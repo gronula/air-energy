@@ -34,7 +34,7 @@ gulp.task('css', function () {
 gulp.task('html', function () {
   return gulp.src('source/*.html')
     .pipe($.htmlmin({
-      collapseWhitespace: true,
+      // collapseWhitespace: true,
       removeAttributeQuotes: true,
       removeComments: true,
       removeEmptyAttributes: true,
