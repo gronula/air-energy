@@ -1,0 +1,50 @@
+.main-nav {
+  margin-left: 27px;
+  margin-right: 27px;
+}
+
+.main-nav__toggle {
+  width: 64px;
+  height: 64px;
+  background: #fbc02d no-repeat center;
+  top: 0;
+  right: 0;
+  border: 0;
+  font-size: 0;
+
+  &--closed {
+    position: absolute;
+    background-image: url("../../img/icon-menu.svg");
+    background-size: 30px;
+  }
+
+  &--opened {
+    position: fixed;
+    background-image: url("../../img/icon-close.svg");
+    background-size: 20px;
+  }
+}
+
+.main-nav__list {
+  display: flex;
+  flex-direction: column;
+  margin-top: 104px;
+  margin-bottom: 40px;
+
+  &--closed {
+    display: none;
+  }
+}
+
+.main-nav__link {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 21px;
+  line-height: 25px;
+  margin-bottom: 24px;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
