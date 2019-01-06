@@ -80,3 +80,27 @@ var bannerTogglesHandler = function (toggle, slide) {
 for (var i = 0; i < bannerToggles.length; i++) {
   bannerTogglesHandler(bannerToggles[i], bannerSlides[i]);
 }
+
+var cities = document.querySelectorAll('.footer__city');
+var addresses = document.querySelectorAll('.footer__address');
+
+var citiesClickHandler = function (city, address) {
+  city.addEventListener('click', function (evt) {
+    evt.preventDefault();
+    if (!city.classList.contains('footer__city--active')) {
+      cities.forEach(function (it) {
+        it.classList.remove('footer__city--active');
+      });
+      addresses.forEach(function (it) {
+        it.classList.remove('footer__address--active');
+      });
+
+      city.classList.add('footer__city--active');
+      address.classList.add('footer__address--active');
+    }
+  });
+};
+
+for (i = 0; i < cities.length; i++) {
+  citiesClickHandler(cities[i], addresses[i]);
+}
