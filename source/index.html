@@ -47,10 +47,10 @@
     </section>
   </header>
 
-  <main class="main">
+  <main class="main" style="overflow: hidden;">
     <section class="categories">
       <ul class="categories__list">
-        <li class="categories__item">
+        <li class="categories__item  categories__item--compressor">
           <h2 class="categories__title">Компрессорное оборудование</h2>
           <a class="categories__link" href="#">Компрессорное оборудование</a>
           <sup class="categories__number">654</sup>
@@ -103,7 +103,7 @@
           </ul>
         </li>
 
-        <li class="categories__item">
+        <li class="categories__item  categories__item--dehydrator">
           <h2 class="categories__title">Адсорбционные осушители</h2>
           <a class="categories__link" href="#">Адсорбционные осушители</a>
           <sup class="categories__number">654</sup>
@@ -141,7 +141,53 @@
           </ul>
         </li>
 
-        <li class="categories__item">
+        <li class="categories__item  categories__item--pump">
+          <h2 class="categories__title">Вакуумные насосы</h2>
+          <a class="categories__link" href="#">Вакуумные насосы</a>
+          <sup class="categories__number">654</sup>
+
+          <ul class="categories__list  categories__list--inner">
+            <li class="categories__item">
+              <a class="categories__link" href="#">Винтовые вакуумные насосы</a>
+              <sup class="categories__number">111</sup>
+            </li>
+
+            <li class="categories__item">
+              <a class="categories__link" href="#">Водокольцевые насосы</a>
+              <sup class="categories__number">111</sup>
+            </li>
+
+            <li class="categories__item">
+              <a class="categories__link" href="#">Пластинчато-роторные насосы</a>
+              <sup class="categories__number">111</sup>
+            </li>
+          </ul>
+        </li>
+
+        <li class="categories__item  categories__item--powerstation">
+          <h2 class="categories__title">Автономные электростанции</h2>
+          <a class="categories__link" href="#">Автономные электростанции</a>
+          <sup class="categories__number">654</sup>
+
+          <ul class="categories__list  categories__list--inner">
+            <li class="categories__item">
+              <a class="categories__link" href="#">Бензиновые мобильные генераторы</a>
+              <sup class="categories__number">111</sup>
+            </li>
+
+            <li class="categories__item">
+              <a class="categories__link" href="#">Передвижные дизельные генераторы</a>
+              <sup class="categories__number">111</sup>
+            </li>
+
+            <li class="categories__item">
+              <a class="categories__link" href="#">Осветительные мачты</a>
+              <sup class="categories__number">111</sup>
+            </li>
+          </ul>
+        </li>
+
+        <li class="categories__item  categories__item--pneumotool">
           <h2 class="categories__title">Пневмоинструмент</h2>
           <a class="categories__link" href="#">Пневмоинструмент</a>
           <sup class="categories__number">654</sup>
@@ -192,52 +238,6 @@
             </li>
           </ul>
         </li>
-
-        <li class="categories__item">
-          <h2 class="categories__title">Вакуумные насосы</h2>
-          <a class="categories__link" href="#">Вакуумные насосы</a>
-          <sup class="categories__number">654</sup>
-
-          <ul class="categories__list  categories__list--inner">
-            <li class="categories__item">
-              <a class="categories__link" href="#">Винтовые вакуумные насосы</a>
-              <sup class="categories__number">111</sup>
-            </li>
-
-            <li class="categories__item">
-              <a class="categories__link" href="#">Водокольцевые насосы</a>
-              <sup class="categories__number">111</sup>
-            </li>
-
-            <li class="categories__item">
-              <a class="categories__link" href="#">Пластинчато-роторные насосы</a>
-              <sup class="categories__number">111</sup>
-            </li>
-          </ul>
-        </li>
-
-        <li class="categories__item">
-          <h2 class="categories__title">Автономные электростанции</h2>
-          <a class="categories__link" href="#">Автономные электростанции</a>
-          <sup class="categories__number">654</sup>
-
-          <ul class="categories__list  categories__list--inner">
-            <li class="categories__item">
-              <a class="categories__link" href="#">Бензиновые мобильные генераторы</a>
-              <sup class="categories__number">111</sup>
-            </li>
-
-            <li class="categories__item">
-              <a class="categories__link" href="#">Передвижные дизельные генераторы</a>
-              <sup class="categories__number">111</sup>
-            </li>
-
-            <li class="categories__item">
-              <a class="categories__link" href="#">Осветительные мачты</a>
-              <sup class="categories__number">111</sup>
-            </li>
-          </ul>
-        </li>
       </ul>
     </section>
 
@@ -250,33 +250,44 @@
         <button class="controls__button  controls__button--next" type="button">Следующий слайд</button>
       </div>
 
-      <article class="banner__slide">
+      <article class="banner__slide  banner__slide--active">
         <h2 class="banner__title">Новая линейка компрессоров</h2>
-        <img class="banner__image" src="img/banner-desktop-01@1x.png" alt="Новая линейка компрессоров">
+        <div class="banner__image-wrapper">
+          <img class="banner__image" src="img/banner-mobile-01@1x.png" alt="Новая линейка компрессоров">
+        </div>
       </article>
+
       <article class="banner__slide">
         <h2 class="banner__title">Новая линейка компрессоров</h2>
-        <img class="banner__image" src="img/banner-desktop-02@1x.png" alt="Новая линейка компрессоров">
+        <div class="banner__image-wrapper">
+          <img class="banner__image" src="img/banner-mobile-01@1x.png" alt="Новая линейка компрессоров">
+        </div>
       </article>
+
       <article class="banner__slide">
         <h2 class="banner__title">Новая линейка компрессоров</h2>
-        <img class="banner__image" src="img/banner-desktop-01@1x.png" alt="Новая линейка компрессоров">
+        <div class="banner__image-wrapper">
+          <img class="banner__image" src="img/banner-mobile-01@1x.png" alt="Новая линейка компрессоров">
+        </div>
       </article>
+
       <article class="banner__slide">
         <h2 class="banner__title">Новая линейка компрессоров</h2>
-        <img class="banner__image" src="img/banner-desktop-02@1x.png" alt="Новая линейка компрессоров">
+        <div class="banner__image-wrapper">
+          <img class="banner__image" src="img/banner-mobile-01@1x.png" alt="Новая линейка компрессоров">
+        </div>
       </article>
 
       <div class="banner__switchers  switchers">
-        <button class="switchers__toggle">Первый слайд</button>
+        <button class="switchers__toggle  switchers__toggle--active">Первый слайд</button>
         <button class="switchers__toggle">Второй слайд</button>
         <button class="switchers__toggle">Третий слайд</button>
-        <button class="switchers__toggle  switchers__toggle--active">Четвёртый слайд</button>
+        <button class="switchers__toggle">Четвёртый слайд</button>
       </div>
     </section>
 
     <div class="sidebar">
-      <a class="sidebar__link  sidebar__link--call" href="#">Позвонить</a>
+      <a class="sidebar__link  sidebar__link--call" href="tel:+78124585650" >Позвонить</a>
       <a class="sidebar__link  sidebar__link--discounts" href="#">Скидки</a>
       <a class="sidebar__link  sidebar__link--сomparison" href="#">
         Сравнение
@@ -877,7 +888,7 @@
       </ul>
     </div>
 
-    <button type="button">Наверх</button>
+    <button class="upward" type="button">Наверх</button>
 
     <section class="filter">
       <h2 class="filter__title">Быстрый подбор компрессора</h2>
@@ -1080,93 +1091,126 @@
       <h2 class="bestsellers__title">Лидеры продаж</h2>
 
       <article class="bestsellers__product">
-        <img class="bestsellers__image" src="img/bestseller-mobile-01@1x.png" alt="Cross Air Compressors Dali CA-0.6/10-RA">
-        <p class="bestsellers__category">Винтовой компрессор</p>
-        <h3 class="bestsellers__name">Cross Air Compressors Dali CA-0.6/10-RA</h3>
+        <div class="bestsellers__image-wrapper">
+          <img class="bestsellers__image" src="img/bestseller-mobile-01@1x.png" alt="Cross Air Compressors Dali CA-0.6/10-RA">
+        </div>
 
-        <footer class="bestsellers__footer">
-          <div class="bestsellers__cost">
-            <p class="bestsellers__value">612 000 ₽</p>
-            <span class="bestsellers__tag">Цена</span>
-          </div>
+        <div class="bestsellers__info">
+          <p class="bestsellers__category">Винтовой компрессор</p>
+          <h3 class="bestsellers__name">Cross Air Compressors Dali CA-0.6/10-RA</h3>
 
-          <a class="bestsellers__comparison" href="#">Сравнение</a>
-        </footer>
+          <footer class="bestsellers__footer">
+            <div class="bestsellers__cost">
+              <p class="bestsellers__value">612 000 ₽</p>
+              <span class="bestsellers__tag">Цена</span>
+            </div>
+
+            <a class="bestsellers__comparison" href="#">Сравнение</a>
+          </footer>
+        </div>
       </article>
 
       <article class="bestsellers__product">
-        <img class="bestsellers__image" src="img/bestseller-mobile-02@1x.png" alt="Cross Air Compressors Dali CA-0.6/10-RA">
-        <p class="bestsellers__category">Винтовой компрессор</p>
-        <h3 class="bestsellers__name">Cross Air Compressors Dali CA-0.6/10-RA</h3>
+        <div class="bestsellers__image-wrapper">
+          <img class="bestsellers__image" src="img/bestseller-mobile-02@1x.png" alt="Cross Air Compressors Dali CA-0.6/10-RA">
+        </div>
 
-        <footer class="bestsellers__footer">
-          <div class="bestsellers__cost">
-            <p class="bestsellers__value bestsellers__value--request">По запросу</p>
-            <span class="bestsellers__tag">Цена</span>
-          </div>
 
-          <a class="bestsellers__comparison" href="#">Сравнение</a>
-        </footer>
+        <div class="bestsellers__info">
+          <p class="bestsellers__category">Винтовой компрессор</p>
+          <h3 class="bestsellers__name">Cross Air Compressors Dali CA-0.6/10-RA</h3>
+
+          <footer class="bestsellers__footer">
+            <div class="bestsellers__cost">
+              <p class="bestsellers__value bestsellers__value--request">По запросу</p>
+              <span class="bestsellers__tag">Цена</span>
+            </div>
+
+            <a class="bestsellers__comparison" href="#">Сравнение</a>
+          </footer>
+        </div>
       </article>
 
       <article class="bestsellers__product">
-        <img class="bestsellers__image" src="img/bestseller-mobile-01@1x.png" alt="Cross Air Compressors Dali CA-0.6/10-RA">
-        <p class="bestsellers__category">Винтовой компрессор</p>
-        <h3 class="bestsellers__name">Cross Air Compressors Dali CA-0.6/10-RA</h3>
+        <div class="bestsellers__image-wrapper">
+          <img class="bestsellers__image" src="img/bestseller-mobile-01@1x.png" alt="Cross Air Compressors Dali CA-0.6/10-RA">
+        </div>
 
-        <footer class="bestsellers__footer">
-          <div class="bestsellers__cost">
-            <p class="bestsellers__value">612 000 ₽</p>
-            <span class="bestsellers__tag">Цена</span>
-          </div>
+        <div class="bestsellers__info">
+          <p class="bestsellers__category">Винтовой компрессор</p>
+          <h3 class="bestsellers__name">Cross Air Compressors Dali CA-0.6/10-RA</h3>
 
-          <a class="bestsellers__comparison" href="#">Сравнение</a>
-        </footer>
+          <footer class="bestsellers__footer">
+            <div class="bestsellers__cost">
+              <p class="bestsellers__value">612 000 ₽</p>
+              <span class="bestsellers__tag">Цена</span>
+            </div>
+
+            <a class="bestsellers__comparison" href="#">Сравнение</a>
+          </footer>
+        </div>
       </article>
 
       <article class="bestsellers__product">
-        <img class="bestsellers__image" src="img/bestseller-mobile-02@1x.png" alt="Cross Air Compressors Dali CA-0.6/10-RA">
-        <p class="bestsellers__category">Винтовой компрессор</p>
-        <h3 class="bestsellers__name">Cross Air Compressors Dali CA-0.6/10-RA</h3>
+        <div class="bestsellers__image-wrapper">
+          <img class="bestsellers__image" src="img/bestseller-mobile-02@1x.png" alt="Cross Air Compressors Dali CA-0.6/10-RA">
+        </div>
 
-        <footer class="bestsellers__footer">
-          <div class="bestsellers__cost">
-            <p class="bestsellers__value">612 000 ₽</p>
-            <span class="bestsellers__tag">Цена</span>
-          </div>
 
-          <a class="bestsellers__comparison" href="#">Сравнение</a>
-        </footer>
+        <div class="bestsellers__info">
+          <p class="bestsellers__category">Винтовой компрессор</p>
+          <h3 class="bestsellers__name">Cross Air Compressors Dali CA-0.6/10-RA</h3>
+
+          <footer class="bestsellers__footer">
+            <div class="bestsellers__cost">
+              <p class="bestsellers__value bestsellers__value--request">По запросу</p>
+              <span class="bestsellers__tag">Цена</span>
+            </div>
+
+            <a class="bestsellers__comparison" href="#">Сравнение</a>
+          </footer>
+        </div>
       </article>
 
       <article class="bestsellers__product">
-        <img class="bestsellers__image" src="img/bestseller-mobile-01@1x.png" alt="Cross Air Compressors Dali CA-0.6/10-RA">
-        <p class="bestsellers__category">Винтовой компрессор</p>
-        <h3 class="bestsellers__name">Cross Air Compressors Dali CA-0.6/10-RA</h3>
+        <div class="bestsellers__image-wrapper">
+          <img class="bestsellers__image" src="img/bestseller-mobile-01@1x.png" alt="Cross Air Compressors Dali CA-0.6/10-RA">
+        </div>
 
-        <footer class="bestsellers__footer">
-          <div class="bestsellers__cost">
-            <p class="bestsellers__value">612 000 ₽</p>
-            <span class="bestsellers__tag">Цена</span>
-          </div>
+        <div class="bestsellers__info">
+          <p class="bestsellers__category">Винтовой компрессор</p>
+          <h3 class="bestsellers__name">Cross Air Compressors Dali CA-0.6/10-RA</h3>
 
-          <a class="bestsellers__comparison" href="#">Сравнение</a>
-        </footer>
+          <footer class="bestsellers__footer">
+            <div class="bestsellers__cost">
+              <p class="bestsellers__value">612 000 ₽</p>
+              <span class="bestsellers__tag">Цена</span>
+            </div>
+
+            <a class="bestsellers__comparison" href="#">Сравнение</a>
+          </footer>
+        </div>
       </article>
 
       <article class="bestsellers__product">
-        <img class="bestsellers__image" src="img/bestseller-mobile-02@1x.png" alt="Cross Air Compressors Dali CA-0.6/10-RA">
-        <p class="bestsellers__category">Винтовой компрессор</p>
-        <h3 class="bestsellers__name">Cross Air Compressors Dali CA-0.6/10-RA</h3>
+        <div class="bestsellers__image-wrapper">
+          <img class="bestsellers__image" src="img/bestseller-mobile-02@1x.png" alt="Cross Air Compressors Dali CA-0.6/10-RA">
+        </div>
 
-        <footer class="bestsellers__footer">
-          <div class="bestsellers__cost">
-            <p class="bestsellers__value">612 000 ₽</p>
-            <span class="bestsellers__tag">Цена</span>
-          </div>
 
-          <a class="bestsellers__comparison" href="#">Сравнение</a>
-        </footer>
+        <div class="bestsellers__info">
+          <p class="bestsellers__category">Винтовой компрессор</p>
+          <h3 class="bestsellers__name">Cross Air Compressors Dali CA-0.6/10-RA</h3>
+
+          <footer class="bestsellers__footer">
+            <div class="bestsellers__cost">
+              <p class="bestsellers__value bestsellers__value--request">По запросу</p>
+              <span class="bestsellers__tag">Цена</span>
+            </div>
+
+            <a class="bestsellers__comparison" href="#">Сравнение</a>
+          </footer>
+        </div>
       </article>
     </section>
 
@@ -1181,11 +1225,23 @@
     <section class="clients">
       <h2 class="clients__title">Наши клиенты</h2>
 
-      <img class="clients__image" src="img/logo-pneumatech.png" alt="Pneumatech">
-      <img class="clients__image" src="img/logo-ceccato.png" alt="Ceccato Aria Compressa">
-      <img class="clients__image" src="img/logo-fogo.png" alt="FOGO">
-      <img class="clients__image" src="img/logo-chicago.png" alt="Chicago Pneumatic">
-      <img class="clients__image" src="img/logo-ceccato.png" alt="Ceccato Aria Compressa">
+      <div class="clients__list">
+        <div class="clients__image-wrapper  clients__image-wrapper--pneumatech">
+          <img class="clients__image" src="img/logo-mobile-pneumatech.png" alt="Pneumatech">
+        </div>
+        <div class="clients__image-wrapper  clients__image-wrapper--ceccato">
+          <img class="clients__image" src="img/logo-mobile-ceccato.png" alt="Ceccato Aria Compressa">
+        </div>
+        <div class="clients__image-wrapper  clients__image-wrapper--fogo">
+          <img class="clients__image" src="img/logo-mobile-fogo.png" alt="FOGO">
+        </div>
+        <div class="clients__image-wrapper  clients__image-wrapper--chicago">
+          <img class="clients__image" src="img/logo-mobile-chicago.png" alt="Chicago Pneumatic">
+        </div>
+        <div class="clients__image-wrapper  clients__image-wrapper--ceccato">
+          <img class="clients__image" src="img/logo-mobile-ceccato.png" alt="Ceccato Aria Compressa">
+        </div>
+      </div>
 
       <div class="clients__switchers  switchers">
         <button class="switchers__toggle  switchers__toggle--active">Первый слайд</button>
@@ -1205,46 +1261,52 @@
       </div>
 
       <header class="industry__header">
-        <h2 class="industry__title">Отраслевые решения</h2>
+        <h2 class="industry__title">Отраслевые <span class="arrow">решения</span></h2>
         <p class="industry__more">еще <span class="industry__number">8</span> решений</p>
       </header>
 
-      <div class="industry__solution">
-        <img class="industry__image" src="img/industry-desktop-01@1x.png" alt="Сжатый воздух для лазерной резки">
-        <h3 class="industry__heading">Сжатый воздух для лазерной резки</h3>
-      </div>
+      <div class="slider">
+        <div class="slider__item">
+          <img class="slider__image" src="img/industry-desktop-01@1x.png" alt="Сжатый воздух для лазерной резки">
+          <h3 class="slider__heading">Сжатый воздух для лазерной резки</h3>
+        </div>
 
-      <div class="industry__solution">
-        <img class="industry__image" src="img/industry-desktop-02@1x.png" alt="Стоматологический комперссор">
-        <h3 class="industry__heading">Стоматологический комперссор</h3>
-      </div>
+        <div class="slider__item">
+          <img class="slider__image" src="img/industry-desktop-02@1x.png" alt="Стоматологический комперссор">
+          <h3 class="slider__heading">Стоматологический комперссор</h3>
+        </div>
 
-      <div class="industry__solution">
-        <img class="industry__image" src="img/industry-desktop-03@1x.png" alt="Сжатый воздух для лазерной резки">
-        <h3 class="industry__heading">Сжатый воздух для лазерной резки</h3>
+        <div class="slider__item">
+          <img class="slider__image" src="img/industry-desktop-03@1x.png" alt="Сжатый воздух для лазерной резки">
+          <h3 class="slider__heading">Сжатый воздух для лазерной резки</h3>
+        </div>
       </div>
     </section>
 
     <section class="news">
-      <h2 class="news__title">Новости</h2>
+      <h2 class="news__title">
+        <span class="arrow">Новости</span>
+      </h2>
 
-      <article class="news__note">
-        <h3 class="news__heading">Обновление линейки Ceccato CSB</h3>
-        <p class="news__text">Компрессоры серии CSB теперь доступны в комплектации на 500-литровом ресивере с осушителем воздуха фильтром.</p>
-        <time class="news__date" datetime="2018-10-27 23:00">27 Октября в 23:00</time>
-      </article>
+      <div class="news__notes">
+        <article class="news__note">
+          <h3 class="news__heading">Обновление линейки Ceccato CSB</h3>
+          <p class="news__text">Компрессоры серии CSB теперь доступны в комплектации на 500-литровом ресивере с осушителем воздуха фильтром.</p>
+          <time class="news__date" datetime="2018-10-27 23:00">27 Октября в 23:00</time>
+        </article>
 
-      <article class="news__note">
-        <h3 class="news__heading">Компания CompAir выпустила новые спиральные компрессоры</h3>
-        <p class="news__text">Производитель CompAir выпустил новую линейку спиральных компрессоров с мощностью от 4 до 16 кВт. Применение спиральной технологии сжатия позволило снизить риски...</p>
-        <time class="news__date" datetime="2018-10-21 21:00">21 Октября в 21:00</time>
-      </article>
+        <article class="news__note">
+          <h3 class="news__heading">Компания CompAir выпустила новые спиральные компрессоры</h3>
+          <p class="news__text">Производитель CompAir выпустил новую линейку спиральных компрессоров с мощностью от 4 до 16 кВт. Применение спиральной технологии сжатия позволило снизить риски...</p>
+          <time class="news__date" datetime="2018-10-21 21:00">21 Октября в 21:00</time>
+        </article>
 
-      <article class="news__note">
-        <h3 class="news__heading">Обновление компрессорного оборудования на Заполярном месторождении завершено</h3>
-        <p class="news__text">На Заполярном нефтегазовом месторождении в Тазовском районе завершены монтажные и пусконаладочные работы. Установлено 6 центробежных компрессоров в рамках проекта по модернизации...</p>
-        <time class="news__date" datetime="2018-10-12 12:00">12 Октября в 12:00</time>
-      </article>
+        <article class="news__note">
+          <h3 class="news__heading">Обновление компрессорного оборудования на Заполярном месторождении завершено</h3>
+          <p class="news__text">На Заполярном нефтегазовом месторождении в Тазовском районе завершены монтажные и пусконаладочные работы. Установлено 6 центробежных компрессоров в рамках проекта по модернизации...</p>
+          <time class="news__date" datetime="2018-10-12 12:00">12 Октября в 12:00</time>
+        </article>
+      </div>
 
       <a class="news__more" href="#">Все новости</a>
 
@@ -1316,29 +1378,29 @@
 
     <section class="projects">
       <header class="projects__header">
-        <h2 class="projects__title">Реализованые проекты</h2>
+        <h2 class="projects__title">Реализованые <span class="arrow">проекты</span></h2>
         <p class="projects__more">еще <span class="projects__number">12</span> проектов</p>
       </header>
 
-      <div class="projects__slider">
-        <div class="projects__controls  controls  controls--mini">
-          <button class="controls__button  controls__button--previous" type="button">Предыдущий слайд</button>
-          <button class="controls__button  controls__button--next" type="button">Следующий слайд</button>
+      <div class="projects__controls  controls  controls--mini">
+        <button class="controls__button  controls__button--previous" type="button">Предыдущий слайд</button>
+        <button class="controls__button  controls__button--next" type="button">Следующий слайд</button>
+      </div>
+
+      <div class="slider">
+        <div class="slider__item">
+          <img class="slider__image" src="img/industry-desktop-01@1x.png" alt="Сжатый воздух для лазерной резки">
+          <h3 class="slider__heading">Сжатый воздух для лазерной резки</h3>
         </div>
 
-        <div class="projects__item">
-          <img class="projects__image" src="img/industry-desktop-01@1x.png" alt="Сжатый воздух для лазерной резки">
-          <h3 class="projects__heading">Сжатый воздух для лазерной резки</h3>
+        <div class="slider__item">
+          <img class="slider__image" src="img/industry-desktop-02@1x.png" alt="Стоматологический комперссор">
+          <h3 class="slider__heading">Стоматологический комперссор</h3>
         </div>
 
-        <div class="projects__item">
-          <img class="projects__image" src="img/industry-desktop-02@1x.png" alt="Стоматологический комперссор">
-          <h3 class="projects__heading">Стоматологический комперссор</h3>
-        </div>
-
-        <div class="projects__item">
-          <img class="projects__image" src="img/industry-desktop-03@1x.png" alt="Сжатый воздух для лазерной резки">
-          <h3 class="projects__heading">Сжатый воздух для лазерной резки</h3>
+        <div class="slider__item">
+          <img class="slider__image" src="img/industry-desktop-03@1x.png" alt="Сжатый воздух для лазерной резки">
+          <h3 class="slider__heading">Сжатый воздух для лазерной резки</h3>
         </div>
       </div>
     </section>

@@ -1,0 +1,47 @@
+.features {
+  background-color: #15262e;
+  padding-top: 71px;
+  padding-bottom: 80px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.features__item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.features__text {
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.features__value {
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 76px;
+  color: rgba(255, 255, 255, 0.9);
+  padding-left: 30px;
+  word-break: break-word;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    left: 0;
+    top: 15px;
+    background: url("../../img/icon-plus.svg") no-repeat center;
+    background-size: contain;
+  }
+}
