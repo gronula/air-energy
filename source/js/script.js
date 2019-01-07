@@ -58,29 +58,6 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
-var bannerToggles = document.querySelectorAll('.banner__switchers  .switchers__toggle');
-var bannerSlides = document.querySelectorAll('.banner__slide');
-
-var bannerTogglesHandler = function (toggle, slide) {
-  toggle.addEventListener('click', function () {
-    if (!toggle.classList.contains('switchers__toggle--active')) {
-      bannerToggles.forEach(function (it) {
-        it.classList.remove('switchers__toggle--active');
-      });
-      bannerSlides.forEach(function (it) {
-        it.classList.remove('banner__slide--active');
-      });
-
-      toggle.classList.add('switchers__toggle--active');
-      slide.classList.add('banner__slide--active');
-    }
-  });
-};
-
-for (var i = 0; i < bannerToggles.length; i++) {
-  bannerTogglesHandler(bannerToggles[i], bannerSlides[i]);
-}
-
 var cities = document.querySelectorAll('.footer__city');
 var addresses = document.querySelectorAll('.footer__address');
 
@@ -101,6 +78,63 @@ var citiesClickHandler = function (city, address) {
   });
 };
 
-for (i = 0; i < cities.length; i++) {
+for (var i = 0; i < cities.length; i++) {
   citiesClickHandler(cities[i], addresses[i]);
 }
+
+/* eslint-disable */
+$(document).ready(function () {
+  $('.banner__slides').slick({
+    dots: true,
+    arrows: false,
+    infinite: false,
+  });
+
+  $('.clients__list').slick({
+    dots: false,
+    arrows: false,
+    infinite: false,
+    speed: 300,
+    slidesToShow: 5,
+    variableWidth: true,
+    responsive: [
+      {
+        breakpoint: 480,
+        settings: {
+          dots: true,
+          slidesToShow: 1,
+        }
+      },
+      {
+        breakpoint: 700,
+        settings: {
+          dots: true,
+          slidesToShow: 2,
+        }
+      },
+      {
+        breakpoint: 940,
+        settings: {
+          dots: true,
+          slidesToShow: 3,
+        }
+      },
+      {
+        breakpoint: 1200,
+        settings: {
+          dots: true,
+          slidesToShow: 4,
+        }
+      }
+    ]
+  });
+
+  $('.news__notes').slick({
+    dots: true,
+    arrows: false,
+    infinite: false,
+    adaptiveHeight: true
+  });
+});
+
+/* eslint-enable */
