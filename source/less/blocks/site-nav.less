@@ -20,3 +20,36 @@
     margin-bottom: 140px;
   }
 }
+
+@media (min-width: @desktop-width) {
+  .site-nav {
+    width: calc(60% - 64px);
+    order: 1;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-left: 64px;
+    margin-right: 0;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #bde1e4;
+
+    &--closed {
+      display: flex;
+    }
+  }
+
+  .site-nav__link {
+    font-size: 13px;
+    line-height: 15px;
+    color: @title-color;
+    margin-right: 40px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+
+    &:last-of-type {
+      margin-right: 0;
+      margin-bottom: 5px;
+    }
+  }
+}

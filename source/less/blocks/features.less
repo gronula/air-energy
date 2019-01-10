@@ -45,3 +45,26 @@
     background-size: contain;
   }
 }
+
+@media (min-width: @desktop-width) {
+  .features {
+    order: 8;
+    width: 454px;
+    padding-top: 72px;
+    padding-bottom: 97px;
+    padding-left: 72px;
+    padding-right: 72px;
+  }
+
+  .features__value {
+    font-size: 80px;
+    line-height: 94px;
+
+    &::before {
+      width: 12px;
+      height: 12px;
+      top: 18px;
+      left: 7px;
+    }
+  }
+}

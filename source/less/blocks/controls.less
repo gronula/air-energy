@@ -1,0 +1,134 @@
+@media (min-width: @desktop-width) {
+  .controls {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    z-index: 1;
+    width: 64px;
+    height: 288px;
+    background-color: #15262e;
+
+    &--vertical {
+      flex-direction: row;
+      width: 288px;
+      height: 64px;
+      background-color: #273840;
+    }
+
+    &--mini {
+      width: 128px;
+    }
+  }
+
+  .controls__button {
+    background-color: #15262e;
+    font-size: 0;
+    width: 64px;
+    height: 64px;
+    border: 0;
+    padding: 0;
+    position: relative;
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 6px;
+      height: 12px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: no-repeat center;
+      background-size: contain;
+    }
+
+    &--previous::before {
+      background-image: url("../../img/icon-arrow-thin.svg");
+      transform: translate(-50%, -50%) rotate(180deg);
+
+      .controls--mini & {
+        background-image: url("../../img/icon-arrow-thin-black.svg");
+      }
+    }
+
+    &--next::before {
+      background-image: url("../../img/icon-arrow-thin.svg");
+
+      .controls--mini & {
+        background-image: url("../../img/icon-arrow-thin-black.svg");
+      }
+    }
+
+    .controls--vertical & {
+      background-color: #273840;
+    }
+
+    .controls--mini & {
+      background-color: #fbc02d;
+    }
+  }
+
+  .controls__line {
+    position: absolute;
+    width: 2px;
+    height: 82px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.2);
+
+    &--vertical {
+      width: 54px;
+      height: 2px;
+    }
+  }
+
+  .controls__timeline {
+    position: absolute;
+    width: 2px;
+    height: 0;
+    background-color: #fbc02d;
+
+    &--vertical {
+      width: 0;
+      height: 2px;
+    }
+  }
+
+  .controls__number {
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 12px;
+    letter-spacing: 0.01em;
+    color: #ffffff;
+
+    &--active {
+      margin-bottom: auto;
+      padding-top: 18px;
+
+      .controls--vertical & {
+        margin-left: 26px;
+        margin-right: auto;
+      }
+    }
+
+    &--last {
+      margin-top: auto;
+      padding-bottom: 18px;
+
+      .controls--vertical & {
+        margin-left: auto;
+        margin-right: 25px;
+      }
+    }
+
+    .controls--vertical & {
+      margin-top: auto;
+      margin-bottom: auto;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+}

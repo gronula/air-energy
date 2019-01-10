@@ -24,20 +24,37 @@
   margin-right: 51px;
   padding-left: 19px;
   flex-shrink: 0;
+}
 
-  &--pneumatech {
-    height: 73px;
+.clients__image {
+  filter: grayscale(1);
+  opacity: 0.6;
+  object-fit: scale-down;
+
+  &:hover {
+    filter: none;
+    opacity: 1;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .clients {
+    order: 11;
+    width: 100%;
+    padding-top: 24px;
+    padding-bottom: 100px;
   }
 
-  &--ceccato {
-    height: 73px;
+  .clients__list {
+    padding-left: 80px;
+    padding-right: 80px;
   }
 
-  &--fogo {
-    height: 63px;
-  }
-
-  &--chicago {
-    height: 63px;
+  .clients__image-wrapper {
+    margin-bottom: 40px;
+    margin-right: 65px;
+    padding-left: 0;
+    max-height: 81px;
+    max-width: 202px;
   }
 }

@@ -22,3 +22,39 @@
 .industry__more {
   display: none;
 }
+
+@media (min-width: @desktop-width) {
+  .industry {
+    order: 6;
+    width: 1377px;
+    position: relative;
+    margin-bottom: 180px;
+    padding-top: 97px;
+    display: flex;
+  }
+
+  .industry__controls {
+    top: 0;
+    right: 0;
+  }
+
+  .industry__header {
+    margin-right: 129px;
+    padding-bottom: 160px;
+    padding-left: 67px;
+    z-index: 0;
+  }
+
+  .industry__title {
+    width: 300px;
+    margin-bottom: 69px;
+    margin-left: 0;
+    margin-right: 0;
+    font-size: 48px;
+    line-height: 48px;
+
+    & .arrow::after {
+      display: none;
+    }
+  }
+}

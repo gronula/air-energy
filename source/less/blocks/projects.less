@@ -22,3 +22,43 @@
 .projects__controls {
   display: none;
 }
+
+@media (min-width: @desktop-width) {
+  .projects {
+    order: 10;
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    min-height: 506px;
+    margin-bottom: 231px;
+    padding-top: 0;
+    padding-left: 81px;
+    position: relative;
+    z-index: 1;
+    background-image: linear-gradient(to right, #ffffff 534px, #15262e 534px);
+  }
+
+  .projects__header {
+    margin-bottom: auto;
+    margin-right: 66px;
+    padding-top: 122px;
+  }
+
+  .projects__title {
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 73px;
+    font-size: 36px;
+    line-height: 37px;
+    color: #15262e;
+
+    & .arrow::after {
+      display: none;
+    }
+  }
+
+  .projects__controls {
+    top: 0;
+    left: 534px;
+  }
+}

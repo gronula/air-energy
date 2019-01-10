@@ -10,11 +10,6 @@
 
 .banner__slide {
   display: none;
-
-  &--active {
-    display: flex;
-    flex-direction: column;
-  }
 }
 
 .banner__title {
@@ -28,4 +23,53 @@
 
 .banner__image-wrapper {
   align-self: center;
+}
+
+.banner__image {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: @desktop-width) {
+  .banner {
+    order: 1;
+    width: 100%;
+    min-height: 505px;
+    padding: 0;
+    position: relative;
+  }
+
+  .banner__controls {
+    top: 50%;
+    left: 1112px;
+    transform: translateY(-50%);
+  }
+
+  .banner__slide {
+    width: 1144px;
+    height: auto;
+    min-height: 505px;
+    align-items: flex-start;
+    background: url("../../img/bg-desktop-banner.svg") no-repeat right top;
+  }
+
+  .banner__title {
+    order: 2;
+    font-size: 48px;
+    line-height: 48px;
+    margin-top: 145px;
+    margin-bottom: 38px;
+    margin-left: 39px;
+    margin-right: 39px;
+  }
+
+  .banner__image-wrapper {
+    order: 1;
+    margin-top: 26px;
+    margin-bottom: 38px;
+    margin-left: 84px;
+    margin-right: 39px;
+    align-self: auto;
+    flex-shrink: 0;
+  }
 }

@@ -1,0 +1,42 @@
+@media (min-width: @desktop-width) {
+  .more {
+    display: block;
+    margin-left: 1px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    padding-left: 30px;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 13px;
+    letter-spacing: 0.1em;
+    background-color: #15262e;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-decoration: none;
+    position: relative;
+
+    .news & {
+      background-color: #ffffff;
+      color: #15262e;
+      padding-left: 19px;
+    }
+
+    .projects & {
+      background-color: #ffffff;
+      width: 450px;
+      color: #15262e;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 56px;
+      height: 56px;
+      top: 50%;
+      left: -3px;
+      transform: translateY(-50%);
+      border: 2px solid #f1ac00;
+      z-index: -1;
+    }
+  }
+}

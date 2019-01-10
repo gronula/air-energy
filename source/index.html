@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="css/style.min.css">
   <title>Air Energy</title>
 </head>
-<body>
+<body class="page">
   <header class="header">
     <div class="logo  logo--opened">
       <a class="logo__link" href="index.html">
@@ -17,12 +17,12 @@
 
     <form class="search  search--closed  search--nojs" action="https://echo.htmlacademy.ru" method="post">
       <label class="search__icon" for="search"></label>
-      <input class="search__field" type="search" name="search" id="search" placeholder="Поиск товаров и услуг" autocomplete="off">
+      <input class="search__field  search__field--closed" type="search" name="search" id="search" placeholder="Поиск товаров и услуг" autocomplete="off" required>
       <button class="search__button" type="submit">Отправить запрос</button>
     </form>
 
     <nav class="main-nav">
-      <button class="main-nav__toggle  main-nav__toggle--closed  main-nav__toggle--nojs" type="button">Кнопка меню</button>
+      <button class="main-nav__toggle  main-nav__toggle--closed  main-nav__toggle--nojs" type="button">Меню</button>
       <div class="main-nav__list  main-nav__list--closed  main-nav__list--nojs">
         <a class="main-nav__link" href="#">Каталог </a>
         <a class="main-nav__link" href="#">Бренды</a>
@@ -41,200 +41,215 @@
     </nav>
 
     <section class="contacts">
-      <p class="contacts__city">Санкт-Петербург</p>
-      <p class="contacts__tel">+7 (812) 458-56-50</p>
-      <p class="contacts__callback">Обратный звонок</p>
+      <div class="contacts__cities-wrapper">
+        <p class="contacts__active">Санкт-Петербург</p>
+        <ul class="contacts__cities">
+          <li class="contacts__city  contacts__city--active">Санкт-Петербург</li>
+          <li class="contacts__city">Москва</li>
+          <li class="contacts__city">Екатеринбург</li>
+        </ul>
+      </div>
+      <a class="contacts__tel" href="tel:+78124585650">+7 (812) <span class="contacts__tel  contacts__tel--lead">458-56-50</span></a>
+      <a class="contacts__callback" href="#">Обратный звонок</a>
     </section>
   </header>
 
-  <main class="main" style="overflow: hidden;">
+  <main class="main">
     <section class="categories">
       <ul class="categories__list">
         <li class="categories__item  categories__item--compressor">
           <h2 class="categories__title">Компрессорное оборудование</h2>
-          <a class="categories__link" href="#">Компрессорное оборудование</a>
-          <sup class="categories__number">654</sup>
-
-          <ul class="categories__list  categories__list--inner">
-            <li class="categories__item">
-              <a class="categories__link" href="#">Винтовые компрессоры</a>
-              <sup class="categories__number">111</sup>
+          <a class="categories__link" href="#">
+            Компрессорное оборудование
+            <sup class="categories__number">111</sup>
+          </a>
+          <ul class="categories__sublist">
+            <li class="categories__subitem">
+              <a class="categories__sublink" href="#">Винтовые компрессоры</a>
+              <sup class="categories__subnumber">111</sup>
             </li>
 
-            <li class="categories__item">
-              <a class="categories__link" href="#">Безмасляные компрессоры</a>
-              <sup class="categories__number">111</sup>
+            <li class="categories__subitem">
+              <a class="categories__sublink" href="#">Безмасляные компрессоры</a>
+              <sup class="categories__subnumber">111</sup>
             </li>
 
-            <li class="categories__item">
-              <a class="categories__link" href="#">Дизельные передвижные компрессоры</a>
-              <sup class="categories__number">111</sup>
+            <li class="categories__subitem">
+              <a class="categories__sublink" href="#">Дизельные передвижные компрессоры</a>
+              <sup class="categories__subnumber">111</sup>
             </li>
 
-            <li class="categories__item">
-              <a class="categories__link" href="#">Поршневые компрессоры</a>
-              <sup class="categories__number">111</sup>
+            <li class="categories__subitem">
+              <a class="categories__sublink" href="#">Поршневые компрессоры</a>
+              <sup class="categories__subnumber">111</sup>
             </li>
 
-            <li class="categories__item">
-              <a class="categories__link" href="#">Роторные воздуходувки</a>
-              <sup class="categories__number">111</sup>
+            <li class="categories__subitem">
+              <a class="categories__sublink" href="#">Роторные воздуходувки</a>
+              <sup class="categories__subnumber">111</sup>
             </li>
 
-            <li class="categories__item">
-              <a class="categories__link" href="#">Компрессоры низкого давления</a>
-              <sup class="categories__number">111</sup>
+            <li class="categories__subitem">
+              <a class="categories__sublink" href="#">Компрессоры низкого давления</a>
+              <sup class="categories__subnumber">111</sup>
             </li>
 
-            <li class="categories__item">
-              <a class="categories__link" href="#">Компрессоры высокого давления</a>
-              <sup class="categories__number">111</sup>
+            <li class="categories__subitem">
+              <a class="categories__sublink" href="#">Компрессоры высокого давления</a>
+              <sup class="categories__subnumber">111</sup>
             </li>
 
-            <li class="categories__item">
-              <a class="categories__link" href="#">Дожимные компрессоры (бустеры)</a>
-              <sup class="categories__number">111</sup>
+            <li class="categories__subitem">
+              <a class="categories__sublink" href="#">Дожимные компрессоры (бустеры)</a>
+              <sup class="categories__subnumber">111</sup>
             </li>
 
-            <li class="categories__item">
-              <a class="categories__link" href="#">Центробежные компрессоры</a>
-              <sup class="categories__number">111</sup>
+            <li class="categories__subitem">
+              <a class="categories__sublink" href="#">Центробежные компрессоры</a>
+              <sup class="categories__subnumber">111</sup>
             </li>
           </ul>
         </li>
 
         <li class="categories__item  categories__item--dehydrator">
           <h2 class="categories__title">Адсорбционные осушители</h2>
-          <a class="categories__link" href="#">Адсорбционные осушители</a>
-          <sup class="categories__number">654</sup>
+          <a class="categories__link" href="#">
+            Адсорбционные осушители<sup class="categories__number">654</sup>
+          </a>
 
-          <ul class="categories__list  categories__list--inner">
-            <li class="categories__item">
-              <a class="categories__link" href="#">Рефрижераторные осушители</a>
-              <sup class="categories__number">111</sup>
+          <ul class="categories__sublist">
+            <li class="categories__subitem">
+              <a class="categories__sublink" href="#">Рефрижераторные осушители</a>
+              <sup class="categories__subnumber">111</sup>
             </li>
 
-            <li class="categories__item">
-              <a class="categories__link" href="#">Осушители холодильного типа с регулировкой производительности</a>
-              <sup class="categories__number">111</sup>
+            <li class="categories__subitem">
+              <a class="categories__sublink" href="#">Осушители холодильного типа с регулировкой производительности</a>
+              <sup class="categories__subnumber">111</sup>
             </li>
 
-            <li class="categories__item">
-              <a class="categories__link" href="#">Рефрижераторные осушители высокого давления до 350 бар</a>
-              <sup class="categories__number">111</sup>
+            <li class="categories__subitem">
+              <a class="categories__sublink" href="#">Рефрижераторные осушители высокого давления до 350 бар</a>
+              <sup class="categories__subnumber">111</sup>
             </li>
 
-            <li class="categories__item">
-              <a class="categories__link" href="#">Адсорбционные осушители холодной регенерации</a>
-              <sup class="categories__number">111</sup>
+            <li class="categories__subitem">
+              <a class="categories__sublink" href="#">Адсорбционные осушители холодной регенерации</a>
+              <sup class="categories__subnumber">111</sup>
             </li>
 
-            <li class="categories__item">
-              <a class="categories__link" href="#">Адсорбционные осушители без потерь сжатого воздуха (с нагревом)</a>
-              <sup class="categories__number">111</sup>
+            <li class="categories__subitem">
+              <a class="categories__sublink" href="#">Адсорбционные осушители без потерь сжатого воздуха (с нагревом)</a>
+              <sup class="categories__subnumber">111</sup>
             </li>
 
-            <li class="categories__item">
-              <a class="categories__link" href="#">Мембранные осушители</a>
-              <sup class="categories__number">111</sup>
-            </li>
-          </ul>
-        </li>
-
-        <li class="categories__item  categories__item--pump">
-          <h2 class="categories__title">Вакуумные насосы</h2>
-          <a class="categories__link" href="#">Вакуумные насосы</a>
-          <sup class="categories__number">654</sup>
-
-          <ul class="categories__list  categories__list--inner">
-            <li class="categories__item">
-              <a class="categories__link" href="#">Винтовые вакуумные насосы</a>
-              <sup class="categories__number">111</sup>
-            </li>
-
-            <li class="categories__item">
-              <a class="categories__link" href="#">Водокольцевые насосы</a>
-              <sup class="categories__number">111</sup>
-            </li>
-
-            <li class="categories__item">
-              <a class="categories__link" href="#">Пластинчато-роторные насосы</a>
-              <sup class="categories__number">111</sup>
-            </li>
-          </ul>
-        </li>
-
-        <li class="categories__item  categories__item--powerstation">
-          <h2 class="categories__title">Автономные электростанции</h2>
-          <a class="categories__link" href="#">Автономные электростанции</a>
-          <sup class="categories__number">654</sup>
-
-          <ul class="categories__list  categories__list--inner">
-            <li class="categories__item">
-              <a class="categories__link" href="#">Бензиновые мобильные генераторы</a>
-              <sup class="categories__number">111</sup>
-            </li>
-
-            <li class="categories__item">
-              <a class="categories__link" href="#">Передвижные дизельные генераторы</a>
-              <sup class="categories__number">111</sup>
-            </li>
-
-            <li class="categories__item">
-              <a class="categories__link" href="#">Осветительные мачты</a>
-              <sup class="categories__number">111</sup>
+            <li class="categories__subitem">
+              <a class="categories__sublink" href="#">Мембранные осушители</a>
+              <sup class="categories__subnumber">111</sup>
             </li>
           </ul>
         </li>
 
         <li class="categories__item  categories__item--pneumotool">
           <h2 class="categories__title">Пневмоинструмент</h2>
-          <a class="categories__link" href="#">Пневмоинструмент</a>
-          <sup class="categories__number">654</sup>
+          <a class="categories__link" href="#">
+            Пневмоинструмент
+            <sup class="categories__number">654</sup>
+          </a>
 
-          <ul class="categories__list  categories__list--inner">
-            <li class="categories__item">
-              <a class="categories__link" href="#">Шлифовальные машинки</a>
-              <sup class="categories__number">111</sup>
+          <ul class="categories__sublist">
+            <li class="categories__subitem">
+              <a class="categories__sublink" href="#">Шлифовальные машинки</a>
+              <sup class="categories__subnumber">111</sup>
             </li>
 
-            <li class="categories__item">
-              <a class="categories__link" href="#">Полировальные машинки</a>
-              <sup class="categories__number">111</sup>
+            <li class="categories__subitem">
+              <a class="categories__sublink" href="#">Полировальные машинки</a>
+              <sup class="categories__subnumber">111</sup>
             </li>
 
-            <li class="categories__item">
-              <a class="categories__link" href="#">Шуруповерты</a>
-              <sup class="categories__number">111</sup>
+            <li class="categories__subitem">
+              <a class="categories__sublink" href="#">Шуруповерты</a>
+              <sup class="categories__subnumber">111</sup>
             </li>
 
-            <li class="categories__item">
-              <a class="categories__link" href="#">Гайковерты</a>
-              <sup class="categories__number">111</sup>
+            <li class="categories__subitem">
+              <a class="categories__sublink" href="#">Гайковерты</a>
+              <sup class="categories__subnumber">111</sup>
             </li>
 
-            <li class="categories__item">
-              <a class="categories__link" href="#">Дрели</a>
-              <sup class="categories__number">111</sup>
+            <li class="categories__subitem">
+              <a class="categories__sublink" href="#">Дрели</a>
+              <sup class="categories__subnumber">111</sup>
             </li>
-            <li class="categories__item">
-              <a class="categories__link" href="#">Краскораспылители (краскопульты)</a>
-              <sup class="categories__number">111</sup>
-            </li>
-
-            <li class="categories__item">
-              <a class="categories__link" href="#">Заклепочники</a>
-              <sup class="categories__number">111</sup>
+            <li class="categories__subitem">
+              <a class="categories__sublink" href="#">Краскораспылители (краскопульты)</a>
+              <sup class="categories__subnumber">111</sup>
             </li>
 
-            <li class="categories__item">
-              <a class="categories__link" href="#">Пистолеты для шпильки, скобы и гвоздей</a>
-              <sup class="categories__number">111</sup>
+            <li class="categories__subitem">
+              <a class="categories__sublink" href="#">Заклепочники</a>
+              <sup class="categories__subnumber">111</sup>
             </li>
 
-            <li class="categories__item">
-              <a class="categories__link" href="#">Расходные материалы для инструмента</a>
-              <sup class="categories__number">111</sup>
+            <li class="categories__subitem">
+              <a class="categories__sublink" href="#">Пистолеты для шпильки, скобы и гвоздей</a>
+              <sup class="categories__subnumber">111</sup>
+            </li>
+
+            <li class="categories__subitem">
+              <a class="categories__sublink" href="#">Расходные материалы для инструмента</a>
+              <sup class="categories__subnumber">111</sup>
+            </li>
+          </ul>
+        </li>
+
+        <li class="categories__item  categories__item--pump">
+          <h2 class="categories__title">Вакуумные насосы</h2>
+          <a class="categories__link" href="#">
+            Вакуумные насосы
+            <sup class="categories__number">654</sup>
+          </a>
+
+          <ul class="categories__sublist">
+            <li class="categories__subitem">
+              <a class="categories__sublink" href="#">Винтовые вакуумные насосы</a>
+              <sup class="categories__subnumber">111</sup>
+            </li>
+
+            <li class="categories__subitem">
+              <a class="categories__sublink" href="#">Водокольцевые насосы</a>
+              <sup class="categories__subnumber">111</sup>
+            </li>
+
+            <li class="categories__subitem">
+              <a class="categories__sublink" href="#">Пластинчато-роторные насосы</a>
+              <sup class="categories__subnumber">111</sup>
+            </li>
+          </ul>
+        </li>
+
+        <li class="categories__item  categories__item--powerstation">
+          <h2 class="categories__title">Автономные электростанции</h2>
+          <a class="categories__link" href="#">
+            Автономные электростанции
+            <sup class="categories__number">654</sup>
+          </a>
+
+          <ul class="categories__sublist">
+            <li class="categories__subitem">
+              <a class="categories__sublink" href="#">Бензиновые мобильные генераторы</a>
+              <sup class="categories__subnumber">111</sup>
+            </li>
+
+            <li class="categories__subitem">
+              <a class="categories__sublink" href="#">Передвижные дизельные генераторы</a>
+              <sup class="categories__subnumber">111</sup>
+            </li>
+
+            <li class="categories__subitem">
+              <a class="categories__sublink" href="#">Осветительные мачты</a>
+              <sup class="categories__subnumber">111</sup>
             </li>
           </ul>
         </li>
@@ -244,55 +259,93 @@
     <section class="banner">
       <div class="banner__controls  controls">
         <button class="controls__button  controls__button--previous" type="button">Предыдущий слайд</button>
-        <span class="controls__number  controls__number--active">01</span>
-        <div class="controls__timeline"></div>
-        <span class="controls__number  controls__number--last">04</span>
+        <span class="controls__number  controls__number--active"></span>
+        <div class="controls__line"><span class="controls__timeline"></span></div>
+        <span class="controls__number  controls__number--last"></span>
         <button class="controls__button  controls__button--next" type="button">Следующий слайд</button>
       </div>
 
       <div class="banner__slides">
-        <article class="banner__slide  banner__slide--active">
+        <article class="banner__slide">
           <h2 class="banner__title">Новая линейка компрессоров</h2>
           <div class="banner__image-wrapper">
-            <img class="banner__image" src="img/banner-mobile-01@1x.png" alt="Новая линейка компрессоров">
+            <picture>
+              <source type="image/webp" media="(min-width: 1520px)" srcset="img/banner-desktop-01@1x.webp">
+              <source type="image/webp" srcset="img/banner-mobile-01@1x.webp">
+
+              <source media="(min-width: 1520px)" srcset="img/banner-desktop-01@1x.png">
+              <img class="banner__image" src="img/banner-mobile-01@1x.png" alt="Новая линейка компрессоров">
+            </picture>
           </div>
         </article>
 
         <article class="banner__slide">
           <h2 class="banner__title">Новая линейка компрессоров</h2>
           <div class="banner__image-wrapper">
-            <img class="banner__image" src="img/banner-mobile-01@1x.png" alt="Новая линейка компрессоров">
+            <picture>
+              <source type="image/webp" media="(min-width: 1520px)" srcset="img/banner-desktop-02@1x.webp">
+              <source type="image/webp" srcset="img/banner-mobile-01@1x.webp">
+
+              <source media="(min-width: 1520px)" srcset="img/banner-desktop-02@1x.png">
+              <img class="banner__image" src="img/banner-mobile-01@1x.png" alt="Новая линейка компрессоров">
+            </picture>
           </div>
         </article>
 
         <article class="banner__slide">
           <h2 class="banner__title">Новая линейка компрессоров</h2>
           <div class="banner__image-wrapper">
-            <img class="banner__image" src="img/banner-mobile-01@1x.png" alt="Новая линейка компрессоров">
+            <picture>
+              <source type="image/webp" media="(min-width: 1520px)" srcset="img/banner-desktop-01@1x.webp">
+              <source type="image/webp" srcset="img/banner-mobile-01@1x.webp">
+
+              <source media="(min-width: 1520px)" srcset="img/banner-desktop-01@1x.png">
+              <img class="banner__image" src="img/banner-mobile-01@1x.png" alt="Новая линейка компрессоров">
+            </picture>
           </div>
         </article>
 
         <article class="banner__slide">
           <h2 class="banner__title">Новая линейка компрессоров</h2>
           <div class="banner__image-wrapper">
-            <img class="banner__image" src="img/banner-mobile-01@1x.png" alt="Новая линейка компрессоров">
+            <picture>
+              <source type="image/webp" media="(min-width: 1520px)" srcset="img/banner-desktop-02@1x.webp">
+              <source type="image/webp" srcset="img/banner-mobile-01@1x.webp">
+
+              <source media="(min-width: 1520px)" srcset="img/banner-desktop-02@1x.png">
+              <img class="banner__image" src="img/banner-mobile-01@1x.png" alt="Новая линейка компрессоров">
+            </picture>
           </div>
         </article>
       </div>
     </section>
 
-    <div class="sidebar">
-      <a class="sidebar__link  sidebar__link--call" href="tel:+78124585650" >Позвонить</a>
-      <a class="sidebar__link  sidebar__link--discounts" href="#">Скидки</a>
+    <section class="sidebar">
+      <a class="sidebar__link  sidebar__link--call" href="tel:+78124585650">
+        <div class="sidebar__item  sidebar__item--call">Позвонить</div>
+      </a>
+
+      <a class="sidebar__link  sidebar__link--discounts" href="#">
+        <div class="sidebar__item  sidebar__item--discounts">Скидки</div>
+      </a>
+
       <a class="sidebar__link  sidebar__link--сomparison" href="#">
-        Сравнение
-        <sup class="sidebar__amount"></sup>
+        <div class="sidebar__item  sidebar__item--сomparison">
+          Сравнение
+          <sup class="sidebar__amount"></sup>
+        </div>
       </a>
+
       <a class="sidebar__link  sidebar__link--cart" href="#">
-        Корзина
-        <sup class="sidebar__amount">4</sup>
+        <div class="sidebar__item  sidebar__item--cart">
+          Корзина
+          <sup class="sidebar__amount">4</sup>
+        </div>
       </a>
-      <a class="sidebar__link  sidebar__link--catalog" href="#">Каталог</a>
+
+      <a class="sidebar__link  sidebar__link--catalog" href="#">
+        <div class="sidebar__item  sidebar__item--catalog">Каталог</div>
+      </a>
 
       <ul class="sidebar__catalog  catalog">
         <li class="catalog__item">
@@ -881,7 +934,7 @@
           <sup class="catalog__number">66</sup>
         </li>
       </ul>
-    </div>
+    </section>
 
     <button class="upward" type="button">Наверх</button>
 
@@ -889,166 +942,201 @@
       <h2 class="filter__title">Быстрый подбор компрессора</h2>
       <ul class="filter__list">
         <li class="filter__item">
-          Винтовые
+          <a class="filter__link  filter__link--active" href="#">Винтовые</a>
           <sup class="filter__number">222</sup>
         </li>
         <li class="filter__item">
-          Безмасляные
+          <a class="filter__link" href="#">Безмасляные</a>
           <sup class="filter__number">222</sup>
         </li>
         <li class="filter__item">
-          Дизельные
+          <a class="filter__link" href="#">Дизельные</a>
           <sup class="filter__number">222</sup>
         </li>
         <li class="filter__item">
-          Поршневые
+          <a class="filter__link" href="#">Поршневые</a>
           <sup class="filter__number">222</sup>
         </li>
       </ul>
 
       <form class="filter__form" action="https://echo.htmlacademy.ru" method="post">
         <section class="filter__main">
-          <div class="filter__price">
+          <div class="filter__block  filter__block--price  filter__block--opened">
             <h3 class="filter__heading">Цена, руб</h3>
-            <input class="filter__min" type="number" name="minprice" id="minprice" placeholder="от 9 000" min="9000" max="90000">
-            <input class="filter__max" type="number" name="maxprice" id="maxprice" placeholder="до 90 000" min="9000" max="90000">
+
+            <div class="filter__prices">
+              <input class="filter__cost  filter__cost--min" type="number" name="minprice" id="minprice" placeholder="от 9 000" min="9000" max="90000">
+              <input class="filter__cost  filter__cost--max" type="number" name="maxprice" id="maxprice" placeholder="до 90 000" min="9000" max="90000">
+            </div>
+
             <div class="filter__range">
               <div class="filter__range-selection"></div>
-              <button class="filter__range-min" type="button">50</button>
-              <button class="filter__range-max" type="button">90K</button>
+              <button class="filter__button  filter__button--min" type="button">
+                  <span class="filter__value  filter__value--min">9000</span>
+                </button>
+              <button class="filter__button  filter__button--max" type="button">
+                <span class="filter__value  filter__value--max">90000</span>
+              </button>
             </div>
           </div>
 
-          <div class="filter__efficiency">
+          <div class="filter__block  filter__block--efficiency">
             <h3 class="filter__heading">Производительность, л/мин</h3>
-            <input class="filter__min" type="number" name="minefficiency" id="minefficiency" placeholder="от 9 000" min="9000" max="90000">
-            <input class="filter__max" type="number" name="maxefficiency" id="maxefficiency" placeholder="до 90 000" min="9000" max="90000">
+
+            <div class="filter__prices">
+              <input class="filter__cost  filter__cost--min" type="number" name="minprice" id="minprice" placeholder="от 9 000" min="9000" max="90000">
+              <input class="filter__cost  filter__cost--max" type="number" name="maxprice" id="maxprice" placeholder="до 90 000" min="9000" max="90000">
+            </div>
+
             <div class="filter__range">
               <div class="filter__range-selection"></div>
-              <button class="filter__range-min" type="button">50</button>
-              <button class="filter__range-max" type="button">90K</button>
+              <button class="filter__button  filter__button--min" type="button">
+                  <span class="filter__value  filter__value--min">9000</span>
+                </button>
+              <button class="filter__button  filter__button--max" type="button">
+                <span class="filter__value  filter__value--max">90000</span>
+              </button>
             </div>
           </div>
 
-          <div class="filter__power">
+          <div class="filter__block  filter__block--power">
             <h3 class="filter__heading">Мощность, кВт</h3>
-            <input class="filter__min" type="number" name="minpower" id="minpower" placeholder="от 9 000" min="9000" max="90000">
-            <input class="filter__max" type="number" name="maxpower" id="maxpower" placeholder="до 90 000" min="9000" max="90000">
+
+            <div class="filter__prices">
+              <input class="filter__cost  filter__cost--min" type="number" name="minprice" id="minprice" placeholder="от 9 000" min="9000" max="90000">
+              <input class="filter__cost  filter__cost--max" type="number" name="maxprice" id="maxprice" placeholder="до 90 000" min="9000" max="90000">
+            </div>
+
             <div class="filter__range">
               <div class="filter__range-selection"></div>
-              <button class="filter__range-min" type="button">50</button>
-              <button class="filter__range-max" type="button">90K</button>
+              <button class="filter__button  filter__button--min" type="button">
+                  <span class="filter__value  filter__value--min">9000</span>
+                </button>
+              <button class="filter__button  filter__button--max" type="button">
+                <span class="filter__value  filter__value--max">90000</span>
+              </button>
             </div>
           </div>
 
-          <div class="filter__volume">
+          <div class="filter__block  filter__block--volume">
             <h3 class="filter__heading">Объём ресивера, л</h3>
-            <input class="filter__min" type="number" name="minvolume" id="minvolume" placeholder="от 9 000" min="9000" max="90000">
-            <input class="filter__max" type="number" name="maxvolume" id="maxvolume" placeholder="до 90 000" min="9000" max="90000">
+
+            <div class="filter__prices">
+              <input class="filter__cost  filter__cost--min" type="number" name="minprice" id="minprice" placeholder="от 9 000" min="9000" max="90000">
+              <input class="filter__cost  filter__cost--max" type="number" name="maxprice" id="maxprice" placeholder="до 90 000" min="9000" max="90000">
+            </div>
+
             <div class="filter__range">
               <div class="filter__range-selection"></div>
-              <button class="filter__range-min" type="button">50</button>
-              <button class="filter__range-max" type="button">90K</button>
+              <button class="filter__button  filter__button--min" type="button">
+                  <span class="filter__value  filter__value--min">9000</span>
+                </button>
+              <button class="filter__button  filter__button--max" type="button">
+                <span class="filter__value  filter__value--max">90000</span>
+              </button>
             </div>
           </div>
         </section>
 
         <section class="filter__additional">
           <h3 class="filter__heading">Дополнительно</h3>
-          <div class="filter__producer">
+
+          <div class="filter__select  filter__select--producer">
             <h4 class="filter__caption">Производитель</h4>
 
-            <input type="checkbox" name="producer" id="firstProducer" value="first">
-            <label for="firstProducer">First</label>
+            <input class="filter__checkbox  visually-hidden" type="checkbox" name="producer" id="firstProducer" value="first" checked>
+            <label class="filter__label" for="firstProducer">First</label>
 
-            <input type="checkbox" name="producer" id="secondProducer" value="second">
-            <label for="secondProducer">Second</label>
+            <input class="filter__checkbox  visually-hidden" type="checkbox" name="producer" id="secondProducer" value="second">
+            <label class="filter__label" for="secondProducer">Second</label>
 
-            <input type="checkbox" name="producer" id="thirdProducer" value="third">
-            <label for="thirdProducer">Third</label>
+            <input class="filter__checkbox  visually-hidden" type="checkbox" name="producer" id="thirdProducer" value="third">
+            <label class="filter__label" for="thirdProducer">Third</label>
           </div>
 
-          <div class="filter__compressor">
+          <div class="filter__select  filter__select--compressor">
             <h4 class="filter__caption">Вид компрессора</h4>
 
-            <input type="checkbox" name="compressor" id="firstCompressor" value="first">
-            <label for="firstCompressor">First</label>
+            <input class="filter__checkbox  visually-hidden" type="checkbox" name="compressor" id="firstCompressor" value="first" checked>
+            <label class="filter__label" for="firstCompressor">First</label>
 
-            <input type="checkbox" name="compressor" id="secondCompressor" value="second">
-            <label for="secondCompressor">Second</label>
+            <input class="filter__checkbox  visually-hidden" type="checkbox" name="compressor" id="secondCompressor" value="second">
+            <label class="filter__label" for="secondCompressor">Second</label>
 
-            <input type="checkbox" name="compressor" id="thirdCompressor" value="third">
-            <label for="thirdCompressor">Third</label>
+            <input class="filter__checkbox  visually-hidden" type="checkbox" name="compressor" id="thirdCompressor" value="third">
+            <label class="filter__label" for="thirdCompressor">Third</label>
           </div>
 
-          <div class="filter__supply">
+          <div class="filter__select  filter__select--supply">
             <h4 class="filter__caption">Питание, В</h4>
 
-            <input type="checkbox" name="supply" id="firstSupply" value="first">
-            <label for="firstSupply">First</label>
+            <input class="filter__checkbox  visually-hidden" type="checkbox" name="supply" id="firstSupply" value="first" checked>
+            <label class="filter__label" for="firstSupply">First</label>
 
-            <input type="checkbox" name="supply" id="secondSupply" value="second">
-            <label for="secondSupply">Second</label>
+            <input class="filter__checkbox  visually-hidden" type="checkbox" name="supply" id="secondSupply" value="second">
+            <label class="filter__label" for="secondSupply">Second</label>
 
-            <input type="checkbox" name="supply" id="thirdSupply" value="third">
-            <label for="thirdSupply">Third</label>
+            <input class="filter__checkbox  visually-hidden" type="checkbox" name="supply" id="thirdSupply" value="third">
+            <label class="filter__label" for="thirdSupply">Third</label>
           </div>
 
-          <div class="filter__oilless">
+          <div class="filter__select  filter__select--oilless">
             <h4 class="filter__caption">Безмасляный</h4>
 
-            <input type="checkbox" name="oilless" id="firstOilless" value="first">
-            <label for="firstOilless">First</label>
+            <input class="filter__checkbox  visually-hidden" type="checkbox" name="oilless" id="firstOilless" value="first" checked>
+            <label class="filter__label" for="firstOilless">First</label>
 
-            <input type="checkbox" name="oilless" id="secondOilless" value="second">
-            <label for="secondOilless">Second</label>
+            <input class="filter__checkbox  visually-hidden" type="checkbox" name="oilless" id="secondOilless" value="second">
+            <label class="filter__label" for="secondOilless">Second</label>
 
-            <input type="checkbox" name="oilless" id="thirdOilless" value="third">
-            <label for="thirdOilless">Third</label>
+            <input class="filter__checkbox  visually-hidden" type="checkbox" name="oilless" id="thirdOilless" value="third">
+            <label class="filter__label" for="thirdOilless">Third</label>
           </div>
 
-          <div class="filter__drive">
+          <div class="filter__select  filter__select--drive">
             <h4 class="filter__caption">Тип привода</h4>
 
-            <input type="checkbox" name="drive" id="firstDrive" value="first">
-            <label for="firstDrive">First</label>
+            <input class="filter__checkbox  visually-hidden" type="checkbox" name="drive" id="firstDrive" value="first" checked>
+            <label class="filter__label" for="firstDrive">First</label>
 
-            <input type="checkbox" name="drive" id="secondDrive" value="second">
-            <label for="secondDrive">Second</label>
+            <input class="filter__checkbox  visually-hidden" type="checkbox" name="drive" id="secondDrive" value="second">
+            <label class="filter__label" for="secondDrive">Second</label>
 
-            <input type="checkbox" name="drive" id="thirdDrive" value="third">
-            <label for="thirdDrive">Third</label>
+            <input class="filter__checkbox  visually-hidden" type="checkbox" name="drive" id="thirdDrive" value="third">
+            <label class="filter__label" for="thirdDrive">Third</label>
           </div>
 
-          <div class="filter__converter">
+          <div class="filter__select  filter__select--converter">
             <h4 class="filter__caption">Частот. преобразователь</h4>
 
-            <input type="checkbox" name="converter" id="firstConverter" value="first">
-            <label for="firstConverter">First</label>
+            <input class="filter__checkbox  visually-hidden" type="checkbox" name="converter" id="firstConverter" value="first" checked>
+            <label class="filter__label" for="firstConverter">First</label>
 
-            <input type="checkbox" name="converter" id="secondConverter" value="second">
-            <label for="secondConverter">Second</label>
+            <input class="filter__checkbox  visually-hidden" type="checkbox" name="converter" id="secondConverter" value="second">
+            <label class="filter__label" for="secondConverter">Second</label>
 
-            <input type="checkbox" name="converter" id="thirdConverter" value="third">
-            <label for="thirdConverter">Third</label>
+            <input class="filter__checkbox  visually-hidden" type="checkbox" name="converter" id="thirdConverter" value="third">
+            <label class="filter__label" for="thirdConverter">Third</label>
           </div>
         </section>
 
         <section class="filter__preview">
-          <div class="filter__back">
-            <p class="filter__info">Пока пусто</p>
+          <div class="filter__background">
+            <p class="filter__text">Пока пусто</p>
             <p class="filter__desc">Пожалуйста настройте фильтр, чтобы мы подобрали оборудование</p>
           </div>
 
-          <div class="filter__preview-left">
+          <div class="filter__preview-left  filter__preview-left--closed">
             <p class="filter__category">Винтовой компрессор</p>
             <h3 class="filter__name">Набор WESTER Компрессор LE 024-150 OLC +Шланг 814-007</h3>
-            <img class="filter__image" src="img/filter-desktop-01@1x.png" alt="Набор WESTER Компрессор LE 024-150 OLC +Шланг 814-007">
+            <div class="filter__image-wrapper">
+              <img class="filter__image" src="img/filter-desktop-01@1x.png" alt="Набор WESTER Компрессор LE 024-150 OLC +Шланг 814-007">
+            </div>
             <p class="filter__characteristics">Поршневой масляный, 1500 Вт, 175л/мин, 8бар</p>
 
             <footer class="filter__footer">
-              <div class="filter__cost">
-                <p class="filter__value">612 000 ₽</p>
+              <div class="filter__info">
+                <p class="filter__rate">612 000 ₽</p>
                 <span class="filter__tag">Цена</span>
               </div>
 
@@ -1057,15 +1145,17 @@
             </footer>
           </div>
 
-          <div class="filter__preview-right">
+          <div class="filter__preview-right  filter__preview-right--closed">
             <p class="filter__category">Винтовой компрессор</p>
             <h3 class="filter__name">Cross Air Compressors Dali CA-0.6/10-RA</h3>
-            <img class="filter__image" src="img/filter-desktop-02@1x.png" alt="Cross Air Compressors Dali CA-0.6/10-RA">
+            <div class="filter__image-wrapper">
+              <img class="filter__image" src="img/filter-desktop-02@1x.png" alt="Cross Air Compressors Dali CA-0.6/10-RA">
+            </div>
             <p class="filter__characteristics">Поршневой масляный, 1500 Вт, 175л/мин, 8бар</p>
 
             <footer class="filter__footer">
-              <div class="filter__cost">
-                <p class="filter__value">612 000 ₽</p>
+              <div class="filter__info">
+                <p class="filter__rate">612 000 ₽</p>
                 <span class="filter__tag">Цена</span>
               </div>
 
@@ -1074,7 +1164,7 @@
             </footer>
           </div>
 
-          <button class="filter__submit" type="submit">
+          <button class="filter__submit  filter__submit--closed" type="submit">
             Показать еще
             <sup class="filter__total">22</sup>
           </button>
@@ -1087,7 +1177,13 @@
 
       <article class="bestsellers__product">
         <div class="bestsellers__image-wrapper">
-          <img class="bestsellers__image" src="img/bestseller-mobile-01@1x.png" alt="Cross Air Compressors Dali CA-0.6/10-RA">
+          <picture>
+            <source type="image/webp" media="(min-width: 1520px)" srcset="img/bestseller-desktop-01@1x.webp">
+            <source type="image/webp" srcset="img/bestseller-mobile-01@1x.webp">
+
+            <source media="(min-width: 1520px)" srcset="img/bestseller-desktop-01@1x.png">
+            <img class="bestsellers__image" src="img/bestseller-mobile-01@1x.png" alt="Cross Air Compressors Dali CA-0.6/10-RA">
+          </picture>
         </div>
 
         <div class="bestsellers__info">
@@ -1107,7 +1203,13 @@
 
       <article class="bestsellers__product">
         <div class="bestsellers__image-wrapper">
-          <img class="bestsellers__image" src="img/bestseller-mobile-02@1x.png" alt="Cross Air Compressors Dali CA-0.6/10-RA">
+          <picture>
+            <source type="image/webp" media="(min-width: 1520px)" srcset="img/bestseller-desktop-02@1x.webp">
+            <source type="image/webp" srcset="img/bestseller-mobile-02@1x.webp">
+
+            <source media="(min-width: 1520px)" srcset="img/bestseller-desktop-02@1x.png">
+            <img class="bestsellers__image" src="img/bestseller-mobile-02@1x.png" alt="Cross Air Compressors Dali CA-0.6/10-RA">
+          </picture>
         </div>
 
 
@@ -1128,7 +1230,13 @@
 
       <article class="bestsellers__product">
         <div class="bestsellers__image-wrapper">
-          <img class="bestsellers__image" src="img/bestseller-mobile-01@1x.png" alt="Cross Air Compressors Dali CA-0.6/10-RA">
+          <picture>
+            <source type="image/webp" media="(min-width: 1520px)" srcset="img/bestseller-desktop-03@1x.webp">
+            <source type="image/webp" srcset="img/bestseller-mobile-01@1x.webp">
+
+            <source media="(min-width: 1520px)" srcset="img/bestseller-desktop-03@1x.png">
+            <img class="bestsellers__image" src="img/bestseller-mobile-01@1x.png" alt="Cross Air Compressors Dali CA-0.6/10-RA">
+          </picture>
         </div>
 
         <div class="bestsellers__info">
@@ -1148,7 +1256,13 @@
 
       <article class="bestsellers__product">
         <div class="bestsellers__image-wrapper">
-          <img class="bestsellers__image" src="img/bestseller-mobile-02@1x.png" alt="Cross Air Compressors Dali CA-0.6/10-RA">
+          <picture>
+            <source type="image/webp" media="(min-width: 1520px)" srcset="img/bestseller-desktop-04@1x.webp">
+            <source type="image/webp" srcset="img/bestseller-mobile-02@1x.webp">
+
+            <source media="(min-width: 1520px)" srcset="img/bestseller-desktop-04@1x.png">
+            <img class="bestsellers__image" src="img/bestseller-mobile-02@1x.png" alt="Cross Air Compressors Dali CA-0.6/10-RA">
+          </picture>
         </div>
 
 
@@ -1169,7 +1283,13 @@
 
       <article class="bestsellers__product">
         <div class="bestsellers__image-wrapper">
-          <img class="bestsellers__image" src="img/bestseller-mobile-01@1x.png" alt="Cross Air Compressors Dali CA-0.6/10-RA">
+          <picture>
+            <source type="image/webp" media="(min-width: 1520px)" srcset="img/bestseller-desktop-05@1x.webp">
+            <source type="image/webp" srcset="img/bestseller-mobile-01@1x.webp">
+
+            <source media="(min-width: 1520px)" srcset="img/bestseller-desktop-05@1x.png">
+            <img class="bestsellers__image" src="img/bestseller-mobile-01@1x.png" alt="Cross Air Compressors Dali CA-0.6/10-RA">
+          </picture>
         </div>
 
         <div class="bestsellers__info">
@@ -1189,7 +1309,13 @@
 
       <article class="bestsellers__product">
         <div class="bestsellers__image-wrapper">
-          <img class="bestsellers__image" src="img/bestseller-mobile-02@1x.png" alt="Cross Air Compressors Dali CA-0.6/10-RA">
+          <picture>
+            <source type="image/webp" media="(min-width: 1520px)" srcset="img/bestseller-desktop-06@1x.webp">
+            <source type="image/webp" srcset="img/bestseller-mobile-02@1x.webp">
+
+            <source media="(min-width: 1520px)" srcset="img/bestseller-desktop-06@1x.png">
+            <img class="bestsellers__image" src="img/bestseller-mobile-02@1x.png" alt="Cross Air Compressors Dali CA-0.6/10-RA">
+          </picture>
         </div>
 
 
@@ -1210,11 +1336,25 @@
     </section>
 
     <section class="brands">
-      <img class="brands__image" src="img/logo-pneumatech.png" alt="Pneumatech">
-      <img class="brands__image" src="img/logo-ceccato.png" alt="Ceccato Aria Compressa">
-      <img class="brands__image" src="img/logo-fogo.png" alt="FOGO">
-      <img class="brands__image" src="img/logo-chicago.png" alt="Chicago Pneumatic">
-      <img class="brands__image" src="img/logo-ceccato.png" alt="Ceccato Aria Compressa">
+      <div class="brands__image-wrapper">
+        <img class="brands__image" src="img/logo-pneumatech.png" alt="Pneumatech">
+      </div>
+
+      <div class="brands__image-wrapper">
+        <img class="brands__image" src="img/logo-ceccato.png" alt="Ceccato Aria Compressa">
+      </div>
+
+      <div class="brands__image-wrapper">
+        <img class="brands__image" src="img/logo-fogo.png" alt="FOGO">
+      </div>
+
+      <div class="brands__image-wrapper">
+        <img class="brands__image" src="img/logo-chicago.png" alt="Chicago Pneumatic">
+      </div>
+
+      <div class="brands__image-wrapper">
+        <img class="brands__image" src="img/logo-ceccato.png" alt="Ceccato Aria Compressa">
+      </div>
     </section>
 
     <section class="clients">
@@ -1222,19 +1362,19 @@
 
       <div class="clients__list">
         <div class="clients__image-wrapper  clients__image-wrapper--pneumatech">
-          <img class="clients__image" src="img/logo-mobile-pneumatech.png" alt="Pneumatech">
+          <img class="clients__image" src="img/logo-pneumatech.png" alt="Pneumatech">
         </div>
         <div class="clients__image-wrapper  clients__image-wrapper--ceccato">
-          <img class="clients__image" src="img/logo-mobile-ceccato.png" alt="Ceccato Aria Compressa">
+          <img class="clients__image" src="img/logo-ceccato.png" alt="Ceccato Aria Compressa">
         </div>
         <div class="clients__image-wrapper  clients__image-wrapper--fogo">
-          <img class="clients__image" src="img/logo-mobile-fogo.png" alt="FOGO">
+          <img class="clients__image" src="img/logo-fogo.png" alt="FOGO">
         </div>
         <div class="clients__image-wrapper  clients__image-wrapper--chicago">
-          <img class="clients__image" src="img/logo-mobile-chicago.png" alt="Chicago Pneumatic">
+          <img class="clients__image" src="img/logo-chicago.png" alt="Chicago Pneumatic">
         </div>
         <div class="clients__image-wrapper  clients__image-wrapper--ceccato">
-          <img class="clients__image" src="img/logo-mobile-ceccato.png" alt="Ceccato Aria Compressa">
+          <img class="clients__image" src="img/logo-ceccato.png" alt="Ceccato Aria Compressa">
         </div>
       </div>
     </section>
@@ -1243,30 +1383,32 @@
       <div class="industry__controls  controls  controls--vertical">
         <button class="controls__button  controls__button--previous" type="button">Предыдущий слайд</button>
         <span class="controls__number  controls__number--active">01</span>
-        <div class="controls__timeline  controls__timeline--vertical"></div>
+        <div class="controls__line  controls__line--vertical"><span class="controls__timeline  controls__timeline--vertical"></span></div>
         <span class="controls__number  controls__number--last">04</span>
         <button class="controls__button  controls__button--next" type="button">Следующий слайд</button>
       </div>
 
       <header class="industry__header">
         <h2 class="industry__title">Отраслевые <span class="arrow">решения</span></h2>
-        <p class="industry__more">еще <span class="industry__number">8</span> решений</p>
+        <a class="industry__more  more" href="#">еще <span class="more__number">8</span> решений</a>
       </header>
 
       <div class="slider">
-        <div class="slider__item">
-          <img class="slider__image" src="img/industry-desktop-01@1x.png" alt="Сжатый воздух для лазерной резки">
-          <h3 class="slider__heading">Сжатый воздух для лазерной резки</h3>
-        </div>
+        <div class="slider__items">
+          <div class="slider__item">
+            <img class="slider__image" src="img/industry-desktop-01@1x.png" alt="Сжатый воздух для лазерной резки">
+            <h3 class="slider__heading">Сжатый воздух для лазерной резки</h3>
+          </div>
 
-        <div class="slider__item">
-          <img class="slider__image" src="img/industry-desktop-02@1x.png" alt="Стоматологический комперссор">
-          <h3 class="slider__heading">Стоматологический комперссор</h3>
-        </div>
+          <div class="slider__item">
+            <img class="slider__image" src="img/industry-desktop-02@1x.png" alt="Стоматологический комперссор">
+            <h3 class="slider__heading">Стоматологический комперссор</h3>
+          </div>
 
-        <div class="slider__item">
-          <img class="slider__image" src="img/industry-desktop-03@1x.png" alt="Сжатый воздух для лазерной резки">
-          <h3 class="slider__heading">Сжатый воздух для лазерной резки</h3>
+          <div class="slider__item">
+            <img class="slider__image" src="img/industry-desktop-03@1x.png" alt="Сжатый воздух для лазерной резки">
+            <h3 class="slider__heading">Сжатый воздух для лазерной резки</h3>
+          </div>
         </div>
       </div>
     </section>
@@ -1280,23 +1422,23 @@
         <article class="news__note">
           <h3 class="news__heading">Обновление линейки Ceccato CSB</h3>
           <p class="news__text">Компрессоры серии CSB теперь доступны в комплектации на 500-литровом ресивере с осушителем воздуха фильтром.</p>
-          <time class="news__date" datetime="2018-10-27 23:00">27 Октября в 23:00</time>
+          <time class="news__date" datetime="2018-10-27 23:00" data-day="27" data-month="Октября" data-year="2018">27 Октября в 23:00</time>
         </article>
 
         <article class="news__note">
           <h3 class="news__heading">Компания CompAir выпустила новые спиральные компрессоры</h3>
           <p class="news__text">Производитель CompAir выпустил новую линейку спиральных компрессоров с мощностью от 4 до 16 кВт. Применение спиральной технологии сжатия позволило снизить риски...</p>
-          <time class="news__date" datetime="2018-10-21 21:00">21 Октября в 21:00</time>
+          <time class="news__date" datetime="2018-10-21 21:00" data-day="21" data-month="Октября" data-year="2018">21 Октября в 21:00</time>
         </article>
 
         <article class="news__note">
           <h3 class="news__heading">Обновление компрессорного оборудования на Заполярном месторождении завершено</h3>
           <p class="news__text">На Заполярном нефтегазовом месторождении в Тазовском районе завершены монтажные и пусконаладочные работы. Установлено 6 центробежных компрессоров в рамках проекта по модернизации...</p>
-          <time class="news__date" datetime="2018-10-12 12:00">12 Октября в 12:00</time>
+          <time class="news__date" datetime="2018-10-12 12:00" data-day="12" data-month="Октября" data-year="2018">12 Октября в 12:00</time>
         </article>
       </div>
 
-      <a class="news__more" href="#">Все новости</a>
+      <a class="news__more  more" href="#">Все новости</a>
     </section>
 
     <section class="features">
@@ -1325,63 +1467,65 @@
       <h2 class="support__title">Сопровождение на всех этапах</h2>
 
       <a class="support__item" href="#">
-        <h3 class="support__title">Пневмоаудит и проектирование</h3>
+        <h3 class="support__caption">Пневмоаудит и&nbsp;проектирование</h3>
       </a>
 
       <a class="support__item" href="#">
-        <h3 class="support__title">Консультирование и поставка</h3>
+        <h3 class="support__caption">Консультирование и&nbsp;поставка</h3>
       </a>
 
       <a class="support__item" href="#">
-        <h3 class="support__title">Пуско-наладка оборудования</h3>
+        <h3 class="support__caption">Пуско-наладка оборудования</h3>
       </a>
 
       <a class="support__item" href="#">
-        <h3 class="support__title">Сервисное обслуживание</h3>
+        <h3 class="support__caption">Сервисное обслуживание</h3>
       </a>
 
       <a class="support__item" href="#">
-        <h3 class="support__title">Диагностика и ремонт</h3>
+        <h3 class="support__caption">Диагностика и ремонт</h3>
       </a>
 
       <a class="support__item" href="#">
-        <h3 class="support__title">Капитальный ремонт винтовых блоков</h3>
+        <h3 class="support__caption">Капитальный ремонт винтовых блоков</h3>
       </a>
 
       <a class="support__item" href="#">
-        <h3 class="support__title">Монтаж трубопроводов</h3>
+        <h3 class="support__caption">Монтаж трубопроводов</h3>
       </a>
 
       <a class="support__item  support__item--more" href="#">
-        <h3 class="support__title  support__title--more">Все услуги</h3>
+        <h3 class="support__caption  support__caption--more">Все услуги</h3>
       </a>
     </section>
 
     <section class="projects">
       <header class="projects__header">
         <h2 class="projects__title">Реализованые <span class="arrow">проекты</span></h2>
-        <p class="projects__more">еще <span class="projects__number">12</span> проектов</p>
+        <p class="projects__more  more">еще <span class="more__number">12</span> проектов</p>
       </header>
 
-      <div class="projects__controls  controls  controls--mini">
+      <div class="projects__controls  controls  controls--vertical  controls--mini">
         <button class="controls__button  controls__button--previous" type="button">Предыдущий слайд</button>
         <button class="controls__button  controls__button--next" type="button">Следующий слайд</button>
       </div>
 
       <div class="slider">
-        <div class="slider__item">
-          <img class="slider__image" src="img/industry-desktop-01@1x.png" alt="Сжатый воздух для лазерной резки">
-          <h3 class="slider__heading">Сжатый воздух для лазерной резки</h3>
-        </div>
+        <div class="slider__items">
+          <div class="slider__item">
+            <img class="slider__image" src="img/industry-desktop-01@1x.png" alt="Сжатый воздух для лазерной резки">
+            <h3 class="slider__heading">Сжатый воздух для лазерной резки</h3>
+          </div>
 
-        <div class="slider__item">
-          <img class="slider__image" src="img/industry-desktop-02@1x.png" alt="Стоматологический комперссор">
-          <h3 class="slider__heading">Стоматологический комперссор</h3>
-        </div>
+          <div class="slider__item">
+            <img class="slider__image" src="img/industry-desktop-02@1x.png" alt="Стоматологический комперссор">
+            <h3 class="slider__heading">Стоматологический комперссор</h3>
+          </div>
 
-        <div class="slider__item">
-          <img class="slider__image" src="img/industry-desktop-03@1x.png" alt="Сжатый воздух для лазерной резки">
-          <h3 class="slider__heading">Сжатый воздух для лазерной резки</h3>
+          <div class="slider__item">
+            <img class="slider__image" src="img/industry-desktop-03@1x.png" alt="Сжатый воздух для лазерной резки">
+            <h3 class="slider__heading">Сжатый воздух для лазерной резки</h3>
+          </div>
         </div>
       </div>
     </section>
@@ -1449,7 +1593,7 @@
 
     <p class="footer__copyrights">© 2007-2018, ООО "Айр энерджи"   Все права защищены</p>
 
-    <p class="footer__policy">Политика в области персональных данных</p>
+    <a class="footer__policy" href="#">Политика в области персональных данных</a>
 
     <p class="footer__copyrights">Сделано в <a class="footer__author" href="//its.agency" target="_blank">Its.agency</a></p>
   </footer>
@@ -1458,5 +1602,6 @@
   <script src="js/jquery-migrate-1.2.1.min.js"></script>
   <script src="js/slick.min.js"></script>
   <script src="js/script.js"></script>
+  <script src="js/picturefill.min.js"></script>
 </body>
 </html>
