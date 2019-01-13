@@ -24,10 +24,23 @@
 
 @media (min-width: @desktop-width) {
   .header {
-    max-width: 1440px;
-    margin-left: calc(50vw - 680px);
+    margin-left: 80px;
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    right: 0;
+    background-color: #ffffff;
     display: flex;
     flex-wrap: wrap;
     overflow: visible;
+    transform: translateY(0);
+    opacity: 1;
+    transition: opacity 0.4s;
+
+    &--closed {
+      transform: translateY(-100%);
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
   }
 }

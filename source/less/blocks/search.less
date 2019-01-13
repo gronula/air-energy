@@ -11,7 +11,7 @@
   position: fixed;
   z-index: 1;
   left: 24px;
-  top: 24px;
+  top: 22px;
   width: 20px;
   height: 20px;
   background: url("../img/icon-search.svg") no-repeat center;
@@ -24,6 +24,7 @@
   border: 0;
   outline: 0;
   background-color: #243239;
+  border-bottom: 2px solid transparent;
   padding: 0;
   color: #8c929a;
   font-weight: 500;
@@ -57,6 +58,12 @@
 
   &::placeholder {
     color: #8c929a;
+  }
+
+  &:focus,
+  &:active {
+    caret-color: #fbc02d;
+    border-bottom: 2px solid #fbc02d;
   }
 }
 
@@ -101,17 +108,23 @@
     background-color: #eceff1;
     flex-shrink: 0;
     cursor: pointer;
+    border-bottom: 2px solid transparent;
+
+    &--opened {
+      border-bottom: 2px solid #fcc742;
+    }
   }
 
   .search__field {
     flex-grow: 1;
-    position: static;
+    position: relative;
     width: auto;
     height: 48px;
     padding-left: 0;
     padding-right: 20px;
     background-color: #eceff1;
     outline: none;
+    border-bottom: 2px solid transparent;
 
     &--closed {
       width: 0;
@@ -119,10 +132,9 @@
       padding-right: 0;
     }
 
-    &:not(:focus) {
-      &::placeholder {
-        color: #eceff1;
-      }
+    &:focus,
+    &:active {
+      border-bottom: 2px solid #fcc742;
     }
   }
 

@@ -58,6 +58,10 @@
   margin-bottom: auto;
 }
 
+.bestsellers__characteristics {
+  display: none;
+}
+
 .bestsellers__footer {
   display: flex;
   flex-wrap: wrap;
@@ -108,6 +112,10 @@
   background: url("../img/icon-comparison.svg") no-repeat center;
 }
 
+.bestsellers__cart {
+  display: none;
+}
+
 @media (min-width: @desktop-width) {
   .bestsellers {
     position: relative;
@@ -115,37 +123,41 @@
     width: 100%;
     padding-top: 0;
     display: grid;
-    grid-template-columns: 489px 423px 263px 264px;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: calc(34vw - 80px) 29vw 18vw 19vw;
+    grid-template-rows: 360px 360px;
     grid-template-areas: "first second third fourth" "first fifth sixth sixth";
     /* stylelint-disable */
     display: -ms-grid;
-    -ms-grid-columns: 489px 423px 263px 264px;
-    -ms-grid-rows: 1fr 1fr;
+    -ms-grid-columns: calc(34vw - 80px) 29vw 18vw 19vw;
+    -ms-grid-rows: 360px 360px;
     /* stylelint-enable */
   }
 
 
   .bestsellers__title {
-    position: absolute;
-    z-index: 1;
-    margin: 0;
-    font-size: 79px;
-    line-height: 103px;
-    color: rgba(255, 255, 255, 0.1);
-    transform: rotate(-90deg);
-    bottom: 313px;
-    left: 153px;
+    display: none;
   }
 
   .bestsellers__product {
-    min-height: 360px;
+    // min-height: 360px;
     border-top: 0;
     padding-top: 33px;
     padding-bottom: 28px;
     padding-left: 32px;
     padding-right: 32px;
     position: relative;
+    z-index: 1;
+    cursor: pointer;
+
+    &:hover::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(24, 39, 46, 0.9);
+    }
 
     &:nth-of-type(1) {
       padding-top: 67px;
@@ -160,6 +172,33 @@
       -ms-grid-column-span: 1;
       /* stylelint-enable */
       background-color: #15262e;
+
+      &::before {
+        content: "Лидер продаж";
+        position: absolute;
+        margin: 0;
+        font-weight: 700;
+        font-size: 79px;
+        line-height: 103px;
+        color: rgba(255, 255, 255, 0.1);
+        transform: rotate(180deg);
+        top: 0;
+        height: 100%;
+        right: -21px;
+        text-align: center;
+        writing-mode: vertical-rl;
+        z-index: -1;
+      }
+
+      &:hover::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(21, 38, 46, 0.9);
+      }
     }
 
     &:nth-of-type(2) {
@@ -192,6 +231,16 @@
       -ms-grid-column-span: 1;
       /* stylelint-enable */
       background-color: #15262e;
+
+      &:hover::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(21, 38, 46, 0.9);
+      }
     }
 
     &:nth-of-type(5) {
@@ -203,6 +252,7 @@
       -ms-grid-column-span: 1;
       /* stylelint-enable */
       background-color: rgba(234, 234, 234, 0.7);
+      border-bottom: 0;
     }
 
     &:nth-of-type(6) {
@@ -292,6 +342,7 @@
 
   .bestsellers__info {
     width: 100%;
+    z-index: 1;
   }
 
   .bestsellers__category {
@@ -305,7 +356,7 @@
       font-size: 21px;
       line-height: 27px;
       color: #ffffff;
-      padding-right: 120px;
+      padding-right: 50px;
     }
 
     .bestsellers__product:nth-of-type(2) & {
@@ -338,9 +389,97 @@
       line-height: 21px;
       padding-right: 270px;
     }
+
+    .bestsellers__product:hover & {
+      color: #ffffff;
+    }
+  }
+
+  .bestsellers__characteristics {
+    align-self: center;
+    margin-top: auto;
+    margin-bottom: auto;
+
+    .bestsellers__product:hover & {
+      display: flex;
+    }
+  }
+
+  .bestsellers__item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 24px;
+    padding-right: 24px;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+
+    .bestsellers__product:nth-of-type(3) &,
+    .bestsellers__product:nth-of-type(4) & {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+
+    &:last-of-type {
+      border-right: 0;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 17px;
+      height: 17px;
+      top: calc(100% + 16px);
+      left: 50%;
+      transform: translateX(-50%);
+      background: url("../img/icon-tip.svg") no-repeat center;
+      background-size: contain;
+
+      .bestsellers__product:nth-of-type(3) &,
+      .bestsellers__product:nth-of-type(4) & {
+        top: calc(100% + 12px);
+      }
+    }
+  }
+
+  .bestsellers__characteristic {
+    margin-bottom: 3px;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    color: #ffffff;
+
+    .bestsellers__product:nth-of-type(3) &,
+    .bestsellers__product:nth-of-type(4) & {
+      font-size: 18px;
+      line-height: 21px;
+    }
+  }
+
+  .bestsellers__caption {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .bestsellers__footer {
+    margin-top: auto;
+  }
+
+  .bestsellers__cost {
+    min-height: 40px;
+    margin-right: auto;
   }
 
   .bestsellers__value {
+    .bestsellers__product:hover & {
+      color: #ffffff;
+    }
+
     &--request {
       .bestsellers__product:nth-of-type(2) & {
         color: @title-color;
@@ -348,6 +487,10 @@
 
       .bestsellers__product:nth-of-type(6) & {
         color: @title-color;
+      }
+
+      .bestsellers__product:hover & {
+        color: #eaa700;
       }
     }
 
@@ -371,9 +514,30 @@
     .bestsellers__product:nth-of-type(4) & {
       color: rgba(255, 255, 255, 0.5);
     }
+
+    .bestsellers__product:hover & {
+      color: rgba(255, 255, 255, 0.5);
+    }
   }
 
   .bestsellers__comparison {
     display: none;
+    margin-right: 8px;
+
+    .bestsellers__product:hover & {
+      display: block;
+    }
+  }
+
+  .bestsellers__cart {
+    font-size: 0;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ffc700;
+    background: #fbc02d url("../img/icon-cart-black.svg") no-repeat center;
+
+    .bestsellers__product:hover & {
+      display: block;
+    }
   }
 }
