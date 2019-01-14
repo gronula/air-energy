@@ -32,16 +32,19 @@
     min-height: 506px;
     margin-bottom: 231px;
     padding-top: 0;
-    padding-left: 81px;
+    padding-left: 61px;
     position: relative;
     z-index: 1;
-    background-image: linear-gradient(to right, #ffffff 534px, #15262e 534px);
+    background-image: linear-gradient(to right, #ffffff 37vw, #15262e 37vw);
   }
 
   .projects__header {
+    width: 300px;
     margin-bottom: auto;
-    margin-right: 66px;
+    margin-right: 0;
     padding-top: 122px;
+    padding-bottom: 40px;
+    flex-shrink: 0;
   }
 
   .projects__title {
@@ -59,6 +62,20 @@
 
   .projects__controls {
     top: 0;
-    left: 534px;
+    left: 37vw;
+  }
+
+  .projects__slider {
+    margin-left: calc(37vw - 300px);
+  }
+}
+
+@media (min-width: 1440px) {
+  .projects__header {
+    width: 450px;
+  }
+
+  .projects__slider {
+    margin-left: calc(37vw - 450px);
   }
 }

@@ -117,13 +117,13 @@
     height: 100%;
     display: grid;
     grid-template-rows: 1fr 1fr;
-    grid-template-columns: 35vw 19vw 21vw calc(25vw - 80px);
+    grid-template-columns: calc(35vw - 80px) 25vw 15vw auto;
     grid-template-areas:
       "compressor dehydrator dehydrator pneumotool"
       "compressor pump powerstation powerstation";
     /* stylelint-disable */
     display: -ms-grid;
-    -ms-grid-columns: 35vw 19vw 21vw calc(25vw - 80px);
+    -ms-grid-columns: calc(35vw - 80px) 25vw 15vw auto;
     -ms-grid-rows: 1fr 1fr;
     /* stylelint-enable */
   }
@@ -136,8 +136,8 @@
     align-items: flex-start;
     padding-top: 38px;
     padding-bottom: 43px;
-    padding-left: 48px;
-    padding-right: 48px;
+    padding-left: 3.3vw;
+    padding-right: 3.3vw;
     border-top: 0;
 
     &:nth-of-type(n + 5) {
@@ -169,8 +169,8 @@
       -ms-grid-column-span: 1;
       padding-top: 80px;
       padding-bottom: 66px;
-      padding-left: 64px;
       background: #15262e url("../img/compressor.svg") no-repeat center 180px;
+      background-size: 22vw;
 
       &::before {
         color: rgba(255, 255, 255, 0.4);
@@ -186,8 +186,8 @@
       -ms-grid-column: 2;
       /* stylelint-enable */
       -ms-grid-column-span: 2;
-      background: #fbc02d url("../img/dehydrator.svg") no-repeat;
-      background-position: calc(100% - 105px) center;
+      background: #fbc02d url("../img/dehydrator.svg") no-repeat 83% center;
+      background-size: 10vw;
     }
 
     &--pump {
@@ -199,13 +199,13 @@
       -ms-grid-column: 2;
       /* stylelint-enable */
       -ms-grid-column-span: 1;
-      padding-bottom: 66px;
       background: url("../img/pump.svg") no-repeat center 136px;
+      background-size: 12vw;
 
       &:hover {
         padding-bottom: 43px;
         padding-left: 29px;
-        padding-right: 25px;
+        padding-right: 29px;
       }
     }
 
@@ -218,9 +218,8 @@
       -ms-grid-column: 3;
       /* stylelint-enable */
       -ms-grid-column-span: 2;
-      padding-bottom: 66px;
-      background: #f7f7f7 url("../img/powerstation.svg") no-repeat;
-      background-position: calc(100% - 82px) center;
+      background: #f7f7f7 url("../img/powerstation.svg") no-repeat 80% center;
+      background-size: 19vw;
 
       &:hover {
         padding-bottom: 43px;
@@ -240,8 +239,8 @@
       background: url("../img/pneumotool.svg") no-repeat center 100px;
 
       &:hover {
-        padding-left: 29px;
-        padding-right: 25px;
+        padding-left: 20px;
+        padding-right: 20px;
       }
     }
 
@@ -261,7 +260,7 @@
     width: 100%;
     z-index: 1;
     margin-top: 0;
-    margin-bottom: 28px;
+    margin-bottom: 25px;
     font-weight: 500;
     font-size: 21px;
     line-height: 25px;
@@ -270,7 +269,7 @@
     .categories__item--compressor & {
       color: #ffffff;
       width: 60%;
-      padding-left: 30px;
+      margin-bottom: 28px;
     }
 
     .categories__item:hover & {
@@ -279,6 +278,7 @@
   }
 
   .categories__link {
+    max-width: 180px;
     margin-top: auto;
     order: 3;
     position: relative;
@@ -291,26 +291,14 @@
       color: #ffffff;
     }
 
-    .categories__item--dehydrator & {
-      max-width: 270px;
-    }
-
-    .categories__item--powerstation & {
-      width: 150px;
-    }
-
     .categories__item:hover & {
       display: none;
     }
   }
 
   .categories__number {
-    position: absolute;
-    top: auto;
-    bottom: 8px;
-    right: -16px;
-    z-index: 1;
-    display: block;
+    display: inline;
+    margin-left: 5px;
     font-weight: 500;
     font-size: 12px;
     line-height: 14px;
@@ -319,10 +307,6 @@
     .categories__item--compressor & {
       color: rgba(255, 255, 255, 0.4);
     }
-
-    .categories__item--powerstation & {
-      right: -5px;
-    }
   }
 
   .categories__sublist {
@@ -330,7 +314,7 @@
     display: none;
     flex-direction: column;
     width: 100%;
-    margin-bottom: 36px;
+    margin-bottom: 25px;
     padding-left: 0;
     list-style: none;
 
@@ -339,7 +323,6 @@
     }
 
     .categories__item--compressor & {
-      padding-left: 30px;
       margin-bottom: 40px;
     }
   }
@@ -360,6 +343,30 @@
       display: block;
       margin-bottom: 18px;
     }
+
+    .categories__item--dehydrator & {
+      &:nth-of-type(n + 4) {
+        margin-bottom: 0;
+      }
+
+      &:nth-of-type(n + 5) {
+        display: none;
+      }
+    }
+
+    .categories__item--pump & {
+      &:nth-of-type(n + 4) {
+        margin-bottom: 0;
+      }
+
+      &:nth-of-type(n + 5) {
+        display: none;
+      }
+    }
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
   }
 
   .categories__sublink {
@@ -371,6 +378,11 @@
     .categories__item--compressor & {
       color: #ffffff;
     }
+  }
+
+  .categories__subnumber {
+    top: -0.3em;
+    margin-left: 5px;
   }
 
   .categories__all {
@@ -388,12 +400,81 @@
       color: @title-color;
     }
 
-    .categories__item--compressor & {
-      margin-left: 30px;
-    }
-
     .categories__item:hover & {
       display: block;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .categories__subitem {
+    .categories__item--pump & {
+      &:nth-of-type(n + 4) {
+        margin-bottom: 18px;
+      }
+
+      &:nth-of-type(n + 5) {
+        display: block;
+        margin-bottom: 0;
+      }
+
+      &:nth-of-type(n + 6) {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (min-width: 1300px) {
+  .categories__link {
+    max-width: none;
+
+    .categories__item--powerstation & {
+      max-width: 150px;
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .categories__list {
+    grid-template-columns: 33vw 21vw 21vw auto;
+    /* stylelint-disable */
+    -ms-grid-columns: 33vw 21vw 21vw auto;
+    /* stylelint-enable */
+  }
+
+  .categories__item {
+    padding-left: 48px;
+    padding-right: 48px;
+    background-size: auto;
+
+    &--compressor {
+      padding-left: 94px;
+    }
+
+    &--pump {
+      padding-bottom: 66px;
+    }
+
+    &--powerstation {
+      padding-bottom: 66px;
+    }
+  }
+
+  .categories__subitem {
+    .categories__item--dehydrator & {
+      &:nth-of-type(n + 4) {
+        margin-bottom: 18px;
+      }
+
+      &:nth-of-type(n + 5) {
+        display: block;
+        margin-bottom: 0;
+      }
+
+      &:nth-of-type(n + 6) {
+        display: none;
+      }
     }
   }
 }

@@ -46,7 +46,7 @@
   line-height: 25px;
   margin-bottom: 24px;
 
-  &:nth-of-type(5) {
+  &:nth-of-type(n + 5) {
     margin-bottom: 0;
   }
 
@@ -125,8 +125,12 @@
     margin-bottom: 0;
     margin-right: 40px;
 
-    &:last-of-type {
+    &:nth-of-type(n + 3) {
       margin-right: 0;
+    }
+
+    &:nth-of-type(n + 4) {
+      display: none;
     }
 
     .main-nav__list--fixed & {
@@ -141,6 +145,40 @@
 
       &:hover {
         background-color: rgba(236, 239, 241, 0.5);
+      }
+    }
+  }
+
+  @media (min-width: 1100px) {
+    .main-nav__link {
+      .main-nav__list:not(.main-nav__list--fixed) &:nth-of-type(n + 3) {
+        margin-right: 40px;
+      }
+
+      .main-nav__list:not(.main-nav__list--fixed) &:nth-of-type(n + 4) {
+        margin-right: 0;
+        display: block;
+      }
+
+      .main-nav__list:not(.main-nav__list--fixed) &:nth-of-type(n + 5) {
+        display: none;
+      }
+    }
+  }
+
+  @media (min-width: 1300px) {
+    .main-nav__link {
+      .main-nav__list:not(.main-nav__list--fixed) &:nth-of-type(n + 4) {
+        margin-right: 40px;
+      }
+
+      .main-nav__list:not(.main-nav__list--fixed) &:nth-of-type(n + 5) {
+        margin-right: 0;
+        display: block;
+      }
+
+      .main-nav__list:not(.main-nav__list--fixed) &:nth-of-type(n + 6) {
+        display: none;
       }
     }
   }

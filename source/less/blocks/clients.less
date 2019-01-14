@@ -21,11 +21,11 @@
 }
 
 .clients__list {
-  margin-bottom: 53px;
+  margin-bottom: 48px;
 }
 
 .clients__image-wrapper {
-  max-width: 182px;
+  max-width: 201px;
   margin-right: 51px;
   padding-left: 19px;
   flex-shrink: 0;
@@ -42,12 +42,23 @@
   }
 }
 
+@media (min-width: 700px) {
+  .clients__image-wrapper {
+    max-width: 182px;
+    padding-left: 0;
+  }
+}
+
 @media (min-width: @desktop-width) {
   .clients {
     order: 11;
     width: 100%;
     padding-top: 24px;
-    padding-bottom: 100px;
+    padding-bottom: 69px;
+  }
+
+  .clients__title {
+    margin-bottom: 32px;
   }
 
   .clients__list {
@@ -56,7 +67,7 @@
   }
 
   .clients__image-wrapper {
-    margin-bottom: 40px;
+    // margin-bottom: 40px;
     margin-right: 65px;
     padding-left: 0;
     max-height: 81px;

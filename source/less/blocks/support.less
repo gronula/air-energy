@@ -30,8 +30,8 @@
     flex-direction: column;
     justify-content: flex-start;
     width: 25%;
-    min-height: 339px;
-    padding: 42px 37px;
+    height: 339px;
+    padding: 3vw 1.9vw;
     border-top: 1px solid rgba(0, 0, 0, 0.05);
     border-left: 1px solid rgba(0, 0, 0, 0.05);
     font-weight: 500;
@@ -40,40 +40,42 @@
     text-decoration: none;
     color: @title-color;
     position: relative;
+    z-index: 1;
 
     &:nth-of-type(1) {
-      background: url("../img/engineering.svg") no-repeat 42px 148px;
+      background: url("../img/engineering.svg") no-repeat 3vw 148px;
     }
 
     &:nth-of-type(2) {
-      background: url("../img/consultation.svg") no-repeat 43px 148px;
+      background: url("../img/consultation.svg") no-repeat 3vw 148px;
     }
 
     &:nth-of-type(3) {
-      background: url("../img/setup.svg") no-repeat 36px 142px;
+      background: url("../img/setup.svg") no-repeat 2.5vw 142px;
     }
 
     &:nth-of-type(4) {
-      background: url("../img/service.svg") no-repeat 42px 144px;
+      background: url("../img/service.svg") no-repeat 3vw 144px;
     }
 
     &:nth-of-type(5) {
-      background: url("../img/diagnostic.svg") no-repeat 38px 156px;
+      background: url("../img/diagnostic.svg") no-repeat 2.6vw 156px;
     }
 
     &:nth-of-type(6) {
       background:
-        url("../img/repair-left.svg") no-repeat 16px 134px,
-        url("../img/repair-right.svg") no-repeat 80px 134px;
+        url("../img/repair-left.svg") no-repeat 1.1vw 134px,
+        url("../img/repair-right.svg") no-repeat calc(1.1vw + 64px) 134px;
     }
 
     &:nth-of-type(7) {
-      background: url("../img/pipeline.svg") no-repeat 41px 134px;
+      background: url("../img/pipeline.svg") no-repeat 3vw 134px;
     }
 
     &:nth-of-type(8) {
       background-color: #fbc02d;
       align-items: center;
+      z-index: auto;
 
       &:hover {
         background-image: none;
@@ -108,10 +110,12 @@
         position: absolute;
         z-index: 1;
         top: 27px;
-        left: 121px;
-        width: 232px;
-        height: 232px;
-        background: url("../img/support-bg-01@1x.png") no-repeat center;
+        right: -20px;
+        min-width: 200px;
+        width: 70%;
+        height: 70%;
+        background: url("../img/support-bg-01@1x.png") no-repeat right center;
+        background-size: contain;
       }
     }
 
@@ -129,17 +133,56 @@
   }
 
   .support__caption {
-    width: 85%;
-    margin-top: 84%;
-    margin-bottom: auto;
+    max-width: 200px;
+    min-height: 38px;
+    margin-top: auto;
+    margin-bottom: 0;
     font-weight: 500;
     font-size: 16px;
     line-height: 19px;
     color: @title-color;
 
     .support__item:nth-of-type(8) & {
-      margin-top: auto;
+      margin-bottom: auto;
       text-align: center;
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .support__item {
+    padding: 42px 37px;
+
+    &:nth-of-type(1) {
+      background-position: 42px 148px;
+    }
+
+    &:nth-of-type(2) {
+      background-position: 43px 148px;
+    }
+
+    &:nth-of-type(3) {
+      background-position: 36px 142px;
+    }
+
+    &:nth-of-type(4) {
+      background-position: 42px 144px;
+    }
+
+    &:nth-of-type(5) {
+      background-position: 38px 156px;
+    }
+
+    &:nth-of-type(6) {
+      background-position: 16px 134px, 80px 134px;
+    }
+
+    &:nth-of-type(7) {
+      background-position: 41px 134px;
+    }
+
+    &:hover {
+      background-position: 35px 33px;
     }
   }
 }

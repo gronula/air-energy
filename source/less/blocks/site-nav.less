@@ -24,16 +24,17 @@
 @media (min-width: @desktop-width) {
   .site-nav {
     display: flex;
-    width: calc(60% - 64px);
+    min-width: 60%;
+    flex-grow: 1;
     order: 1;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
-    margin-left: 64px;
+    margin-left: 0;
     margin-right: 0;
     padding-top: 18px;
     padding-bottom: 18px;
-    border-bottom: 1px solid #bde1e4;
+    border-bottom: 1px solid #dbe1e4;
 
     &--closed {
       display: none;
@@ -52,5 +53,11 @@
       margin-right: 0;
       margin-bottom: 5px;
     }
+  }
+}
+
+@media (min-width: 1200px) {
+  .site-nav {
+    min-width: 55%;
   }
 }

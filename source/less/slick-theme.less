@@ -61,17 +61,6 @@
     opacity: @slick-opacity-default;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-
-    & when ( @slick-font-family = 'slick' ) {
-        /* Icons */
-        @font-face {
-            font-family: 'slick';
-            font-weight: normal;
-            font-style: normal;
-            src: url('@{slick-font-path}slick.eot');
-            src: url('@{slick-font-path}slick.eot?#iefix') format('embedded-opentype'), url('@{slick-font-path}slick.woff') format('woff'), url('@{slick-font-path}slick.ttf') format('truetype'), url('@{slick-font-path}slick.svg#slick') format('svg');
-        }
-    }
 }
 
 .slick-prev {
@@ -114,7 +103,7 @@
 
 .slick-dots {
     position: absolute;
-    top: calc(100% + 10px);
+    top: 100%;
     left: 0;
     list-style: none;
     display: block;
@@ -173,8 +162,22 @@
             background-color: #f1ac00;
         }
     }
+    .banner & {
+      top: calc(100% + 10px);
+    }
     .brands &,
     .clients & {
-      top: calc(100% + 53px);
+      top: calc(100% + 57px);
     }
+    .news & {
+      top: calc(100% + 19px);
+    }
+}
+
+@media (min-width: @desktop-width) {
+  .slick-dots {
+    .clients & {
+      top: calc(100% + 27px);
+    }
+  }
 }

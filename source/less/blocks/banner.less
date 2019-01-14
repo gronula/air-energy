@@ -1,7 +1,6 @@
 .banner {
   background-color: #f7f7f7;
-  padding: 23px;
-  padding-bottom: 71px;
+  padding: 31px 23px 71px;
 }
 
 .banner__controls {
@@ -41,12 +40,12 @@
 
   .banner__controls {
     top: 50%;
-    left: calc(75vw - 32px);
+    left: calc(75vw - 112px);
     transform: translateY(-50%);
   }
 
   .banner__slide {
-    width: 75vw;
+    width: calc(75vw - 80px);
     min-height: 505px;
     align-items: center;
     background: url("../img/bg-desktop-banner.svg") no-repeat right top;
@@ -54,20 +53,37 @@
 
   .banner__title {
     order: 2;
-    font-size: 48px;
-    line-height: 48px;
-    margin-bottom: 0;
-    margin-left: 39px;
-    margin-right: 39px;
+    font-size: 3.33vw;
+    line-height: 3.33vw;
+    margin-bottom: 120px;
+    margin-left: 0;
+    margin-right: 40px;
   }
 
   .banner__image-wrapper {
     order: 1;
+    width: 30vw;
     margin-top: 26px;
     margin-bottom: 38px;
-    margin-left: 84px;
-    margin-right: 39px;
+    margin-left: 5.8vw;
+    margin-right: 2.7vw;
     align-self: auto;
     flex-shrink: 0;
+  }
+}
+
+@media (min-width: 1440px) {
+  .banner__controls {
+    left: calc(75vw - 32px);
+  }
+
+  .banner__slide {
+    width: 75vw;
+  }
+
+  .banner__title {
+    font-size: 48px;
+    line-height: 48px;
+    margin-left: 40px;
   }
 }

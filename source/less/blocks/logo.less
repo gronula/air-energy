@@ -68,7 +68,6 @@
     order: 3;
     margin-top: 28px;
     margin-bottom: 39px;
-    margin-left: 64px;
     align-items: center;
     padding: 0;
 
@@ -76,11 +75,10 @@
       grid-area: logo;
       margin-top: 0;
       margin-bottom: 0;
-      margin-left: 0;
-      padding-top: 32px;
-      padding-bottom: 27px;
-      padding-left: 113px;
-      padding-right: 113px;
+      padding-top: 35px;
+      padding-bottom: 35px;
+      padding-left: 80px;
+      padding-right: 2.4vw;
     /* stylelint-disable */
       -ms-grid-row: 1;
       -ms-grid-row-span: 1;
@@ -107,10 +105,18 @@
 
     .logo--footer & {
       margin-left: 0;
+      margin-right: 0;
     }
   }
 
   .logo__text {
     margin-left: 56px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .logo--footer {
+    padding-left: 112px;
+    padding-right: 48px;
   }
 }

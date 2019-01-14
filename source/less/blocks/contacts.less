@@ -4,16 +4,16 @@
 
 @media (min-width: @desktop-width) {
   .contacts {
-    width: calc(40% - 64px);
     order: 2;
+    min-width: 40%;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-end;
     align-items: center;
+    margin-left: auto;
     padding-top: 18px;
     padding-bottom: 18px;
-    margin-right: 64px;
-    border-bottom: 1px solid #bde1e4;
+    border-bottom: 1px solid #dbe1e4;
 
     &--closed {
       display: none;
@@ -118,6 +118,7 @@
   }
 
   .contacts__callback {
+    display: none;
     margin-bottom: 5px;
     margin-top: 5px;
     font-weight: 500;
@@ -136,5 +137,15 @@
       bottom: -3px;
       background-color: rgba(0, 0, 0, 0.3);
     }
+  }
+}
+
+@media (min-width: 1200px) {
+  .contacts {
+    min-width: 45%;
+  }
+
+  .contacts__callback {
+    display: block;
   }
 }

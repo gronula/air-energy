@@ -25,15 +25,20 @@
 
   .filter__list {
     margin-top: 0;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     padding-left: 0;
     list-style: none;
     display: flex;
-    flex-wrap: wrap;
+    overflow-x: auto;
+    overflow-y: hidden;
   }
 
   .filter__item {
     margin-right: 40px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: baseline;
+    height: 24px;
   }
 
   .filter__link {
@@ -86,12 +91,12 @@
   }
 
   .filter__main {
-    width: 25%;
+    // width: 25%;
+    width: 33%;
     border-right: 1px solid rgba(0, 0, 0, 0.1);
   }
 
   .filter__block {
-    padding: 24px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -99,38 +104,41 @@
   }
 
   .filter__heading {
-    margin-top: 8px;
-    margin-bottom: 8px;
-    padding-right: 36px;
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 24px 1.5vw;
     font-weight: 700;
     font-size: 16px;
     line-height: 19px;
     color: @title-color;
     position: relative;
     cursor: pointer;
+    word-break: break-word;
 
     .filter__additional & {
       margin-bottom: 28px;
+      padding: 0;
       cursor: default;
     }
 
     &::after {
       content: "";
       position: absolute;
-      bottom: 5px;
-      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      margin-left: 10px;
       width: 11px;
       height: 7px;
       background: url("../img/icon-arrow-fat-big.svg") no-repeat center;
       background-size: contain;
 
       .filter__block--opened & {
-        transform: rotate(180deg);
+        transform: translateY(-50%) rotate(180deg);
       }
 
       .filter__additional & {
         display: none;
-        margin-bottom: 28px;
       }
     }
   }
@@ -140,6 +148,8 @@
     width: 100%;
     margin-top: 20px;
     margin-bottom: 45px;
+    padding-left: 1.5vw;
+    padding-right: 1.5vw;
 
     .filter__block--opened & {
       display: flex;
@@ -150,9 +160,9 @@
 
   .filter__cost {
     border: 0;
-    width: 122px;
+    width: calc(50% - 8px);
     height: 47px;
-    padding: 15px 12px;
+    padding: 15px 1vw;
     background-color: #eceff1;
 
     &::placeholder {
@@ -164,8 +174,10 @@
   }
 
   .filter__range {
+    align-self: center;
     display: none;
-    width: 100%;
+    width: calc(100% - 3vw);
+    margin-bottom: 40px;
     position: relative;
     height: 1px;
     background-color: rgba(0, 0, 0, 0.2);
@@ -184,7 +196,6 @@
       background-color: #fbc02d;
       border-radius: 50%;
       border: 0;
-      outline: none;
       top: -7px;
       cursor: pointer;
     }
@@ -206,7 +217,7 @@
   }
 
   .filter__additional {
-    width: 25%;
+    width: 33%;
     border-right: 1px solid rgba(0, 0, 0, 0.1);
     padding: 24px;
   }
@@ -229,7 +240,10 @@
     color: #314047;
     margin-top: 0;
     margin-bottom: 0;
-    padding: 20px 12px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 12px;
+    padding-right: 24px;
     position: relative;
     cursor: pointer;
 
@@ -316,7 +330,7 @@
   }
 
   .filter__preview {
-    width: 50%;
+    width: 34%;
     display: flex;
     flex-wrap: wrap;
   }
@@ -327,8 +341,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-left: 2vw;
+    padding-right: 2vw;
     background: url("../img/filter-bg-desktop@1x.png") no-repeat center 97px;
-    background-size: 284px 263px;
+    background-size: 80%;
 
     .filter__preview--opened & {
       display: none;
@@ -345,10 +361,12 @@
   }
 
   .filter__desc {
+    width: 100%;
     margin-top: 0;
     margin-bottom: auto;
     font-size: 18px;
     line-height: 23px;
+    text-align: center;
   }
 
   .filter__preview-left {
@@ -356,7 +374,7 @@
     flex-direction: column;
     width: 50%;
     padding: 24px;
-    border-right: 1px solid #eceff1;
+    flex-grow: 1;
 
     .filter__preview--opened & {
       display: flex;
@@ -373,7 +391,7 @@
 
   .filter__name {
     margin-top: 0;
-    margin-bottom: 40px;
+    margin-bottom: auto;
   }
 
   .filter__image-wrapper {
@@ -401,7 +419,6 @@
   .filter__footer {
     display: flex;
     flex-wrap: wrap;
-    margin-top: auto;
   }
 
   .filter__info {
@@ -447,22 +464,17 @@
     flex-direction: column;
     width: 50%;
     padding: 24px;
-
-    .filter__preview--opened & {
-      display: flex;
-    }
   }
 
   .filter__submit {
     display: none;
     width: 100%;
-    min-height: 88px;
-    padding: 24px;
+    padding: 35px 24px;
     border: 0;
     background-color: #fbc02d;
     font-weight: 500;
     font-size: 15px;
-    line-height: 17px;
+    line-height: 18px;
     color: @title-color;
     cursor: pointer;
 
@@ -476,5 +488,33 @@
     font-size: 13px;
     line-height: 15px;
     color: rgba(51, 51, 51, 0.5);
+  }
+}
+
+@media (min-width: 1300px) {
+  .filter__main {
+    width: 25%;
+  }
+
+  .filter__additional {
+    width: 25%;
+  }
+
+  .filter__preview {
+    width: 50%;
+  }
+
+  .filter__background {
+    background-size: 284px 263px;
+  }
+
+  .filter__preview-left {
+    border-right: 1px solid #eceff1;
+  }
+
+  .filter__preview-right {
+    .filter__preview--opened & {
+      display: flex;
+    }
   }
 }
