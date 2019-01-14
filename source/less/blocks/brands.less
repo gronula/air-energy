@@ -29,17 +29,17 @@
   margin-right: 51px;
   padding-left: 19px;
   flex-shrink: 0;
-}
-
-.brands__image {
   filter: grayscale(1);
   opacity: 0.6;
-  object-fit: scale-down;
 
   &:hover {
     filter: none;
     opacity: 1;
   }
+}
+
+.brands__image {
+  object-fit: scale-down;
 }
 
 @media (min-width: 700px) {
@@ -85,13 +85,6 @@
     line-height: 331px;
     min-height: 331px;
     text-align: left;
-    filter: grayscale(1);
-    opacity: 0.6;
-
-    &:hover {
-      filter: none;
-      opacity: 1;
-    }
   }
 
   .brands__image {
