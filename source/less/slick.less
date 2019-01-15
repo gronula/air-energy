@@ -43,7 +43,6 @@
     position: relative;
     left: 0;
     top: 0;
-    // display: block;
     display: flex;
     margin-left: auto;
     margin-right: auto;
@@ -104,11 +103,9 @@
 
 @media (min-width: @desktop-width) {
   .slick-slide {
-    flex-direction: row;
-
-    .banner__slide&.slick-active + .slick-slide {
-      transition: all 0.3s linear;
-      background-color: #c2c2c2;
+    .banner & {
+      flex-direction: row;
+      transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
     }
   }
 }

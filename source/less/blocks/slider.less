@@ -44,11 +44,18 @@
 
   .slider__item {
     flex-direction: column;
+    overflow: hidden;
   }
 
   .slider__image {
     width: 352px;
     height: 376px;
+    transition: 2s ease;
+    transform-origin: 50% 50%;
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 
   .slider__heading {
@@ -56,5 +63,10 @@
     min-height: 76px;
     justify-content: center;
     align-items: center;
+    z-index: 1;
+
+    .slider__item:hover & {
+      color: #000000;
+    }
   }
 }

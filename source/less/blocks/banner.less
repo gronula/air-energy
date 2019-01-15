@@ -11,15 +11,6 @@
   display: none;
 }
 
-.banner__title {
-  margin-top: 0;
-  margin-bottom: 22px;
-  font-weight: 700;
-  font-size: 27px;
-  line-height: 27px;
-  color: rgba(51, 51, 51, 0.9);
-}
-
 .banner__image-wrapper {
   align-self: center;
 }
@@ -27,15 +18,16 @@
 .banner__image {
   margin-left: auto;
   margin-right: auto;
+  mix-blend-mode: multiply;
 }
 
 @media (min-width: @desktop-width) {
   .banner {
     order: 1;
     width: 100%;
-    min-height: 505px;
     padding: 0;
     position: relative;
+    background-color: transparent;
   }
 
   .banner__controls {
@@ -46,27 +38,17 @@
 
   .banner__slide {
     width: calc(75vw - 80px);
-    min-height: 505px;
     align-items: center;
-    background: url("../img/bg-desktop-banner.svg") no-repeat right top;
-  }
+    overflow: hidden;
 
-  .banner__title {
-    order: 2;
-    font-size: 3.33vw;
-    line-height: 3.33vw;
-    margin-bottom: 120px;
-    margin-left: 0;
-    margin-right: 40px;
+    &.slick-active {
+      transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    }
   }
 
   .banner__image-wrapper {
     order: 1;
-    width: 30vw;
-    margin-top: 26px;
-    margin-bottom: 38px;
-    margin-left: 5.8vw;
-    margin-right: 2.7vw;
+    width: 100%;
     align-self: auto;
     flex-shrink: 0;
   }

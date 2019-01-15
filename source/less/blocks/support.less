@@ -41,6 +41,7 @@
     color: @title-color;
     position: relative;
     z-index: 1;
+    mix-blend-mode: multiply;
 
     &:nth-of-type(1) {
       background: url("../img/engineering.svg") no-repeat 3vw 148px;
@@ -116,6 +117,7 @@
         height: 70%;
         background: url("../img/support-bg-01@1x.png") no-repeat right center;
         background-size: contain;
+        mix-blend-mode: multiply;
       }
     }
 
@@ -145,6 +147,10 @@
     .support__item:nth-of-type(8) & {
       margin-bottom: auto;
       text-align: center;
+    }
+
+    .support__item:hover & {
+      color: #000000;
     }
   }
 }
