@@ -81,6 +81,7 @@
   font-weight: 700;
   font-size: 16px;
   line-height: 19px;
+  text-decoration: none;
   color: @title-color;
   margin-top: 0;
   margin-bottom: 1px;
@@ -152,7 +153,7 @@
     position: relative;
     z-index: 1;
 
-    &:hover::after {
+    &::after {
       content: "";
       position: absolute;
       top: 0;
@@ -160,6 +161,12 @@
       left: 0;
       right: 0;
       background-color: rgba(24, 39, 46, 0.9);
+      opacity: 0;
+      transition: all 0.7s cubic-bezier(0.77, 0, 0.175, 1);
+    }
+
+    &:hover::after {
+      opacity: 1;
     }
 
     &:nth-of-type(1) {
@@ -363,6 +370,7 @@
     font-size: 16px;
     line-height: 22px;
     color: @title-color;
+    transition: all 0.2s cubic-bezier(0.77, 0, 0.175, 1);
 
     .bestsellers__product:nth-of-type(1) & {
       max-width: 220px;
@@ -374,16 +382,28 @@
     .bestsellers__product:nth-of-type(4) &,
     .bestsellers__product:hover & {
       color: #ffffff;
+      transition: all 0.2s cubic-bezier(0.77, 0, 0.175, 1);
+
+      &:hover {
+        color: #000000;
+      }
+    }
+
+    &:hover {
+      color: #000000;
     }
   }
 
   .bestsellers__characteristics {
+    display: flex;
     align-self: center;
     margin-top: auto;
     margin-bottom: auto;
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 
     .bestsellers__product:hover & {
-      display: flex;
+      opacity: 1;
     }
   }
 
@@ -465,8 +485,14 @@
   }
 
   .bestsellers__value {
+    transition: all 0.2s cubic-bezier(0.77, 0, 0.175, 1);
+
     .bestsellers__product:hover & {
       color: #ffffff;
+
+      &:hover {
+        color: #000000;
+      }
     }
 
     &--request {
@@ -477,6 +503,10 @@
 
       .bestsellers__product:hover & {
         color: #eaa700;
+
+        &:hover {
+          color: #000000;
+        }
       }
     }
 
@@ -492,6 +522,7 @@
     font-size: 12px;
     line-height: 14px;
     color: rgba(51, 51, 51, 0.5);
+    transition: all 0.2s cubic-bezier(0.77, 0, 0.175, 1);
 
     .bestsellers__product:nth-of-type(1) &,
     .bestsellers__product:nth-of-type(4) &,
@@ -503,11 +534,11 @@
   .bestsellers__comparison {
     width: 32px;
     height: 32px;
-    display: none;
+    opacity: 0;
     margin-right: 8px;
     background-image: url("../img/icon-comparison-desktop.svg");
     background-size: 16px;
-    opacity: 0.5;
+    transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 
     .bestsellers__product:nth-of-type(1) & {
       width: 40px;
@@ -516,17 +547,20 @@
     }
 
     .bestsellers__product:hover & {
-      display: block;
+      opacity: 0.5;
     }
   }
 
   .bestsellers__cart {
+    display: block;
     font-size: 0;
     width: 32px;
     height: 32px;
     border: 1px solid #ffc700;
     background: #fbc02d url("../img/icon-cart-black.svg") no-repeat center;
     background-size: 16px;
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 
     .bestsellers__product:nth-of-type(1) & {
       width: 40px;
@@ -535,7 +569,7 @@
     }
 
     .bestsellers__product:hover & {
-      display: block;
+      opacity: 1;
     }
   }
 }

@@ -107,6 +107,7 @@
     flex-shrink: 0;
     cursor: pointer;
     border-bottom: 2px solid transparent;
+    transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 
     &--opened {
       border-bottom: 2px solid #fcc742;
@@ -114,9 +115,8 @@
   }
 
   .search__field {
-    flex-grow: 1;
     position: relative;
-    width: auto;
+    width: 100%;
     height: 48px;
     padding-left: 0;
     padding-right: 20px;
@@ -125,7 +125,6 @@
 
     &--closed {
       width: 0;
-      flex-grow: 0;
       padding-right: 0;
     }
 
@@ -143,9 +142,10 @@
     margin-left: 16px;
     padding-left: 33px;
     padding-right: 33px;
+    transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 
     &:hover {
-      background-color: #ffb700;
+      background-color: #ffb600;
       color: #000000;
     }
   }

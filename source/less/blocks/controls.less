@@ -32,6 +32,11 @@
     padding: 0;
     position: relative;
     cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.77, 0, 0.175, 1);
+
+    &:hover {
+      background-color: #223138;
+    }
 
     &::before {
       content: "";
@@ -64,10 +69,18 @@
 
     .controls--vertical & {
       background-color: #273840;
+
+      &:hover {
+        background-color: #223138;
+      }
     }
 
     .controls--mini & {
       background-color: #fbc02d;
+
+      &:hover {
+        background-color: #ffb600;
+      }
     }
   }
 

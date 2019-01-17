@@ -48,6 +48,7 @@
     color: rgba(51, 51, 51, 0.4);
     text-decoration: none;
     position: relative;
+    transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 
     &--active {
       color: @title-color;
@@ -95,16 +96,8 @@
   }
 
   .filter__main {
-    // width: 25%;
     width: 33%;
     border-right: 1px solid rgba(0, 0, 0, 0.1);
-  }
-
-  .filter__block {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    border-bottom: 1px solid #eceff1;
   }
 
   .filter__heading {
@@ -136,13 +129,16 @@
       height: 7px;
       background: url("../img/icon-arrow-fat-big.svg") no-repeat center;
       background-size: contain;
-
-      .filter__block--opened & {
-        transform: translateY(-50%) rotate(180deg);
-      }
+      transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 
       .filter__additional & {
         display: none;
+      }
+    }
+
+    &--opened {
+      &::after {
+        transform: translateY(-50%) rotate(180deg);
       }
     }
 
@@ -151,19 +147,30 @@
     }
   }
 
+  .filter__block {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-bottom: 1px solid #eceff1;
+    height: 0;
+    transition: height 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+
+    &--opened {
+      height: auto;
+      transition: height 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    }
+  }
+
   .filter__prices {
-    display: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     width: 100%;
     margin-top: 20px;
     margin-bottom: 45px;
     padding-left: 1.5vw;
     padding-right: 1.5vw;
-
-    .filter__block--opened & {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-    }
   }
 
   .filter__cost {
@@ -182,19 +189,15 @@
   }
 
   .filter__range {
+    display: block;
+    border: 0;
+    border-radius: 0;
     align-self: center;
-    display: none;
     width: calc(100% - 3vw);
     margin-bottom: 40px;
     position: relative;
     height: 1px;
     background-color: rgba(0, 0, 0, 0.2);
-
-    .filter__block--opened & {
-      display: block;
-      border: 0;
-      border-radius: 0;
-    }
 
     & span:not(.filter__value) {
       position: absolute;
@@ -266,6 +269,7 @@
       height: 7px;
       background: url("../img/icon-arrow-fat-small.svg") no-repeat center;
       background-size: contain;
+      transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 
       .filter__select--opened & {
         transform: translateY(-50%) rotate(180deg);
@@ -278,14 +282,17 @@
   }
 
   .filter__checkboxes {
-    display: none;
     position: absolute;
-    z-index: 2;
     top: calc(100% + 5px);
     left: 5px;
     right: 5px;
     background-color: #ffffff;
     border: 1px solid #eceff1;
+    opacity: 0;
+    z-index: 2;
+    transform: scale(0);
+    transform-origin: 100% 0;
+    transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
     box-shadow:
       2px 2px 4px rgba(211, 214, 215, 0.2),
       0 16px 16px rgba(211, 214, 215, 0.2),
@@ -294,7 +301,8 @@
       0 0 32px rgba(211, 214, 215, 0.05);
 
     .filter__select--opened & {
-      display: block;
+      opacity: 1;
+      transform: scale(1);
     }
   }
 
@@ -312,6 +320,7 @@
     border-bottom: 1px solid #eceff1;
     position: relative;
     cursor: pointer;
+    transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 
     &:last-of-type {
       border-bottom: 0;
@@ -327,6 +336,7 @@
       transform: translateY(-50%);
       border: 2px solid @title-color;
       border-radius: 3px;
+      transition: background-color 0.1s cubic-bezier(0.77, 0, 0.175, 1);
 
       .filter__checkbox:checked + & {
         background: @title-color url("../img/icon-tick-2.svg") no-repeat center;
@@ -336,22 +346,18 @@
 
     &:hover {
       color: #000000;
-
-      &::before {
-        opacity: 0.8;
-      }
     }
   }
 
   .filter__preview {
+    overflow: hidden;
     width: 34%;
     display: flex;
-    flex-wrap: wrap;
   }
 
   .filter__background {
     width: 100%;
-    height: 100%;
+    flex-shrink: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -359,9 +365,14 @@
     padding-right: 2vw;
     background: url("../img/filter-bg-desktop@1x.png") no-repeat center 97px;
     background-size: 80%;
+    opacity: 1;
+    transform: translateX(0%);
+    transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 
     .filter__preview--opened & {
-      display: none;
+      opacity: 0;
+      transform: translateX(-100%);
+      transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
     }
   }
 
@@ -383,6 +394,7 @@
     text-align: center;
   }
 
+  //
   .filter__preview-left {
     display: none;
     flex-direction: column;
@@ -392,6 +404,43 @@
 
     .filter__preview--opened & {
       display: flex;
+    }
+  }
+  //
+
+  .filter__goods {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    flex-shrink: 0;
+    opacity: 0;
+    transform: translateX(0%);
+    transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+
+    .filter__preview--opened & {
+      opacity: 1;
+      transform: translateX(-100%);
+      transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    }
+  }
+
+  .filter__cards {
+    display: flex;
+    width: 100%;
+    flex-grow: 1;
+    flex-shrink: 0;
+    transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  }
+
+  .filter__card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    flex-shrink: 0;
+    padding: 24px;
+
+    &:nth-of-type(n + 2) {
+      display: none;
     }
   }
 
@@ -473,6 +522,7 @@
     border: 1px solid #eceff1;
   }
 
+  //
   .filter__preview-right {
     display: none;
     flex-direction: column;
@@ -481,7 +531,8 @@
   }
 
   .filter__submit {
-    display: none;
+    align-self: flex-end;
+    flex-shrink: 0;
     width: 100%;
     padding: 35px 24px;
     border: 0;
@@ -491,13 +542,11 @@
     line-height: 18px;
     color: @title-color;
     cursor: pointer;
-
-    .filter__preview--opened & {
-      display: block;
-    }
+    transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 
     &:hover {
       color: #000000;
+      background-color: #ffb600;
     }
   }
 
@@ -524,6 +573,15 @@
 
   .filter__background {
     background-size: 284px 263px;
+  }
+
+  .filter__card {
+    width: 50%;
+    border-right: 1px solid #eceff1;
+
+    &:nth-of-type(n + 2) {
+      display: flex;
+    }
   }
 
   .filter__preview-left {

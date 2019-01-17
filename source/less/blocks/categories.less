@@ -117,13 +117,13 @@
     height: 100%;
     display: grid;
     grid-template-rows: 1fr 1fr;
-    grid-template-columns: calc(35vw - 80px) 25vw 15vw auto;
+    grid-template-columns: calc(38vw - 80px) 28vw 6vw auto;
     grid-template-areas:
       "compressor dehydrator dehydrator pneumotool"
       "compressor pump powerstation powerstation";
     /* stylelint-disable */
     display: -ms-grid;
-    -ms-grid-columns: calc(35vw - 80px) 25vw 15vw auto;
+    -ms-grid-columns: calc(38vw - 80px) 28vw 6vw auto;
     -ms-grid-rows: 1fr 1fr;
     /* stylelint-enable */
   }
@@ -139,6 +139,7 @@
     padding-left: 3.3vw;
     padding-right: 3.3vw;
     border-top: 0;
+    transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 
     &:nth-of-type(n + 5) {
       display: flex;
@@ -156,6 +157,7 @@
       font-size: 14px;
       line-height: 17px;
       color: rgba(0, 0, 0, 0.4);
+      transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
     }
 
     &--compressor {
@@ -201,12 +203,6 @@
       -ms-grid-column-span: 1;
       background: url("../img/pump.svg") no-repeat center 136px;
       background-size: 12vw;
-
-      &:hover {
-        padding-bottom: 43px;
-        padding-left: 29px;
-        padding-right: 29px;
-      }
     }
 
     &--powerstation {
@@ -220,10 +216,6 @@
       -ms-grid-column-span: 2;
       background: #f7f7f7 url("../img/powerstation.svg") no-repeat 80% center;
       background-size: 19vw;
-
-      &:hover {
-        padding-bottom: 43px;
-      }
     }
 
     &--pneumotool {
@@ -237,15 +229,10 @@
       /* stylelint-enable */
       -ms-grid-column-span: 1;
       background: url("../img/pneumotool.svg") no-repeat center 100px;
-
-      &:hover {
-        padding-left: 20px;
-        padding-right: 20px;
-      }
     }
 
     &:hover {
-      background-image: none;
+      background-position-x: 100vw;
 
       &::before {
         opacity: 0;
@@ -254,7 +241,7 @@
   }
 
   .categories__title {
-    display: none;
+    display: block;
     order: 1;
     position: relative;
     width: 100%;
@@ -264,6 +251,8 @@
     font-weight: 500;
     font-size: 21px;
     line-height: 25px;
+    opacity: 0;
+    transition: opacity 0.5s cubic-bezier(0.77, 0, 0.175, 1);
     color: @title-color;
 
     .categories__item--compressor & {
@@ -274,25 +263,28 @@
 
     .categories__item:hover & {
       display: block;
+      opacity: 1;
     }
   }
 
   .categories__link {
     max-width: 180px;
-    margin-top: auto;
-    order: 3;
+    max-height: 42px;
+    order: 4;
     position: relative;
     z-index: 1;
     font-size: 18px;
     line-height: 21px;
     word-break: break-word;
+    transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 
     .categories__item--compressor & {
       color: #ffffff;
     }
 
     .categories__item:hover & {
-      display: none;
+      opacity: 0;
+      max-height: 0;
     }
   }
 
@@ -311,15 +303,18 @@
 
   .categories__sublist {
     order: 2;
-    display: none;
+    display: flex;
     flex-direction: column;
     width: 100%;
     margin-bottom: 25px;
     padding-left: 0;
     list-style: none;
+    transition: opacity 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    opacity: 0;
 
     .categories__item:hover & {
       display: flex;
+      opacity: 1;
     }
 
     .categories__item--compressor & {
@@ -374,6 +369,7 @@
     line-height: 16px;
     text-decoration: none;
     color: #333333;
+    transition: all 0.3s cubic-bezier(0.77, 0, 0.175, 1);
 
     .categories__item--compressor & {
       color: #ffffff;
@@ -390,7 +386,8 @@
   }
 
   .categories__all {
-    display: none;
+    display: block;
+    margin-bottom: auto;
     order: 3;
     text-transform: uppercase;
     text-decoration: none;
@@ -399,6 +396,8 @@
     line-height: 18px;
     letter-spacing: 0.06em;
     color: #e3a815;
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 
     &--black {
       color: @title-color;
@@ -406,6 +405,7 @@
 
     .categories__item:hover & {
       display: block;
+      opacity: 1;
     }
   }
 }
@@ -433,8 +433,9 @@
   .categories__link {
     max-width: none;
 
+    .categories__item--dehydrator &,
     .categories__item--powerstation & {
-      max-width: 150px;
+      max-width: 180px;
     }
   }
 }
@@ -449,7 +450,7 @@
 
   .categories__item {
     padding-left: 48px;
-    padding-right: 48px;
+    padding-right: 0;
     background-size: auto;
 
     &--compressor {
@@ -457,11 +458,23 @@
     }
 
     &--pump {
-      padding-bottom: 66px;
+      padding-bottom: 58px;
     }
 
     &--powerstation {
-      padding-bottom: 66px;
+      padding-bottom: 58px;
+    }
+  }
+
+  .categories__link {
+    max-width: none;
+
+    .categories__item--dehydrator & {
+      max-width: none;
+    }
+
+    .categories__item--powerstation & {
+      max-width: 150px;
     }
   }
 

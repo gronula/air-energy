@@ -41,6 +41,7 @@
     color: @title-color;
     position: relative;
     cursor: pointer;
+    transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 
     &::after {
       content: "";
@@ -60,7 +61,6 @@
   }
 
   .contacts__cities {
-    display: none;
     min-width: 182px;
     margin-top: 0;
     margin-bottom: 0;
@@ -71,6 +71,10 @@
     left: -24px;
     top: 24px;
     background-color: #ffffff;
+    opacity: 0;
+    transform: scale(0);
+    transform-origin: 50% 0;
+    transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
     box-shadow:
       2px 2px 4px rgba(211, 214, 215, 0.2),
       0 16px 16px rgba(211, 214, 215, 0.2),
@@ -79,7 +83,8 @@
       0 0 32px rgba(211, 214, 215, 0.05);
 
     &--opened {
-      display: block;
+      opacity: 1;
+      transform: scale(1);
     }
   }
 
@@ -93,6 +98,7 @@
     padding-left: 24px;
     padding-right: 24px;
     cursor: pointer;
+    transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 
     &--active {
       display: block;
@@ -116,6 +122,7 @@
     line-height: 18px;
     text-decoration: none;
     color: #919191;
+    transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 
     &--lead {
       color: @title-color;
@@ -136,6 +143,7 @@
     color: @title-color;
     text-decoration: none;
     position: relative;
+    transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 
     &::after {
       content: "";
