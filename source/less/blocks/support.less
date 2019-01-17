@@ -45,32 +45,63 @@
 
     &:nth-of-type(1) {
       background: url("../img/engineering.svg") no-repeat 3vw 148px;
+
+      &:hover {
+        background: #fbc02d url("../img/engineering-black.svg") no-repeat 35px 33px;
+      }
     }
 
     &:nth-of-type(2) {
       background: url("../img/consultation.svg") no-repeat 3vw 148px;
+
+      &:hover {
+        background: #fbc02d url("../img/consultation-black.svg") no-repeat 35px 33px;
+      }
     }
 
     &:nth-of-type(3) {
       background: url("../img/setup.svg") no-repeat 2.5vw 142px;
+
+      &:hover {
+        background: #fbc02d url("../img/setup-black.svg") no-repeat 35px 33px;
+      }
     }
 
     &:nth-of-type(4) {
       background: url("../img/service.svg") no-repeat 3vw 144px;
+
+      &:hover {
+        background: #fbc02d url("../img/service-black.svg") no-repeat 35px 33px;
+      }
     }
 
     &:nth-of-type(5) {
       background: url("../img/diagnostic.svg") no-repeat 2.6vw 156px;
+
+      &:hover {
+        background: #fbc02d url("../img/diagnostic-black.svg") no-repeat 35px 33px;
+      }
     }
 
     &:nth-of-type(6) {
       background:
         url("../img/repair-left.svg") no-repeat 1.1vw 134px,
         url("../img/repair-right.svg") no-repeat calc(1.1vw + 64px) 134px;
+
+      &:hover {
+        background:
+          url("../img/repair-left-black.svg") no-repeat 15px 33px,
+          url("../img/repair-right-black.svg") no-repeat 79px 33px;
+        background-color: #fbc02d;
+      }
     }
 
     &:nth-of-type(7) {
       background: url("../img/pipeline.svg") no-repeat 3vw 134px;
+
+      &:hover {
+        background: #fbc02d url("../img/pipeline-black.svg") no-repeat 35px 33px;
+      }
     }
 
     &:nth-of-type(8) {
@@ -101,14 +132,11 @@
     }
 
     &:hover {
-      background: #fbc02d url("../img/support-bg-01.svg") no-repeat 35px 33px;
-
       &::before {
         color: rgba(22, 22, 22, 0.8);
       }
 
       &::after {
-        // transform: translateX(0);
         right: -20px;
         opacity: 1;
         visibility: visible;
@@ -202,5 +230,72 @@
     &:hover {
       background-position: 35px 33px;
     }
+  }
+}
+
+@media (min-width: 1920px) {
+  .support {
+    padding-top: 125px;
+    padding-bottom: 125px;
+  }
+
+  .support__item {
+    height: 407px;
+    padding: 50px 44px;
+
+    &:nth-of-type(1) {
+      background-position: 50px 60%;
+    }
+
+    &:nth-of-type(2) {
+      background-position: 52px 60%;
+    }
+
+    &:nth-of-type(3) {
+      background-position: 43px 60%;
+    }
+
+    &:nth-of-type(4) {
+      background-position: 50px 60%;
+    }
+
+    &:nth-of-type(5) {
+      background-position: 46px 60%;
+    }
+
+    &:nth-of-type(6) {
+      background-position: 19px 60%, 83px calc(60% - 10px);
+    }
+
+    &:nth-of-type(7) {
+      background-position: 49px 60%;
+    }
+
+    &:hover {
+      background-position: 42px 40px;
+    }
+  }
+}
+
+@media (min-width: 2200px) {
+  .support {
+    padding-top: 156px;
+    padding-bottom: 156px;
+  }
+
+  .support__title {
+    font-size: 56px;
+    line-height: 56px;
+    margin-bottom: 72px;
+  }
+
+  .support__item {
+    height: 509px;
+    padding: 63px 56px;
+  }
+
+  .support__caption {
+    font-size: 18px;
+    line-height: 21px;
   }
 }

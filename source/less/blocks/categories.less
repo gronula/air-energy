@@ -108,7 +108,6 @@
   .categories {
     order: 2;
     width: 100%;
-    height: 682px;
   }
 
   .categories__list {
@@ -161,7 +160,7 @@
     }
 
     &--compressor {
-      min-height: 682px;
+      height: 682px;
       grid-area: compressor;
       /* stylelint-disable */
         -ms-grid-row: 1;
@@ -171,7 +170,7 @@
       -ms-grid-column-span: 1;
       padding-top: 80px;
       padding-bottom: 66px;
-      background: #15262e url("../img/compressor.svg") no-repeat center 180px;
+      background: #15262e url("../img/compressor.svg") no-repeat center;
       background-size: 22vw;
 
       &::before {
@@ -189,7 +188,7 @@
       /* stylelint-enable */
       -ms-grid-column-span: 2;
       background: #fbc02d url("../img/dehydrator.svg") no-repeat 83% center;
-      background-size: 10vw;
+      background-size: 9vw;
     }
 
     &--pump {
@@ -201,7 +200,7 @@
       -ms-grid-column: 2;
       /* stylelint-enable */
       -ms-grid-column-span: 1;
-      background: url("../img/pump.svg") no-repeat center 136px;
+      background: url("../img/pump.svg") no-repeat center;
       background-size: 12vw;
     }
 
@@ -228,7 +227,8 @@
       -ms-grid-column: 4;
       /* stylelint-enable */
       -ms-grid-column-span: 1;
-      background: url("../img/pneumotool.svg") no-repeat center 100px;
+      background: url("../img/pneumotool.svg") no-repeat center;
+      background-size: 15vw;
     }
 
     &:hover {
@@ -441,6 +441,10 @@
 }
 
 @media (min-width: 1440px) {
+  .categories {
+    height: auto;
+  }
+
   .categories__list {
     grid-template-columns: 33vw 21vw 21vw auto;
     /* stylelint-disable */
@@ -451,7 +455,6 @@
   .categories__item {
     padding-left: 48px;
     padding-right: 0;
-    background-size: auto;
 
     &--compressor {
       padding-left: 94px;
@@ -493,5 +496,38 @@
         display: none;
       }
     }
+  }
+}
+
+@media (min-width: 1920px) {
+  .categories__item {
+    height: 409px;
+    padding-top: 46px;
+
+    &--compressor {
+      height: 818px;
+      padding-top: 96px;
+    }
+  }
+}
+
+@media (min-width: 2200px) {
+  .categories__item {
+    height: 511px;
+    padding-top: 57px;
+
+    &--compressor {
+      height: 1022px;
+      padding-top: 120px;
+    }
+  }
+
+  .categories__title {
+    font-size: 27px;
+  }
+
+  .categories__sublink {
+    font-size: 18px;
+    line-height: 18px;
   }
 }

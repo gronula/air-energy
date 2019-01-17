@@ -44,6 +44,7 @@
     padding-top: 122px;
     padding-bottom: 40px;
     flex-shrink: 0;
+    z-index: 0;
   }
 
   .projects__title {
@@ -76,5 +77,36 @@
 
   .projects__slider {
     margin-left: calc(37vw - 450px);
+  }
+}
+
+@media (min-width: 1920px) {
+  .projects {
+    padding-top: 128px;
+    margin-bottom: 277px;
+  }
+
+  .projects__header {
+    padding-top: 0;
+  }
+}
+
+@media (min-width: 2200px) {
+  .projects {
+    margin-bottom: 347px;
+  }
+
+  .projects__header {
+    width: 700px;
+  }
+
+  .projects__title {
+    font-size: 56px;
+    line-height: 56px;
+    margin-bottom: 72px;
+  }
+
+  .projects__slider {
+    margin-left: calc(37vw - 700px);
   }
 }

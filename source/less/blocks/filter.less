@@ -394,20 +394,6 @@
     text-align: center;
   }
 
-  //
-  .filter__preview-left {
-    display: none;
-    flex-direction: column;
-    width: 50%;
-    padding: 24px;
-    flex-grow: 1;
-
-    .filter__preview--opened & {
-      display: flex;
-    }
-  }
-  //
-
   .filter__goods {
     display: flex;
     flex-direction: column;
@@ -454,14 +440,15 @@
 
   .filter__name {
     margin-top: 0;
-    margin-bottom: auto;
+    margin-bottom: 0;
   }
 
   .filter__image-wrapper {
     line-height: 261px;
     height: 261px;
     text-align: center;
-    margin-bottom: 19px;
+    margin-top: auto;
+    margin-bottom: auto;
   }
 
   .filter__image {
@@ -520,14 +507,6 @@
     height: 40px;
     background: url("../img/icon-comparison-black.svg") no-repeat center;
     border: 1px solid #eceff1;
-  }
-
-  //
-  .filter__preview-right {
-    display: none;
-    flex-direction: column;
-    width: 50%;
-    padding: 24px;
   }
 
   .filter__submit {
@@ -592,5 +571,67 @@
     .filter__preview--opened & {
       display: flex;
     }
+  }
+}
+
+@media (min-width: 1920px) {
+  .filter {
+    padding-top: 124px;
+    padding-bottom: 106px;
+  }
+
+  .filter__form {
+    min-height: 754px;
+  }
+
+  .filter__background {
+    background-position-y: 116px;
+  }
+
+  .filter__text {
+    margin-top: 500px;
+  }
+
+  .filter__image-wrapper {
+    line-height: 313px;
+    height: 313px;
+  }
+
+  .filter__image {
+    max-height: 313px;
+  }
+}
+
+@media (min-width: 2200px) {
+  .filter {
+    padding-top: 152px;
+    padding-bottom: 132px;
+  }
+
+  .filter__title {
+    font-size: 56px;
+    line-height: 56px;
+    margin-bottom: 72px;
+  }
+
+  .filter__background {
+    background-position-y: 250px;
+  }
+
+  .filter__text {
+    margin-top: 650px;
+  }
+
+  .filter__form {
+    min-height: 942px;
+  }
+
+  .filter__image-wrapper {
+    line-height: 392px;
+    height: 392px;
+  }
+
+  .filter__image {
+    max-height: 392px;
   }
 }
