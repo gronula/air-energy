@@ -10,8 +10,8 @@
     flex-direction: column;
     padding-top: 103px;
     padding-bottom: 88px;
-    padding-left: 60px;
-    padding-right: 60px;
+    .fluid(padding-left, 40, 64, 1024, 1440);
+    .fluid(padding-right, 40, 64, 1024, 1440);
   }
 
   .filter__title {
@@ -127,7 +127,7 @@
       margin-left: 10px;
       width: 11px;
       height: 7px;
-      background: url("../img/icon-arrow-fat-big.svg") no-repeat center;
+      background: url("../../img/icon-arrow-fat-big.svg") no-repeat center;
       background-size: contain;
       transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 
@@ -267,7 +267,7 @@
       transform: translateY(-50%);
       width: 11px;
       height: 7px;
-      background: url("../img/icon-arrow-fat-small.svg") no-repeat center;
+      background: url("../../img/icon-arrow-fat-small.svg") no-repeat center;
       background-size: contain;
       transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 
@@ -339,7 +339,7 @@
       transition: background-color 0.1s cubic-bezier(0.77, 0, 0.175, 1);
 
       .filter__checkbox:checked + & {
-        background: @title-color url("../img/icon-tick-2.svg") no-repeat center;
+        background: @title-color url("../../img/icon-tick-2.svg") no-repeat center;
         background-size: auto;
       }
     }
@@ -363,7 +363,7 @@
     align-items: center;
     padding-left: 2vw;
     padding-right: 2vw;
-    background: url("../img/filter-bg-desktop@1x.png") no-repeat center 97px;
+    background: url("../../img/filter-bg-desktop@1x.png") no-repeat center 97px;
     background-size: 80%;
     opacity: 1;
     transform: translateX(0%);
@@ -496,8 +496,7 @@
     font-size: 0;
     width: 40px;
     height: 40px;
-    margin-right: 8px;
-    background: #f1ac00 url("../img/icon-cart-black.svg") no-repeat center;
+    background: #f1ac00 url("../../img/icon-cart-black.svg") no-repeat center;
     background-size: 20px;
   }
 
@@ -505,7 +504,8 @@
     font-size: 0;
     width: 40px;
     height: 40px;
-    background: url("../img/icon-comparison-black.svg") no-repeat center;
+    margin-right: 8px;
+    background: url("../../img/icon-comparison-black.svg") no-repeat center;
     border: 1px solid #eceff1;
   }
 
@@ -537,7 +537,12 @@
   }
 }
 
-@media (min-width: 1300px) {
+@media (min-width: 1440px) {
+  .filter {
+    .fluid(padding-left, 64, 144, 1440, 1920);
+    .fluid(padding-right, 64, 144, 1440, 1920);
+  }
+
   .filter__main {
     width: 25%;
   }

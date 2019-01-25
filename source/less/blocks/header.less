@@ -8,7 +8,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background: #15262e url("../img/bg-mobile-menu.svg") no-repeat right 91px;
+    background: #15262e url("../../img/bg-mobile-menu.svg") no-repeat right 91px;
 
     &::after {
       content: "";
@@ -25,8 +25,8 @@
 @media (min-width: @desktop-width) {
   .header {
     margin-left: 80px;
-    padding-left: 4vw;
-    padding-right: 4vw;
+    .fluid(padding-left, 40, 64, 1024, 1440);
+    .fluid(padding-right, 40, 64, 1024, 1440);
     position: fixed;
     z-index: 2;
     left: 0;
@@ -44,5 +44,12 @@
       opacity: 0;
       transition: all 0.4s;
     }
+  }
+}
+
+@media (min-width: 1440px) {
+  .header {
+    .fluid(padding-left, 64, 144, 1440, 1920);
+    .fluid(padding-right, 64, 144, 1440, 1920);
   }
 }

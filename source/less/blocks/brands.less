@@ -41,6 +41,7 @@
 }
 
 .brands__image {
+  height: 100%;
   object-fit: scale-down;
 }
 
@@ -59,8 +60,8 @@
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    padding-left: 64px;
-    padding-right: 52px;
+    .fluid(padding-left, 40, 64, 1024, 1440);
+    .fluid(padding-right, 40, 64, 1024, 1440);
     padding-bottom: 0;
     background-color: transparent;
   }
@@ -93,5 +94,12 @@
     display: inline-block;
     max-height: 81px;
     vertical-align: middle;
+  }
+}
+
+@media (min-width: 1440px) {
+  .brands {
+    .fluid(padding-left, 64, 144, 1440, 1920);
+    .fluid(padding-right, 64, 144, 1440, 1920);
   }
 }

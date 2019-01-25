@@ -6,8 +6,10 @@ var del = require('del');
 var autoprefixer = require('autoprefixer');
 var server = require('browser-sync').create();
 
+var isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV === 'development';
+
 gulp.task('clean', function () {
-  return del('build/**');
+  return del('build');
 });
 
 gulp.task('copy', function () {
@@ -21,12 +23,14 @@ gulp.task('copy', function () {
 gulp.task('css', function () {
   return gulp.src('source/less/style.less')
     .pipe($.plumber())
-    .pipe($.less())
-    .pipe($.postcss([
-      autoprefixer()
-    ]))
+    .pipe($.if(isDevelopment, $.sourcemaps.init()))
+    .pipe($.less({relativeUrls: true}))
+    .pipe($.postcss([autoprefixer({grid: true})]))
+    .pipe($.if(isDevelopment, $.sourcemaps.write()))
     .pipe(gulp.dest('build/css'))
+    .pipe($.if(isDevelopment, $.sourcemaps.init()))
     .pipe($.csso())
+    .pipe($.if(isDevelopment, $.sourcemaps.write()))
     .pipe($.rename('style.min.css'))
     .pipe(gulp.dest('build/css'))
     .pipe(server.stream());
@@ -53,7 +57,7 @@ gulp.task('js', function () {
 });
 
 gulp.task('imagemin', function () {
-  return gulp.src('source/img/**/*.{png,jpg,gif,svg}')
+  return gulp.src('source/img/**/*.{png,jpg,gif,svg}', {since: gulp.lastRun('imagemin')})
     .pipe($.cache($.imagemin([
       $.imagemin.gifsicle({optimizationLevel: 3}),
       $.imagemin.optipng({optimizationLevel: 3}),
@@ -69,7 +73,7 @@ gulp.task('imagemin', function () {
 });
 
 gulp.task('webp', function () {
-  return gulp.src('source/img/**/*.{png,jpg}')
+  return gulp.src('source/img/**/*.{png,jpg}', {since: gulp.lastRun('webp')})
     .pipe($.webp({quality: 90}))
     .pipe(gulp.dest('build/img'));
 });
@@ -95,6 +99,8 @@ gulp.task('server', function () {
   gulp.watch('source/less/**/*.less', gulp.series('css'));
   gulp.watch('source/js/**/*.js', gulp.series('js', 'refresh'));
   gulp.watch('source/*.html', gulp.series('html', 'refresh'));
+  gulp.watch('source/img/**/*.{png,jpg,gif,svg}', gulp.series('imagemin', 'refresh'));
+  gulp.watch('source/img/**/*.{png,jpg}', gulp.series('webp', 'refresh'));
 });
 
 gulp.task('images', gulp.series('imagemin', 'webp'));

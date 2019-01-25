@@ -26,7 +26,7 @@
 @media (min-width: @desktop-width) {
   .industry {
     order: 6;
-    width: calc(100% - 80px);
+    width: calc(100% - 40px - 24 * (100vw - 1024px) / 416);
     position: relative;
     margin-bottom: 180px;
     padding-top: 97px;
@@ -40,8 +40,9 @@
 
   .industry__header {
     margin-right: 129px;
+    .fluid(margin-right, 88, 128, 1024, 1440);
     padding-bottom: 160px;
-    padding-left: 67px;
+    .fluid(padding-left, 40, 64, 1024, 1440);
     z-index: 0;
   }
 
@@ -56,6 +57,17 @@
     & .arrow::after {
       display: none;
     }
+  }
+}
+
+@media (min-width: 1440px) {
+  .industry {
+    width: calc(100% - 64px - 80 * (100vw - 1440px) / 480);
+  }
+
+  .industry__header {
+    .fluid(margin-right, 128, 168, 1440, 1920);
+    .fluid(padding-left, 64, 144, 1440, 1920);
   }
 }
 

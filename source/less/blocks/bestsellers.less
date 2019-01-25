@@ -97,7 +97,7 @@
       height: 8px;
       top: 7px;
       right: -10px;
-      background: url("../img/icon-arrow-top-right.svg") no-repeat center;
+      background: url("../../img/icon-arrow-top-right.svg") no-repeat center;
       background-size: contain;
     }
   }
@@ -114,7 +114,7 @@
   width: 40px;
   height: 40px;
   border: 1px solid #eceff1;
-  background: url("../img/icon-comparison-black.svg") no-repeat center;
+  background: url("../../img/icon-comparison-black.svg") no-repeat center;
 }
 
 .bestsellers__cart {
@@ -131,11 +131,6 @@
     grid-template-columns: 28% 24% 24% 24%;
     grid-template-rows: 1fr 1fr;
     grid-template-areas: "first second third fourth" "first fifth sixth sixth";
-    /* stylelint-disable */
-    display: -ms-grid;
-    -ms-grid-columns: 28% 24% 24% 24%;
-    -ms-grid-rows: 1fr 1fr;
-    /* stylelint-enable */
   }
 
 
@@ -170,17 +165,11 @@
     }
 
     &:nth-of-type(1) {
+      grid-area: first;
       padding-top: 67px;
       padding-bottom: 59px;
       padding-left: 2vw;
       padding-right: 2vw;
-      grid-area: first;
-      /* stylelint-disable */
-      -ms-grid-row: 1;
-      -ms-grid-row-span: 2;
-      -ms-grid-column: 1;
-      -ms-grid-column-span: 1;
-      /* stylelint-enable */
       background-color: #15262e;
 
       &::before {
@@ -213,33 +202,15 @@
 
     &:nth-of-type(2) {
       grid-area: second;
-      /* stylelint-disable */
-      -ms-grid-row: 1;
-      -ms-grid-row-span: 1;
-      -ms-grid-column: 2;
-      -ms-grid-column-span: 1;
-      /* stylelint-enable */
     }
 
     &:nth-of-type(3) {
       grid-area: third;
-      /* stylelint-disable */
-      -ms-grid-row: 1;
-      -ms-grid-row-span: 1;
-      -ms-grid-column: 3;
-      -ms-grid-column-span: 1;
-      /* stylelint-enable */
       background-color: rgba(234, 234, 234, 0.7);
     }
 
     &:nth-of-type(4) {
       grid-area: fourth;
-      /* stylelint-disable */
-      -ms-grid-row: 1;
-      -ms-grid-row-span: 1;
-      -ms-grid-column: 4;
-      -ms-grid-column-span: 1;
-      /* stylelint-enable */
       background-color: #15262e;
 
       &:hover::after {
@@ -255,12 +226,6 @@
 
     &:nth-of-type(5) {
       grid-area: fifth;
-      /* stylelint-disable */
-      -ms-grid-row: 2;
-      -ms-grid-row-span: 1;
-      -ms-grid-column: 2;
-      -ms-grid-column-span: 1;
-      /* stylelint-enable */
       background-color: rgba(234, 234, 234, 0.7);
       border-bottom: 0;
     }
@@ -268,12 +233,6 @@
     &:nth-of-type(6) {
       display: flex;
       grid-area: sixth;
-      /* stylelint-disable */
-      -ms-grid-row: 2;
-      -ms-grid-row-span: 1;
-      -ms-grid-column: 3;
-      -ms-grid-column-span: 2;
-      /* stylelint-enable */
       background-color: #ffc700;
     }
   }
@@ -437,7 +396,7 @@
       top: calc(100% + 16px);
       left: 50%;
       transform: translateX(-50%);
-      background: url("../img/icon-tip.svg") no-repeat center;
+      background: url("../../img/icon-tip.svg") no-repeat center;
       background-size: contain;
 
       .bestsellers__product:nth-of-type(2) &,
@@ -491,7 +450,7 @@
       color: #ffffff;
 
       &:hover {
-        color: #000000;
+        color: #ffb600;
       }
     }
 
@@ -536,7 +495,7 @@
     height: 32px;
     opacity: 0;
     margin-right: 8px;
-    background-image: url("../img/icon-comparison-desktop.svg");
+    background-image: url("../../img/icon-comparison-desktop.svg");
     background-size: 16px;
     transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 
@@ -557,7 +516,7 @@
     width: 32px;
     height: 32px;
     border: 1px solid #ffc700;
-    background: #fbc02d url("../img/icon-cart-black.svg") no-repeat center;
+    background: #fbc02d url("../../img/icon-cart-black.svg") no-repeat center;
     background-size: 16px;
     opacity: 0;
     transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
@@ -577,9 +536,6 @@
 @media (min-width: 1440px) {
   .bestsellers {
     grid-template-columns: 32% 28% 20% 20%;
-    /* stylelint-disable */
-    -ms-grid-columns: 32% 28% 20% 20%;
-    /* stylelint-enable */
   }
 
   .bestsellers__product {

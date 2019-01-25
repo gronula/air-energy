@@ -30,7 +30,7 @@
       width: 26px;
       height: 24px;
       left: 16px;
-      background: url("../img/icon-compressor.png") no-repeat center;
+      background: url("../../img/icon-compressor.png") no-repeat center;
     }
   }
 
@@ -43,7 +43,7 @@
       width: 22px;
       height: 22px;
       left: 16px;
-      background: url("../img/icon-pump.png") no-repeat center;
+      background: url("../../img/icon-pump.png") no-repeat center;
     }
   }
 
@@ -61,7 +61,7 @@
       width: 22px;
       height: 22px;
       left: 11px;
-      background: url("../img/icon-pump.png") no-repeat center;
+      background: url("../../img/icon-pump.png") no-repeat center;
     }
   }
 
@@ -75,7 +75,7 @@
       width: 26px;
       height: 24px;
       left: 11px;
-      background: url("../img/icon-compressor.png") no-repeat center;
+      background: url("../../img/icon-compressor.png") no-repeat center;
     }
   }
 }
@@ -120,11 +120,6 @@
     grid-template-areas:
       "compressor dehydrator dehydrator pneumotool"
       "compressor pump powerstation powerstation";
-    /* stylelint-disable */
-    display: -ms-grid;
-    -ms-grid-columns: calc(38vw - 80px) 28vw 6vw auto;
-    -ms-grid-rows: 1fr 1fr;
-    /* stylelint-enable */
   }
 
   .categories__item {
@@ -162,15 +157,9 @@
     &--compressor {
       height: 682px;
       grid-area: compressor;
-      /* stylelint-disable */
-        -ms-grid-row: 1;
-        -ms-grid-row-span: 2;
-        -ms-grid-column: 1;
-      /* stylelint-enable */
-      -ms-grid-column-span: 1;
       padding-top: 80px;
       padding-bottom: 66px;
-      background: #15262e url("../img/compressor.svg") no-repeat center;
+      background: #15262e url("../../img/compressor.svg") no-repeat center;
       background-size: 22vw;
 
       &::before {
@@ -181,39 +170,21 @@
     &--dehydrator {
       order: 2;
       grid-area: dehydrator;
-      /* stylelint-disable */
-      -ms-grid-row: 1;
-      -ms-grid-row-span: 1;
-      -ms-grid-column: 2;
-      /* stylelint-enable */
-      -ms-grid-column-span: 2;
-      background: #fbc02d url("../img/dehydrator.svg") no-repeat 83% center;
+      background: #fbc02d url("../../img/dehydrator.svg") no-repeat 83% center;
       background-size: 9vw;
     }
 
     &--pump {
       order: 4;
       grid-area: pump;
-      /* stylelint-disable */
-      -ms-grid-row: 2;
-      -ms-grid-row-span: 1;
-      -ms-grid-column: 2;
-      /* stylelint-enable */
-      -ms-grid-column-span: 1;
-      background: url("../img/pump.svg") no-repeat center;
+      background: url("../../img/pump.svg") no-repeat center;
       background-size: 12vw;
     }
 
     &--powerstation {
       order: 5;
       grid-area: powerstation;
-      /* stylelint-disable */
-      -ms-grid-row: 2;
-      -ms-grid-row-span: 1;
-      -ms-grid-column: 3;
-      /* stylelint-enable */
-      -ms-grid-column-span: 2;
-      background: #f7f7f7 url("../img/powerstation.svg") no-repeat 80% center;
+      background: #f7f7f7 url("../../img/powerstation.svg") no-repeat 80% center;
       background-size: 19vw;
     }
 
@@ -221,13 +192,7 @@
       order: 3;
       display: flex;
       grid-area: pneumotool;
-      /* stylelint-disable */
-      -ms-grid-row: 1;
-      -ms-grid-row-span: 1;
-      -ms-grid-column: 4;
-      /* stylelint-enable */
-      -ms-grid-column-span: 1;
-      background: url("../img/pneumotool.svg") no-repeat center;
+      background: url("../../img/pneumotool.svg") no-repeat center;
       background-size: 15vw;
     }
 
@@ -373,6 +338,10 @@
 
     .categories__item--compressor & {
       color: #ffffff;
+
+      &:hover {
+        color: #ffb600;
+      }
     }
 
     &:hover {
@@ -447,9 +416,6 @@
 
   .categories__list {
     grid-template-columns: 33vw 21vw 21vw auto;
-    /* stylelint-disable */
-    -ms-grid-columns: 33vw 21vw 21vw auto;
-    /* stylelint-enable */
   }
 
   .categories__item {

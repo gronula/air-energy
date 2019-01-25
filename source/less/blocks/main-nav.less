@@ -16,13 +16,13 @@
 
   &--closed {
     position: absolute;
-    background-image: url("../img/icon-menu.svg");
+    background-image: url("../../img/icon-menu.svg");
     background-size: 30px;
   }
 
   &--opened {
     position: fixed;
-    background-image: url("../img/icon-close.svg");
+    background-image: url("../../img/icon-close.svg");
     background-size: 20px;
   }
 }
@@ -88,24 +88,25 @@
     letter-spacing: 0.05em;
     color: @title-color;
     text-transform: uppercase;
-    background-image: url("../img/icon-close.svg");
-    background-color: #eceff1;
-    background-position: calc(100% - 18px) center;
-    background-size: 12px;
+    transition: all 0.5s ease;
 
     &--closed {
       display: none;
     }
 
     &--opened {
-      background-image: url("../img/icon-menu.svg");
+      background-image: url("../../img/icon-menu.svg");
       background-color: transparent;
       background-position: calc(100% - 19px) center;
-      background-size: 15px 18px;
+      background-size: 15px;
     }
 
-    &:hover {
+    .main-nav:hover & {
       color: #000000;
+      background-image: url("../../img/icon-close.svg");
+      background-color: #eceff1;
+      background-position: calc(100% - 18px) center;
+      background-size: 12px;
     }
   }
 
@@ -132,16 +133,23 @@
         0 0 32px rgba(211, 214, 215, 0.05);
     }
 
-    &--hidden {
-      transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    .main-nav:hover &--hidden {
       display: flex;
+      transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
       position: absolute;
-      top: 90px;
+      top: 75px;
       width: 296px;
       flex-direction: column;
-      transform: scaleY(0);
+      background: #ffffff;
+      transform: scaleY(1);
       transform-origin: 0 0;
-      opacity: 0;
+      opacity: 1;
+      box-shadow:
+        2px 2px 4px rgba(211, 214, 215, 0.2),
+        0 16px 16px rgba(211, 214, 215, 0.2),
+        0 0 4px rgba(211, 214, 215, 0.2),
+        0 0 64px rgba(211, 214, 215, 0.05),
+        0 0 32px rgba(211, 214, 215, 0.05);
     }
   }
 
@@ -161,11 +169,11 @@
       display: none;
     }
 
-    .main-nav__list--fixed &,
+    .main-nav__list--hidden &,
     .main-nav__list--closed & {
       display: block;
       margin-right: 0;
-      padding-top: 1.11vh;
+      padding-top: 1.67vh;
       padding-bottom: 1.67vh;
       padding-left: 24px;
       padding-right: 24px;

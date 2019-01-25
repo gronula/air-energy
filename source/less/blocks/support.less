@@ -11,8 +11,8 @@
     width: 100%;
     padding-top: 104px;
     padding-bottom: 103px;
-    padding-left: 61px;
-    padding-right: 64px;
+    .fluid(padding-left, 40, 64, 1024, 1440);
+    .fluid(padding-right, 40, 64, 1024, 1440);
   }
 
   .support__title {
@@ -44,63 +44,58 @@
     transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 
     &:nth-of-type(1) {
-      background: url("../img/engineering.svg") no-repeat 3vw 148px;
+      background: url("../../img/engineering.svg") no-repeat 3vw 148px;
 
       &:hover {
-        background: #fbc02d url("../img/engineering-black.svg") no-repeat 35px 33px;
+        background: #fbc02d url("../../img/engineering-black.svg") no-repeat 35px 33px;
       }
     }
 
     &:nth-of-type(2) {
-      background: url("../img/consultation.svg") no-repeat 3vw 148px;
+      background: url("../../img/consultation.svg") no-repeat 3vw 148px;
 
       &:hover {
-        background: #fbc02d url("../img/consultation-black.svg") no-repeat 35px 33px;
+        background: #fbc02d url("../../img/consultation-black.svg") no-repeat 35px 33px;
       }
     }
 
     &:nth-of-type(3) {
-      background: url("../img/setup.svg") no-repeat 2.5vw 142px;
+      background: url("../../img/setup.svg") no-repeat 2.5vw 142px;
 
       &:hover {
-        background: #fbc02d url("../img/setup-black.svg") no-repeat 35px 33px;
+        background: #fbc02d url("../../img/setup-black.svg") no-repeat 35px 33px;
       }
     }
 
     &:nth-of-type(4) {
-      background: url("../img/service.svg") no-repeat 3vw 144px;
+      background: url("../../img/service.svg") no-repeat 3vw 144px;
 
       &:hover {
-        background: #fbc02d url("../img/service-black.svg") no-repeat 35px 33px;
+        background: #fbc02d url("../../img/service-black.svg") no-repeat 35px 33px;
       }
     }
 
     &:nth-of-type(5) {
-      background: url("../img/diagnostic.svg") no-repeat 2.6vw 156px;
+      background: url("../../img/diagnostic.svg") no-repeat 2.6vw 156px;
 
       &:hover {
-        background: #fbc02d url("../img/diagnostic-black.svg") no-repeat 35px 33px;
+        background: #fbc02d url("../../img/diagnostic-black.svg") no-repeat 35px 33px;
       }
     }
 
     &:nth-of-type(6) {
-      background:
-        url("../img/repair-left.svg") no-repeat 1.1vw 134px,
-        url("../img/repair-right.svg") no-repeat calc(1.1vw + 64px) 134px;
+      background: url("../../img/repair.svg") no-repeat 3vw 134px;
 
       &:hover {
-        background:
-          url("../img/repair-left-black.svg") no-repeat 15px 33px,
-          url("../img/repair-right-black.svg") no-repeat 79px 33px;
-        background-color: #fbc02d;
+        background: #fbc02d url("../../img/repair-black.svg") no-repeat 35px 33px;
       }
     }
 
     &:nth-of-type(7) {
-      background: url("../img/pipeline.svg") no-repeat 3vw 134px;
+      background: url("../../img/pipeline.svg") no-repeat 3vw 134px;
 
       &:hover {
-        background: #fbc02d url("../img/pipeline-black.svg") no-repeat 35px 33px;
+        background: #fbc02d url("../../img/pipeline-black.svg") no-repeat 35px 33px;
       }
     }
 
@@ -137,7 +132,6 @@
       }
 
       &::after {
-        right: -20px;
         opacity: 1;
         visibility: visible;
       }
@@ -161,13 +155,13 @@
       position: absolute;
       z-index: -1;
       top: 27px;
-      right: -220px;
+      right: -20px;
       opacity: 0;
       visibility: hidden;
       min-width: 200px;
       width: 70%;
       height: 70%;
-      background: url("../img/support-bg-01@1x.png") no-repeat right center;
+      background: url("../../img/support-bg-01@1x.png") no-repeat right center;
       background-size: contain;
       mix-blend-mode: multiply;
       transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
@@ -196,6 +190,11 @@
 }
 
 @media (min-width: 1440px) {
+  .support {
+    .fluid(padding-left, 64, 144, 1440, 1920);
+    .fluid(padding-right, 64, 144, 1440, 1920);
+  }
+
   .support__item {
     padding: 42px 37px;
 
@@ -220,7 +219,7 @@
     }
 
     &:nth-of-type(6) {
-      background-position: 16px 134px, 80px 134px;
+      background-position: 40px 134px;
     }
 
     &:nth-of-type(7) {
@@ -264,7 +263,7 @@
     }
 
     &:nth-of-type(6) {
-      background-position: 19px 60%, 83px calc(60% - 10px);
+      background-position: 50px 60%;
     }
 
     &:nth-of-type(7) {

@@ -62,8 +62,8 @@
   .news {
     order: 7;
     width: 60%;
-    padding-left: 5vw;
-    padding-right: 5vw;
+    .fluid(padding-left, 40, 64, 1024, 1440);
+    .fluid(padding-right, 40, 64, 1024, 1440);
   }
 
   .news__title {
@@ -151,8 +151,8 @@
 @media (min-width: 1440px) {
   .news {
     width: 70%;
-    padding-left: 141px;
-    padding-right: 141px;
+    .fluid(padding-left, 64, 144, 1440, 1920);
+    .fluid(padding-right, 64, 144, 1440, 1920);
   }
 
   .news__note {
