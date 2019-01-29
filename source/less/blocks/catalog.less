@@ -1,0 +1,129 @@
+.catalog {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  background-color: #ffffff;
+  overflow: auto;
+  z-index: 1;
+
+  &--opened {
+    display: block;
+  }
+
+  &::before {
+    content: "";
+    position: fixed;
+    z-index: 1;
+    top: 64px;
+    left: 0;
+    right: 0;
+    height: 30px;
+    background-image: linear-gradient(to top, rgba(255, 255, 255, 0) 0%, #ffffff 60%);
+  }
+
+  &::after {
+    content: "";
+    position: fixed;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 56px;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff 60%);
+  }
+}
+
+.catalog__header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  padding-left: 27px;
+  padding-right: 91px;
+  border-bottom: 1px solid #eceff1;
+  background-color: #ffffff;
+  z-index: 1;
+}
+
+.catalog__title {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: 700;
+  font-size: 27px;
+  line-height: 27px;
+  color: @title-color;
+}
+
+.catalog__toggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 64px;
+  height: 64px;
+  font-size: 0;
+  border: 0;
+  background: #fbc02d url("../../img/icon-close.svg") no-repeat center;
+}
+
+.catalog__list {
+  margin-top: 105px;
+  margin-bottom: 56px;
+  padding-left: 0;
+  list-style: none;
+}
+
+.catalog__item {
+  position: relative;
+  display: flex;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: calc(50% - 3px);
+    right: 18px;
+    width: 12px;
+    height: 6px;
+    transform: rotate(-90deg) translateY(-50%);
+    background: url("../../img/icon-arrow-fat-big.svg") no-repeat center;
+    background-size: contain;
+  }
+}
+
+.catalog__link {
+  width: 100%;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: @title-color;
+  text-decoration: none;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 24px;
+  padding-right: 46px;
+}
+
+.catalog__number {
+  top: -0.8em;
+  margin-left: 5px;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 12px;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.catalog__sublist {
+  display: none;
+
+  &--opened {
+    display: block;
+  }
+}
