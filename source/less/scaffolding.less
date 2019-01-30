@@ -43,6 +43,21 @@ html {
   outline: none;
 }
 
+* {
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: #ccd1d4;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #fbc02d;
+    border-radius: 5px;
+  }
+}
+
 body {
   min-width: 320px;
   margin: 0;
@@ -79,8 +94,34 @@ input[type="radio"].visually-hidden {
   clip-path: inset(100%);
 }
 
+.page {
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+
+  &::before {
+    content: "";
+    transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  }
+}
+
 .no-scroll {
   width: 100%;
   position: fixed;
   overflow: hidden;
+}
+
+.dark {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #000000;
+    opacity: 0.7;
+    z-index: 3;
+    transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  }
 }

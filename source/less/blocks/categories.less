@@ -133,6 +133,7 @@
     padding-left: 3.3vw;
     padding-right: 3.3vw;
     border-top: 0;
+    z-index: 1;
     transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 
     &:nth-of-type(n + 5) {
@@ -154,52 +155,87 @@
       transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
     }
 
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: -1;
+      transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    }
+
     &--compressor {
       height: 682px;
       grid-area: compressor;
       padding-top: 80px;
       padding-bottom: 66px;
-      background: #15262e url("../../img/compressor.svg") no-repeat center;
-      background-size: 22vw;
+      background-color: #15262e;
 
       &::before {
         color: rgba(255, 255, 255, 0.4);
+      }
+
+      &::after {
+        background: url("../../img/compressor.svg") no-repeat center;
+        background-size: 22vw;
       }
     }
 
     &--dehydrator {
       order: 2;
       grid-area: dehydrator;
-      background: #fbc02d url("../../img/dehydrator.svg") no-repeat 83% center;
-      background-size: 9vw;
+      background-color: #fbc02d;
+
+      &::after {
+        background: url("../../img/dehydrator.svg") no-repeat 83% center;
+        background-size: 9vw;
+      }
     }
 
     &--pump {
       order: 4;
       grid-area: pump;
-      background: url("../../img/pump.svg") no-repeat center;
-      background-size: 12vw;
+
+      &::after {
+        background: url("../../img/pump.svg") no-repeat center;
+        background-size: 12vw;
+      }
     }
 
     &--powerstation {
       order: 5;
       grid-area: powerstation;
-      background: #f7f7f7 url("../../img/powerstation.svg") no-repeat 80% center;
-      background-size: 19vw;
+      background-color: #f7f7f7;
+
+      &::after {
+        background: url("../../img/powerstation.svg") no-repeat 80% center;
+        background-size: 19vw;
+      }
     }
 
     &--pneumotool {
       order: 3;
       display: flex;
       grid-area: pneumotool;
-      background: url("../../img/pneumotool.svg") no-repeat center;
-      background-size: 15vw;
+
+      &::after {
+        background: url("../../img/pneumotool.svg") no-repeat center;
+        background-size: 15vw;
+      }
     }
 
     &:hover {
-      background-position-x: 100vw;
+      // background-position-x: 100vw;
+      // background-image: transparent;
+      // background-size: 0;
 
       &::before {
+        opacity: 0;
+      }
+
+      &::after {
         opacity: 0;
       }
     }

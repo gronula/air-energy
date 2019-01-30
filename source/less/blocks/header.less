@@ -2,20 +2,21 @@
   overflow: auto;
 
   &--fixed {
+    overflow: visible;
     position: fixed;
     z-index: 1;
-    top: 0;
-    bottom: 0;
+    top: 64px;
+    bottom: 56px;
     left: 0;
     right: 0;
-    background: #15262e url("../../img/bg-mobile-menu.svg") no-repeat right 91px;
+    background: #15262e url("../../img/bg-mobile-menu.svg") no-repeat right 27px;
 
     &::after {
       content: "";
       position: fixed;
       bottom: 56px;
       left: 0;
-      right: 0;
+      right: 5px;
       height: 61px;
       background-image: linear-gradient(to top, #15262e 0%, rgba(21, 38, 46, 0) 100%);
     }
