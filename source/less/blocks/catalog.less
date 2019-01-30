@@ -283,8 +283,29 @@
     font-size: 15px;
     line-height: 18px;
 
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 5px;
+      left: 64px;
+      width: 107px;
+      height: 2px;
+      background-color: transparent;
+      transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    }
+
     &::after {
       right: 26px;
+    }
+
+    &--opened {
+      &::before {
+        background-color: #f1ac00;
+      }
+    }
+
+    &:hover {
+      color: #000000;
     }
   }
 
@@ -322,5 +343,9 @@
     font-weight: 400;
     font-size: 15px;
     line-height: 18px;
+
+    &:hover {
+      color: #000000;
+    }
   }
 }

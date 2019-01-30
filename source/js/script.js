@@ -255,6 +255,7 @@ var catalogButtonClickHandler = function () {
     document.body.classList.remove('dark');
     catalogHeader.classList.remove('catalog__header--opened');
     catalogWrapper.classList.remove('catalog__wrapper--opened');
+    catalogLink.classList.remove('catalog__link--opened');
     catalogSublist.classList.remove('catalog__sublist--opened');
     setTimeout(function () {
       sidebarCatalogLink.addEventListener('mouseover', sidebarCatalogLinkMouseoverHandler);
@@ -300,6 +301,7 @@ var catalogMouseoverHandler = function (evt) {
       catalog.classList.remove('catalog--opened');
       catalogHeader.classList.remove('catalog__header--opened');
       catalogWrapper.classList.remove('catalog__wrapper--opened');
+      catalogLink.classList.remove('catalog__link--opened');
       catalogSublist.classList.remove('catalog__sublist--opened');
     }, 250);
   } else {
@@ -314,6 +316,7 @@ var catalogMouseoutHandler = function (evt) {
       catalog.classList.remove('catalog--opened');
       catalogHeader.classList.remove('catalog__header--opened');
       catalogWrapper.classList.remove('catalog__wrapper--opened');
+      catalogLink.classList.remove('catalog__link--opened');
       catalogSublist.classList.remove('catalog__sublist--opened');
       return;
     }
@@ -321,12 +324,15 @@ var catalogMouseoutHandler = function (evt) {
 };
 
 var catalogSublist;
+var catalogLink;
 
 var catalogItemMouseoverHandler = function (evt) {
+  catalogLink = evt.currentTarget.querySelector('.catalog__link');
   catalogSublist = evt.currentTarget.querySelector('.catalog__sublist');
 
   catalogHeader.classList.add('catalog__header--opened');
   catalogWrapper.classList.add('catalog__wrapper--opened');
+  catalogLink.classList.add('catalog__link--opened');
   catalogSublist.classList.add('catalog__sublist--opened');
 };
 
@@ -337,6 +343,7 @@ var catalogItemMouseoutHandler = function (evt) {
 
   catalogHeader.classList.remove('catalog__header--opened');
   catalogWrapper.classList.remove('catalog__wrapper--opened');
+  catalogLink.classList.remove('catalog__link--opened');
   catalogSublist.classList.remove('catalog__sublist--opened');
 };
 
