@@ -160,8 +160,12 @@
       transition: all 0.7s cubic-bezier(0.77, 0, 0.175, 1);
     }
 
-    &:hover::after {
-      opacity: 1;
+    &:hover {
+      z-index: 2;
+
+      &::after {
+        opacity: 1;
+      }
     }
 
     &:nth-of-type(1) {
@@ -321,7 +325,25 @@
   }
 
   .bestsellers__category {
-    display: none;
+    color: rgba(0, 0, 0, 0.55);
+    font-size: 12px;
+    line-height: 14px;
+    margin-bottom: 7px;
+    opacity: 1;
+    transition: all 0.2s cubic-bezier(0.77, 0, 0.175, 1);
+
+    .bestsellers__product:nth-of-type(1) & {
+      margin-bottom: 16px;
+    }
+
+    .bestsellers__product:nth-of-type(1) &,
+    .bestsellers__product:nth-of-type(4) & {
+      color: rgba(255, 255, 255, 0.55);
+    }
+
+    .bestsellers__product:hover & {
+      opacity: 0;
+    }
   }
 
   .bestsellers__link {
@@ -387,25 +409,6 @@
     &:last-of-type {
       border-right: 0;
     }
-
-    &::after {
-      content: "";
-      position: absolute;
-      width: 18px;
-      height: 17px;
-      top: calc(100% + 16px);
-      left: 50%;
-      transform: translateX(-50%);
-      background: url("../../img/icon-tip.svg") no-repeat center;
-      background-size: contain;
-
-      .bestsellers__product:nth-of-type(2) &,
-      .bestsellers__product:nth-of-type(3) &,
-      .bestsellers__product:nth-of-type(4) &,
-      .bestsellers__product:nth-of-type(5) & {
-        top: calc(100% + 12px);
-      }
-    }
   }
 
   .bestsellers__characteristic {
@@ -431,6 +434,85 @@
     font-size: 12px;
     line-height: 14px;
     color: rgba(255, 255, 255, 0.5);
+  }
+
+  .bestsellers__tooltip {
+    position: absolute;
+    width: 18px;
+    height: 17px;
+    top: calc(100% + 16px);
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0;
+    background: url("../../img/icon-tip.svg") no-repeat center;
+    background-size: contain;
+    transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    z-index: 1;
+    cursor: pointer;
+
+    .bestsellers__product:nth-of-type(2) &,
+    .bestsellers__product:nth-of-type(3) &,
+    .bestsellers__product:nth-of-type(4) &,
+    .bestsellers__product:nth-of-type(5) & {
+      top: calc(100% + 12px);
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: calc(100% - 7px);
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border: 15px solid transparent;
+      transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    }
+
+    &::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      top: calc(100% - 7px);
+      left: 50%;
+      transform: translateX(-50%) scale(0);
+      transform-origin: 50% 0;
+      height: 44px;
+      margin-top: 30px;
+      padding-left: 24px;
+      padding-right: 24px;
+      background-color: #fbc02d;
+      border-radius: 6px;
+      font-size: 15px;
+      line-height: 44px;
+      text-align: center;
+      letter-spacing: 0.04em;
+      color: @title-color;
+      transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    }
+
+    &:hover {
+      background-image: url("../../img/icon-tip-hover.svg");
+
+      &::before {
+        border-bottom-color: #fbc02d;
+      }
+
+      &::after {
+        transform: translateX(-50%) scale(1);
+      }
+    }
+
+    .bestsellers__product:nth-of-type(1) .bestsellers__item:first-of-type &:hover {
+      &::after {
+        transform: translateX(calc(-15% + -35 * (100vw - 1024px) / 416)) scale(1);
+      }
+    }
+
+    .bestsellers__product:nth-of-type(4) .bestsellers__item:last-of-type &:hover {
+      &::after {
+        transform: translateX(-75%) scale(1);
+      }
+    }
   }
 
   .bestsellers__footer {
@@ -577,6 +659,20 @@
     }
   }
 
+  .bestsellers__tooltip {
+    .bestsellers__product:nth-of-type(1) .bestsellers__item:first-of-type &:hover {
+      &::after {
+        transform: translateX(-50%) scale(1);
+      }
+    }
+
+    .bestsellers__product:nth-of-type(4) .bestsellers__item:last-of-type &:hover {
+      &::after {
+        transform: translateX(calc(-75% + 50 * (100vw - 1440px) / 480)) scale(1);
+      }
+    }
+  }
+
   .bestsellers__comparison {
     width: 40px;
     height: 40px;
@@ -657,6 +753,14 @@
 
     .bestsellers__product:nth-of-type(6) & {
       max-height: 241px;
+    }
+  }
+
+  .bestsellers__tooltip {
+    .bestsellers__product:nth-of-type(4) .bestsellers__item:last-of-type &:hover {
+      &::after {
+        transform: translateX(-50%) scale(1);
+      }
     }
   }
 }
