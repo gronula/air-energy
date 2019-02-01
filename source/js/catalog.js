@@ -309,7 +309,6 @@ var sidebarCatalogLinkMouseoverHandler = function () {
 };
 
 var sidebarCatalogLinkMouseoutHandler = function (evt) {
-  // debugger
   if (!window.matchMedia('(max-width: 1023px)').matches) {
     if (evt.toElement === null ||
         evt.toElement !== catalogList &&
