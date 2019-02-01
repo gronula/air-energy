@@ -106,3 +106,13 @@ gulp.task('server', function () {
 gulp.task('images', gulp.series('imagemin', 'webp'));
 gulp.task('build', gulp.series('clean', 'copy', 'css', 'js', 'html', 'images'));
 gulp.task('start', gulp.series('build', 'server'));
+
+gulp.task('prod', function () {
+  del(['../Gronula/**/*'], {force: true});
+  return gulp.src([
+    'build/**/*'
+  ], {base: 'build'})
+    .pipe(gulp.dest('../Gronula'));
+});
+
+gulp.task('gronula', gulp.series('build', 'prod'));
