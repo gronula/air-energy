@@ -420,6 +420,7 @@
 
   .filter__goods {
     position: relative;
+    z-index: -1;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -429,6 +430,7 @@
     transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 
     .filter__preview--opened & {
+      z-index: 1;
       opacity: 1;
       filter: grayscale(0);
       transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);

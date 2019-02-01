@@ -1,5 +1,11 @@
 .bestsellers {
+  position: relative;
   padding-top: 31px;
+
+  .main--inner & {
+    padding-top: 0;
+    padding-bottom: 80px;
+  }
 }
 
 .bestsellers__title {
@@ -11,14 +17,20 @@
   font-size: 27px;
   line-height: 31px;
   color: @title-color;
+
+  .main--inner & {
+    text-align: center;
+  }
 }
 
 .bestsellers__product {
   border-top: 1px solid #eceff1;
   padding-top: 24px;
   padding-bottom: 41px;
-  padding-left: 12px;
-  padding-right: 19px;
+  // padding-left: 12px;
+  // padding-right: 19px;
+  .fluid(padding-left, 12, 40, 320, 1024);
+  .fluid(padding-right, 12, 40, 320, 1024);
   display: flex;
   flex-wrap: wrap;
 
@@ -26,8 +38,8 @@
     border-bottom: 1px solid #eceff1;
   }
 
-  &:nth-of-type(n + 6) {
-    display: none;
+  .main--inner & {
+    border-bottom: 1px solid #eceff1;
   }
 }
 
@@ -121,21 +133,65 @@
   display: none;
 }
 
+.bestsellers__controls {
+  position: absolute;
+  bottom: 35px;
+  width: 100%;
+  height: 24px;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.bestsellers__button {
+  position: absolute;
+  bottom: calc(100%);
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  font-size: 0;
+  border: 0;
+  background: url("../../img/icon-arrow-fat-big.svg") no-repeat center;
+  opacity: 0.3;
+  cursor: pointer;
+
+  &--previous {
+    top: 0;
+    left: 24px;
+    transform: rotate(90deg);
+  }
+
+  &--next {
+    top: 1px;
+    right: 24px;
+    transform: rotate(-90deg);
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
 @media (min-width: @desktop-width) {
   .bestsellers {
-    position: relative;
     order: 4;
     width: 100%;
     padding-top: 0;
+
+    .main--inner & {
+      order: unset;
+      padding-bottom: 0;
+    }
+  }
+
+  .bestsellers__title {
+    display: none;
+  }
+
+  .bestsellers__products {
     display: grid;
     grid-template-columns: 28% 24% 24% 24%;
     grid-template-rows: 1fr 1fr;
     grid-template-areas: "first second third fourth" "first fifth sixth sixth";
-  }
-
-
-  .bestsellers__title {
-    display: none;
   }
 
   .bestsellers__product {
@@ -147,6 +203,10 @@
     padding-right: 2.22vw;
     position: relative;
     z-index: 1;
+
+    .main--inner & {
+      border-bottom: 0;
+    }
 
     &::after {
       content: "";
@@ -342,7 +402,7 @@
     }
 
     .bestsellers__product:hover & {
-      opacity: 0;
+      color: rgba(255, 255, 255, 0.55);
     }
   }
 
@@ -612,6 +672,10 @@
     .bestsellers__product:hover & {
       opacity: 1;
     }
+  }
+
+  .bestsellers__controls {
+    display: none;
   }
 }
 

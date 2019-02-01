@@ -1,0 +1,158 @@
+.advantages {
+  background-color: #15262e;
+  padding-top: 48px;
+  padding-bottom: 35px;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.advantages__title {
+  margin-top: 0;
+  margin-bottom: 36px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 31px;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+}
+
+.advantages__item {
+  margin-bottom: 28px;
+  padding-bottom: 40px;
+  padding-right: 72px;
+  position: relative;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+  &:last-of-type {
+    margin-bottom: 0;
+    border-bottom: 0;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 40px;
+    right: 0;
+    width: 56px;
+    height: 46px;
+  }
+
+  &:nth-of-type(1)::after {
+    background: url("../../img/advantages-service.svg") no-repeat right center;
+  }
+
+  &:nth-of-type(2)::after {
+    background: url("../../img/advantages-discounts.svg") no-repeat right center;
+    right: -8px;
+  }
+
+  &:nth-of-type(3)::after {
+    background: url("../../img/advantages-warranty.svg") no-repeat right center;
+    bottom: 32px;
+  }
+
+  &:nth-of-type(4)::after {
+    background: url("../../img/advantages-delivery.svg") no-repeat right center;
+    right: -3px;
+  }
+}
+
+.advantages__name {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #f1ac00;
+  opacity: 0.9;
+}
+
+.advantages__text {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 15px;
+  line-height: 19px;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  opacity: 0.6;
+
+  &--footnote {
+    display: none;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .advantages {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 72px;
+    padding-bottom: 90px;
+    .fluid(padding-left, 40, 64, 1024, 1440);
+    .fluid(padding-right, 40, 64, 1024, 1440);
+  }
+
+  .advantages__title {
+    width: 100%;
+    margin-bottom: 48px;
+  }
+
+  .advantages__item {
+    width: 25%;
+    margin-bottom: 0;
+    padding-top: 104px;
+    padding-bottom: 0;
+    padding-left: 48px;
+    padding-right: 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 0;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+
+    &::after {
+      top: 28px;
+      bottom: auto;
+      right: 50%;
+      transform: translateX(50%);
+    }
+
+    &:nth-of-type(1)::after {
+      background: url("../../img/advantages-service-desktop.svg") no-repeat right center;
+    }
+
+    &:nth-of-type(2)::after {
+      background: url("../../img/advantages-discounts-desktop.svg") no-repeat right center;
+      right: 50%;
+    }
+
+    &:nth-of-type(3)::after {
+      background: url("../../img/advantages-warranty-desktop.svg") no-repeat right center;
+      bottom: auto;
+    }
+
+    &:nth-of-type(4)::after {
+      background: url("../../img/advantages-delivery-desktop.svg") no-repeat right center;
+      right: 50%;
+    }
+
+    &:last-of-type {
+      border-right: 0;
+    }
+  }
+
+  .advantages__text {
+    text-align: center;
+
+    &--footnote {
+      display: block;
+      margin-top: 16px;
+      font-size: 12px;
+      line-height: 15px;
+      color: #ffffff;
+      opacity: 0.3;
+    }
+  }
+}
