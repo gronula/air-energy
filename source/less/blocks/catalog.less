@@ -274,10 +274,20 @@
     margin-top: 0;
     margin-bottom: 0;
     // margin-left: 1px;
-    padding-top: 85px;
-    padding-bottom: 85px;
+    // padding-top: 85px;
+    // padding-bottom: 85px;
     background-color: #ffffff;
     // border-right: 1px solid #eceff1;
+  }
+
+  .catalog__item {
+    &:first-of-type {
+      margin-top: 85px;
+    }
+
+    &:last-of-type {
+      margin-bottom: 85px;
+    }
   }
 
   .catalog__link {
@@ -327,23 +337,22 @@
     z-index: -1;
     top: 0;
     bottom: 0;
-    left: 0;
+    .fluid(left, 360, 480, 1024, 1440);
     .fluid(width, 360, 480, 1024, 1440);
+    transform: translateX(-100%);
     padding-top: 85px;
     padding-bottom: 85px;
-    opacity: 1;
     transition:
-      left 0.2s linear,
+      transform 0.2s linear,
       z-index 0s linear;
     background-color: #ffffff;
     border-left: 1px solid #eceff1;
 
     &--opened {
       z-index: 1;
-      .fluid(left, 360, 480, 1024, 1440);
-      opacity: 1;
+      transform: translateX(0);
       transition:
-        left 0.2s linear 0.3s,
+        transform 0.2s linear 0.3s,
         z-index 0s linear 0.5s;
     }
   }

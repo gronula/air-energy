@@ -19,6 +19,7 @@
     text-decoration: none;
     opacity: 0.6;
     position: relative;
+    transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 
     &:last-of-type {
       margin-right: 0;
@@ -36,6 +37,10 @@
       width: 3px;
       height: 3px;
       background-color: #fbc02d;
+    }
+
+    &:hover {
+      opacity: 1;
     }
   }
 }
