@@ -1,3 +1,62 @@
+.controls {
+  position: absolute;
+  bottom: 35px;
+  width: 100%;
+  height: 24px;
+  padding-left: 24px;
+  padding-right: 24px;
+
+  .pagination & {
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.controls__button {
+  position: absolute;
+  bottom: calc(100%);
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  font-size: 0;
+  border: 0;
+  background: url("../../img/icon-arrow-fat-big.svg") no-repeat center;
+  opacity: 0.3;
+  cursor: pointer;
+
+  .pagination & {
+    width: 43px;
+    height: 43px;
+  }
+
+  &--previous {
+    top: 0;
+    left: 24px;
+    transform: rotate(90deg);
+
+    .pagination & {
+      left: 0;
+    }
+  }
+
+  &--next {
+    top: 1px;
+    right: 24px;
+    transform: rotate(-90deg);
+
+    .pagination & {
+      right: 0;
+    }
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
 @media (min-width: @desktop-width) {
   .controls {
     display: flex;
@@ -21,6 +80,17 @@
     &--mini {
       width: 128px;
     }
+
+    .main--catalog &,
+    .recently-viewed & {
+      display: none;
+    }
+
+    .pagination & {
+      width: 100%;
+      z-index: 0;
+      background-color: transparent;
+    }
   }
 
   .controls__button {
@@ -33,6 +103,19 @@
     position: relative;
     cursor: pointer;
     transition: all 0.2s cubic-bezier(0.77, 0, 0.175, 1);
+
+    .pagination & {
+      position: absolute;
+      background-color: transparent;
+
+      &::before {
+        display: none;
+      }
+
+      &:hover {
+        background-color: transparent;
+      }
+    }
 
     &:hover {
       background-color: #223138;

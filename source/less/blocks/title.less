@@ -1,0 +1,52 @@
+.title {
+  order: 1;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  padding-left: 16px;
+  padding-right: 16px;
+  color: @title-color;
+
+  &--hide {
+    display: none;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .title {
+    width: 40%;
+    align-self: flex-start;
+    margin-top: 16px;
+    margin-bottom: 56px;
+    padding-bottom: 40px;
+    .fluid(padding-left, 40, 64, 1024, 1440);
+    .fluid(padding-right, 40, 64, 1024, 1440);
+    font-size: 48px;
+    line-height: 49px;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      .fluid(left, 40, 64, 1024, 1440);
+      width: 112px;
+      height: 1px;
+      background-color: #000000;
+      opacity: 0.3;
+    }
+
+    &--hide {
+      width: auto;
+      display: inline;
+      margin-top: 0;
+      margin-bottom: 0;
+      padding-bottom: 0;
+      padding-left: 0;
+      padding-right: 0;
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+}

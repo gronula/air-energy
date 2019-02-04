@@ -1,4 +1,5 @@
 .feedback {
+  order: 6;
   padding-top: 72px;
   padding-bottom: 88px;
   padding-left: 24px;
@@ -134,10 +135,12 @@
 
 @media (min-width: @desktop-width) {
   .feedback {
+    width: 100%;
+    margin-left: 20px;
     padding-top: 120px;
     padding-bottom: 144px;
-    .fluid(padding-left, 88, 112, 1024, 1440);
-    .fluid(padding-right, 88, 112, 1024, 1440);
+    .fluid(padding-left, 96, 224, 1024, 1440);
+    .fluid(padding-right, 96, 224, 1024, 1440);
     display: flex;
     flex-wrap: wrap;
   }
@@ -155,14 +158,14 @@
     }
 
     &--desktop {
-      width: 33%;
+      width: 35%;
       display: block;
       font-size: 36px;
     }
   }
 
   .feedback__form {
-    width: 67%;
+    width: 65%;
     margin-left: auto;
   }
 
@@ -173,7 +176,7 @@
   }
 
   .feedback__inputs {
-    width: 25%;
+    width: 35%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -186,7 +189,7 @@
   }
 
   .feedback__textarea {
-    width: calc(75% - 24px);
+    width: calc(65% - 24px);
     margin-bottom: 0;
     margin-left: 24px;
   }
@@ -213,5 +216,23 @@
     &:hover {
       opacity: 1;
     }
+  }
+}
+
+@media (min-width: 1440px) {
+  .feedback {
+    .fluid(margin-left, 20, 32, 1440, 1920);
+    .fluid(padding-left, 224, 272, 1440, 1920);
+    .fluid(padding-right, 224, 272, 1440, 1920);
+  }
+
+  .feedback__info {
+    &--desktop {
+      width: 40%;
+    }
+  }
+
+  .feedback__form {
+    width: 60%;
   }
 }

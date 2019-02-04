@@ -28,12 +28,12 @@ gulp.task('css', function () {
     .pipe($.postcss([autoprefixer({grid: true})]))
     .pipe($.if(isDevelopment, $.sourcemaps.write()))
     .pipe(gulp.dest('build/css'))
-    .pipe($.if(isDevelopment, $.sourcemaps.init()))
+    .pipe(server.stream())
+    // .pipe($.if(isDevelopment, $.sourcemaps.init()))
     .pipe($.csso())
-    .pipe($.if(isDevelopment, $.sourcemaps.write()))
+    // .pipe($.if(isDevelopment, $.sourcemaps.write()))
     .pipe($.rename('style.min.css'))
-    .pipe(gulp.dest('build/css'))
-    .pipe(server.stream());
+    .pipe(gulp.dest('build/css'));
 });
 
 gulp.task('html', function () {

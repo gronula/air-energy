@@ -1,5 +1,10 @@
 .main {
   overflow: hidden;
+
+  &--catalog {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 @media (min-width: @desktop-width) {
@@ -13,8 +18,9 @@
       padding-top: 180px;
     }
 
-    &--inner {
-      flex-direction: column;
+    &--catalog {
+      flex-direction: row;
+      flex-wrap: wrap;
     }
   }
 }
