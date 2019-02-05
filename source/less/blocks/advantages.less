@@ -37,24 +37,26 @@
     right: 0;
     width: 56px;
     height: 46px;
+    background-repeat: no-repeat;
+    background-position: right center;
   }
 
   &:nth-of-type(1)::after {
-    background: url("../../img/advantages-service.svg") no-repeat right center;
+    background-image: url("../../img/advantages-service.svg");
   }
 
   &:nth-of-type(2)::after {
-    background: url("../../img/advantages-discounts.svg") no-repeat right center;
+    background-image: url("../../img/advantages-discounts.svg");
     right: -8px;
   }
 
   &:nth-of-type(3)::after {
-    background: url("../../img/advantages-warranty.svg") no-repeat right center;
+    background-image: url("../../img/advantages-warranty.svg");
     bottom: 32px;
   }
 
   &:nth-of-type(4)::after {
-    background: url("../../img/advantages-delivery.svg") no-repeat right center;
+    background-image: url("../../img/advantages-delivery.svg");
     right: -3px;
   }
 }
@@ -119,24 +121,25 @@
       bottom: auto;
       right: 50%;
       transform: translateX(50%);
+      background-position: center;
     }
 
     &:nth-of-type(1)::after {
-      background: url("../../img/advantages-service-desktop.svg") no-repeat right center;
+      background-image: url("../../img/advantages-service-desktop.svg");
     }
 
     &:nth-of-type(2)::after {
-      background: url("../../img/advantages-discounts-desktop.svg") no-repeat right center;
+      background-image: url("../../img/advantages-discounts-desktop.svg");
       right: 50%;
     }
 
     &:nth-of-type(3)::after {
-      background: url("../../img/advantages-warranty-desktop.svg") no-repeat right center;
+      background-image: url("../../img/advantages-warranty-desktop.svg");
       bottom: auto;
     }
 
     &:nth-of-type(4)::after {
-      background: url("../../img/advantages-delivery-desktop.svg") no-repeat right center;
+      background-image: url("../../img/advantages-delivery-desktop.svg");
       right: 50%;
     }
 
