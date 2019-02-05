@@ -48,8 +48,8 @@
     margin-left: auto;
     padding-top: 72px;
     padding-bottom: 72px;
-    .fluid(padding-left, 60, 96, 1024, 1440);
-    .fluid(padding-right, 60, 96, 1024, 1440);
+    .fluid(padding-left, 40, 64, 1024, 1440);
+    .fluid(padding-right, 40, 64, 1024, 1440);
     background-color: #15262e;
 
     .main--section & {
@@ -72,5 +72,12 @@
 
   .info__link {
     display: none;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .info {
+    .fluid(padding-left, 64, 96, 1440, 1920);
+    .fluid(padding-right, 64, 96, 1440, 1920);
   }
 }
