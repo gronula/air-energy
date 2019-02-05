@@ -521,8 +521,8 @@ var windowScrollHandler = function () {
     // var feedbackOffsetBottom = feedback.offsetTop + feedback.getBoundingClientRect().height;
 
     if (pageYOffset > feedbackTop && pageYOffset < feedbackBottom) {
-      if (pageYOffset <= feedbackMiddle) {
-        var currentPosition = (pageYOffset - feedbackTop) / (feedbackMiddle - feedbackTop);
+      if (pageYOffset <= feedbackBottom) {
+        var currentPosition = (pageYOffset - feedbackTop) / (feedbackBottom - feedbackTop);
         var colors = [
           [21, 38, 46], // #15262e
           [251, 192, 45] // #fbc02d
