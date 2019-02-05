@@ -516,7 +516,7 @@ var windowScrollHandler = function () {
   setTimeout(function () {
     var feedbackTop = feedback.offsetTop - innerHeight + sidebarHeight;
     // var feedbackOffsetTop = feedback.offsetTop;
-    var feedbackMiddle = feedbackTop + feedback.getBoundingClientRect().height / 2;
+    // var feedbackMiddle = feedbackTop + feedback.getBoundingClientRect().height / 2;
     var feedbackBottom = feedbackTop + feedback.getBoundingClientRect().height;
     // var feedbackOffsetBottom = feedback.offsetTop + feedback.getBoundingClientRect().height;
 
