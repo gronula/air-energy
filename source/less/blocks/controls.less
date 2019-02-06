@@ -3,8 +3,11 @@
   bottom: 35px;
   width: 100%;
   height: 24px;
-  padding-left: 24px;
-  padding-right: 24px;
+
+  .bestsellers & {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
 
   .pagination & {
     top: 0;
@@ -17,7 +20,6 @@
 
 .controls__button {
   position: absolute;
-  bottom: calc(100%);
   width: 24px;
   height: 24px;
   padding: 0;
@@ -43,9 +45,12 @@
   }
 
   &--next {
-    top: 1px;
     right: 24px;
     transform: rotate(-90deg);
+
+    .bestsellers & {
+      top: 1px;
+    }
 
     .pagination & {
       right: 0;
@@ -63,7 +68,6 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    position: absolute;
     z-index: 1;
     width: 64px;
     height: 288px;
@@ -98,15 +102,20 @@
     font-size: 0;
     width: 64px;
     height: 64px;
+    left: auto;
+    right: auto;
     border: 0;
     padding: 0;
+    opacity: 1;
     position: relative;
+    background-image: none;
     cursor: pointer;
     transition: all 0.2s cubic-bezier(0.77, 0, 0.175, 1);
 
     .pagination & {
       position: absolute;
       background-color: transparent;
+      background-image: url("../../img/icon-arrow-fat-big.svg");
 
       &::before {
         display: none;
@@ -128,30 +137,35 @@
       height: 12px;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%) rotate(90deg);
       background: no-repeat center;
       background-size: contain;
     }
 
     &--previous::before {
       background-image: url("../../img/icon-arrow-thin.svg");
-      transform: translate(-50%, -50%) rotate(180deg);
 
       .controls--mini & {
         background-image: url("../../img/icon-arrow-thin-black.svg");
       }
     }
 
-    &--next::before {
-      background-image: url("../../img/icon-arrow-thin.svg");
+    &--next {
+      &::before {
+        background-image: url("../../img/icon-arrow-thin.svg");
 
-      .controls--mini & {
-        background-image: url("../../img/icon-arrow-thin-black.svg");
+        .controls--mini & {
+          background-image: url("../../img/icon-arrow-thin-black.svg");
+        }
       }
     }
 
     .controls--vertical & {
       background-color: #273840;
+
+      &--next::before {
+        margin-left: 1px;
+      }
 
       &:hover {
         background-color: #223138;
