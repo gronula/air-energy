@@ -395,6 +395,21 @@ var filterSectionTopMousedownHandler = function (evt) {
   }
 };
 
+var delta = function () {
+  var item = document.querySelector('.item:nth-of-type(11)');
+  var pagination = document.querySelector('.pagination');
+
+  var itemLeft = item.getBoundingClientRect().left;
+  var paginationLeft = pagination.getBoundingClientRect().left;
+
+  var shift = Math.round(itemLeft - paginationLeft);
+
+  console.log(shift);
+};
+
+window.onload = delta;
+window.onresize = delta;
+
 var filterSectionTopWheelHandler = function (evt) {
   if (!window.matchMedia('(max-width: 1023px)').matches) {
     evt.preventDefault();
