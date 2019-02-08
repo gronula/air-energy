@@ -299,9 +299,12 @@ var dropDownItemClickHandler = function (evt) {
 var filterButtonViewClickHandler = function (button) {
   button.addEventListener('click', function (evt) {
     evt.preventDefault();
-    filterButtonsView.forEach(function (it) {
-      it.classList.toggle('filter__button--active');
-    });
+    if (!evt.target.classList.contains('filter__button--active')) {
+      filterButtonsView.forEach(function (it) {
+        it.classList.remove('filter__button--active');
+      });
+      evt.target.classList.add('filter__button--active');
+    }
     if (button.classList.contains('filter__button--grid')) {
       productsItems.classList.add('products__items--grid');
       productsItems.classList.remove('products__items--row');
@@ -394,21 +397,6 @@ var filterSectionTopMousedownHandler = function (evt) {
     document.addEventListener('mouseup', mouseUpHandler, true);
   }
 };
-
-var delta = function () {
-  var item = document.querySelector('.item:nth-of-type(11)');
-  var pagination = document.querySelector('.pagination');
-
-  var itemLeft = item.getBoundingClientRect().left;
-  var paginationLeft = pagination.getBoundingClientRect().left;
-
-  var shift = Math.round(itemLeft - paginationLeft);
-
-  console.log(shift);
-};
-
-window.onload = delta;
-window.onresize = delta;
 
 var filterSectionTopWheelHandler = function (evt) {
   if (!window.matchMedia('(max-width: 1023px)').matches) {

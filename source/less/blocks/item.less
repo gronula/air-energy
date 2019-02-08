@@ -76,6 +76,18 @@
   grid-area: footer;
 }
 
+.item__separator {
+  display: none;
+}
+
+.item__footer-right {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .item__cost {
   display: flex;
   flex-direction: column;
@@ -456,7 +468,7 @@
     .products__items--row & {
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: flex-start;
       background-color: #eceff1;
       padding: 16px;
       position: relative;
@@ -464,18 +476,6 @@
 
       &:nth-of-type(n + 3) {
         display: none;
-      }
-
-      & + .item__characteristic {
-        &::after {
-          content: "";
-          position: absolute;
-          top: 20px;
-          left: 0;
-          width: 1px;
-          height: calc(100% - 40px);
-          background-color: rgba(69, 90, 100, 0.15);
-        }
       }
     }
 
@@ -485,7 +485,7 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start;
       position: relative;
 
       & + .item__characteristic {
@@ -496,7 +496,7 @@
           left: 0;
           width: 1px;
           height: calc(100% - 40px);
-          background-color: #eceff1;
+          // background-color: #eceff1;
         }
       }
     }
@@ -505,7 +505,8 @@
   .item__footer {
     .products__items--row & {
       justify-content: flex-start;
-      background-color: #fbc02d;
+      align-items: stretch;
+      background-color: #eceff1;
     }
 
     .recently-viewed & {
@@ -653,6 +654,45 @@
     }
   }
 
+  .item__separator {
+    .products__items--row & {
+      display: block;
+      flex-grow: 1;
+      width: 1px;
+      position: relative;
+
+      &:nth-of-type(n + 3) {
+        display: none;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 1px;
+        height: calc(100% - 32px);
+        top: 16px;
+        left: 0;
+        background-color: rgba(69, 90, 100, 0.15);
+      }
+
+      &--hide {
+        &::before {
+          background-color: transparent;
+        }
+      }
+    }
+  }
+
+  .item__footer-right {
+    .products__items--row & {
+      width: auto;
+      align-items: stretch;
+      margin-left: auto;
+      background-color: #fbc02d;
+      flex-grow: 5;
+    }
+  }
+
   .item__cost {
     min-height: 40px;
     margin-right: auto;
@@ -668,10 +708,11 @@
       &::after {
         content: "";
         position: absolute;
-        top: 20px;
+        top: 50%;
         right: 0;
+        transform: translateY(-50%);
         width: 1px;
-        height: calc(100% - 40px);
+        height: calc(100% - 32px);
         background-color: rgba(69, 90, 100, 0.4);
       }
     }
@@ -762,8 +803,12 @@
 
     .products__items--row & {
       border: 0;
+      height: calc(100% - 32px);
+      margin-top: auto;
+      margin-bottom: auto;
       margin-left: 8px;
       margin-right: 8px;
+      flex-grow: 1;
     }
 
     .recently-viewed & {
@@ -771,8 +816,6 @@
     }
 
     &--comparison {
-      margin-right: 8px;
-
       .bestsellers & {
         background-image: url("../../img/icon-comparison-desktop.svg");
       }
@@ -787,11 +830,10 @@
         &::after {
           content: "";
           position: absolute;
-          top: 0;
           right: -8px;
           width: 1px;
-          height: 100%;
           background-color: rgba(69, 90, 100, 0.4);
+          height: 100%;
         }
       }
     }
@@ -820,6 +862,18 @@
       }
     }
   }
+
+  .item__separator {
+    .products__items--row & {
+      &:nth-of-type(n + 3) {
+        display: block;
+      }
+
+      &:nth-of-type(n + 4) {
+        display: none;
+      }
+    }
+  }
 }
 
 @media (min-width: 1200px) {
@@ -834,6 +888,18 @@
       }
     }
   }
+
+  .item__separator {
+    .products__items--row & {
+      &:nth-of-type(n + 4) {
+        display: block;
+      }
+
+      &:nth-of-type(n + 5) {
+        display: none;
+      }
+    }
+  }
 }
 
 @media (min-width: 1300px) {
@@ -841,6 +907,18 @@
     .products__items--row & {
       &:nth-of-type(n + 5) {
         display: flex;
+      }
+    }
+  }
+
+  .item__separator {
+    .products__items--row & {
+      &:nth-of-type(n + 5) {
+        display: block;
+      }
+
+      &:nth-of-type(n + 6) {
+        display: none;
       }
     }
   }
@@ -912,10 +990,6 @@
     width: 40px;
     height: 40px;
     background-size: 20px;
-
-    .products__items--row & {
-      padding: 20px;
-    }
   }
 }
 
