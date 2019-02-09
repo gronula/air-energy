@@ -133,6 +133,11 @@
 
   &--comparison {
     background: url("../../img/icon-comparison-black.svg") no-repeat center;
+
+    .products__items--grid & {
+      opacity: 0.5;
+      border-color: #d6d6d6;
+    }
   }
 
   &--cart {
@@ -816,6 +821,8 @@
     }
 
     &--comparison {
+      margin-right: 8px;
+
       .bestsellers & {
         background-image: url("../../img/icon-comparison-desktop.svg");
       }

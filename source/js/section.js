@@ -345,6 +345,9 @@ var filterSectionTopMousedownHandler = function (evt) {
   if (!window.matchMedia('(max-width: 1023px)').matches) {
     evt.preventDefault();
 
+    filterSectionTopWidth = filterSectionTop.getBoundingClientRect().width;
+    filterWidth = filter.getBoundingClientRect().width;
+
     filterSectionTop.style.transition = '';
 
     var startCoords = {
@@ -401,6 +404,9 @@ var filterSectionTopMousedownHandler = function (evt) {
 var filterSectionTopWheelHandler = function (evt) {
   if (!window.matchMedia('(max-width: 1023px)').matches) {
     evt.preventDefault();
+
+    filterSectionTopWidth = filterSectionTop.getBoundingClientRect().width;
+    filterWidth = filter.getBoundingClientRect().width;
 
     if (evt.deltaY < 0) {
       x -= 40;
