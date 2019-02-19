@@ -26,7 +26,8 @@
 @media (min-width: @desktop-width) {
   .industry {
     order: 6;
-    width: calc(100% - 40px - 24 * (100vw - 1024px) / 416);
+    width: calc(100% - 40px - 24 * (100vw - 1024px) / 536);
+    // width: 100%;
     position: relative;
     margin-bottom: 180px;
     padding-top: 97px;
@@ -36,13 +37,14 @@
   .industry__controls {
     top: 0;
     right: 0;
+    // right: calc(40px + 24 * (100vw - 1024px) / 536);
   }
 
   .industry__header {
-    margin-right: 129px;
-    .fluid(margin-right, 88, 128, 1024, 1440);
+    // margin-right: 129px;
+    .fluid(margin-right, 88, 128, 1024, 1560);
     padding-bottom: 160px;
-    .fluid(padding-left, 40, 64, 1024, 1440);
+    .fluid(padding-left, 40, 64, 1024, 1560);
     z-index: 0;
   }
 
@@ -60,14 +62,17 @@
   }
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1560px) {
   .industry {
-    width: calc(100% - 64px - 32 * (100vw - 1440px) / 480);
+    // width: calc(100% - 64px - 32 * (100vw - 1560px) / 480);
+    width: calc(1496px + (50% - 780px));
   }
 
   .industry__header {
-    .fluid(margin-right, 128, 168, 1440, 1920);
-    .fluid(padding-left, 64, 96, 1440, 1920);
+    // .fluid(margin-right, 128, 168, 1560, 1920);
+    // .fluid(padding-left, 64, 96, 1560, 1920);
+    margin-right: 128px;
+    padding-left: calc(50vw - 716px);
   }
 }
 
@@ -84,7 +89,12 @@
     margin-bottom: 270px;
   }
 
+  .industry__header {
+    margin-right: 144px;
+  }
+
   .industry__title {
+    width: 350px;
     font-size: 56px;
     line-height: 56px;
     margin-bottom: 72px;

@@ -18,8 +18,8 @@
     margin-top: 16px;
     margin-bottom: 56px;
     padding-bottom: 40px;
-    .fluid(padding-left, 40, 64, 1024, 1440);
-    .fluid(padding-right, 40, 64, 1024, 1440);
+    .fluid(padding-left, 40, 64, 1024, 1560);
+    .fluid(padding-right, 40, 64, 1024, 1560);
     font-size: 48px;
     line-height: 49px;
     position: relative;
@@ -28,7 +28,7 @@
       content: "";
       position: absolute;
       bottom: 0;
-      .fluid(left, 40, 64, 1024, 1440);
+      .fluid(left, 40, 64, 1024, 1560);
       width: 112px;
       height: 1px;
       background-color: #000000;
@@ -51,16 +51,22 @@
   }
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1560px) {
   .title {
-    .fluid(padding-left, 64, 96, 1440, 1920);
-    .fluid(padding-right, 64, 96, 1440, 1920);
+    // .fluid(padding-left, 64, 96, 1560, 1920);
+    // .fluid(padding-right, 64, 96, 1560, 1920);
+    width: calc(50% - 160px - (50% - 716px));
+    margin-left: calc(50% - 716px);
+    padding-left: 0;
+    padding-right: 64px;
 
     &::after {
-      .fluid(left, 64, 96, 1440, 1920);
+      // .fluid(left, 64, 96, 1560, 1920);
+      left: 0;
     }
 
     &--hide {
+      margin-left: 0;
       padding-left: 0;
       padding-right: 0;
     }

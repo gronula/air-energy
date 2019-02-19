@@ -179,7 +179,7 @@
 
       &::after {
         background: url("../../img/compressor.svg") no-repeat center;
-        background-size: 22vw;
+        background-size: 90%;
       }
     }
 
@@ -190,7 +190,7 @@
 
       &::after {
         background: url("../../img/dehydrator.svg") no-repeat 83% center;
-        background-size: 9vw;
+        background-size: 25%;
       }
     }
 
@@ -200,7 +200,7 @@
 
       &::after {
         background: url("../../img/pump.svg") no-repeat center;
-        background-size: 12vw;
+        background-size: 70%;
       }
     }
 
@@ -211,7 +211,7 @@
 
       &::after {
         background: url("../../img/powerstation.svg") no-repeat 80% center;
-        background-size: 19vw;
+        background-size: 50%;
       }
     }
 
@@ -222,7 +222,7 @@
 
       &::after {
         background: url("../../img/pneumotool.svg") no-repeat center;
-        background-size: 15vw;
+        background-size: 70%;
       }
     }
 
@@ -445,13 +445,16 @@
   }
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1560px) {
   .categories {
     height: auto;
+    padding-left: calc(50% - 780px);
+    padding-right: calc(50% - 780px);
   }
 
   .categories__list {
-    grid-template-columns: 33vw 21vw 21vw auto;
+    // grid-template-columns: 33vw 21vw 21vw auto;
+    grid-template-columns: 514px 328px 328px auto;
   }
 
   .categories__item {

@@ -25,9 +25,9 @@
 
 @media (min-width: @desktop-width) {
   .header {
-    margin-left: 80px;
-    .fluid(padding-left, 40, 64, 1024, 1440);
-    .fluid(padding-right, 40, 64, 1024, 1440);
+    // margin-left: 80px;
+    .fluid(padding-left, 40, 64, 1024, 1560);
+    .fluid(padding-right, 40, 64, 1024, 1560);
     position: fixed;
     z-index: 3;
     left: 0;
@@ -48,9 +48,11 @@
   }
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1560px) {
   .header {
-    .fluid(padding-left, 64, 96, 1440, 1920);
-    .fluid(padding-right, 64, 96, 1440, 1920);
+    // .fluid(padding-left, 64, 96, 1560, 1920);
+    // .fluid(padding-right, 64, 96, 1560, 1920);
+    padding-left: calc(50% - 716px);
+    padding-right: calc(50% - 716px);
   }
 }

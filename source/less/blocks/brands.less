@@ -65,8 +65,8 @@
     min-height: 331px;
     display: flex;
     flex-wrap: wrap;
-    .fluid(margin-left, 40, 64, 1024, 1440);
-    .fluid(margin-right, 40, 64, 1024, 1440);
+    // .fluid(margin-left, 40, 64, 1024, 1560);
+    // .fluid(margin-right, 40, 64, 1024, 1560);
     padding-bottom: 0;
     background-color: transparent;
     overflow: hidden;
@@ -110,9 +110,11 @@
   }
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1560px) {
   .brands {
-    .fluid(margin-left, 64, 96, 1440, 1920);
-    .fluid(margin-right, 64, 96, 1440, 1920);
+    margin-left: calc(50% - 780px);
+    margin-right: calc(50% - 780px);
+    // .fluid(margin-left, 64, 96, 1560, 1920);
+    // .fluid(margin-right, 64, 96, 1560, 1920);
   }
 }

@@ -18,12 +18,6 @@
   color: @title-color;
 }
 
-.recently-viewed__products {
-  &--copy {
-    display: none;
-  }
-}
-
 @media (min-width: @desktop-width) {
   .recently-viewed {
     order: 6;
@@ -51,9 +45,13 @@
     top: 180px;
     left: 0;
     flex-shrink: 0;
+  }
+}
 
-    &--copy {
-      left: 1800px;
-    }
+@media (min-width: 1560px) {
+  .recently-viewed {
+    margin-left: calc(50% - 780px);
+    margin-right: calc(50% - 780px);
+    overflow: hidden;
   }
 }

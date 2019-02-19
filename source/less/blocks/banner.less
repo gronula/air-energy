@@ -112,19 +112,25 @@
   }
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1560px) {
   .banner {
+    padding-left: calc(50% - 780px);
+    padding-right: calc(50% - 780px);
+
     &::after {
-      left: 75vw;
+      // left: 75vw;
+      left: 1170px;
     }
   }
 
   .banner__controls {
-    left: calc(75vw - 32px);
+    // left: calc(75vw - 32px);
+    left: calc(50% + 358px);
   }
 
   .banner__slide {
-    width: 75vw;
+    // width: 75vw;
+    width: 1170px;
   }
 }
 

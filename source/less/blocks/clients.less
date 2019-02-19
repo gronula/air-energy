@@ -65,8 +65,8 @@
   }
 
   .clients__list {
-    padding-left: 40px;
-    padding-right: 40px;
+    .fluid(padding-left, 40, 64, 1024, 1560);
+    .fluid(padding-right, 40, 64, 1024, 1560);
   }
 
   .clients__image-wrapper {
@@ -74,5 +74,14 @@
     padding-left: 0;
     max-height: 81px;
     max-width: 202px;
+  }
+}
+
+@media (min-width: 1560px) {
+  .clients__list {
+    margin-left: calc(50vw - 720px);
+    margin-right: calc(50vw - 720px);
+    padding-left: 64px;
+    padding-right: 64px;
   }
 }

@@ -150,21 +150,25 @@
   padding-right: 24px;
   border-bottom: 1px solid #eceff1;
   height: 0;
-  transform: scaleY(0);
-  transition:
-    transform 0.5s cubic-bezier(0.77, 0, 0.175, 1),
-    height 0.5s cubic-bezier(0.77, 0, 0.175, 1),
-    padding 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  opacity: 0;
+  // transform: scale(0);
+  // transform-origin: 50% 0;
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  // transition:
+  //   transform 0.5s cubic-bezier(0.77, 0, 0.175, 1),
+  //   height 0.5s cubic-bezier(0.77, 0, 0.175, 1),
+  //   padding 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 
   &--opened {
     overflow: visible;
     padding-bottom: 28px;
     height: auto;
-    transform: scaleY(1);
-    transition:
-      transform 0.5s cubic-bezier(0.77, 0, 0.175, 1),
-      height 0.5s cubic-bezier(0.77, 0, 0.175, 1),
-      padding 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    opacity: 1;
+    // transform: scale(1);
+    // transition:
+    //   transform 0.5s cubic-bezier(0.77, 0, 0.175, 1),
+    //   height 0.5s cubic-bezier(0.77, 0, 0.175, 1),
+    //   padding 0.5s cubic-bezier(0.77, 0, 0.175, 1);
   }
 
   &--choice {
@@ -338,10 +342,11 @@
 
   &--sort {
     width: 100%;
-    height: 56px;
-    display: grid;
-    grid-template-columns: auto min-content;
-    grid-template-areas: "caption sort" "caption sort";
+    min-height: 56px;
+    // display: grid;
+    // grid-template-columns: auto min-content;
+    // grid-template-areas: "caption sort" "caption sort";
+    display: flex;
   }
 
   &:last-of-type {
@@ -365,7 +370,8 @@
   }
 
   .filter--opened & {
-    display: grid;
+    // display: grid;
+    display: flex;
   }
 }
 
@@ -376,6 +382,7 @@
   line-height: 23px;
   letter-spacing: 0.01em;
   color: #314047;
+  flex-grow: 1;
   margin-top: 0;
   margin-bottom: 0;
   padding-top: 20px;
@@ -391,6 +398,7 @@
     line-height: 18px;
     color: rgba(69, 90, 100, 0.7);
     z-index: 1;
+    flex-grow: 1;
   }
 
   &::after {
@@ -421,7 +429,8 @@
 
   .filter__select--sort & {
     position: absolute;
-    bottom: 8px;
+    // bottom: 8px;
+    top: 24px;
     left: 12px;
     right: 12px;
     white-space: nowrap;
@@ -472,7 +481,6 @@
   }
 }
 
-
 .filter__checkboxes {
   position: absolute;
   top: calc(100% + 5px);
@@ -491,6 +499,12 @@
     0 0 4px rgba(211, 214, 215, 0.2),
     0 0 64px rgba(211, 214, 215, 0.05),
     0 0 32px rgba(211, 214, 215, 0.05);
+
+  &--top {
+    top: auto;
+    bottom: calc(100% + 5px);
+    transform-origin: 100% 100%;
+  }
 
   .filter__select--opened & {
     opacity: 1;
@@ -610,8 +624,8 @@
     flex-direction: column;
     padding-top: 103px;
     padding-bottom: 88px;
-    .fluid(padding-left, 40, 64, 1024, 1440);
-    .fluid(padding-right, 40, 64, 1024, 1440);
+    .fluid(padding-left, 40, 64, 1024, 1560);
+    .fluid(padding-right, 40, 64, 1024, 1560);
 
     .products & {
       position: relative;
@@ -746,8 +760,9 @@
   .filter__heading {
     padding-top: 24px;
     padding-bottom: 24px;
-    .fluid(padding-left, 16, 24, 1024, 1440);
-    .fluid(padding-right, 16, 24, 1024, 1440);
+    .fluid(padding-left, 16, 24, 1024, 1560);
+    .fluid(padding-right, 16, 24, 1024, 1560);
+    border-bottom: 0;
 
     &::after {
       right: 24px;
@@ -770,14 +785,15 @@
   }
 
   .filter__block {
+    opacity: 1;
     padding-bottom: 0;
     padding-left: 0;
     padding-right: 0;
 
     .products & {
       display: flex;
-      .fluid(padding-left, 16, 24, 1024, 1440);
-      .fluid(padding-right, 16, 24, 1024, 1440);
+      .fluid(padding-left, 16, 24, 1024, 1560);
+      .fluid(padding-right, 16, 24, 1024, 1560);
 
       &--categories {
         height: auto;
@@ -810,6 +826,10 @@
         height: auto;
         flex-shrink: 0;
         border-bottom: 0;
+      }
+
+      &--opened {
+        overflow: hidden;
       }
     }
   }
@@ -860,7 +880,8 @@
       display: block;
 
       &--sort {
-        display: grid;
+        // display: grid;
+        display: flex;
         margin-top: 0;
         margin-bottom: 0;
         width: auto;
@@ -872,8 +893,8 @@
 
       &--inner {
         width: auto;
-        .fluid(margin-left, 16, 24, 1024, 1440);
-        .fluid(margin-right, 16, 24, 1024, 1440);
+        .fluid(margin-left, 16, 24, 1024, 1560);
+        .fluid(margin-right, 16, 24, 1024, 1560);
       }
     }
   }
@@ -886,7 +907,9 @@
     }
 
     .filter__select:first-of-type & {
-      min-width: 240px;
+      .products & {
+        min-width: 240px;
+      }
     }
   }
 
@@ -984,10 +1007,12 @@
   }
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1560px) {
   .filter {
-    .fluid(padding-left, 64, 96, 1440, 1920);
-    .fluid(padding-right, 64, 96, 1440, 1920);
+    padding-left: calc(50% - 716px);
+    padding-right: calc(50% - 716px);
+    // .fluid(padding-left, 64, 96, 1560, 1920);
+    // .fluid(padding-right, 64, 96, 1560, 1920);
   }
 
   .filter__main {
