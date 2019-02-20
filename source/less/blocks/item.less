@@ -63,9 +63,7 @@
 }
 
 .item__characteristic {
-  .products & {
-    display: none;
-  }
+  display: none;
 }
 
 .item__footer {
@@ -260,18 +258,19 @@
     }
 
     .recently-viewed & {
-      width: 300px;
-      flex-shrink: 0;
+      // width: 300px;
+      .fluid(width, 312px, 392px, @notebook-width, @desktop-width);
+      // flex-shrink: 0;
       border: 1px solid rgba(0, 0, 0, 0.1);
       border-right: 0;
-      padding: 0;
-      display: grid;
-      grid-template-columns: auto max-content;
-      grid-template-rows: auto min-content 64px;
-      grid-template-areas:
-        "image image"
-        "name footer"
-        "characteristics characteristics";
+      // padding: 0;
+      // display: grid;
+      // grid-template-columns: auto max-content;
+      // grid-template-rows: auto min-content 64px;
+      // grid-template-areas:
+      //   "image image"
+      //   "name footer"
+      //   "characteristics characteristics";
 
       &:last-of-type {
         border-right: 1px solid rgba(0, 0, 0, 0.1);
@@ -304,12 +303,12 @@
     }
 
     .recently-viewed & {
-      width: 300px;
-      margin-bottom: 0;
-      padding-top: 60px;
-      padding-bottom: 40px;
-      padding-left: 40px;
-      padding-right: 40px;
+      // width: 300px;
+      // margin-bottom: 0;
+      // padding-top: 60px;
+      // padding-bottom: 40px;
+      // padding-left: 40px;
+      // padding-right: 40px;
     }
   }
 
@@ -348,7 +347,7 @@
     }
 
     .recently-viewed & {
-      display: none;
+      // display: none;
     }
   }
 
@@ -366,8 +365,8 @@
     }
 
     .recently-viewed & {
-      padding-left: 16px;
-      padding-right: 16px;
+      // padding-left: 16px;
+      // padding-right: 16px;
     }
   }
 
@@ -401,8 +400,8 @@
     }
 
     .recently-viewed & {
-      font-size: 15px;
-      line-height: 18px;
+      // font-size: 15px;
+      // line-height: 18px;
     }
 
     &:hover {
@@ -443,10 +442,10 @@
     }
 
     .recently-viewed & {
-      width: 300px;
-      border-top: 1px solid #eceff1;
-      margin-bottom: 0;
-      padding-right: 0;
+      // width: 300px;
+      // border-top: 1px solid #eceff1;
+      // margin-bottom: 0;
+      // padding-right: 0;
     }
   }
 
@@ -489,24 +488,24 @@
     }
 
     .recently-viewed & {
-      padding: 12px;
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      position: relative;
+      // padding: 12px;
+      // flex-grow: 1;
+      // display: flex;
+      // flex-direction: column;
+      // justify-content: center;
+      // align-items: flex-start;
+      // position: relative;
 
-      & + .item__characteristic {
-        &::after {
-          content: "";
-          position: absolute;
-          top: 20px;
-          left: 0;
-          width: 1px;
-          height: calc(100% - 40px);
-        }
-      }
+      // & + .item__characteristic {
+      //   &::after {
+      //     content: "";
+      //     position: absolute;
+      //     top: 20px;
+      //     left: 0;
+      //     width: 1px;
+      //     height: calc(100% - 40px);
+      //   }
+      // }
     }
   }
 
@@ -518,10 +517,10 @@
     }
 
     .recently-viewed & {
-      align-items: flex-start;
-      padding-top: 2px;
-      padding-left: 16px;
-      padding-right: 16px;
+      // align-items: flex-start;
+      // padding-top: 2px;
+      // padding-left: 16px;
+      // padding-right: 16px;
     }
   }
 
@@ -550,10 +549,10 @@
     }
 
     .recently-viewed & {
-      font-weight: 700;
-      font-size: 14px;
-      line-height: 17px;
-      color: @title-color;
+      // font-weight: 700;
+      // font-size: 14px;
+      // line-height: 17px;
+      // color: @title-color;
     }
   }
 
@@ -573,11 +572,11 @@
     }
 
     .recently-viewed & {
-      margin-top: 0;
-      margin-bottom: 0;
-      font-size: 12px;
-      line-height: 14px;
-      color: rgba(51, 51, 51, 0.5);
+      // margin-top: 0;
+      // margin-bottom: 0;
+      // font-size: 12px;
+      // line-height: 14px;
+      // color: rgba(51, 51, 51, 0.5);
     }
   }
 
@@ -749,9 +748,9 @@
       }
 
       .recently-viewed & {
-        &::after {
-          display: none;
-        }
+        // &::after {
+        //   display: none;
+        // }
       }
     }
 
@@ -770,8 +769,8 @@
     }
 
     .recently-viewed & {
-      font-size: 14px;
-      line-height: 17px;
+      // font-size: 14px;
+      // line-height: 17px;
     }
   }
 
@@ -814,7 +813,7 @@
     }
 
     .recently-viewed & {
-      display: none;
+      // display: none;
     }
 
     &--comparison {
