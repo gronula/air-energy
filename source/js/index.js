@@ -882,9 +882,18 @@ var bestsellersItemClickHandler = function (evt) {
   window.location.href = '#';
 };
 
+var bestsellersItemMousedownHandler = function (evt) {
+  evt.preventDefault();
+  if (evt.which === 2) {
+    window.open('#', '_blank');
+    window.focus();
+  }
+};
+
 var bestsellersItems = main.querySelectorAll('.item--bestsellers');
 bestsellersItems.forEach(function (it) {
   it.addEventListener('click', bestsellersItemClickHandler);
+  it.addEventListener('mousedown', bestsellersItemMousedownHandler);
 });
 
 var requestAnimationFrame = window.requestAnimationFrame ||

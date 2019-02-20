@@ -498,7 +498,6 @@ var bestsellersItemClickHandler = function (evt) {
 var bestsellersItemMousedownHandler = function (evt) {
   evt.preventDefault();
   if (evt.which === 2) {
-    console.log(evt.which);
     window.open('#', '_blank');
     window.focus();
   }
