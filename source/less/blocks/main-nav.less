@@ -64,7 +64,7 @@
   }
 }
 
-@media (min-width: @desktop-width) {
+@media (min-width: @notebook-width) {
   .main-nav {
     overflow: hidden;
     order: 4;
@@ -254,25 +254,6 @@
       .main-nav__list:not(.main-nav__list--fixed):not(.main-nav__list--closed) &:nth-of-type(n + 6) {
         display: none;
       }
-    }
-  }
-}
-
-@media (min-width: 1920px) {
-  .main-nav__link {
-    font-size: 16px;
-  }
-}
-
-@media (min-width: 2200px) {
-  .main-nav__link {
-    font-size: 18px;
-
-    .main-nav__list--fixed &,
-    .main-nav__list--closed & {
-      font-size: 1.16em;
-      line-height: 1em;
-      letter-spacing: 0.02em;
     }
   }
 }

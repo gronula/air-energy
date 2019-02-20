@@ -43,8 +43,8 @@
   }
 }
 
-@media (min-width: 1560px) {
+@media (min-width: @desktop-width) {
   .pagination {
-    margin-left: calc((50% - (64px + 32 * (100vw - 1560px) / 480) / 4) - (360px - 25%) / 2);
+    margin-left: calc((50% - (50% - @desktop-width / 2 + @desktop-offset) / 4) - (360px - 25%) / 2);
   }
 }

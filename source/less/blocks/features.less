@@ -46,15 +46,15 @@
   }
 }
 
-@media (min-width: @desktop-width) {
+@media (min-width: @notebook-width) {
   .features {
     order: 8;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    // width: 40%;
-    .fluid(width, 410, 468, 1024, 1560);
-    margin-left: auto;
+    width: calc(40% - (@notebook-offset + unit(@desktop-offset - @notebook-offset) * (100vw - @notebook-width) / unit(@desktop-width - @notebook-width)));
+    max-width: 504px;
+    .fluid(padding-right, @notebook-offset, @desktop-offset, @notebook-width, @desktop-width);
   }
 
   .features__items {
@@ -62,10 +62,8 @@
     height: 100%;
     padding-top: 72px;
     padding-bottom: 97px;
-    // padding-left: 5vw;
-    // padding-right: 5vw;
-    .fluid(padding-left, 40, 64, 1024, 1560);
-    .fluid(padding-right, 40, 64, 1024, 1560);
+    .fluid(padding-left, @notebook-offset, @desktop-offset, @notebook-width, @desktop-width);
+    .fluid(padding-right, @notebook-offset, @desktop-offset, @notebook-width, @desktop-width);
   }
 
   .features__value {
@@ -81,18 +79,15 @@
   }
 }
 
-@media (min-width: 1560px) {
+@media (min-width: @desktop-width) {
   .features {
-    width: calc(50% - 312px);
-    // margin-left: 0;
-    // margin-right: calc(50% - 780px);
-    padding-right: calc(50% - 780px);
-    // .fluid(padding-left, 64, 72, 1560, 1920);
-    // .fluid(padding-right, 64, 96, 1560, 1920);
+    width: calc(50% - @desktop-width * 0.2);
+    max-width: none;
+    padding-right: calc(50% - @desktop-width / 2 + @desktop-offset);
   }
 
   .features__items {
-    padding-left: 64px;
-    padding-right: 64px;
+    padding-left: @desktop-offset;
+    padding-right: @desktop-offset;
   }
 }

@@ -133,14 +133,14 @@
   cursor: pointer;
 }
 
-@media (min-width: @desktop-width) {
+@media (min-width: @notebook-width) {
   .feedback {
     width: 100%;
     margin-left: 20px;
     padding-top: 120px;
     padding-bottom: 144px;
-    .fluid(padding-left, 96, 224, 1024, 1560);
-    .fluid(padding-right, 96, 224, 1024, 1560);
+    .fluid(padding-left, 96px, 224px, @notebook-width, @desktop-width);
+    .fluid(padding-right, 96px, 224px, @notebook-width, @desktop-width);
     display: flex;
     flex-wrap: wrap;
   }
@@ -220,13 +220,10 @@
   }
 }
 
-@media (min-width: 1560px) {
+@media (min-width: @desktop-width) {
   .feedback {
-    // .fluid(margin-left, 20, 32, 1560, 1920);
-    // .fluid(padding-left, 224, 272, 1560, 1920);
-    // .fluid(padding-right, 224, 272, 1560, 1920);
-    margin-left: calc(50% - 780px);
-    margin-right: calc(50% - 780px);
+    margin-left: calc(50% - @desktop-width / 2 + @desktop-offset);
+    margin-right: calc(50% - @desktop-width / 2 + @desktop-offset);
     padding-left: 224px;
     padding-right: 224px;
   }

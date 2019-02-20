@@ -56,18 +56,20 @@
   }
 }
 
-@media (min-width: @desktop-width) {
+@media (min-width: @notebook-width) {
   .brands {
     margin-top: 1px;
     margin-bottom: 1px;
+    margin-left: auto;
+    margin-right: auto;
     order: 5;
-    width: 100%;
+    width: calc(100% - (@notebook-offset + unit(@desktop-offset - @notebook-offset) * (100vw - @notebook-width) / unit(@desktop-width - @notebook-width)) * 2);
     min-height: 331px;
     display: flex;
     flex-wrap: wrap;
-    // .fluid(margin-left, 40, 64, 1024, 1560);
-    // .fluid(margin-right, 40, 64, 1024, 1560);
     padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
     background-color: transparent;
     overflow: hidden;
   }
@@ -110,11 +112,10 @@
   }
 }
 
-@media (min-width: 1560px) {
+@media (min-width: @desktop-width) {
   .brands {
-    margin-left: calc(50% - 780px);
-    margin-right: calc(50% - 780px);
-    // .fluid(margin-left, 64, 96, 1560, 1920);
-    // .fluid(margin-right, 64, 96, 1560, 1920);
+    flex-grow: 1;
+    margin-left: calc(50% - @desktop-width / 2 + @desktop-offset);
+    margin-right: calc(50% - @desktop-width / 2 + @desktop-offset);
   }
 }

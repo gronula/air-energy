@@ -38,18 +38,19 @@
   color: @title-color;
 }
 
-@media (min-width: @desktop-width) {
+@media (min-width: @notebook-width) {
   .info {
     order: 2;
     flex-direction: row;
     flex-wrap: wrap;
-    width: 60%;
+    width: calc(60% - (40px + 24 * (100vw - 1024px) / 664));
     margin-bottom: 56px;
-    margin-left: auto;
+    margin-left: 0;
+    margin-right: auto;
     padding-top: 64px;
     padding-bottom: 64px;
-    .fluid(padding-left, 40, 64, 1024, 1560);
-    .fluid(padding-right, 40, 64, 1024, 1560);
+    .fluid(padding-left, @notebook-offset, @desktop-offset, @notebook-width, @desktop-width);
+    .fluid(padding-right, @notebook-offset, @desktop-offset, @notebook-width, @desktop-width);
     background-color: #15262e;
 
     .main--section & {
@@ -75,14 +76,11 @@
   }
 }
 
-@media (min-width: 1560px) {
+@media (min-width: @desktop-width) {
   .info {
-    width: calc(50% + 160px - (50% - 716px));
-    margin-left: 0;
-    margin-right: calc(50% - 780px);
+    width: calc(50% + 160px - (50% - @desktop-width / 2 + @desktop-offset));
+    margin-right: calc(50% - @desktop-width / 2 + @desktop-offset);
     padding-left: 64px;
     padding-right: 64px;
-    // .fluid(padding-left, 64, 96, 1560, 1920);
-    // .fluid(padding-right, 64, 96, 1560, 1920);
   }
 }

@@ -4,7 +4,7 @@
   }
 }
 
-@media (min-width: @desktop-width) {
+@media (min-width: @notebook-width) {
   .link {
     position: relative;
   }
@@ -17,12 +17,6 @@
       visibility 0.4s,
       opacity 0.4s cubic-bezier(0.77, 0, 0.175, 1);
 
-    div:not(.main-nav__list--hidden) .link:hover & {
-      // opacity: 0;
-      // transform: translateY(40%);
-      // visibility: hidden;
-    }
-
     &--hover {
       position: absolute;
       top: 0;
@@ -31,12 +25,6 @@
       opacity: 0;
       transform: translateY(-40%);
       visibility: hidden;
-
-      div:not(.main-nav__list--hidden) .link:hover & {
-        // opacity: 1;
-        // transform: translateY(0);
-        // visibility: visible;
-      }
     }
   }
 }

@@ -2,8 +2,8 @@
   border-top: 1px solid #eceff1;
   padding-top: 24px;
   padding-bottom: 41px;
-  .fluid(padding-left, 12, 40, 320, 1024);
-  .fluid(padding-right, 12, 40, 320, 1024);
+  .fluid(padding-left, 12px, 40px, 320px, 1024px);
+  .fluid(padding-right, 12px, 40px, 320px, 1024px);
 
   &:last-of-type {
     border-bottom: 1px solid #eceff1;
@@ -145,7 +145,7 @@
   }
 }
 
-@media (min-width: @desktop-width) {
+@media (min-width: @notebook-width) {
   .item {
     position: relative;
     z-index: 1;
@@ -272,6 +272,10 @@
         "image image"
         "name footer"
         "characteristics characteristics";
+
+      &:last-of-type {
+        border-right: 1px solid rgba(0, 0, 0, 0.1);
+      }
     }
 
     &--bg-dark {
@@ -501,7 +505,6 @@
           left: 0;
           width: 1px;
           height: calc(100% - 40px);
-          // background-color: #eceff1;
         }
       }
     }
@@ -648,13 +651,7 @@
 
     .bestsellers .item:nth-of-type(1) .item__characteristic:first-of-type &:hover {
       &::after {
-        transform: translateX(calc(-15% + -35 * (100vw - 1024px) / 536)) scale(1);
-      }
-    }
-
-    .bestsellers .item:nth-of-type(4) .item__characteristic:last-of-type &:hover {
-      &::after {
-        // transform: translateX(calc(-75% + 25 * (100vw - 1024px) / 536)) scale(1);
+        transform: translateX(calc(-15% + -35 * (100vw - 1024px) / 664)) scale(1);
       }
     }
   }
@@ -943,7 +940,7 @@
   }
 }
 
-@media (min-width: 1560px) {
+@media (min-width: @desktop-width) {
   .item {
     .bestsellers & {
       &:nth-of-type(1) {
@@ -979,12 +976,6 @@
         transform: translateX(-50%) scale(1);
       }
     }
-
-    .bestsellers .item:nth-of-type(4) .item__characteristic:last-of-type &:hover {
-      &::after {
-        // transform: translateX(-50%) scale(1);
-      }
-    }
   }
 
   .item__cost {
@@ -997,29 +988,5 @@
     width: 40px;
     height: 40px;
     background-size: 20px;
-  }
-}
-
-@media (min-width: 1920px) {
-  .item {
-    .bestsellers & {
-      min-height: 432px;
-      padding-top: 40px;
-      padding-bottom: 34px;
-    }
-  }
-
-  .item__image {
-    max-width: 100%;
-  }
-}
-
-@media (min-width: 2200px) {
-  .item {
-    .bestsellers & {
-      min-height: 540px;
-      padding-top: 50px;
-      padding-bottom: 42px;
-    }
   }
 }

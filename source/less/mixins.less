@@ -1,8 +1,8 @@
 .fluid(@property; @min-value; @max-value; @min-vw; @max-vw) {
-  @value1: "@{min-value}px";
-  @value2: @max-value - @min-value;
-  @width1: "(100vw - @{min-vw}px)";
-  @width2: @max-vw - @min-vw;
+  @value1: @min-value;
+  @value2: unit(@max-value - @min-value);
+  @width1: "(100vw - @{min-vw})";
+  @width2: unit(@max-vw - @min-vw);
 
   @{property}: ~"calc(@{value1} + @{value2} * @{width1} / @{width2})";
 }

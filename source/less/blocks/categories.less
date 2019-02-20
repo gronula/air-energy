@@ -104,10 +104,12 @@
   display: none;
 }
 
-@media (min-width: @desktop-width) {
+@media (min-width: @notebook-width) {
   .categories {
     order: 2;
     width: 100%;
+    .fluid(padding-left, @notebook-offset, @desktop-offset, @notebook-width, @desktop-width);
+    .fluid(padding-right, @notebook-offset, @desktop-offset, @notebook-width, @desktop-width);
   }
 
   .categories__list {
@@ -116,7 +118,7 @@
     height: 100%;
     display: grid;
     grid-template-rows: 1fr 1fr;
-    grid-template-columns: calc(38vw - 80px) 28vw 6vw auto;
+    grid-template-columns: 33vw 29vw 4vw auto;
     grid-template-areas:
       "compressor dehydrator dehydrator pneumotool"
       "compressor pump powerstation powerstation";
@@ -227,10 +229,6 @@
     }
 
     &:hover {
-      // background-position-x: 100vw;
-      // background-image: transparent;
-      // background-size: 0;
-
       &::before {
         opacity: 0;
       }
@@ -445,15 +443,14 @@
   }
 }
 
-@media (min-width: 1560px) {
+@media (min-width: @desktop-width) {
   .categories {
     height: auto;
-    padding-left: calc(50% - 780px);
-    padding-right: calc(50% - 780px);
+    padding-left: calc(50% - @desktop-width / 2 + @desktop-offset);
+    padding-right: calc(50% - @desktop-width / 2 + @desktop-offset);
   }
 
   .categories__list {
-    // grid-template-columns: 33vw 21vw 21vw auto;
     grid-template-columns: 514px 328px 328px auto;
   }
 
@@ -501,38 +498,5 @@
         display: none;
       }
     }
-  }
-}
-
-@media (min-width: 1920px) {
-  .categories__item {
-    height: 409px;
-    padding-top: 46px;
-
-    &--compressor {
-      height: 818px;
-      padding-top: 96px;
-    }
-  }
-}
-
-@media (min-width: 2200px) {
-  .categories__item {
-    height: 511px;
-    padding-top: 57px;
-
-    &--compressor {
-      height: 1022px;
-      padding-top: 120px;
-    }
-  }
-
-  .categories__title {
-    font-size: 27px;
-  }
-
-  .categories__sublink {
-    font-size: 18px;
-    line-height: 18px;
   }
 }

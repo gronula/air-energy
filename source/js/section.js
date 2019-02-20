@@ -252,8 +252,10 @@ var getFilterBlockHeight = function () {
     }
 
     filterMain.style.transition = 'none';
+
     var filterMainOffsetBottom = filterMain.getBoundingClientRect().bottom;
-    filterMain.style.transition = 'none';
+
+    filterMain.style.transition = '';
 
     it.style.transition = 'none';
     it.classList.remove('filter__checkboxes--top');

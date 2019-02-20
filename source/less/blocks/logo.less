@@ -63,7 +63,7 @@
   margin-bottom: 0;
 }
 
-@media (min-width: @desktop-width) {
+@media (min-width: @notebook-width) {
   .logo {
     order: 3;
     margin-top: 28px;
@@ -77,8 +77,8 @@
       margin-bottom: 0;
       padding-top: 35px;
       padding-bottom: 35px;
-      .fluid(padding-left, 40, 64, 1024, 1560);
-      .fluid(padding-right, 24, 48, 1024, 1560);
+      .fluid(padding-left, @notebook-offset, @desktop-offset, @notebook-width, @desktop-width);
+      .fluid(padding-right, 24px, 48px, @notebook-width, @desktop-width);
       border-right: 1px solid rgba(255, 255, 255, 0.1);
       display: flex;
       flex-wrap: wrap;
@@ -108,8 +108,7 @@
     position: relative;
     font-size: 13px;
     line-height: 15px;
-    // width: 88px;
-    .fluid(width, 88, 224, 1024, 1560);
+    .fluid(width, 88px, 224px, @notebook-width, @desktop-width);
     flex-grow: 1;
 
     &::before {
@@ -123,30 +122,13 @@
   }
 }
 
-@media (min-width: 1560px) {
+@media (min-width: @desktop-width) {
   .logo--footer {
-    // .fluid(padding-left, 144, 176, 1560, 1920);
-    // .fluid(padding-right, 48, 64, 1560, 1920);
-    padding-left: calc(50vw - 716px);
-    .fluid(padding-right, 48, 64, 1560, 1920);
+    padding-left: calc(50vw - @desktop-width / 2 + @desktop-offset);
+    padding-right: 48px;
   }
 
   .logo__text {
     width: 224px;
-  }
-}
-
-@media (min-width: 1920px) {
-  .logo--footer {
-    padding-top: 42px;
-    padding-bottom: 42px;
-    padding-right: 64px;
-  }
-}
-
-@media (min-width: 2200px) {
-  .logo--footer {
-    padding-top: 53px;
-    padding-bottom: 53px;
   }
 }

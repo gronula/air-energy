@@ -2,7 +2,7 @@
   display: none;
 }
 
-@media (min-width: @desktop-width) {
+@media (min-width: @notebook-width) {
   .support {
     counter-reset: items;
     order: 9;
@@ -11,8 +11,8 @@
     width: 100%;
     padding-top: 104px;
     padding-bottom: 103px;
-    .fluid(padding-left, 40, 64, 1024, 1560);
-    .fluid(padding-right, 40, 64, 1024, 1560);
+    .fluid(padding-left, @notebook-offset, @desktop-offset, @notebook-width, @desktop-width);
+    .fluid(padding-right, @notebook-offset, @desktop-offset, @notebook-width, @desktop-width);
   }
 
   .support__title {
@@ -190,12 +190,10 @@
   }
 }
 
-@media (min-width: 1560px) {
+@media (min-width: @desktop-width) {
   .support {
-    padding-left: calc(50% - 716px);
-    padding-right: calc(50% - 716px);
-    // .fluid(padding-left, 64, 96, 1560, 1920);
-    // .fluid(padding-right, 64, 96, 1560, 1920);
+    padding-left: calc(50% - @desktop-width / 2 + @desktop-offset);
+    padding-right: calc(50% - @desktop-width / 2 + @desktop-offset);
   }
 
   .support__item {
@@ -232,72 +230,5 @@
     &:hover {
       background-position: 35px 33px;
     }
-  }
-}
-
-@media (min-width: 1920px) {
-  .support {
-    padding-top: 125px;
-    padding-bottom: 125px;
-  }
-
-  .support__item {
-    height: 407px;
-    padding: 50px 44px;
-
-    &:nth-of-type(1) {
-      background-position: 50px 60%;
-    }
-
-    &:nth-of-type(2) {
-      background-position: 52px 60%;
-    }
-
-    &:nth-of-type(3) {
-      background-position: 43px 60%;
-    }
-
-    &:nth-of-type(4) {
-      background-position: 50px 60%;
-    }
-
-    &:nth-of-type(5) {
-      background-position: 46px 60%;
-    }
-
-    &:nth-of-type(6) {
-      background-position: 50px 60%;
-    }
-
-    &:nth-of-type(7) {
-      background-position: 49px 60%;
-    }
-
-    &:hover {
-      background-position: 42px 40px;
-    }
-  }
-}
-
-@media (min-width: 2200px) {
-  .support {
-    padding-top: 156px;
-    padding-bottom: 156px;
-  }
-
-  .support__title {
-    font-size: 56px;
-    line-height: 56px;
-    margin-bottom: 72px;
-  }
-
-  .support__item {
-    height: 509px;
-    padding: 63px 56px;
-  }
-
-  .support__caption {
-    font-size: 18px;
-    line-height: 21px;
   }
 }
