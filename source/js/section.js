@@ -26,6 +26,7 @@ var filterBlocks = filter.querySelectorAll('.filter__block');
 var filterCaptions = filter.querySelectorAll('.filter__caption');
 var filterSelects = filter.querySelectorAll('.filter__select');
 var filterButtonsView = filter.querySelectorAll('.filter__view  .filter__button');
+var filterButtonsSort = filter.querySelectorAll('.filter__sort  .filter__button');
 var sidebar = main.querySelector('.sidebar');
 // var sidebarLinks = sidebar.querySelectorAll('.sidebar__link');
 var sidebarCatalogLink = sidebar.querySelector('.sidebar__link--catalog');
@@ -375,6 +376,18 @@ var filterButtonViewClickHandler = function (button) {
     } else if (button.classList.contains('filter__button--row')) {
       productsItems.classList.remove('products__items--grid');
       productsItems.classList.add('products__items--row');
+    }
+  });
+};
+
+var filterButtonsSortClickHandler = function (button) {
+  button.addEventListener('click', function (evt) {
+    evt.preventDefault();
+    if (!evt.target.classList.contains('filter__button--active')) {
+      filterButtonsSort.forEach(function (it) {
+        it.classList.remove('filter__button--active');
+      });
+      evt.target.classList.add('filter__button--active');
     }
   });
 };
@@ -1195,6 +1208,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
   for (i = 0; i < filterButtonsView.length; i++) {
     filterButtonViewClickHandler(filterButtonsView[i]);
+  }
+
+  for (i = 0; i < filterButtonsView.length; i++) {
+    filterButtonsSortClickHandler(filterButtonsSort[i]);
   }
 
   for (i = 0; i < citiesFooter.length; i++) {
