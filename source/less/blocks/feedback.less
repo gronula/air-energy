@@ -137,6 +137,8 @@
   .feedback {
     width: 100%;
     margin-left: 20px;
+    .fluid(margin-left, @notebook-offset, @desktop-offset, @notebook-width, @desktop-width);
+    .fluid(margin-right, @notebook-offset, @desktop-offset, @notebook-width, @desktop-width);
     padding-top: 120px;
     padding-bottom: 144px;
     .fluid(padding-left, 96px, 224px, @notebook-width, @desktop-width);

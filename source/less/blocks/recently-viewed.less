@@ -22,18 +22,21 @@
   .recently-viewed {
     order: 6;
     margin-bottom: 0;
+    .fluid(margin-left, @notebook-offset, @desktop-offset, @notebook-width, @desktop-width);
+    .fluid(margin-right, @notebook-offset, @desktop-offset, @notebook-width, @desktop-width);
     padding-top: 88px;
     padding-bottom: 96px;
     min-height: 750px;
     display: flex;
     flex-wrap: wrap;
     position: relative;
+    overflow: hidden;
   }
 
   .recently-viewed__title {
     margin-bottom: 56px;
-    padding-left: 56px;
-    padding-right: 56px;
+    padding-left: 0;
+    padding-right: 0;
     font-size: 36px;
     line-height: 38px;
     letter-spacing: normal;
@@ -50,8 +53,9 @@
 
 @media (min-width: @desktop-width) {
   .recently-viewed {
-    margin-left: calc(50% - 780px);
-    margin-right: calc(50% - 780px);
+    min-height: 800px;
+    margin-left: calc(50% - @desktop-width / 2 + @desktop-offset);
+    margin-right: calc(50% - @desktop-width / 2 + @desktop-offset);
     overflow: hidden;
   }
 }
