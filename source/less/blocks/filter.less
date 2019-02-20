@@ -154,6 +154,12 @@
   }
 }
 
+.filter__slider {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
 .filter__block {
   overflow: hidden;
   display: flex;
@@ -656,6 +662,7 @@
       &--full {
         &::after {
           opacity: 0;
+          z-index: -1;
         }
       }
     }
@@ -734,7 +741,7 @@
     min-width: 100%;
     display: flex;
     margin-bottom: 40px;
-    flex-shrink: 0;
+    // flex-shrink: 0;
   }
 
   .filter__view {
@@ -782,6 +789,10 @@
     }
   }
 
+  .filter__slider {
+    flex-shrink: 0;
+  }
+
   .filter__block {
     opacity: 1;
     padding-bottom: 0;
@@ -801,7 +812,6 @@
       }
 
       &--choice {
-        overflow: visible;
         height: 56px;
         flex-wrap: nowrap;
         order: 3;
