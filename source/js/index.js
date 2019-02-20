@@ -877,6 +877,16 @@ var filterFormsSubmitHandler = function (form) {
   });
 };
 
+var bestsellersItemClickHandler = function (evt) {
+  evt.preventDefault();
+  window.location.href = '#';
+};
+
+var bestsellersItems = main.querySelectorAll('.item--bestsellers');
+bestsellersItems.forEach(function (it) {
+  it.addEventListener('click', bestsellersItemClickHandler);
+});
+
 var requestAnimationFrame = window.requestAnimationFrame ||
                                 window.mozRequestAnimationFrame ||
                                 window.webkitRequestAnimationFrame ||
