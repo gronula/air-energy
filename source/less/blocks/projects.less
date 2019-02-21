@@ -28,10 +28,10 @@
     order: 10;
     display: flex;
     align-items: flex-end;
-    width: calc(100% - 405.5px - (@notebook-offset + unit(@desktop-offset - @notebook-offset) * (100vw - @notebook-width) / unit(@desktop-width - @notebook-width)));
+    width: calc(100% - 670px - (@notebook-offset + unit(@desktop-offset - @notebook-offset) * (100vw - @notebook-width) / unit(@desktop-width - @notebook-width)));
     min-height: 506px;
     margin-bottom: 179px;
-    margin-left: calc(405.5px + (@notebook-offset + unit(@desktop-offset - @notebook-offset) * (100vw - @notebook-width) / unit(@desktop-width - @notebook-width)));
+    margin-left: calc(670px + (@notebook-offset + unit(@desktop-offset - @notebook-offset) * (100vw - @notebook-width) / unit(@desktop-width - @notebook-width)));
     padding-top: 0;
     padding-left: 0;
     position: relative;
@@ -39,10 +39,10 @@
   }
 
   .projects__header {
-    transform: translateX(calc(-405.5px - (@notebook-offset + unit(@desktop-offset - @notebook-offset) * (100vw - @notebook-width) / unit(@desktop-width - @notebook-width))));
-    width: calc(405.5px + (@notebook-offset + unit(@desktop-offset - @notebook-offset) * (100vw - @notebook-width) / unit(@desktop-width - @notebook-width)));
+    transform: translateX(calc(-670px - (@notebook-offset + unit(@desktop-offset - @notebook-offset) * (100vw - @notebook-width) / unit(@desktop-width - @notebook-width))));
+    width: calc(400px + (@notebook-offset + unit(@desktop-offset - @notebook-offset) * (100vw - @notebook-width) / unit(@desktop-width - @notebook-width)));
     margin-bottom: auto;
-    margin-right: calc(-405.5px - (@notebook-offset + unit(@desktop-offset - @notebook-offset) * (100vw - @notebook-width) / unit(@desktop-width - @notebook-width)));
+    margin-right: calc(-400px - (@notebook-offset + unit(@desktop-offset - @notebook-offset) * (100vw - @notebook-width) / unit(@desktop-width - @notebook-width)));
     padding-top: 128px;
     padding-bottom: 40px;
     .fluid(padding-left, @notebook-offset, @desktop-offset, @notebook-width, @desktop-width);
@@ -70,21 +70,25 @@
   }
 
   .projects__slider {
-    margin-left: 64px;
+    margin-left: -200px;
   }
 }
 
 @media (min-width: @desktop-width) {
   .projects {
-    width: calc(100% - 405.5px - (50vw - @desktop-width / 2 + @desktop-offset));
-    margin-left: calc((50vw - @desktop-width / 2 + @desktop-offset) + 405.5px);
+    width: calc(100% - 670px - (50vw - @desktop-width / 2 + @desktop-offset));
+    margin-left: calc((50vw - @desktop-width / 2 + @desktop-offset) + 670px);
   }
 
   .projects__header {
-    transform: translateX(calc(-405.5px - (50vw - @desktop-width / 2 + @desktop-offset)));
-    width: calc((50vw - @desktop-width / 2 + @desktop-offset) + 405.5px);
-    margin-right: calc(-405.5px - (50vw - @desktop-width / 2 + @desktop-offset));
+    transform: translateX(calc(-670px - (50vw - @desktop-width / 2 + @desktop-offset)));
+    width: calc((50vw - @desktop-width / 2 + @desktop-offset) + 400px);
+    margin-right: calc(-400px - (50vw - @desktop-width / 2 + @desktop-offset));
     padding-left: calc(50vw - @desktop-width / 2 + @desktop-offset);
     padding-right: @desktop-offset;
+  }
+
+  .projects__slider {
+    // margin-left: -200px;
   }
 }

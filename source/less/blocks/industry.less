@@ -26,7 +26,7 @@
 @media (min-width: @notebook-width) {
   .industry {
     order: 6;
-    width: calc(100% - (@notebook-offset + unit(@desktop-offset - @notebook-offset) * (100vw - @notebook-width) / unit(@desktop-width - @notebook-width)));
+    width: calc(100% - 200px - (@notebook-offset + unit(@desktop-offset - @notebook-offset) * (100vw - @notebook-width) / unit(@desktop-width - @notebook-width)));
     position: relative;
     margin-bottom: 180px;
     padding-top: 97px;
@@ -61,7 +61,7 @@
 
 @media (min-width: @desktop-width) {
   .industry {
-    width: calc(@desktop-width - @desktop-offset + (50% - @desktop-width / 2));
+    width: calc(@desktop-width - @desktop-offset + (50% - @desktop-width / 2) - 200px);
     padding-left: calc(50% - @desktop-width / 2 + @desktop-offset);
   }
 
