@@ -152,7 +152,6 @@ var searchFieldFocusHandler = function () {
     searchField.placeholder = 'Поиск';
     searchField.addEventListener('blur', searchFieldBlurHandler);
     document.addEventListener('click', searchFieldCloseHandler);
-    console.log('addEventListeners');
 
     if (!header.classList.contains('header--fixed')) {
       mainNav.style.transition = 'all 0.5s cubic-bezier(0.77, 0, 0.175, 1)';
