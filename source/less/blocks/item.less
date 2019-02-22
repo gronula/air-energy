@@ -269,8 +269,8 @@
     }
 
     .recently-viewed & {
-      // width: 300px;
-      .fluid(width, 312px, 392px, @notebook-width, @desktop-width);
+      width: 309px;
+      // .fluid(width, 312px, 392px, @notebook-width, @desktop-width);
       // flex-shrink: 0;
       border: 1px solid rgba(0, 0, 0, 0.1);
       border-right: 0;
@@ -963,6 +963,14 @@
   .item__button {
     .products__items--row & {
       flex-grow: 1;
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .item {
+    .recently-viewed & {
+      .fluid(width, 309px, 392px, 1440px, @desktop-width);
     }
   }
 }
