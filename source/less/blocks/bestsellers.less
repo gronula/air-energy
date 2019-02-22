@@ -91,6 +91,13 @@
   }
 }
 
+@media (min-width: @notebook-width + 1) {
+  .bestsellers__products {
+    grid-template-columns: 28% 24% 24% 24%;
+    grid-template-areas: "first second third fourth" "first fifth sixth sixth";
+  }
+}
+
 @media (min-width: @desktop-width) {
   .bestsellers {
     padding-left: calc(50% - @desktop-width / 2 + @desktop-offset);
@@ -99,5 +106,6 @@
 
   .bestsellers__products {
     // grid-template-columns: 60% 20% 20%;
+    grid-template-columns: 32% 28% 20% 20%;
   }
 }
