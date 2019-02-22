@@ -27,7 +27,8 @@
   .header {
     .fluid(padding-left, @notebook-offset, @desktop-offset, @notebook-width, @desktop-width);
     .fluid(padding-right, @notebook-offset, @desktop-offset, @notebook-width, @desktop-width);
-    position: fixed;
+    // position: fixed;
+    position: relative;
     z-index: 3;
     left: 0;
     right: 0;
@@ -37,12 +38,24 @@
     overflow: visible;
     transform: translateY(0);
     opacity: 1;
-    transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    // transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 
     &--closed {
       transform: translateY(-100%);
       opacity: 0;
       transition: all 0.4s;
+    }
+
+    &--fixed {
+      position: fixed;
+      top: 0;
+      bottom: auto;
+      height: auto;
+      background: #ffffff;
+
+      &::after {
+        display: none;
+      }
     }
   }
 }
