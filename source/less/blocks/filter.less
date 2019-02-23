@@ -16,7 +16,7 @@
       bottom: 0;
       left: 0;
       right: 0;
-      z-index: 1;
+      z-index: 2;
       background-color: #ffffff;
     }
   }
@@ -97,7 +97,10 @@
   width: 100%;
   margin-top: 0;
   margin-bottom: 0;
-  padding: 24px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  padding-left: 60px;
+  padding-right: 24px;
   font-weight: 700;
   font-size: 16px;
   line-height: 19px;
@@ -127,13 +130,16 @@
     content: "";
     position: absolute;
     top: 50%;
-    right: 24px;
+    left: 24px;
     transform: translateY(-50%);
-    margin-left: 10px;
-    width: 11px;
-    height: 7px;
-    background: url("../../img/icon-arrow-fat-big.svg") no-repeat center;
-    background-size: contain;
+    transform-origin: 50% 50%;
+    // margin-left: 10px;
+    width: 24px;
+    height: 24px;
+    border: 1px solid #d2d7db;
+    border-radius: 50%;
+    background: url("../../img/icon-arrow-filter.svg") no-repeat 7px 9px;
+    background-size: auto;
     transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 
     .filter__additional & {
@@ -146,6 +152,7 @@
 
     &::after {
       transform: translateY(-50%) rotate(180deg);
+      background-position: 6px 9px;
     }
   }
 
@@ -173,7 +180,6 @@
   transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 
   &--opened {
-    overflow: visible;
     padding-bottom: 28px;
     height: auto;
     opacity: 1;
@@ -216,11 +222,11 @@
 }
 
 .filter__cost {
-  border: 0;
   width: calc(50% - 8px);
   height: 47px;
   padding: 15px 1vw;
-  background-color: #eceff1;
+  background-color: #ffffff;
+  border: 1px solid #eceff1;
 
   &::placeholder {
     font-weight: 400;
@@ -534,7 +540,7 @@
   border-bottom: 1px solid #eceff1;
   position: relative;
   cursor: pointer;
-  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: all 0.1s cubic-bezier(0.77, 0, 0.175, 1);
 
   .filter__checkbox + & {
     padding-left: 50px;
@@ -547,15 +553,19 @@
       top: 50%;
       left: 15px;
       transform: translateY(-50%);
-      border: 2px solid @title-color;
+      background-color: #ffffff;
+      border: 2px solid #d2d7db;
       border-radius: 3px;
-      transition: background-color 0.1s cubic-bezier(0.77, 0, 0.175, 1);
+      // transition:
+      //   background-color 0.1s cubic-bezier(0.77, 0, 0.175, 1),
+      //   border-color 0.1s cubic-bezier(0.77, 0, 0.175, 1);
     }
   }
 
   .filter__checkbox:checked + & {
     &::before {
-      background: @title-color url("../../img/icon-tick-2.svg") no-repeat center;
+      border-color: #fbc02d;
+      background: #fbc02d url("../../img/icon-tick.svg") no-repeat center;
       background-size: auto;
     }
   }
@@ -566,6 +576,7 @@
 
   &:hover {
     color: #000000;
+    background-color: rgba(69, 90, 100, 0.05);
   }
 }
 
@@ -579,9 +590,17 @@
   color: @title-color;
   border-top: 1px solid #eceff1;
 
+  &:hover {
+    background-color: rgba(69, 90, 100, 0.05);
+  }
+
   &--active {
     background-color: #eceff1;
     border-left: 6px solid #fbc02d;
+
+    &:hover {
+      background-color: #eceff1;
+    }
   }
 }
 
@@ -678,7 +697,7 @@
     overflow-y: hidden;
   }
 
-  .filter__item {
+  .filter__section {
     margin-right: 40px;
     margin-bottom: 20px;
     display: flex;
@@ -752,11 +771,12 @@
   }
 
   .filter__main {
-    // width: 33%;
-    .fluid(width, 309px, 395px, @notebook-width, 1440px);
+    width: 33%;
     border-right: 1px solid #eceff1;
 
     .products & {
+      .fluid(width, 309px, 395px, @notebook-width, 1440px);
+      border-top: 1px solid #eceff1;
       border-bottom: 1px solid #eceff1;
       border-left: 1px solid #eceff1;
       border-right: 0;
@@ -764,21 +784,11 @@
   }
 
   .filter__heading {
-    padding-top: 24px;
-    padding-bottom: 24px;
-    .fluid(padding-left, 16px, 24px, @notebook-width, @desktop-width);
-    .fluid(padding-right, 16px, 24px, @notebook-width, @desktop-width);
+    // padding-top: 24px;
+    // padding-bottom: 24px;
+    // .fluid(padding-left, 16px, 24px, @notebook-width, @desktop-width);
+    // .fluid(padding-right, 16px, 24px, @notebook-width, @desktop-width);
     border-bottom: 0;
-
-    &::after {
-      right: 24px;
-    }
-
-    &--opened {
-      &::after {
-        transform: translateY(-50%) rotate(180deg);
-      }
-    }
 
     .products & {
       display: flex;
@@ -835,10 +845,6 @@
         height: auto;
         flex-shrink: 0;
         border-bottom: 0;
-      }
-
-      &--opened {
-        overflow: hidden;
       }
     }
   }
@@ -1001,25 +1007,27 @@
 
 @media (min-width: 1100px) {
   .filter__main {
-    // width: 30%;
+    width: 30%;
   }
 }
 
 @media (min-width: 1200px) {
   .filter__main {
-    // width: 28%;
+    width: 28%;
   }
 }
 
 @media (min-width: 1300px) {
   .filter__main {
-    // width: 26%;
+    width: 26%;
   }
 }
 
 @media (min-width: 1440px) {
   .filter__main {
-    width: calc(100% - 928px);
+    .products & {
+      width: calc(100% - 928px);
+    }
   }
 }
 

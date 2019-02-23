@@ -778,6 +778,8 @@ var windowResizeHandler = function () {
     }, 500);
 
     header.classList.remove('header--fixed');
+    main.classList.remove('main--full');
+
     if (pageYOffset > 115) {
       // header.classList.add('header--closed');
       // main.classList.remove('main--full');
