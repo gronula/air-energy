@@ -109,7 +109,7 @@
   cursor: pointer;
   word-break: break-word;
   border-bottom: 1px solid #eceff1;
-  transition: border-width 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: border-color 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 
   .products & {
     display: none;
@@ -158,7 +158,8 @@
   }
 
   &--opened {
-    border-bottom: 0;
+    // border-bottom: 0;
+    border-bottom-color: transparent;
 
     &::after {
       transform: translateY(-50%) rotate(180deg);
@@ -506,13 +507,16 @@
   flex-direction: row;
   flex-wrap: wrap;
   align-content: flex-start;
-  max-height: 240px;
   overflow: hidden;
   transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
   opacity: 0;
 
   .filter__block--opened & {
     opacity: 1;
+  }
+
+  .products & {
+    max-height: 240px;
   }
 }
 
@@ -829,6 +833,7 @@
 
   .filter__form {
     min-height: 628px;
+    height: 628px;
     display: none;
     flex-wrap: wrap;
     border: 1px solid rgba(0, 0, 0, 0.1);
@@ -862,10 +867,12 @@
 
   .filter__main {
     width: 33%;
+    height: 100%;
     border-right: 1px solid #eceff1;
 
     .products & {
       .fluid(width, 309px, 395px, @notebook-width, 1440px);
+      height: auto;
       border-top: 1px solid #eceff1;
       border-bottom: 1px solid #eceff1;
       border-left: 1px solid #eceff1;
@@ -1020,6 +1027,10 @@
     }
   }
 
+  .filter__additional {
+    height: 100%;
+  }
+
   .filter__select {
     .products & {
       display: block;
@@ -1060,6 +1071,7 @@
   .filter__preview {
     overflow: hidden;
     width: 34%;
+    height: 100%;
     display: flex;
     position: relative;
     flex-grow: 1;
