@@ -727,6 +727,10 @@ var getFilterBlockHeight = function () {
     blocks[0].classList.add('filter__block--opened');
     blocks[0].style.height = blocks[0].getBoundingClientRect().height + 'px';
 
+    var blockBrands = it.querySelector('.filter__additional  .filter__block');
+    blockBrands.classList.add('filter__block--opened');
+    blockBrands.style.height = blockBrands.getBoundingClientRect().height + 'px';
+
     if (j > 0) {
       it.classList.remove('filter__form--active');
     }
