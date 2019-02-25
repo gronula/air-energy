@@ -1171,19 +1171,6 @@
 
 @media (min-width: 1440px) {
   .filter__main {
-    .products & {
-      // width: calc(100% - 928px);
-    }
-  }
-}
-
-@media (min-width: @desktop-width) {
-  .filter {
-    padding-left: calc(50% - @desktop-width / 2 + @desktop-offset);
-    padding-right: calc(50% - @desktop-width / 2 + @desktop-offset);
-  }
-
-  .filter__main {
     width: 25%;
 
     .products & {
@@ -1206,5 +1193,12 @@
     &:nth-of-type(n + 2) {
       display: grid;
     }
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .filter {
+    padding-left: calc(50% - @desktop-width / 2 + @desktop-offset);
+    padding-right: calc(50% - @desktop-width / 2 + @desktop-offset);
   }
 }
