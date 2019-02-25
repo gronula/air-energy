@@ -674,7 +674,7 @@ var getFilterBlockHeight = function () {
       blocks[i].style.maxHeight = '';
       blocks[i].classList.remove('filter__block--opened');
       var headingParentElement = headings[i].parentElement;
-      var filterMainFreeHeight = headingParentElement.getBoundingClientRect().height + 2; // 2 нужно, чтобы пустота учитывала границы фильтра
+      var filterMainFreeHeight = headingParentElement.getBoundingClientRect().height + 1; // 2 нужно, чтобы пустота учитывала границы фильтра
 
       if (blocks[i].classList.contains('filter__block--elements')) {
         // var element = blocks[i].querySelector('.filter__elements');
