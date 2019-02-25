@@ -109,6 +109,7 @@
   cursor: pointer;
   word-break: break-word;
   border-bottom: 1px solid #eceff1;
+  transition: border-width 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 
   .products & {
     display: none;
@@ -120,10 +121,10 @@
   }
 
   .filter__additional & {
-    margin-bottom: 28px;
-    padding: 0;
-    border-bottom: 0;
-    cursor: default;
+    // margin-bottom: 28px;
+    // padding: 0;
+    // border-bottom: 0;
+    // cursor: default;
   }
 
   &::after {
@@ -143,7 +144,16 @@
     transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 
     .filter__additional & {
-      display: none;
+      // display: none;
+    }
+  }
+
+  &:hover {
+    color: #000000;
+
+    &::after {
+      transform: translateY(-50%) scale(1.2);
+      background-position: 7px 9px;
     }
   }
 
@@ -154,10 +164,13 @@
       transform: translateY(-50%) rotate(180deg);
       background-position: 6px 9px;
     }
-  }
 
-  &:hover {
-    color: #000000;
+    &:hover {
+      &::after {
+        transform: translateY(-50%) rotate(180deg) scale(1.2);
+        background-position: 6px 9px;
+      }
+    }
   }
 }
 
@@ -180,6 +193,7 @@
   transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 
   &--opened {
+    overflow: visible;
     padding-bottom: 28px;
     height: auto;
     opacity: 1;
@@ -212,13 +226,6 @@
   width: 100%;
   margin-top: 20px;
   margin-bottom: 45px;
-  padding-left: 1.5vw;
-  padding-right: 1.5vw;
-
-  .products & {
-    padding-left: 0;
-    padding-right: 0;
-  }
 }
 
 .filter__cost {
@@ -345,7 +352,7 @@
 .filter__additional {
   width: 33%;
   border-right: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 24px;
+  // padding: 24px;
 }
 
 .filter__select {
@@ -494,6 +501,70 @@
   }
 }
 
+.filter__elements {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  max-height: 240px;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  opacity: 0;
+
+  .filter__block--opened & {
+    opacity: 1;
+  }
+}
+
+.filter__element {
+  display: flex;
+  align-items: center;
+  min-height: 32px;
+  font-size: 15px;
+  line-height: 16px;
+  color: rgba(51, 51, 51, 0.9);
+  text-decoration: none;
+  background-color: #eceff1;
+  margin-bottom: 16px;
+  margin-right: 12px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 12px;
+  padding-right: 12px;
+  position: relative;
+  word-break: break-word;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 11px;
+    transform: translateY(-50%);
+    padding: 0;
+    width: 10px;
+    height: 10px;
+    background: transparent url("../../img/icon-close.svg") no-repeat center;
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  }
+
+  &--selected {
+    &::after {
+      opacity: 1;
+    }
+
+    &:hover {
+      &::after {
+        transform: translateY(-50%) scale(1.2);
+      }
+    }
+  }
+}
+
+.filter__more {
+  display: none;
+}
+
 .filter__checkboxes {
   position: absolute;
   top: calc(100% + 5px);
@@ -528,10 +599,10 @@
 .filter__label {
   display: block;
   margin-top: 0;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  padding-left: 24px;
+  padding-right: 24px;
   font-weight: 400;
   font-size: 15px;
   line-height: 18px;
@@ -542,16 +613,24 @@
   cursor: pointer;
   transition: all 0.1s cubic-bezier(0.77, 0, 0.175, 1);
 
+  .products & {
+    display: none;
+  }
+
+  .filter--opened & {
+    display: block;
+  }
+
   .filter__checkbox + & {
-    padding-left: 50px;
+    padding-left: 60px;
 
     &::before {
       content: "";
       position: absolute;
-      width: 20px;
-      height: 20px;
+      width: 24px;
+      height: 24px;
       top: 50%;
-      left: 15px;
+      left: 24px;
       transform: translateY(-50%);
       background-color: #ffffff;
       border: 2px solid #d2d7db;
@@ -570,7 +649,7 @@
     }
   }
 
-  &:last-of-type {
+  .filter__checkboxes &:last-of-type {
     border-bottom: 0;
   }
 
@@ -595,7 +674,7 @@
   }
 
   &--active {
-    background-color: #eceff1;
+    background-color: rgba(236, 239, 240, 0.4);
     border-left: 6px solid #fbc02d;
 
     &:hover {
@@ -619,6 +698,17 @@
     margin-left: 6px;
     font-size: 10px;
     line-height: 12px;
+  }
+
+  .filter__element & {
+    flex-shrink: 0;
+    margin-left: 20px;
+    opacity: 1;
+    transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  }
+
+  .filter__element--selected & {
+    opacity: 0;
   }
 }
 
@@ -788,7 +878,7 @@
     // padding-bottom: 24px;
     // .fluid(padding-left, 16px, 24px, @notebook-width, @desktop-width);
     // .fluid(padding-right, 16px, 24px, @notebook-width, @desktop-width);
-    border-bottom: 0;
+    // border-bottom: 0;
 
     .products & {
       display: flex;
@@ -805,15 +895,10 @@
   }
 
   .filter__block {
-    opacity: 1;
     padding-bottom: 0;
-    padding-left: 0;
-    padding-right: 0;
 
     .products & {
       display: flex;
-      .fluid(padding-left, 16px, 24px, @notebook-width, @desktop-width);
-      .fluid(padding-right, 16px, 24px, @notebook-width, @desktop-width);
 
       &--categories {
         height: auto;
@@ -823,6 +908,7 @@
       }
 
       &--choice {
+        opacity: 1;
         height: 56px;
         flex-wrap: nowrap;
         order: 3;
@@ -834,6 +920,7 @@
       }
 
       &--sort {
+        opacity: 1;
         overflow: visible;
         flex-direction: row-reverse;
         transform: none;
@@ -887,6 +974,49 @@
     &--active,
     &:hover {
       opacity: 1;
+    }
+  }
+
+  .filter__label {
+    .products & {
+      display: block;
+    }
+  }
+
+  .filter__more {
+    display: block;
+    width: 100%;
+    margin-bottom: 40px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    color: #db9c00;
+    position: relative;
+    transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    opacity: 0;
+
+    .filter__block--opened & {
+      opacity: 1;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 6px;
+      margin-left: 8px;
+      width: 8px;
+      height: 8px;
+      background: url("../../img/icon-plus-filter.svg") no-repeat center;
+      background-size: contain;
+    }
+
+    &:hover {
+      &::after {
+        transform: rotate(90deg);
+        transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+      }
     }
   }
 
@@ -1039,6 +1169,10 @@
 
   .filter__main {
     width: 25%;
+
+    .products & {
+      width: 390px;
+    }
   }
 
   .filter__additional {
