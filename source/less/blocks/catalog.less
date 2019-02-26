@@ -95,6 +95,7 @@
   font-size: 0;
   border: 0;
   background: #fbc02d url("../../img/icon-close.svg") no-repeat center;
+  background-size: 20px;
   cursor: pointer;
 }
 
@@ -212,6 +213,8 @@
     position: static;
     transform: none;
     background-color: transparent;
+    padding-top: 16px;
+    padding-bottom: 16px;
 
     &::after {
       display: none;
@@ -225,15 +228,22 @@
   .catalog__wrapper {
     height: 100%;
     margin-top: 0;
-    padding-top: 16px;
-    padding-bottom: 16px;
+    padding-top: 0;
+    padding-bottom: 0;
+    transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+
+    &--hovered {
+      background-color: #ffffff;
+    }
   }
 
   .catalog__list {
+    width: 377px;
     height: 100%;
     padding-top: 16px;
     padding-bottom: 16px;
     background-color: #ffffff;
+    border-right: 1px solid #eceff1;
   }
 
   .catalog__item {
@@ -253,17 +263,22 @@
   }
 
   .catalog__sublist {
+    display: block;
+    visibility: hidden;
+    opacity: 0;
     position: absolute;
     top: 16px;
-    left: 100%;
+    left: 377px;
+    width: 377px;
     height: calc(100% - 32px);
     padding-top: 16px;
     padding-bottom: 16px;
-    border-left: 1px solid #eceff1;
     background-color: #ffffff;
+    transition: all 0.2s cubic-bezier(0.77, 0, 0.175, 1) 0.1s;
 
     .catalog__item:hover & {
-      display: block;
+      visibility: visible;
+      opacity: 1;
     }
   }
 
