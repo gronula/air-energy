@@ -1188,6 +1188,16 @@
 
   .filter__preview {
     width: 50%;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 88px;
+      left: calc(50% - 1px);
+      width: 1px;
+      background-color: #eceff1;
+    }
   }
 
   .filter__card {
