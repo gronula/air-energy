@@ -107,7 +107,7 @@ gulp.task('images', gulp.series('imagemin', 'webp'));
 gulp.task('build', gulp.series('clean', 'copy', 'css', 'js', 'html', 'images'));
 gulp.task('start', gulp.series('build', 'server'));
 
-gulp.task('prod', function () {
+gulp.task('gronula', function () {
   del(['../Gronula/**/*'], {force: true});
   return gulp.src([
     'build/**/*'
@@ -115,4 +115,16 @@ gulp.task('prod', function () {
     .pipe(gulp.dest('../Gronula'));
 });
 
-gulp.task('gronula', gulp.series('build', 'prod'));
+gulp.task('its', function () {
+  del([
+    '../its.agency/airenergy/build/**',
+    '../its.agency/airenergy/source/**'
+  ], {force: true});
+  return gulp.src([
+    './build/**',
+    './source/**'
+  ], {base: './'})
+    .pipe(gulp.dest('../its.agency/airenergy'));
+});
+
+gulp.task('prod', gulp.series('build', 'its', 'gronula'));
