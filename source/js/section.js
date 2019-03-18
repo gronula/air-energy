@@ -417,8 +417,11 @@ var getFilterBlockHeight = function () {
 var filterHeadingsClickHandler = function (evt) {
   var heading = evt.target;
   var block = evt.target.nextElementSibling;
+  var element = block.querySelector('.filter__elements');
+  var link = block.querySelector('.filter__more');
   var elements = filter.querySelectorAll('.filter__elements');
   var links = filter.querySelectorAll('.filter__more');
+
   var number;
 
   if (window.matchMedia('(max-width: 1023px)').matches) {
@@ -448,43 +451,29 @@ var filterHeadingsClickHandler = function (evt) {
         it.classList.remove('filter__block--opened');
         it.style.height = 0;
       });
-
-      heading.classList.add('filter__heading--opened');
-      block.classList.add('filter__block--opened');
-      block.style.height = blockHeights[number] + 'px';
-    } else {
-      if (heading.classList.contains('filter__heading--categories')) {
-        heading.classList.add('filter__heading--opened');
-        block.classList.add('filter__block--opened');
-        block.style.height = blockHeights[number] + 'px';
-      } else {
-        headings.forEach(function (it) {
-          if (!it.classList.contains('filter__heading--categories')) {
-            it.classList.remove('filter__heading--opened');
-          }
-        });
-        blocks.forEach(function (it) {
-          if (!it.classList.contains('filter__block--categories')) {
-            it.classList.remove('filter__block--opened');
-            it.style.height = 0;
-          }
-        });
-
-        heading.classList.add('filter__heading--opened');
-        block.classList.add('filter__block--opened');
-        block.style.height = blockHeights[number] + 'px';
-      }
     }
+
+    heading.classList.add('filter__heading--opened');
+    block.classList.add('filter__block--opened');
+    block.style.height = blockHeights[number] + 'px';
   }
 
-  links.forEach(function (it) {
-    it.textContent = 'Показать все';
-  });
+  if (window.matchMedia('(max-width: 1023px)').matches) {
+    links.forEach(function (it) {
+      it.textContent = 'Показать все';
+    });
 
-  elements.forEach(function (it) {
-    it.style.maxHeight = '';
-    it.classList.remove('filter__elements--full');
-  });
+    elements.forEach(function (it) {
+      it.style.maxHeight = '';
+      it.classList.remove('filter__elements--full');
+    });
+  } else {
+    if (element) {
+      link.textContent = 'Показать все';
+      element.style.maxHeight = '';
+      element.classList.remove('filter__elements--full');
+    }
+  }
 };
 
 var filterCapionsClickHandler = function (caption, select) {
