@@ -30,12 +30,12 @@
 
   .banner__controls {
     top: 50%;
-    left: calc((@notebook-offset + unit(@desktop-offset - @notebook-offset) * (100vw - @notebook-width) / unit(@desktop-width - @notebook-width)) + (66vw - 32px));
+    left: calc((@notebook-offset + unit(@desktop-offset - @notebook-offset) * (100vw - @notebook-width) / unit(@desktop-width - @notebook-width)) + ((100vw - (@notebook-offset + unit(@desktop-offset - @notebook-offset) * (100vw - @notebook-width) / unit(@desktop-width - @notebook-width)) * 2) * 0.75 - 32px));
     transform: translateY(-50%);
   }
 
   .banner__slide {
-    width: 66vw;
+    width: calc((100vw - (40px + 24 * (100vw - 1024px) / 664) * 2) * 0.75);
     align-items: center;
     overflow: hidden;
     position: relative;
@@ -121,10 +121,10 @@
   }
 
   .banner__controls {
-    left: calc((50% - @desktop-width / 2 + @desktop-offset) + (@desktop-width * 0.66 - 32px));
+    left: calc((50% - @desktop-width / 2 + @desktop-offset) + ((@desktop-width - @desktop-offset * 2) * 0.75 - 32px));
   }
 
   .banner__slide {
-    width: @desktop-width * 0.66;
+    width: (@desktop-width - @desktop-offset * 2) * 0.75;
   }
 }
