@@ -203,9 +203,11 @@ var mainNavOverlayMouseoverHandler = function () {
 
   window.scroll(0, offsetTop);
 
+  var mainNavLinkCatalogOffsetLeft = mainNavLinkCatalog.getBoundingClientRect().left;
+
   mainNavOverlay.classList.add('main-nav__overlay--out');
   sidebar.classList.add('sidebar--out');
-  sidebar.style.left = '';
+  sidebar.style.left = mainNavLinkCatalogOffsetLeft + 'px';
 
   mainNavLinkCatalog.removeEventListener('mouseover', mainNavOverlayMouseoverHandler);
   window.addEventListener('scroll', windowScrollHandler);
@@ -631,6 +633,10 @@ var windowScrollHandler = function () {
   if (!window.matchMedia('(max-width: 1023px)').matches) {
     searchField.blur();
     searchField.style.transition = 'border-bottom 0.5s cubic-bezier(0.77, 0, 0.175, 1)';
+
+    var mainNavLinkCatalogOffsetLeft = mainNavLinkCatalog.getBoundingClientRect().left;
+
+    sidebar.style.left = mainNavLinkCatalogOffsetLeft + 'px';
 
     // var newScrollTop = document.body.getBoundingClientRect().top;
 
