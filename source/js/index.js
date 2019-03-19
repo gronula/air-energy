@@ -18,20 +18,17 @@ var citiesList = citiesWrapper.querySelector('.contacts__cities');
 var citiesHeader = citiesList.querySelectorAll('.contacts__city');
 var main = document.querySelector('.main');
 var sidebar = main.querySelector('.sidebar');
-// var sidebarLinks = sidebar.querySelectorAll('.sidebar__link');
 var sidebarCatalogLink = sidebar.querySelector('.sidebar__link--catalog');
 var catalog = sidebar.querySelector('.catalog');
 var catalogHeader = catalog.querySelector('.catalog__header');
 var catalogTitle = catalog.querySelector('.catalog__title');
 var catalogButton = catalog.querySelector('.catalog__toggle');
 var catalogWrapper = catalog.querySelector('.catalog__wrapper');
-// var catalogList = catalog.querySelector('.catalog__list');
 var catalogItems = catalog.querySelectorAll('.catalog__item');
 var catalogLinks = catalog.querySelectorAll('.catalog__link');
 var catalogNumbers = catalog.querySelectorAll('.catalog__number');
 var catalogSublists = catalog.querySelectorAll('.catalog__sublist');
 var categoriesSublists = main.querySelectorAll('.categories__sublist');
-var categoriesAlls = main.querySelectorAll('.categories__all');
 var categoriesLinks = main.querySelectorAll('.categories__link');
 var categoryCompressor = main.querySelector('.categories__item--compressor  .categories__link');
 var categoryDehydrator = main.querySelector('.categories__item--dehydrator  .categories__link');
@@ -426,12 +423,10 @@ var citiesFooterClickHandler = function (city, address) {
   });
 };
 
-var getCategoriesSublistHeight = function (sublist, all, link) {
-  sublist.style.opacity = 1;
-  all.style.opacity = 1;
+var getCategoriesSublistHeight = function (sublist, link) {
+  link.style.opacity = 0;
   link.style.transition = 'none';
   link.style.maxHeight = 0;
-  link.style.opacity = 0;
 
   var subitems = sublist.querySelectorAll('.categories__subitem');
 
@@ -451,11 +446,9 @@ var getCategoriesSublistHeight = function (sublist, all, link) {
       subitems[i].style.marginBottom = 0;
       subitems[i].style.transition = '';
 
-      link.style.opacity = '';
       link.style.maxHeight = '';
       link.style.transition = '';
-      all.style.opacity = '';
-      sublist.style.opacity = '';
+      link.style.opacity = '';
 
       return;
     }
@@ -989,7 +982,7 @@ var windowResizeHandler = function () {
 
     setTimeout(function () {
       for (var i = 0; i < categoriesSublists.length; i++) {
-        getCategoriesSublistHeight(categoriesSublists[i], categoriesAlls[i], categoriesLinks[i]);
+        getCategoriesSublistHeight(categoriesSublists[i], categoriesLinks[i]);
       }
     }, 500);
 
