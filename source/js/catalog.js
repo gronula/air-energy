@@ -154,8 +154,10 @@ var mainNavLinkCatalogMouseoverHandler = function () {
       header.style.left = '';
       header.style.right = getScrollWidth() + 'px';
     } else {
-      header.style.left = offsetTop > 65 ? getScrollWidth() / -2 + 'px' : '';
-      header.style.right = offsetTop > 65 ? getScrollWidth() / 2 + 'px' : getScrollWidth() + 'px';
+      var pl = 'calc(50% - 1688px / 2 + 64px + ' + getScrollWidth() / -2 + 'px)';
+      var pr = 'calc(50% - 1688px / 2 + 64px + ' + getScrollWidth() / 2 + 'px)';
+      header.style.paddingLeft = offsetTop > 65 ? pl : '';
+      header.style.paddingRight = offsetTop > 65 ? pr : '';
     }
 
     document.body.style.top = -offsetTop + 'px';
@@ -200,6 +202,8 @@ var mainNavOverlayMouseoverHandler = function () {
   document.body.classList.remove('no-scroll');
   header.style.left = '';
   header.style.right = '';
+  header.style.paddingLeft = '';
+  header.style.paddingRight = '';
 
   window.scroll(0, offsetTop);
 
