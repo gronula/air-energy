@@ -685,7 +685,7 @@ var getCategoriesSublistHeight = function (sublist, all, link) {
     var subitemHeight = subitems[i].getBoundingClientRect().height;
     var subitemOffsetBottom = subitems[i].offsetTop + subitemHeight;
 
-    if (subitemOffsetBottom > 320) {
+    if (subitemOffsetBottom > 300) {
       subitems[i].style.display = 'none';
     } else {
       subitems[i].style.marginBottom = 0;
