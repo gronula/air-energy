@@ -120,13 +120,6 @@
     display: flex;
   }
 
-  .filter__additional & {
-    // margin-bottom: 28px;
-    // padding: 0;
-    // border-bottom: 0;
-    // cursor: default;
-  }
-
   &::after {
     content: "";
     position: absolute;
@@ -134,7 +127,6 @@
     left: 24px;
     transform: translateY(-50%);
     transform-origin: 50% 50%;
-    // margin-left: 10px;
     width: 24px;
     height: 24px;
     border: 1px solid #d2d7db;
@@ -142,10 +134,6 @@
     background: url("../../img/icon-arrow-filter.svg") no-repeat 7px 9px;
     background-size: auto;
     transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
-
-    .filter__additional & {
-      // display: none;
-    }
   }
 
   &:hover {
@@ -158,7 +146,6 @@
   }
 
   &--opened {
-    // border-bottom: 0;
     border-bottom-color: transparent;
 
     &::after {
@@ -358,7 +345,6 @@
 .filter__additional {
   width: 33%;
   border-right: 1px solid rgba(0, 0, 0, 0.1);
-  // padding: 24px;
 }
 
 .filter__select {
@@ -684,9 +670,6 @@
       background-color: #ffffff;
       border: 2px solid #d2d7db;
       border-radius: 3px;
-      // transition:
-      //   background-color 0.1s cubic-bezier(0.77, 0, 0.175, 1),
-      //   border-color 0.1s cubic-bezier(0.77, 0, 0.175, 1);
     }
   }
 
@@ -794,7 +777,6 @@
 
     .products & {
       position: relative;
-      // overflow: hidden;
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
@@ -878,7 +860,6 @@
 
   .filter__form {
     min-height: 628px;
-    // height: 628px;
     display: none;
     flex-wrap: wrap;
     border: 1px solid rgba(0, 0, 0, 0.1);
@@ -900,7 +881,6 @@
     min-width: 100%;
     display: flex;
     margin-bottom: 40px;
-    // flex-shrink: 0;
   }
 
   .filter__view {
@@ -926,12 +906,6 @@
   }
 
   .filter__heading {
-    // padding-top: 24px;
-    // padding-bottom: 24px;
-    // .fluid(padding-left, 16px, 24px, @notebook-width, @desktop-width);
-    // .fluid(padding-right, 16px, 24px, @notebook-width, @desktop-width);
-    // border-bottom: 0;
-
     .products & {
       display: flex;
       z-index: auto;
@@ -1077,7 +1051,6 @@
   }
 
   .filter__preview {
-    // overflow: hidden;
     width: 34%;
     height: 100%;
     display: flex;

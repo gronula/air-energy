@@ -30,20 +30,17 @@ var filterButtonsSort = filter.querySelectorAll('.filter__sort  .filter__button'
 var filterElements = filter.querySelectorAll('.filter__element');
 var filterLinksMore = filter.querySelectorAll('.filter__more');
 var sidebar = main.querySelector('.sidebar');
-// var sidebarLinks = sidebar.querySelectorAll('.sidebar__link');
 var sidebarCatalogLink = sidebar.querySelector('.sidebar__link--catalog');
 var catalog = sidebar.querySelector('.catalog');
 var catalogHeader = catalog.querySelector('.catalog__header');
 var catalogTitle = catalog.querySelector('.catalog__title');
 var catalogButton = catalog.querySelector('.catalog__toggle');
 var catalogWrapper = catalog.querySelector('.catalog__wrapper');
-// var catalogList = catalog.querySelector('.catalog__list');
 var catalogItems = catalog.querySelectorAll('.catalog__item');
 var catalogLinks = catalog.querySelectorAll('.catalog__link');
 var catalogNumbers = catalog.querySelectorAll('.catalog__number');
 var catalogSublists = catalog.querySelectorAll('.catalog__sublist');
 var recentlyViewed = main.querySelector('.recently-viewed');
-// var recentlyViewedProducts = recentlyViewed.querySelectorAll('.recently-viewed__products');
 var recentlyViewedProducts = recentlyViewed.querySelector('.recently-viewed__products');
 var recentlyViewedItems = recentlyViewed.querySelectorAll('.recently-viewed  .item');
 var footer = document.querySelector('.footer');
@@ -838,35 +835,9 @@ var requestAnimationFrame = window.requestAnimationFrame ||
 
 window.requestAnimationFrame = requestAnimationFrame;
 
-// var isScrollDown = true;
-// var requestId;
 var coord = 0;
 
-// var animation = function () {
-//   if (!window.matchMedia('(max-width: 1023px)').matches) {
-//     var recentlyViewedProductsWidth = recentlyViewedProducts[0].getBoundingClientRect().width;
-//     coord = isScrollDown ? coord - 1 : coord + 1;
-
-//     recentlyViewedProducts.forEach(function (it) {
-//       if (coord < -recentlyViewedProductsWidth) {
-//         coord = 0;
-//       } else if (coord > 0) {
-//         coord = -recentlyViewedProductsWidth;
-//       }
-
-//       it.style.transform = 'translateX(' + coord + 'px)';
-//     });
-
-//     // requestId = requestAnimationFrame(animation);
-//   }
-// };
-
-// var cancelAnimation = function () {
-//   cancelAnimationFrame(requestId);
-// };
-
 var isMoved = false;
-// var isClick = true;
 
 var recentlyViewedItemClickHandler = function (evt) {
   if (!isClick) {
@@ -892,20 +863,6 @@ var recentlyViewedProductsMouseDownHandler = function (evt) {
     var mouseMoveHandler = function (moveEvt) {
       moveEvt.preventDefault();
 
-      // cancelAnimation();
-
-      // coord -= startCoords.x - moveEvt.x;
-
-      // recentlyViewedProducts.forEach(function (it) {
-      //   if (coord < -recentlyViewedProductsWidth) {
-      //     coord = 0;
-      //   } else if (coord > 0) {
-      //     coord = -recentlyViewedProductsWidth;
-      //   }
-
-      //   it.style.transform = 'translateX(' + coord + 'px)';
-      // });
-
       if (coord > 0) {
         coord -= (startCoords.x - moveEvt.x) * 0.3;
       } else if (coord < -recentlyViewedProductsWidth + recentlyViewedWidth - 50) {
@@ -929,7 +886,6 @@ var recentlyViewedProductsMouseDownHandler = function (evt) {
 
       if (isMoved) {
         isMoved = false;
-        // animation();
       }
 
       if (coord > 0) {
@@ -978,24 +934,6 @@ var recentlyViewedProductsWheelHandler = function (evt) {
   }
 };
 
-// var animateRecentlyViewedProducts = function () {
-//   if (!window.matchMedia('(max-width: 1023px)').matches) {
-//     var recentlyViewedScrollTop = recentlyViewed.getBoundingClientRect().top;
-
-//     window.addEventListener('scroll', function () {
-//       var newRecentlyViewedScrollTop = recentlyViewed.getBoundingClientRect().top;
-//       isScrollDown = recentlyViewedScrollTop >= newRecentlyViewedScrollTop;
-//       recentlyViewedScrollTop = newRecentlyViewedScrollTop;
-//     });
-
-//     requestAnimationFrame(animation);
-
-//     for (var i = 0; i < recentlyViewedItems.length; i++) {
-//       recentlyViewedItems[i].addEventListener('mousedown', recentlyViewedItemMouseDownHandler);
-//     }
-//   }
-// };
-
 var citiesFooterClickHandler = function (city, address) {
   city.addEventListener('click', function (evt) {
     evt.preventDefault();
@@ -1013,8 +951,6 @@ var citiesFooterClickHandler = function (city, address) {
   });
 };
 
-// var scrollTop = document.body.getBoundingClientRect().top;
-
 var windowScrollHandler = function () {
   if (!window.matchMedia('(max-width: 1023px)').matches) {
     searchField.blur();
@@ -1023,8 +959,6 @@ var windowScrollHandler = function () {
     var mainNavLinkCatalogOffsetLeft = mainNavLinkCatalog.getBoundingClientRect().left;
 
     sidebar.style.left = mainNavLinkCatalogOffsetLeft + 'px';
-
-    // var newScrollTop = document.body.getBoundingClientRect().top;
 
     var mainOffsetTop = main.getBoundingClientRect().top;
 
@@ -1049,7 +983,6 @@ var windowScrollHandler = function () {
     }
 
     getSearchInputWidth();
-    // setTimeout(getSearchInputWidth, 400);
   }
 };
 
@@ -1087,20 +1020,11 @@ var windowResizeHandler = function () {
     }
 
     sidebarCatalogLink.addEventListener('click', sidebarCatalogLinkClickHandler);
-    // sidebarCatalogLink.removeEventListener('mouseover', sidebarCatalogLinkMouseoverHandler);
-    // sidebarCatalogLink.removeEventListener('mouseout', sidebarCatalogLinkMouseoutHandler);
     catalog.classList.remove('catalog--opened');
-    // catalog.removeEventListener('mouseover', catalogMouseoverHandler);
-    // catalog.removeEventListener('mouseout', catalogMouseoutHandler);
     catalogHeader.classList.remove('catalog__header--opened');
     catalogButton.removeEventListener('click', catalogButtonClickHandler);
     catalogWrapper.classList.remove('catalog__wrapper--opened');
     catalogTitleClickHandler();
-
-    // for (var i = 0; i < catalogItems.length; i++) {
-    // catalogItems[i].removeEventListener('mouseover', catalogItemMouseoverHandler);
-    //   catalogItems[i].removeEventListener('mouseout', catalogItemMouseoutHandler);
-    // }
 
     catalogLinks.forEach(function (it) {
       it.classList.remove('catalog__link--opened');
@@ -1124,11 +1048,6 @@ var windowResizeHandler = function () {
     header.classList.remove('header--fixed');
     main.classList.remove('main--full');
 
-    if (pageYOffset > 115) {
-      // header.classList.add('header--closed');
-      // main.classList.remove('main--full');
-    }
-
     logo.classList.remove('logo--closed');
     logo.classList.add('logo--opened');
     logoTitle.classList.remove('logo__title--closed');
@@ -1151,21 +1070,11 @@ var windowResizeHandler = function () {
 
     sidebar.classList.remove('sidebar--closed');
     sidebarCatalogLink.removeEventListener('click', sidebarCatalogLinkClickHandler);
-    // sidebarCatalogLink.addEventListener('mouseover', sidebarCatalogLinkMouseoverHandler);
-    // sidebarCatalogLink.addEventListener('mouseout', sidebarCatalogLinkMouseoutHandler);
     catalog.classList.remove('catalog--opened');
-    // catalog.removeEventListener('mouseover', catalogMouseoverHandler);
-    // catalog.removeEventListener('mouseout', catalogMouseoutHandler);
     catalogHeader.classList.remove('catalog__header--opened');
     catalogButton.removeEventListener('click', catalogButtonClickHandler);
     catalogWrapper.classList.remove('catalog__wrapper--opened');
     catalogTitleClickHandler();
-
-    // for (i = 0; i < catalogLinks.length; i++) {
-    //   if (catalogLinks[i].parentElement.childElementCount > 1) {
-    //     catalogLinks[i].removeEventListener('click', catalogLinkClickHandler, true);
-    //   }
-    // }
 
     catalogLinks.forEach(function (it) {
       it.classList.remove('catalog__link--opened');
@@ -1177,9 +1086,6 @@ var windowResizeHandler = function () {
     setTimeout(function () {
       $('.recently-viewed__products.slick-initialized').not('.recently-viewed__products--copy').slick('unslick');
     }, 50);
-
-    // cancelAnimation();
-    // animateRecentlyViewedProducts();
   }
 
   if (filterBlockTimer) {
@@ -1217,8 +1123,6 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   animateFilterSlider();
-
-  // getFilterBlockHeight();
 
   for (var i = 0; i < filterCaptions.length; i++) {
     filterCapionsClickHandler(filterCaptions[i], filterSelects[i]);

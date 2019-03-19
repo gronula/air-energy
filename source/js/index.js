@@ -490,8 +490,6 @@ var getFilterBlockHeight = function () {
       var filterMainFreeHeight = headingParentElement.getBoundingClientRect().height + 1; // 2 нужно, чтобы пустота учитывала границы фильтра
 
       if (blocks[i].classList.contains('filter__block--elements')) {
-        // var element = blocks[i].querySelector('.filter__elements');
-
         for (var k = 0; k < headingParentElement.children.length; k++) {
           if (!headingParentElement.children[k].classList.contains('visually-hidden')) {
             filterMainFreeHeight -= headingParentElement.children[k].getBoundingClientRect().height;
@@ -791,8 +789,6 @@ var animateBrandsLists = function () {
   }
 };
 
-// var scrollTop = document.body.getBoundingClientRect().top;
-
 var windowScrollHandler = function () {
   if (!window.matchMedia('(max-width: 1023px)').matches) {
     searchField.blur();
@@ -802,22 +798,10 @@ var windowScrollHandler = function () {
 
     sidebar.style.left = mainNavLinkCatalogOffsetLeft + 'px';
 
-    // var newScrollTop = document.body.getBoundingClientRect().top;
-
     var bodyHeight = document.body.offsetHeight;
-    // var footerHeight = footer.getBoundingClientRect().height;
-    // var footerTop = bodyHeight - innerHeight - footerHeight;
     var footerAuthorHeight = footerAuthor.getBoundingClientRect().height;
     var footerAuthorTop = bodyHeight - footerAuthorHeight;
     var upwardButtonTop = footerAuthorTop - upwardButton.getBoundingClientRect().height - 28;
-
-    // if (footerTop < window.pageYOffset) {
-    //   sidebar.style.position = 'absolute';
-    //   sidebar.style.top = footerTop + 'px';
-    // } else {
-    //   sidebar.style.position = '';
-    //   sidebar.style.top = '';
-    // }
 
     if (footerAuthorTop < window.pageYOffset + innerHeight) {
       upwardButton.style.position = 'absolute';
@@ -850,7 +834,6 @@ var windowScrollHandler = function () {
     }
 
     getSearchInputWidth();
-    // setTimeout(getSearchInputWidth, 400);
   }
 };
 
@@ -893,20 +876,11 @@ var windowResizeHandler = function () {
     categoryPowerstation.textContent = 'Электростанции';
 
     sidebarCatalogLink.addEventListener('click', sidebarCatalogLinkClickHandler);
-    // sidebarCatalogLink.removeEventListener('mouseover', sidebarCatalogLinkMouseoverHandler);
-    // sidebarCatalogLink.removeEventListener('mouseout', sidebarCatalogLinkMouseoutHandler);
     catalog.classList.remove('catalog--opened');
-    // catalog.removeEventListener('mouseover', catalogMouseoverHandler);
-    // catalog.removeEventListener('mouseout', catalogMouseoutHandler);
     catalogHeader.classList.remove('catalog__header--opened');
     catalogButton.removeEventListener('click', catalogButtonClickHandler);
     catalogWrapper.classList.remove('catalog__wrapper--opened');
     catalogTitleClickHandler();
-
-    // for (var i = 0; i < catalogItems.length; i++) {
-    //   catalogItems[i].removeEventListener('mouseover', catalogItemMouseoverHandler);
-    //   catalogItems[i].removeEventListener('mouseout', catalogItemMouseoutHandler);
-    // }
 
     catalogLinks.forEach(function (it) {
       it.classList.remove('catalog__link--opened');
@@ -916,7 +890,6 @@ var windowResizeHandler = function () {
     });
   } else {
     windowScrollHandler();
-    // getSearchInputWidth();
 
     document.body.classList.remove('no-scroll');
     document.body.classList.remove('dark');
@@ -930,11 +903,6 @@ var windowResizeHandler = function () {
 
     header.classList.remove('header--fixed');
     main.classList.remove('main--full');
-
-    if (pageYOffset > 115) {
-      // header.classList.add('header--closed');
-      // main.classList.remove('main--full');
-    }
 
     logo.classList.remove('logo--closed');
     logo.classList.add('logo--opened');
@@ -953,21 +921,11 @@ var windowResizeHandler = function () {
 
     sidebar.classList.remove('sidebar--closed');
     sidebarCatalogLink.removeEventListener('click', sidebarCatalogLinkClickHandler);
-    // sidebarCatalogLink.addEventListener('mouseover', sidebarCatalogLinkMouseoverHandler);
-    // sidebarCatalogLink.addEventListener('mouseout', sidebarCatalogLinkMouseoutHandler);
     catalog.classList.remove('catalog--opened');
-    // catalog.removeEventListener('mouseover', catalogMouseoverHandler);
-    // catalog.removeEventListener('mouseout', catalogMouseoutHandler);
     catalogHeader.classList.remove('catalog__header--opened');
     catalogButton.removeEventListener('click', catalogButtonClickHandler);
     catalogWrapper.classList.remove('catalog__wrapper--opened');
     catalogTitleClickHandler();
-
-    // for (i = 0; i < catalogLinks.length; i++) {
-    //   if (catalogLinks[i].parentElement.childElementCount > 1) {
-    //     catalogLinks[i].removeEventListener('click', catalogLinkClickHandler, true);
-    //   }
-    // }
 
     catalogLinks.forEach(function (it) {
       it.classList.remove('catalog__link--opened');
@@ -978,7 +936,6 @@ var windowResizeHandler = function () {
 
     searchIcon.addEventListener('click', searchIconClickHandler);
     searchField.addEventListener('focus', searchFieldFocusHandler);
-    // searchField.addEventListener('blur', searchFieldBlurHandler);
 
     setTimeout(function () {
       for (var i = 0; i < categoriesSublists.length; i++) {
@@ -1019,7 +976,6 @@ var windowResizeHandler = function () {
     getFilterBlockHeight();
     isHandlerAdded = true;
   }, 500);
-  // getFilterBlockHeight();
 
   document.removeEventListener('click', filterSelectsCloseHandler);
 };
@@ -1046,7 +1002,6 @@ document.addEventListener('DOMContentLoaded', function () {
     filterLinksClickHandler(filterLinks[i], filterForms[i]);
     filterFormsClickHandler(filterForms[i], filterPreview[i]);
     filterFormsSubmitHandler(filterForms[i]);
-    // getFilterBlockHeight(filterForms[i]);
   }
 
   filterForms[0].classList.add('filter__form--active');
