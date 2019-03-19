@@ -260,6 +260,7 @@
 
       &:hover {
         // z-index: 2;
+        box-shadow: none;
 
         &::after {
           opacity: 1;
@@ -288,6 +289,15 @@
       &:last-of-type {
         border-right: 1px solid rgba(0, 0, 0, 0.1);
       }
+    }
+
+    &:hover {
+      box-shadow:
+        2px 2px 4px rgba(211, 214, 215, 0.2),
+        0 16px 16px rgba(211, 214, 215, 0.2),
+        0 0 4px rgba(211, 214, 215, 0.2),
+        0 0 64px rgba(211, 214, 215, 0.05),
+        0 0 32px rgba(211, 214, 215, 0.05);
     }
   }
 
