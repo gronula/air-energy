@@ -136,13 +136,10 @@
 @media (min-width: @notebook-width) {
   .feedback {
     width: 100%;
-    margin-left: 20px;
-    .fluid(margin-left, @notebook-offset, @desktop-offset, @notebook-width, @desktop-width);
-    .fluid(margin-right, @notebook-offset, @desktop-offset, @notebook-width, @desktop-width);
     padding-top: 120px;
     padding-bottom: 144px;
-    .fluid(padding-left, 96px, 224px, @notebook-width, @desktop-width);
-    .fluid(padding-right, 96px, 224px, @notebook-width, @desktop-width);
+    .fluid(padding-left, @notebook-offset + 96px, @desktop-offset + 224px, @notebook-width, @desktop-width);
+    .fluid(padding-right, @notebook-offset + 96px, @desktop-offset + 224px, @notebook-width, @desktop-width);
     display: flex;
     flex-wrap: wrap;
   }
@@ -224,10 +221,8 @@
 
 @media (min-width: @desktop-width) {
   .feedback {
-    margin-left: calc(50% - @desktop-width / 2 + @desktop-offset);
-    margin-right: calc(50% - @desktop-width / 2 + @desktop-offset);
-    padding-left: 224px;
-    padding-right: 224px;
+    padding-left: calc(50% - 780px + 224px);
+    padding-right: calc(50% - 780px + 224px);
   }
 
   .feedback__info {

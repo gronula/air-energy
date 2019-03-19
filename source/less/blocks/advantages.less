@@ -91,12 +91,10 @@
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    .fluid(margin-left, @notebook-offset, @desktop-offset, @notebook-width, @desktop-width);
-    .fluid(margin-right, @notebook-offset, @desktop-offset, @notebook-width, @desktop-width);
     padding-top: 72px;
     padding-bottom: 90px;
-    .fluid(padding-left, 24px, 144px, @notebook-width, @desktop-width);
-    .fluid(padding-right, 24px, 144px, @notebook-width, @desktop-width);
+    .fluid(padding-left, @notebook-offset, 199px, @notebook-width, @desktop-width);
+    .fluid(padding-right, @notebook-offset, 199px, @notebook-width, @desktop-width);
   }
 
   .advantages__title {
@@ -170,9 +168,7 @@
 
 @media (min-width: @desktop-width) {
   .advantages {
-    margin-left: calc(50% - 780px);
-    margin-right: calc(50% - 780px);
-    padding-left: 144px;
-    padding-right: 144px;
+    padding-left: calc(50% - 780px + 144px);
+    padding-right: calc(50% - 780px + 144px);
   }
 }
