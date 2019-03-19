@@ -30,6 +30,9 @@ var catalogItems = catalog.querySelectorAll('.catalog__item');
 var catalogLinks = catalog.querySelectorAll('.catalog__link');
 var catalogNumbers = catalog.querySelectorAll('.catalog__number');
 var catalogSublists = catalog.querySelectorAll('.catalog__sublist');
+var categoriesSublists = main.querySelectorAll('.categories__sublist');
+var categoriesAlls = main.querySelectorAll('.categories__all');
+var categoriesLinks = main.querySelectorAll('.categories__link');
 var categoryCompressor = main.querySelector('.categories__item--compressor  .categories__link');
 var categoryDehydrator = main.querySelector('.categories__item--dehydrator  .categories__link');
 var categoryPneumotool = main.querySelector('.categories__item--pneumotool  .categories__link');
@@ -663,6 +666,42 @@ var citiesFooterClickHandler = function (city, address) {
   });
 };
 
+var getCategoriesSublistHeight = function (sublist, all, link) {
+  sublist.style.opacity = 1;
+  all.style.opacity = 1;
+  link.style.transition = 'none';
+  link.style.maxHeight = 0;
+  link.style.opacity = 0;
+
+  var subitems = sublist.querySelectorAll('.categories__subitem');
+
+  subitems.forEach(function (it) {
+    it.style.transition = 'none';
+    it.style.display = '';
+    it.style.marginBottom = '';
+  });
+
+  for (var i = subitems.length - 1; i >= 0; i--) {
+    var subitemHeight = subitems[i].getBoundingClientRect().height;
+    var subitemOffsetBottom = subitems[i].offsetTop + subitemHeight;
+
+    if (subitemOffsetBottom > 320) {
+      subitems[i].style.display = 'none';
+    } else {
+      subitems[i].style.marginBottom = 0;
+      subitems[i].style.transition = '';
+
+      link.style.opacity = '';
+      link.style.maxHeight = '';
+      link.style.transition = '';
+      all.style.opacity = '';
+      sublist.style.opacity = '';
+
+      return;
+    }
+  }
+};
+
 var filterLinksClickHandler = function (link, form) {
   link.addEventListener('click', function (evt) {
     evt.preventDefault();
@@ -1218,6 +1257,12 @@ var windowResizeHandler = function () {
     searchIcon.addEventListener('click', searchIconClickHandler);
     searchField.addEventListener('focus', searchFieldFocusHandler);
     // searchField.addEventListener('blur', searchFieldBlurHandler);
+
+    setTimeout(function () {
+      for (var i = 0; i < categoriesSublists.length; i++) {
+        getCategoriesSublistHeight(categoriesSublists[i], categoriesAlls[i], categoriesLinks[i]);
+      }
+    }, 500);
 
     var categoryCompressorSubitems = categoryCompressor.parentElement.querySelectorAll('.categories__subitem').length;
     var categoryDehydratorSubitems = categoryDehydrator.parentElement.querySelectorAll('.categories__subitem').length;
