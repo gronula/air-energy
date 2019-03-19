@@ -225,10 +225,11 @@
     .main-nav__list:not(.main-nav__list--hidden) &,
     .main-nav__list:not(.main-nav__list--closed) & {
       &:hover {
-        color: #000000;
+        // color: #000000;
 
         &::after {
-          transform: scaleX(1);
+          // transform: scaleX(1);
+          width: 33px;
         }
       }
     }
@@ -240,13 +241,14 @@
     &::after {
       content: "";
       position: absolute;
-      width: 33px;
+      width: 0;
       height: 2px;
       bottom: 0;
       background-color: #f1ac00;
-      transform: scaleX(0);
-      transform-origin: 0 0;
+      // transform: scaleX(0);
+      // transform-origin: 0 0;
       transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+      // will-change: transform;
     }
   }
 
