@@ -29,7 +29,7 @@
           Корзина
           <sup class="search__number">4</sup>
         </a>
-        <button class="search__button" type="submit">Отправить запрос</button>
+        <button class="search__request" type="button">Отправить запрос</button>
       </form>
 
       <nav class="main-nav">
@@ -3476,8 +3476,41 @@
       <p class="footer__copyrights">Сделано в <a class="footer__author" href="//its.agency" target="_blank">Its.agency</a></p>
     </footer>
 
-    <div class="modal modal--request">
-      <h2 class="modal__title"></h2>
+    <div class="modal  modal--callback  modal--closed">
+      <h2 class="modal__title">Мы перезвоним вам в течение 5 минут</h2>
+      <button class="modal__close" type="button" >Закрыть окно заказа обратного звонка</button>
+
+      <form class="modal__form" action="https://echo.htmlacademy.ru" method="post">
+        <input class="modal__input" type="text" name="callbackName" id="callbackName" placeholder="Имя" required>
+        <input class="modal__input" type="tel" name="callbackTel" id="callbackTel" placeholder="Телефон" required>
+
+        <input class="modal__checkbox  visually-hidden" type="checkbox" name="callbackPepsonalData" id="callbackPepsonalData" required>
+        <label class="modal__label" for="callbackPepsonalData">Я согласен на обработку персональных данных</label>
+
+        <button class="modal__submit" type="submit">Оправить запрос</button>
+      </form>
+    </div>
+
+    <div class="modal  modal--request  modal--closed">
+      <h2 class="modal__title">Отправить запрос</h2>
+      <button class="modal__close" type="button" >Закрыть окно отправки запроса</button>
+
+      <form class="modal__form" action="https://echo.htmlacademy.ru" method="post">
+        <input class="modal__input" type="text" name="requestName" id="requestName" placeholder="Имя" required>
+        <input class="modal__input" type="email" name="requestEmail" id="requestEmail" placeholder="E-mail" required>
+        <input class="modal__input" type="tel" name="requestTel" id="requestTel" placeholder="Телефон" required>
+        <textarea class="modal__textarea" name="requestMessage" id="requestMessage" placeholder="Сообщение" required></textarea>
+
+        <label class="modal__file-label">
+          <span class="modal__file-text">Прикрепить документы</span>
+          <input class="modal__file" type="file" name="requestFile" id="requestFile">
+        </label>
+
+        <input class="modal__checkbox  visually-hidden" type="checkbox" name="requestPepsonalData" id="requestPepsonalData" required>
+        <label class="modal__label" for="requestPepsonalData">Я согласен на обработку персональных данных</label>
+
+        <button class="modal__submit" type="submit">Оправить запрос</button>
+      </form>
     </div>
 
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>

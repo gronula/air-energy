@@ -1,0 +1,227 @@
+.modal {
+  position: fixed;
+  z-index: 3;
+  top: 100px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 432px;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  padding-left: 32px;
+  padding-right: 32px;
+  background-color: #ffffff;
+  opacity: 1;
+  box-shadow:
+    2px 2px 4px rgba(211, 214, 215, 0.2),
+    0 16px 16px rgba(211, 214, 215, 0.2),
+    0 0 4px rgba(211, 214, 215, 0.2),
+    0 0 64px rgba(211, 214, 215, 0.05),
+    0 0 32px rgba(211, 214, 215, 0.05);
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+
+  &--closed {
+    transform: translate(-50%, 100vh);
+    opacity: 0;
+  }
+}
+
+.modal__title {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: 0.01em;
+  margin-top: 0;
+  margin-bottom: 32px;
+}
+
+.modal__close {
+  position: absolute;
+  top: 19px;
+  right: 19px;
+  width: 24px;
+  height: 24px;
+  font-size: 0;
+  border: 0;
+  background: transparent url("../../img/icon-modal-close.svg") no-repeat center;
+  background-size: contain;
+  cursor: pointer;
+  transform-origin: 50% 50%;
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+
+  &:hover {
+    transform: rotate(90deg) scale(1.1);
+  }
+}
+
+.modal__input {
+  display: flex;
+  width: 100%;
+  margin-bottom: 16px;
+  padding-top: 20px;
+  padding-bottom: 21px;
+  padding-left: 13px;
+  padding-right: 13px;
+  border: 0;
+  background-color: #eceff1;
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: 0.01em;
+  color: rgba(51, 51, 51, 0.6);
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+
+  &::placeholder {
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: 0.01em;
+    color: rgba(51, 51, 51, 0.6);
+    transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  }
+
+  &:hover {
+    color: @title-color;
+
+    &::placeholder {
+      color: @title-color;
+    }
+  }
+}
+
+.modal__textarea {
+  display: flex;
+  width: 100%;
+  min-height: 104px;
+  margin-bottom: 16px;
+  padding-top: 20px;
+  padding-bottom: 21px;
+  padding-left: 13px;
+  padding-right: 13px;
+  background-color: #eceff1;
+  border: 0;
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: 0.01em;
+  color: rgba(51, 51, 51, 0.6);
+  resize: none;
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+
+  &::placeholder {
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: 0.01em;
+    color: rgba(51, 51, 51, 0.6);
+    transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  }
+
+  &:hover {
+    color: @title-color;
+
+    &::placeholder {
+      color: @title-color;
+    }
+  }
+}
+
+.modal__file-label {
+  display: flex;
+  width: 100%;
+  margin-bottom: 16px;
+  padding-top: 16px;
+  padding-bottom: 17px;
+  padding-left: 13px;
+  padding-right: 13px;
+  justify-content: center;
+  border: 1px solid #eceff1;
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: 0.01em;
+  color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+
+  &:hover {
+    color: #000000;
+  }
+}
+
+.modal__file-text {
+  position: relative;
+  margin-left: 34px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -34px;
+    transform: translateY(-50%);
+    width: 22px;
+    height: 22px;
+    background: url("../../img/icon-modal-file.svg") no-repeat center;
+    background-size: contain;
+  }
+}
+
+.modal__file {
+  display: none;
+}
+
+.modal__label {
+  display: flex;
+  margin-bottom: 32px;
+  padding-left: 32px;
+  font-size: 14px;
+  line-height: 21px;
+  color: rgba(51, 51, 51, 0.6);
+  position: relative;
+  cursor: pointer;
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+
+  &:hover {
+    color: @title-color;
+  }
+
+  .modal__checkbox + & {
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 20px;
+      height: 20px;
+      background-color: #ffffff;
+      border: 1px solid #d2d7db;
+    }
+  }
+
+  .modal__checkbox:checked + & {
+    &::before {
+      border-color: #fbc02d;
+      background: #fbc02d url("../../img/icon-tick.svg") no-repeat center;
+    }
+  }
+}
+
+.modal__submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border: 0;
+  background-color: #fcc742;
+  padding: 16px 64px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  color: @title-color;
+  cursor: pointer;
+  filter: grayscale(0);
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+
+  &:hover {
+    background-color: #ffb600;
+  }
+
+  .modal__checkbox:not(:checked) ~ & {
+    pointer-events: none;
+    filter: grayscale(1);
+  }
+}
