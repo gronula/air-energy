@@ -30,16 +30,16 @@
   margin-right: 51px;
   padding-left: 19px;
   flex-shrink: 0;
+  align-self: center;
 }
 
 .clients__image {
-  height: 100%;
   filter: grayscale(1);
   opacity: 0.6;
   object-fit: scale-down;
   transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 
-  &:hover {
+  .clients__image-wrapper:hover & {
     filter: none;
     opacity: 1;
   }
@@ -76,6 +76,12 @@
     padding-left: 0;
     max-height: 81px;
     max-width: 202px;
+  }
+
+  .clients__image {
+    display: inline-block;
+    max-height: 81px;
+    vertical-align: middle;
   }
 }
 
