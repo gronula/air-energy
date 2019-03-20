@@ -43,104 +43,29 @@
     mix-blend-mode: multiply;
     transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 
-    &:nth-of-type(1) {
-      background: url("../../img/support-engineering.svg") no-repeat 2vw 156px;
-      background-size: 55px 63px;
-
-      &:hover {
-        background: #fbc02d url("../../img/support-engineering-black.svg") no-repeat 2vw 33px;
-        background-size: 27px 35px;
-      }
-    }
-
-    &:nth-of-type(2) {
-      background: url("../../img/support-consultation.svg") no-repeat 2vw 151px;
-      background-size: 60px 67px;
-
-      &:hover {
-        background: #fbc02d url("../../img/support-consultation-black.svg") no-repeat 2vw 33px;
-        background-size: 30px 34px;
-      }
-    }
-
-    &:nth-of-type(3) {
-      background: url("../../img/support-setup.svg") no-repeat 1vw 148px;
-      background-size: 75px 78px;
-
-      &:hover {
-        background: #fbc02d url("../../img/support-setup-black.svg") no-repeat 1vw 33px;
-        background-size: 37px 39px;
-      }
-    }
-
-    &:nth-of-type(4) {
-      background: url("../../img/support-service.svg") no-repeat 2vw 156px;
-      background-size: 62px 62px;
-
-      &:hover {
-        background: #fbc02d url("../../img/support-service-black.svg") no-repeat 2vw 33px;
-        background-size: 31px 31px;
-      }
-    }
-
-    &:nth-of-type(5) {
-      background: url("../../img/support-diagnostic.svg") no-repeat 2vw 166px;
-      background-size: 84px 51px;
-
-      &:hover {
-        background: #fbc02d url("../../img/support-diagnostic-black.svg") no-repeat 2vw 33px;
-        background-size: 42px 26px;
-      }
-    }
-
-    &:nth-of-type(6) {
-      background: url("../../img/support-repair.svg") no-repeat 2vw 160px;
-      background-size: 98px 57px;
-
-      &:hover {
-        background: #fbc02d url("../../img/support-repair-black.svg") no-repeat 2vw 33px;
-        background-size: 49px 28px;
-      }
-    }
-
-    &:nth-of-type(7) {
-      background: url("../../img/support-pipeline.svg") no-repeat 2vw 152px;
-      background-size: 69px 64px;
-
-      &:hover {
-        background: #fbc02d url("../../img/support-pipeline-black.svg") no-repeat 2vw 33px;
-        background-size: 35px 32px;
-      }
-    }
-
-    &:nth-of-type(8) {
+    &:last-of-type {
       background-color: #fbc02d;
       align-items: center;
       z-index: auto;
 
       &:hover {
-        background-image: none;
         background-color: #ffb600;
       }
 
-      &::before {
-        display: none;
-      }
-
+      &::before,
       &::after {
         display: none;
       }
     }
 
-    &:nth-of-type(4n) {
+    &:nth-of-type(4n),
+    &:nth-last-of-type(-n + 4) {
       border-right: 1px solid rgba(0, 0, 0, 0.05);
     }
 
-    &:nth-last-of-type(-n + 4) {
-      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    }
-
     &:hover {
+      background-color: #fbc02d;
+
       &::before {
         color: rgba(22, 22, 22, 0.8);
       }
@@ -168,7 +93,6 @@
     &::after {
       content: "";
       position: absolute;
-      // z-index: -1;
       top: 27px;
       right: -220px;
       opacity: 0;
@@ -203,6 +127,57 @@
 
     .support__item:hover & {
       color: #000000;
+    }
+  }
+
+  .support__icon {
+    position: absolute;
+    transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    transform: scale(1);
+    transform-origin: 0 50%;
+    fill: #f1ac00;
+
+    .support__item:nth-of-type(1) & {
+      top: 156px;
+    }
+
+    .support__item:nth-of-type(2) & {
+      top: 151px;
+    }
+
+    .support__item:nth-of-type(3) & {
+      top: 148px;
+    }
+
+    .support__item:nth-of-type(4) & {
+      top: 156px;
+      stroke: #f1ac00;
+    }
+
+    .support__item:nth-of-type(5) & {
+      top: 166px;
+    }
+
+    .support__item:nth-of-type(6) & {
+      top: 160px;
+      stroke: #f1ac00;
+    }
+
+    .support__item:nth-of-type(7) & {
+      top: 152px;
+      stroke: #f1ac00;
+    }
+
+    .support__item:hover & {
+      top: 33px;
+      transform: scale(0.5);
+      fill: #000000;
+    }
+
+    .support__item:nth-of-type(4):hover &,
+    .support__item:nth-of-type(6):hover &,
+    .support__item:nth-of-type(7):hover & {
+      stroke: #000000;
     }
   }
 }
