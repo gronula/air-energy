@@ -72,14 +72,19 @@
   }
 
   .clients__image-wrapper {
-    margin-right: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0;
     padding-left: 0;
-    max-height: 81px;
-    max-width: 202px;
+    height: 81px;
+    max-width: none;
+    width: calc((100vw - 17px - (@notebook-offset + unit(@desktop-offset - @notebook-offset) * (100vw - @notebook-width) / unit(@desktop-width - @notebook-width)) * 2) / 5);
   }
 
   .clients__image {
     display: inline-block;
+    max-width: 80%;
     max-height: 81px;
     vertical-align: middle;
   }
@@ -89,5 +94,9 @@
   .clients__list {
     padding-left: calc(50% - @desktop-width / 2 + @desktop-offset);
     padding-right: calc(50% - @desktop-width / 2 + @desktop-offset);
+  }
+
+  .clients__image-wrapper {
+    width: calc((100vw - 17px - (50vw - 17px / 2 - @desktop-width / 2 + @desktop-offset) * 2) / 5);
   }
 }
