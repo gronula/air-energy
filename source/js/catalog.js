@@ -224,9 +224,31 @@ var mainNavLinkCatalogMouseoverHandler = function () {
       it.addEventListener('mouseleave', catalogItemMouseleaveHandler);
     });
 
+    mainNavLinkCatalog.addEventListener('mouseout', mainNavLinkCatalogMouseoutHandler);
     mainNavOverlay.addEventListener('mouseover', mainNavOverlayMouseoverHandler);
     sidebar.addEventListener('mouseover', sidebarMouseoverHandler);
   }
+};
+
+var mainNavLinkCatalogMouseoutHandler = function () {
+  document.body.style.top = '';
+  document.body.style.width = '';
+  document.body.classList.remove('no-scroll');
+  header.style.left = '';
+  header.style.right = '';
+  header.style.paddingLeft = '';
+  header.style.paddingRight = '';
+
+  window.scroll(0, offsetTop);
+
+  var mainNavLinkCatalogOffsetLeft = mainNavLinkCatalog.getBoundingClientRect().left;
+
+  mainNavOverlay.classList.add('main-nav__overlay--out');
+  sidebar.classList.add('sidebar--out');
+  sidebar.style.left = mainNavLinkCatalogOffsetLeft + 'px';
+
+  mainNavLinkCatalog.removeEventListener('mouseover', mainNavOverlayMouseoverHandler);
+  window.addEventListener('scroll', windowScrollHandler);
 };
 
 var catalogItemMouseenterHandler = function () {
@@ -257,6 +279,9 @@ var mainNavOverlayMouseoverHandler = function () {
   mainNavLinkCatalog.removeEventListener('mouseover', mainNavOverlayMouseoverHandler);
   window.addEventListener('scroll', windowScrollHandler);
 
+  clearTimeout(mainNavLinkTimer);
+  mainNavLinkTimer = null;
+
   mainNavLinkTimer = setTimeout(function () {
     catalogItems.forEach(function (it) {
       it.removeEventListener('mouseenter', catalogItemMouseenterHandler);
@@ -266,6 +291,9 @@ var mainNavOverlayMouseoverHandler = function () {
     mainNavOverlay.classList.remove('main-nav__overlay--hover');
     sidebar.classList.remove('sidebar--hover');
     sidebar.removeEventListener('mouseover', sidebarMouseoverHandler);
+
+    clearTimeout(mainNavLinkTimer);
+    mainNavLinkTimer = null;
   }, 500);
 };
 
