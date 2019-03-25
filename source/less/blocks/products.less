@@ -93,7 +93,7 @@
   }
 
   .products__items {
-    width: 630px;
+    width: 618px;
     flex-grow: 1;
     display: flex;
     position: relative;
@@ -200,7 +200,7 @@
 
 @media (min-width: 1440px) {
   .products__items {
-    width: 928px;
+    width: calc(100% - 390px);
   }
 
   .products__item {
@@ -214,9 +214,5 @@
   .products {
     padding-left: calc(50% - @desktop-width / 2 + @desktop-offset);
     padding-right: calc(50% - @desktop-width / 2 + @desktop-offset);
-  }
-
-  .products__items {
-    width: 1170px;
   }
 }

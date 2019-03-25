@@ -20,6 +20,13 @@
       background-color: #ffffff;
     }
   }
+
+  .comparison & {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+    position: relative;
+  }
 }
 
 .filter__header {
@@ -386,6 +393,12 @@
   .filter--opened & {
     display: flex;
   }
+
+  .comparison & {
+    width: calc(100% - 32px);
+    margin-left: 16px;
+    margin-right: 16px;
+  }
 }
 
 .filter__caption {
@@ -631,6 +644,10 @@
   }
 }
 
+.filter__radio-buttons {
+  display: none;
+}
+
 .filter__label {
   display: block;
   margin-top: 0;
@@ -683,6 +700,51 @@
 
   .filter__checkboxes &:last-of-type {
     border-bottom: 0;
+  }
+
+  .filter__radio + & {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: rgba(51, 51, 51, 0.4);
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 32px;
+    padding-right: 0;
+    border-bottom: 0;
+    background-color: transparent;
+
+    &:hover {
+      background-color: transparent;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      width: 16px;
+      height: 16px;
+      border: 1px solid rgba(69, 90, 100, 0.4);
+      border-radius: 50%;
+    }
+  }
+
+  .filter__radio:checked + & {
+    color: rgba(51, 51, 51, 1);
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 4px;
+      transform: translateY(-50%);
+      width: 8px;
+      height: 8px;
+      background-color: #fbc02d;
+      border-radius: 50%;
+    }
   }
 
   &:hover {
@@ -764,6 +826,27 @@
   }
 }
 
+.filter__remove {
+  position: absolute;
+  bottom: calc(100% + 38px);
+  right: 16px;
+  width: 24px;
+  height: 24px;
+  background: url("../../img/icon-remove.svg") no-repeat center;
+  border: 0;
+  font-size: 0;
+  cursor: pointer;
+  opacity: 0.6;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.filter__charachteristics {
+  display: none;
+}
+
 @media (min-width: @notebook-width) {
   .filter {
     order: 3;
@@ -805,6 +888,14 @@
           z-index: -1;
         }
       }
+    }
+
+    .comparison & {
+      flex-direction: row;
+      margin-bottom: 0;
+      padding-top: 0;
+      padding-bottom: 60px;
+      padding-right: 0;
     }
   }
 
@@ -1009,6 +1100,11 @@
     }
   }
 
+  .filter__radio-buttons {
+    display: block;
+    width: 100%;
+  }
+
   .filter__additional {
     height: 100%;
   }
@@ -1033,6 +1129,13 @@
         .fluid(margin-left, 16px, 24px, @notebook-width, @desktop-width);
         .fluid(margin-right, 16px, 24px, @notebook-width, @desktop-width);
       }
+    }
+
+    .comparison & {
+      width: 100%;
+      margin-bottom: 32px;
+      margin-left: 0;
+      margin-right: 0;
     }
   }
 
@@ -1126,6 +1229,54 @@
     line-height: 15px;
     color: rgba(51, 51, 51, 0.5);
   }
+
+  .filter__remove {
+    width: 100%;
+    margin-top: auto;
+    margin-bottom: 40px;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 24px;
+    padding-right: 0;
+    position: static;
+    order: 1;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: left;
+    color: rgba(51, 51, 51, 0.6);
+    background-position-x: left;
+    transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  }
+
+  .filter__controls {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    width: 204px;
+    min-height: 583px;
+    position: relative;
+  }
+
+  .filter__charachteristics {
+    display: block;
+    order: 2;
+  }
+
+  .filter__charachteristic {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 24px;
+    padding-bottom: 40px;
+    font-size: 16px;
+    line-height: 21px;
+    color: rgba(51, 51, 51, 0.6);
+    border-top: 1px solid rgba(0, 0, 0, 0.3);
+
+    &:last-of-type {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    }
+  }
 }
 
 @media (min-width: 1100px) {
@@ -1187,5 +1338,9 @@
   .filter {
     padding-left: calc(50% - @desktop-width / 2 + @desktop-offset);
     padding-right: calc(50% - @desktop-width / 2 + @desktop-offset);
+
+    .comparison & {
+      padding-right: calc(50% - @desktop-width / 2 + @desktop-offset);
+    }
   }
 }

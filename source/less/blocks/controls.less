@@ -16,6 +16,12 @@
     padding-left: 0;
     padding-right: 0;
   }
+
+  .comparison & {
+    top: 82px;
+    left: 0;
+    bottom: auto;
+  }
 }
 
 .controls__button {
@@ -94,6 +100,20 @@
       width: 100%;
       z-index: 0;
       background-color: transparent;
+    }
+
+    .comparison & {
+      top: 160px;
+      right: 0;
+      transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+
+      &--mini {
+        left: -20px;
+        width: 100%;
+        height: 0;
+        overflow: visible;
+        background-color: transparent;
+      }
     }
   }
 
@@ -177,6 +197,21 @@
 
       &:hover {
         background-color: #ffb600;
+      }
+    }
+
+    .comparison & {
+      width: 40px;
+      height: 40px;
+    }
+
+    &.slick-disabled {
+      transform: scale(0);
+      opacity: 0;
+      z-index: -1;
+
+      &::before {
+        display: none;
       }
     }
   }

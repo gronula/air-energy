@@ -225,8 +225,7 @@ var isSidebarCatalogHovered = false;
 var mainNavLinkCatalogMouseenterHandler = function (evt) {
   if (!window.matchMedia('(max-width: 1023px)').matches) {
     if (evt.relatedTarget) {
-      if (evt.relatedTarget === catalog ||
-          evt.relatedTarget.classList.contains('catalog__list') ||
+      if (evt.relatedTarget.classList.contains('catalog__list') ||
           evt.relatedTarget.classList.contains('catalog__link')) {
         return;
       }

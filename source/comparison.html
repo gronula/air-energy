@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <title>Air Energy. Каталог</title>
+    <title>Air Energy</title>
   </head>
 
   <body class="page">
@@ -73,105 +73,174 @@
       </section>
     </header>
 
-    <main class="main  main--catalog">
-      <div class="breadcrumbs">
-        <a class="breadcrumbs__item" href="index.html">Главная</a>
-        <a class="breadcrumbs__item" href="catalog.html">Каталог</a>
-      </div>
+    <main class="main  main--comparison">
+      <h1 class="title  title--no-line">Сравнение</h1>
 
-      <h1 class="title">Каталог<span class="title  title--hide"> продукции</span></h1>
+      <section class="comparison">
+        <form class="filter" action="https://echo.htmlacademy.ru" method="post">
+          <div class="filter__controls">
+            <button class="filter__remove" type="button">Очистить список</button>
 
-      <section class="info">
-        <p class="info__text">Разнообразный и богатый опыт новая модель организационной деятельности влечет за собой процесс внедрения модернизации направлений развития.</p>
+            <div class="filter__select  filter__select--sort">
+              <h4 class="filter__caption">Категория</h4>
+              <p class="filter__choice">Компрессоры</p>
 
-        <a class="info__link" href="#">Читать далее</a>
-      </section>
+              <ul class="filter__drop-down">
+                <li><a class="filter__label" href="#">Компрессоры</a></li>
+                <li><a class="filter__label" href="#">Осушители</a></li>
+                <li><a class="filter__label" href="#">Пневмоинструмент</a></li>
+                <li><a class="filter__label" href="#">Насосы</a></li>
+                <li><a class="filter__label" href="#">Электростанции</a></li>
+              </ul>
+            </div>
 
-      <section class="products">
-        <a class="products__item" href="section.html">
-          <img class="products__image" src="img/catalog-01@1x.png" alt="Воздушные компрессоры">
-          <h2 class="products__name">Воздушные компрессоры</h2>
-        </a>
+            <div class="filter__radio-buttons">
+              <input class="filter__radio  visually-hidden" type="radio" name="charachteristics" id="charachteristicsAll"
+              value="all" checked>
+              <label class="filter__label" for="charachteristicsAll">Все характеристики</label>
 
-        <a class="products__item" href="section.html">
-          <img class="products__image" src="img/catalog-02@1x.png" alt="Осушители сжатого воздуха">
-          <h2 class="products__name">Осушители сжатого воздуха</h2>
-        </a>
+              <input class="filter__radio  visually-hidden" type="radio" name="charachteristics" id="charachteristicsDifferent"
+              value="different">
+              <label class="filter__label" for="charachteristicsDifferent">Различающиеся</label>
+            </div>
 
-        <a class="products__item" href="section.html">
-          <img class="products__image" src="img/catalog-03@1x.png" alt="Фильтрация сжатого воздуха">
-          <h2 class="products__name">Фильтрация сжатого воздуха</h2>
-        </a>
+            <div class="filter__charachteristics">
+              <p class="filter__charachteristic">Цена</p>
+              <p class="filter__charachteristic">Тип компрессора</p>
+              <p class="filter__charachteristic">Тип смазки</p>
+            </div>
+          </div>
 
-        <a class="products__item" href="section.html">
-          <img class="products__image" src="img/catalog-04@1x.png" alt="Установки получения газообразного азота и кислорода">
-          <h2 class="products__name">Установки получения газообразного азота и кислорода</h2>
-        </a>
+          <div class="comparison__goods">
+            <div class="controls  controls--vertical  controls--mini">
+              <button class="controls__button  controls__button--previous" type="button">Предыдущий слайд</button>
+              <button class="controls__button  controls__button--next" type="button">Следующий слайд</button>
+            </div>
 
-        <a class="products__item" href="section.html">
-          <img class="products__image" src="img/catalog-04@1x.png" alt="Ресиверы и воздухосборники">
-          <h2 class="products__name">Ресиверы и воздухосборники</h2>
-        </a>
+            <div class="comparison__block  comparison__block--images">
+              <div class="comparison__header">
+                <button class="comparison__delete" type="button">Удалить товар из сравнения</button>
+                <a class="comparison__image-wrapper" href="#">
+                  <img class="comparison__image" src="img/products-mobile-01@1x.png" alt="Cross Air Compressors Dali CA-0.6/10-RA">
+                </a>
+                <h2 class="comparison__value">
+                  <a href="#">Cross Air Compressors Dali CA-0.6/10-RA</a>
+                </h2>
+              </div>
+              <div class="comparison__header">
+                <button class="comparison__delete" type="button">Удалить товар из сравнения</button>
+                <a class="comparison__image-wrapper" href="#">
+                  <img class="comparison__image" src="img/products-mobile-02@1x.png" alt="Cross Air Compressors Dali CA-0.6/10-RA">
+                </a>
+                <h2 class="comparison__value">
+                  <a href="#">Cross Air Compressors Dali CA-0.6/10-RA</a>
+                </h2>
+              </div>
+              <div class="comparison__header">
+                <button class="comparison__delete" type="button">Удалить товар из сравнения</button>
+                <a class="comparison__image-wrapper" href="#">
+                  <img class="comparison__image" src="img/products-mobile-01@1x.png" alt="Cross Air Compressors Dali CA-0.6/10-RA">
+                </a>
+                <h2 class="comparison__value">
+                  <a href="#">Cross Air Compressors Dali CA-0.6/10-RA</a>
+                </h2>
+              </div>
+              <div class="comparison__header">
+                <button class="comparison__delete" type="button">Удалить товар из сравнения</button>
+                <a class="comparison__image-wrapper" href="#">
+                  <img class="comparison__image" src="img/products-mobile-02@1x.png" alt="Cross Air Compressors Dali CA-0.6/10-RA">
+                </a>
+                <h2 class="comparison__value">
+                  <a href="#">Cross Air Compressors Dali CA-0.6/10-RA</a>
+                </h2>
+              </div>
+              <div class="comparison__header">
+                <button class="comparison__delete" type="button">Удалить товар из сравнения</button>
+                <a class="comparison__image-wrapper" href="#">
+                  <img class="comparison__image" src="img/products-mobile-01@1x.png" alt="Cross Air Compressors Dali CA-0.6/10-RA">
+                </a>
+                <h2 class="comparison__value">
+                  <a href="#">Cross Air Compressors Dali CA-0.6/10-RA</a>
+                </h2>
+              </div>
+              <div class="comparison__header">
+                <button class="comparison__delete" type="button">Удалить товар из сравнения</button>
+                <a class="comparison__image-wrapper" href="#">
+                  <img class="comparison__image" src="img/products-mobile-02@1x.png" alt="Cross Air Compressors Dali CA-0.6/10-RA">
+                </a>
+                <h2 class="comparison__value">
+                  <a href="#">Cross Air Compressors Dali CA-0.6/10-RA</a>
+                </h2>
+              </div>
+              <div class="comparison__header">
+                <button class="comparison__delete" type="button">Удалить товар из сравнения</button>
+                <a class="comparison__image-wrapper" href="#">
+                  <img class="comparison__image" src="img/products-mobile-01@1x.png" alt="Cross Air Compressors Dali CA-0.6/10-RA">
+                </a>
+                <h2 class="comparison__value">
+                  <a href="#">Cross Air Compressors Dali CA-0.6/10-RA</a>
+                </h2>
+              </div>
+              <div class="comparison__header">
+                <button class="comparison__delete" type="button">Удалить товар из сравнения</button>
+                <a class="comparison__image-wrapper" href="#">
+                  <img class="comparison__image" src="img/products-mobile-02@1x.png" alt="Cross Air Compressors Dali CA-0.6/10-RA">
+                </a>
+                <h2 class="comparison__value">
+                  <a href="#">Cross Air Compressors Dali CA-0.6/10-RA</a>
+                </h2>
+              </div>
+              <div class="comparison__header">
+                <button class="comparison__delete" type="button">Удалить товар из сравнения</button>
+                <a class="comparison__image-wrapper" href="#">
+                  <img class="comparison__image" src="img/products-mobile-01@1x.png" alt="Cross Air Compressors Dali CA-0.6/10-RA">
+                </a>
+                <h2 class="comparison__value">
+                  <a href="#">Cross Air Compressors Dali CA-0.6/10-RA</a>
+                </h2>
+              </div>
+            </div>
 
-        <a class="products__item" href="section.html">
-          <img class="products__image" src="img/catalog-04@1x.png" alt="Быстросборные трубопроводы AIRnet">
-          <h2 class="products__name">Быстросборные трубопроводы AIRnet</h2>
-        </a>
+            <h2 class="comparison__heading">Цена</h2>
+            <div class="comparison__block">
+              <p class="comparison__value">612 000 ₽</p>
+              <p class="comparison__value">612 000 ₽</p>
+              <p class="comparison__value">612 000 ₽</p>
+              <p class="comparison__value">612 000 ₽</p>
+              <p class="comparison__value">612 000 ₽</p>
+              <p class="comparison__value">612 000 ₽</p>
+              <p class="comparison__value">612 000 ₽</p>
+              <p class="comparison__value">612 000 ₽</p>
+              <p class="comparison__value">612 000 ₽</p>
+            </div>
 
-        <a class="products__item" href="section.html">
-          <img class="products__image" src="img/catalog-04@1x.png" alt="Пневмоинструмент">
-          <h2 class="products__name">Пневмоинструмент</h2>
-        </a>
+            <h2 class="comparison__heading">Тип компрессора</h2>
+            <div class="comparison__block">
+              <p class="comparison__value">Поршневой</p>
+              <p class="comparison__value">Дизельный</p>
+              <p class="comparison__value">Поршневой</p>
+              <p class="comparison__value">Дизельный</p>
+              <p class="comparison__value">Поршневой</p>
+              <p class="comparison__value">Дизельный</p>
+              <p class="comparison__value">Поршневой</p>
+              <p class="comparison__value">Дизельный</p>
+              <p class="comparison__value">Поршневой</p>
+            </div>
 
-        <a class="products__item" href="section.html">
-          <img class="products__image" src="img/catalog-04@1x.png" alt="Пневматика и аксессуары для компрессоров">
-          <h2 class="products__name">Пневматика и аксессуары для компрессоров</h2>
-        </a>
-
-        <a class="products__item" href="section.html">
-          <img class="products__image" src="img/catalog-04@1x.png" alt="Вакуумные насосы">
-          <h2 class="products__name">Вакуумные насосы</h2>
-        </a>
-
-        <a class="products__item" href="section.html">
-          <img class="products__image" src="img/catalog-04@1x.png" alt="Автономные электростанции">
-          <h2 class="products__name">Автономные электростанции</h2>
-        </a>
-
-        <a class="products__item" href="section.html">
-          <img class="products__image" src="img/catalog-04@1x.png" alt="Дорожно-строительное оборудование">
-          <h2 class="products__name">Дорожно-строительное оборудование</h2>
-        </a>
-
-        <a class="products__item" href="section.html">
-          <img class="products__image" src="img/catalog-04@1x.png" alt="Насосы и мотопомпы">
-          <h2 class="products__name">Насосы и мотопомпы</h2>
-        </a>
-
-        <a class="products__item" href="section.html">
-          <img class="products__image" src="img/catalog-04@1x.png" alt="Абразивоструйные установки">
-          <h2 class="products__name">Абразивоструйные установки</h2>
-        </a>
-
-        <a class="products__item" href="section.html">
-          <img class="products__image" src="img/catalog-04@1x.png" alt="Аппараты безвоздушного распыления">
-          <h2 class="products__name">Аппараты безвоздушного распыления</h2>
-        </a>
-
-        <a class="products__item" href="section.html">
-          <img class="products__image" src="img/catalog-04@1x.png" alt="Оборудование в контейнерном исполнении">
-          <h2 class="products__name">Оборудование в контейнерном исполнении</h2>
-        </a>
-
-        <a class="products__item" href="section.html">
-          <img class="products__image" src="img/catalog-04@1x.png" alt="Запасные части и материалы">
-          <h2 class="products__name">Запасные части и материалы</h2>
-        </a>
-
-        <a class="products__item" href="section.html">
-          <img class="products__image" src="img/catalog-04@1x.png" alt="Б/у техника">
-          <h2 class="products__name">Б/у техника</h2>
-        </a>
+            <h2 class="comparison__heading">Тип смазки</h2>
+            <div class="comparison__block">
+              <p class="comparison__value">Безмасляный</p>
+              <p class="comparison__value">Масляный</p>
+              <p class="comparison__value">Безмасляный</p>
+              <p class="comparison__value">Масляный</p>
+              <p class="comparison__value">Безмасляный</p>
+              <p class="comparison__value">Масляный</p>
+              <p class="comparison__value">Безмасляный</p>
+              <p class="comparison__value">Масляный</p>
+              <p class="comparison__value">Безмасляный</p>
+            </div>
+          </div>
+        </form>
       </section>
 
       <section class="sidebar">
@@ -909,313 +978,6 @@
         </div>
       </section>
 
-      <section class="bestsellers">
-        <h2 class="bestsellers__title">Лидеры продаж</h2>
-
-        <div class="bestsellers__products">
-          <article class="item  item--bestsellers  item--bg-dark">
-            <div class="item__image-wrapper">
-              <picture>
-                <source type="image/webp" media="(min-width: 1024px)" srcset="img/bestseller-desktop-01@1x.webp">
-                <source type="image/webp" srcset="img/bestseller-mobile-01@1x.webp">
-
-                <source media="(min-width: 1024px)" srcset="img/bestseller-desktop-01@1x.png">
-                <img class="item__image" src="img/bestseller-mobile-01@1x.png" alt="Cross Air Compressors Dali CA-0.6/10-RA">
-              </picture>
-            </div>
-
-            <p class="item__category">Винтовой компрессор</p>
-
-            <h3 class="item__name">
-              <a class="item__link" href="#">Cross Air Compressors Dali CA-0.6/10-RA</a>
-            </h3>
-
-            <div class="item__characteristics">
-              <div class="item__characteristic">
-                <span class="item__value">5.5</span>
-                <p class="item__caption">кВт</p>
-                <span class="item__tooltip" data-tooltip="Производительность">Производительность</span>
-              </div>
-              <div class="item__characteristic">
-                <span class="item__value">10</span>
-                <p class="item__caption">атм</p>
-                <span class="item__tooltip" data-tooltip="Давление">Давление</span>
-              </div>
-              <div class="item__characteristic">
-                <span class="item__value">600</span>
-                <p class="item__caption">л/мин</p>
-                <span class="item__tooltip" data-tooltip="Расход">Расход</span>
-              </div>
-            </div>
-
-            <footer class="item__footer">
-              <div class="item__cost">
-                <a class="item__price" href="#">612 000 ₽</a>
-                <span class="item__tag">Цена</span>
-              </div>
-
-              <a class="item__button  item__button--comparison" href="#">Сравнение</a>
-              <a class="item__button  item__button--cart" href="#">Корзина</a>
-            </footer>
-          </article>
-
-          <article class="item  item--bestsellers">
-            <div class="item__image-wrapper">
-              <picture>
-                <source type="image/webp" media="(min-width: 1024px)" srcset="img/bestseller-desktop-02@1x.webp">
-                <source type="image/webp" srcset="img/bestseller-mobile-02@1x.webp">
-
-                <source media="(min-width: 1024px)" srcset="img/bestseller-desktop-02@1x.png">
-                <img class="item__image" src="img/bestseller-mobile-02@1x.png" alt="Cross Air Compressors Dali CA-0.6/10-RA">
-              </picture>
-            </div>
-
-            <p class="item__category">Винтовой компрессор</p>
-            <h3 class="item__name">
-              <a class="item__link" href="#">Cross Air Compressors Dali CA-0.6/10-RA</a>
-            </h3>
-
-            <div class="item__characteristics">
-              <div class="item__characteristic">
-                <span class="item__value">5.5</span>
-                <p class="item__caption">кВт</p>
-                <span class="item__tooltip" data-tooltip="Производительность">Производительность</span>
-              </div>
-              <div class="item__characteristic">
-                <span class="item__value">10</span>
-                <p class="item__caption">атм</p>
-                <span class="item__tooltip" data-tooltip="Давление">Давление</span>
-              </div>
-              <div class="item__characteristic">
-                <span class="item__value">600</span>
-                <p class="item__caption">л/мин</p>
-                <span class="item__tooltip" data-tooltip="Расход">Расход</span>
-              </div>
-            </div>
-
-            <footer class="item__footer">
-              <div class="item__cost">
-                <a class="item__price  item__price--request" href="#">По запросу</a>
-                <span class="item__tag">Цена</span>
-              </div>
-
-              <a class="item__button  item__button--comparison" href="#">Сравнение</a>
-              <a class="item__button  item__button--cart" href="#">Корзина</a>
-            </footer>
-          </article>
-
-          <article class="item  item--bestsellers  item--bg-grey">
-            <div class="item__image-wrapper">
-              <picture>
-                <source type="image/webp" media="(min-width: 1024px)" srcset="img/bestseller-desktop-03@1x.webp">
-                <source type="image/webp" srcset="img/bestseller-mobile-01@1x.webp">
-
-                <source media="(min-width: 1024px)" srcset="img/bestseller-desktop-03@1x.png">
-                <img class="item__image" src="img/bestseller-mobile-01@1x.png" alt="Cross Air Compressors Dali CA-0.6/10-RA">
-              </picture>
-            </div>
-
-            <p class="item__category">Винтовой компрессор</p>
-            <h3 class="item__name">
-              <a class="item__link" href="#">Cross Air Compressors Dali CA-0.6/10-RA</a>
-            </h3>
-
-            <div class="item__characteristics">
-              <div class="item__characteristic">
-                <span class="item__value">5.5</span>
-                <p class="item__caption">кВт</p>
-                <span class="item__tooltip" data-tooltip="Производительность">Производительность</span>
-              </div>
-              <div class="item__characteristic">
-                <span class="item__value">10</span>
-                <p class="item__caption">атм</p>
-                <span class="item__tooltip" data-tooltip="Давление">Давление</span>
-              </div>
-              <div class="item__characteristic">
-                <span class="item__value">600</span>
-                <p class="item__caption">л/мин</p>
-                <span class="item__tooltip" data-tooltip="Расход">Расход</span>
-              </div>
-            </div>
-
-            <footer class="item__footer">
-              <div class="item__cost">
-                <a class="item__price" href="#">612 000 ₽</a>
-                <span class="item__tag">Цена</span>
-              </div>
-
-              <a class="item__button  item__button--comparison" href="#">Сравнение</a>
-              <a class="item__button  item__button--cart" href="#">Корзина</a>
-            </footer>
-          </article>
-
-          <article class="item  item--bestsellers  item--bg-dark">
-            <div class="item__image-wrapper">
-              <picture>
-                <source type="image/webp" media="(min-width: 1024px)" srcset="img/bestseller-desktop-04@1x.webp">
-                <source type="image/webp" srcset="img/bestseller-mobile-02@1x.webp">
-
-                <source media="(min-width: 1024px)" srcset="img/bestseller-desktop-04@1x.png">
-                <img class="item__image" src="img/bestseller-mobile-02@1x.png" alt="Cross Air Compressors Dali CA-0.6/10-RA">
-              </picture>
-            </div>
-
-            <p class="item__category">Винтовой компрессор</p>
-            <h3 class="item__name">
-              <a class="item__link" href="#">Cross Air Compressors Dali CA-0.6/10-RA</a>
-            </h3>
-
-            <div class="item__characteristics">
-              <div class="item__characteristic">
-                <span class="item__value">5.5</span>
-                <p class="item__caption">кВт</p>
-                <span class="item__tooltip" data-tooltip="Производительность">Производительность</span>
-              </div>
-              <div class="item__characteristic">
-                <span class="item__value">10</span>
-                <p class="item__caption">атм</p>
-                <span class="item__tooltip" data-tooltip="Давление">Давление</span>
-              </div>
-              <div class="item__characteristic">
-                <span class="item__value">600</span>
-                <p class="item__caption">л/мин</p>
-                <span class="item__tooltip" data-tooltip="Расход">Расход</span>
-              </div>
-            </div>
-
-            <footer class="item__footer">
-              <div class="item__cost">
-                <a class="item__price  item__price--request" href="#">По запросу</a>
-                <span class="item__tag">Цена</span>
-              </div>
-
-              <a class="item__button  item__button--comparison" href="#">Сравнение</a>
-              <a class="item__button  item__button--cart" href="#">Корзина</a>
-            </footer>
-          </article>
-
-          <article class="item  item--bestsellers  item--bg-grey">
-            <div class="item__image-wrapper">
-              <picture>
-                <source type="image/webp" media="(min-width: 1024px)" srcset="img/bestseller-desktop-05@1x.webp">
-                <source type="image/webp" srcset="img/bestseller-mobile-01@1x.webp">
-
-                <source media="(min-width: 1024px)" srcset="img/bestseller-desktop-05@1x.png">
-                <img class="item__image" src="img/bestseller-mobile-01@1x.png" alt="Cross Air Compressors Dali CA-0.6/10-RA">
-              </picture>
-            </div>
-
-            <p class="item__category">Винтовой компрессор</p>
-            <h3 class="item__name">
-              <a class="item__link" href="#">Cross Air Compressors Dali CA-0.6/10-RA</a>
-            </h3>
-
-            <div class="item__characteristics">
-              <div class="item__characteristic">
-                <span class="item__value">5.5</span>
-                <p class="item__caption">кВт</p>
-                <span class="item__tooltip" data-tooltip="Производительность">Производительность</span>
-              </div>
-              <div class="item__characteristic">
-                <span class="item__value">10</span>
-                <p class="item__caption">атм</p>
-                <span class="item__tooltip" data-tooltip="Давление">Давление</span>
-              </div>
-              <div class="item__characteristic">
-                <span class="item__value">600</span>
-                <p class="item__caption">л/мин</p>
-                <span class="item__tooltip" data-tooltip="Расход">Расход</span>
-              </div>
-            </div>
-
-            <footer class="item__footer">
-              <div class="item__cost">
-                <a class="item__price" href="#">612 000 ₽</a>
-                <span class="item__tag">Цена</span>
-              </div>
-
-              <a class="item__button  item__button--comparison" href="#">Сравнение</a>
-              <a class="item__button  item__button--cart" href="#">Корзина</a>
-            </footer>
-          </article>
-
-          <article class="item  item--bestsellers  item--bg-yellow">
-            <div class="item__image-wrapper">
-              <picture>
-                <source type="image/webp" media="(min-width: 1024px)" srcset="img/bestseller-desktop-06@1x.webp">
-                <source type="image/webp" srcset="img/bestseller-mobile-02@1x.webp">
-
-                <source media="(min-width: 1024px)" srcset="img/bestseller-desktop-06@1x.png">
-                <img class="item__image" src="img/bestseller-mobile-02@1x.png" alt="Cross Air Compressors Dali CA-0.6/10-RA">
-              </picture>
-            </div>
-
-            <p class="item__category">Винтовой компрессор</p>
-            <h3 class="item__name">
-              <a class="item__link" href="#">Cross Air Compressors Dali CA-0.6/10-RA</a>
-            </h3>
-
-            <div class="item__characteristics">
-              <div class="item__characteristic">
-                <span class="item__value">5.5</span>
-                <p class="item__caption">кВт</p>
-                <span class="item__tooltip" data-tooltip="Производительность">Производительность</span>
-              </div>
-              <div class="item__characteristic">
-                <span class="item__value">10</span>
-                <p class="item__caption">атм</p>
-                <span class="item__tooltip" data-tooltip="Давление">Давление</span>
-              </div>
-              <div class="item__characteristic">
-                <span class="item__value">600</span>
-                <p class="item__caption">л/мин</p>
-                <span class="item__tooltip" data-tooltip="Расход">Расход</span>
-              </div>
-            </div>
-
-            <footer class="item__footer">
-              <div class="item__cost">
-                <a class="item__price  item__price--request" href="#">По запросу</a>
-                <span class="item__tag">Цена</span>
-              </div>
-
-              <a class="item__button  item__button--comparison" href="#">Сравнение</a>
-              <a class="item__button  item__button--cart" href="#">Корзина</a>
-            </footer>
-          </article>
-        </div>
-
-        <div class="controls">
-          <button class="controls__button  controls__button--previous" type="button">Предыдущий слайд</button>
-          <button class="controls__button  controls__button--next" type="button">Следующий слайд</button>
-        </div>
-      </section>
-
-      <section class="advantages">
-        <h2 class="advantages__title">Наши преимущества</h2>
-
-        <div class="advantages__item">
-          <h3 class="advantages__name">Сервис</h3>
-          <p class="advantages__text  advantages__text--short">1 год бесплатного сервиса</p>
-        </div>
-
-        <div class="advantages__item">
-          <h3 class="advantages__name">Скидки</h3>
-          <p class="advantages__text">Лучшие индивидуальные скидки и удобный клиентский сервис</p>
-        </div>
-
-        <div class="advantages__item">
-          <h3 class="advantages__name">Гарантия</h3>
-          <p class="advantages__text">До 60 месяцев полной гарантии на поставляемую технику</p>
-        </div>
-
-        <div class="advantages__item">
-          <h3 class="advantages__name">Доставка</h3>
-          <p class="advantages__text">Бесплатно доставим заказ за 1-2 дня</p>
-          <small class="advantages__text  advantages__text--footnote">(по Москве, Cанкт-Петербургу и Екатеринбургу)*</small>
-        </div>
-      </section>
-
       <section class="feedback">
         <h2 class="feedback__title">Обратная связь</h2>
         <b class="feedback__info  feedback__info--mobile">Появились вопросы?</b>
@@ -1355,7 +1117,8 @@
 
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="js/slick.min.js"></script>
-    <script src="js/catalog.js"></script>
+    <script src="js/comparison.js"></script>
+    <script src="js/picturefill.min.js"></script>
   </body>
 
 </html>

@@ -58,9 +58,12 @@
       }
     }
 
-    &:nth-of-type(4n),
-    &:nth-last-of-type(-n + 4) {
+    &:nth-of-type(4n) {
       border-right: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    &:nth-last-of-type(-n + 4) {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     }
 
     &:hover {
