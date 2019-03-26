@@ -543,7 +543,7 @@
         position: absolute;
         top: calc(100% - 7px);
         left: 50%;
-        transform: translateX(-50%);
+        transform: translateX(-50%) scale(0);
         width: 0;
         height: 0;
         border: 15px solid transparent;
@@ -558,10 +558,10 @@
         transform: translateX(-50%) scale(0);
         transform-origin: 50% 0;
         height: 44px;
-        margin-top: 30px;
+        margin-top: 15px;
         padding-left: 24px;
         padding-right: 24px;
-        background-color: #fbc02d;
+        background-color: transparent;
         border-radius: 6px;
         font-size: 15px;
         line-height: 44px;
@@ -576,9 +576,12 @@
 
         &::before {
           border-bottom-color: #fbc02d;
+          transform: translateX(-50%) scale(1);
         }
 
         &::after {
+          margin-top: 29px;
+          background-color: #fbc02d;
           transform: translateX(-50%) scale(1);
         }
       }
