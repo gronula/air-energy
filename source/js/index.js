@@ -1379,28 +1379,23 @@ $(document).ready(function () {
     autoplay: true,
     autoplaySpeed: 6000,
     speed: 500,
+    draggable: false,
     pauseOnHover: false,
-    slidesToShow: 4,
     variableWidth: true,
     centerMode: true,
     responsive: [
       {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          centerMode: false
-        }
-      },
-      {
         breakpoint: 700,
         settings: {
+          draggable: true,
           slidesToShow: 2,
           centerMode: false
         }
       },
       {
-        breakpoint: 940,
+        breakpoint: 1024,
         settings: {
+          draggable: true,
           slidesToShow: 3
         }
       }

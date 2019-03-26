@@ -38,7 +38,8 @@
 }
 
 .brands__image {
-  object-fit: scale-down;
+  height: 81px;
+  object-fit: contain;
   filter: grayscale(1);
   opacity: 0.6;
   transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
@@ -108,8 +109,10 @@
   .brands__image {
     display: inline-block;
     max-width: 75%;
-    max-height: 81px;
+    width: 202px;
+    height: 81px;
     vertical-align: middle;
+    object-position: left;
   }
 }
 

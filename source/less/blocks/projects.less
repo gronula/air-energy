@@ -76,15 +76,15 @@
 
 @media (min-width: @desktop-width) {
   .projects {
-    width: calc(100% - 670px - (50vw - @desktop-width / 2 + @desktop-offset));
-    margin-left: calc((50vw - @desktop-width / 2 + @desktop-offset) + 670px);
+    width: calc(100% - 670px - (50vw - @desktop-width / 2 + @desktop-offset - @scrollbar-width / 2));
+    margin-left: calc((50vw - @desktop-width / 2 + @desktop-offset - @scrollbar-width / 2) + 670px);
   }
 
   .projects__header {
     transform: translateX(calc(-670px - (50vw - @desktop-width / 2 + @desktop-offset)));
     width: calc((50vw - @desktop-width / 2 + @desktop-offset) + 400px);
     margin-right: calc(-400px - (50vw - @desktop-width / 2 + @desktop-offset));
-    padding-left: calc(50vw - @desktop-width / 2 + @desktop-offset);
+    padding-left: calc(50vw - @desktop-width / 2 + @desktop-offset - @scrollbar-width / 2);
     padding-right: @desktop-offset;
   }
 }
