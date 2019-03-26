@@ -164,6 +164,7 @@ var searchRequestClickHandler = function (evt) {
 
     modalRequest.addEventListener('click', modalRequestClickHandler);
     document.addEventListener('click', modalRequestCloseHandler);
+    mainNavLinkCatalog.removeEventListener('mouseenter', mainNavLinkCatalogMouseenterHandler);
   }
 };
 
@@ -172,6 +173,7 @@ var modalRequestCloseClickHandler = function (evt) {
   modalRequest.classList.add('modal--closed');
   evt.target.removeEventListener('click', modalRequestCloseClickHandler);
   document.removeEventListener('click', modalRequestCloseHandler);
+  mainNavLinkCatalog.addEventListener('mouseenter', mainNavLinkCatalogMouseenterHandler);
 };
 
 var modalRequestClickHandler = function (evt) {
@@ -185,6 +187,7 @@ var modalRequestCloseHandler = function (evt) {
     modalRequest.classList.add('modal--closed');
     evt.target.removeEventListener('click', modalRequestCloseClickHandler);
     document.removeEventListener('click', modalRequestCloseHandler);
+    mainNavLinkCatalog.addEventListener('mouseenter', mainNavLinkCatalogMouseenterHandler);
   }
 };
 
@@ -354,6 +357,30 @@ var contactsCallbackClickHandler = function () {
 
   modalCallback.addEventListener('click', modalCallbackClickHandler);
   document.addEventListener('click', modalCallbackCloseHandler);
+  mainNavLinkCatalog.removeEventListener('mouseenter', mainNavLinkCatalogMouseenterHandler);
+};
+
+var modalCallbackCloseClickHandler = function (evt) {
+  evt.preventDefault();
+  modalCallback.classList.add('modal--closed');
+  evt.target.removeEventListener('click', modalCallbackCloseClickHandler);
+  document.removeEventListener('click', modalCallbackCloseHandler);
+  mainNavLinkCatalog.addEventListener('mouseenter', mainNavLinkCatalogMouseenterHandler);
+};
+
+var modalCallbackClickHandler = function (evt) {
+  if (evt.currentTarget === modalCallback) {
+    evt.stopPropagation();
+  }
+};
+
+var modalCallbackCloseHandler = function (evt) {
+  if (evt.target !== contactsCallback) {
+    modalCallback.classList.add('modal--closed');
+    evt.target.removeEventListener('click', modalCallbackCloseClickHandler);
+    document.removeEventListener('click', modalCallbackCloseHandler);
+    mainNavLinkCatalog.addEventListener('mouseenter', mainNavLinkCatalogMouseenterHandler);
+  }
 };
 
 var filterCapionsClickHandler = function (caption, select) {
@@ -424,27 +451,6 @@ var comparisonDeleteButtonHandler = function (button) {
     $('.comparison__block--images').slick('slickRemove', order);
     $('.comparison__block:not(.comparison__block--images)').slick('slickRemove', order);
   });
-};
-
-var modalCallbackCloseClickHandler = function (evt) {
-  evt.preventDefault();
-  modalCallback.classList.add('modal--closed');
-  evt.target.removeEventListener('click', modalCallbackCloseClickHandler);
-  document.removeEventListener('click', modalCallbackCloseHandler);
-};
-
-var modalCallbackClickHandler = function (evt) {
-  if (evt.currentTarget === modalCallback) {
-    evt.stopPropagation();
-  }
-};
-
-var modalCallbackCloseHandler = function (evt) {
-  if (evt.target !== contactsCallback) {
-    modalCallback.classList.add('modal--closed');
-    evt.target.removeEventListener('click', modalCallbackCloseClickHandler);
-    document.removeEventListener('click', modalCallbackCloseHandler);
-  }
 };
 
 var offsetTop = 0;

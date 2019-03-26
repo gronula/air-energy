@@ -195,6 +195,7 @@ var searchRequestClickHandler = function (evt) {
 
     modalRequest.addEventListener('click', modalRequestClickHandler);
     document.addEventListener('click', modalRequestCloseHandler);
+    mainNavLinkCatalog.removeEventListener('mouseenter', mainNavLinkCatalogMouseenterHandler);
   }
 };
 
@@ -203,6 +204,7 @@ var modalRequestCloseClickHandler = function (evt) {
   modalRequest.classList.add('modal--closed');
   evt.target.removeEventListener('click', modalRequestCloseClickHandler);
   document.removeEventListener('click', modalRequestCloseHandler);
+  mainNavLinkCatalog.addEventListener('mouseenter', mainNavLinkCatalogMouseenterHandler);
 };
 
 var modalRequestClickHandler = function (evt) {
@@ -216,6 +218,7 @@ var modalRequestCloseHandler = function (evt) {
     modalRequest.classList.add('modal--closed');
     evt.target.removeEventListener('click', modalRequestCloseClickHandler);
     document.removeEventListener('click', modalRequestCloseHandler);
+    mainNavLinkCatalog.addEventListener('mouseenter', mainNavLinkCatalogMouseenterHandler);
   }
 };
 
@@ -501,6 +504,7 @@ var contactsCallbackClickHandler = function () {
 
   modalCallback.addEventListener('click', modalCallbackClickHandler);
   document.addEventListener('click', modalCallbackCloseHandler);
+  mainNavLinkCatalog.removeEventListener('mouseenter', mainNavLinkCatalogMouseenterHandler);
 };
 
 var modalCallbackCloseClickHandler = function (evt) {
@@ -508,6 +512,7 @@ var modalCallbackCloseClickHandler = function (evt) {
   modalCallback.classList.add('modal--closed');
   evt.target.removeEventListener('click', modalCallbackCloseClickHandler);
   document.removeEventListener('click', modalCallbackCloseHandler);
+  mainNavLinkCatalog.addEventListener('mouseenter', mainNavLinkCatalogMouseenterHandler);
 };
 
 var modalCallbackClickHandler = function (evt) {
@@ -521,6 +526,7 @@ var modalCallbackCloseHandler = function (evt) {
     modalCallback.classList.add('modal--closed');
     evt.target.removeEventListener('click', modalCallbackCloseClickHandler);
     document.removeEventListener('click', modalCallbackCloseHandler);
+    mainNavLinkCatalog.addEventListener('mouseenter', mainNavLinkCatalogMouseenterHandler);
   }
 };
 
@@ -1050,15 +1056,15 @@ var windowResizeHandler = function () {
     var categoryPumpSubitems = categoryPump.parentElement.querySelectorAll('.categories__subitem').length;
     var categoryPowerstationSubitems = categoryPowerstation.parentElement.querySelectorAll('.categories__subitem').length;
 
-    categoryCompressor.innerHTML = 'Компрессорное оборудование<sup class="categories__number">' + categoryCompressorSubitems + '</sup>';
+    categoryCompressor.innerHTML = 'Компрессорное оборудование&nbsp;<sup class="categories__number">' + categoryCompressorSubitems + '</sup>';
 
-    categoryDehydrator.innerHTML = 'Адсорбционные осушители<sup class="categories__number">' + categoryDehydratorSubitems + '</sup>';
+    categoryDehydrator.innerHTML = 'Адсорбционные осушители&nbsp;<sup class="categories__number">' + categoryDehydratorSubitems + '</sup>';
 
-    categoryPneumotool.innerHTML = 'Пневмоинструмент<sup class="categories__number">' + categoryPneumotoolSubitems + '</sup>';
+    categoryPneumotool.innerHTML = 'Пневмо-инструмент&nbsp;<sup class="categories__number">' + categoryPneumotoolSubitems + '</sup>';
 
-    categoryPump.innerHTML = 'Вакуумные насосы<sup class="categories__number">' + categoryPumpSubitems + '</sup>';
+    categoryPump.innerHTML = 'Вакуумные насосы&nbsp;<sup class="categories__number">' + categoryPumpSubitems + '</sup>';
 
-    categoryPowerstation.innerHTML = 'Автономные электростанции<sup class="categories__number">' + categoryPowerstationSubitems + '</sup>';
+    categoryPowerstation.innerHTML = 'Автономные электростанции&nbsp;<sup class="categories__number">' + categoryPowerstationSubitems + '</sup>';
 
     setTimeout(function () {
       $('.brands__list.slick-initialized').not('.brands__list--copy').slick('unslick');

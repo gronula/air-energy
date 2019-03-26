@@ -30,12 +30,12 @@
 
   .banner__controls {
     top: 50%;
-    left: calc((@notebook-offset + unit(@desktop-offset - @notebook-offset) * (100vw - @notebook-width) / unit(@desktop-width - @notebook-width)) + ((100vw - (@notebook-offset + unit(@desktop-offset - @notebook-offset) * (100vw - @notebook-width) / unit(@desktop-width - @notebook-width)) * 2) * 0.75 - 32px));
+    left: calc((@notebook-offset + unit(@desktop-offset - @notebook-offset) * (100vw - @notebook-width) / unit(@desktop-width - @notebook-width)) + ((100vw - (@notebook-offset + unit(@desktop-offset - @notebook-offset) * (100vw - @notebook-width) / unit(@desktop-width - @notebook-width)) * 2 - @scrollbar-width) * 0.75 - 32px));
     transform: translateY(-50%);
   }
 
   .banner__slide {
-    width: calc((100vw - (40px + 24 * (100vw - 1024px) / 664) * 2) * 0.75);
+    width: calc((100vw - (@notebook-offset + unit(@desktop-offset - @notebook-offset) * (100vw - @notebook-width) / unit(@desktop-width - @notebook-width)) * 2 - @scrollbar-width) * 0.75);
     align-items: center;
     overflow: hidden;
     position: relative;

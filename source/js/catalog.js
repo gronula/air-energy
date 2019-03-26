@@ -159,6 +159,7 @@ var searchRequestClickHandler = function (evt) {
 
     modalRequest.addEventListener('click', modalRequestClickHandler);
     document.addEventListener('click', modalRequestCloseHandler);
+    mainNavLinkCatalog.removeEventListener('mouseenter', mainNavLinkCatalogMouseenterHandler);
   }
 };
 
@@ -167,6 +168,7 @@ var modalRequestCloseClickHandler = function (evt) {
   modalRequest.classList.add('modal--closed');
   evt.target.removeEventListener('click', modalRequestCloseClickHandler);
   document.removeEventListener('click', modalRequestCloseHandler);
+  mainNavLinkCatalog.addEventListener('mouseenter', mainNavLinkCatalogMouseenterHandler);
 };
 
 var modalRequestClickHandler = function (evt) {
@@ -180,6 +182,7 @@ var modalRequestCloseHandler = function (evt) {
     modalRequest.classList.add('modal--closed');
     evt.target.removeEventListener('click', modalRequestCloseClickHandler);
     document.removeEventListener('click', modalRequestCloseHandler);
+    mainNavLinkCatalog.addEventListener('mouseenter', mainNavLinkCatalogMouseenterHandler);
   }
 };
 
@@ -349,6 +352,7 @@ var contactsCallbackClickHandler = function () {
 
   modalCallback.addEventListener('click', modalCallbackClickHandler);
   document.addEventListener('click', modalCallbackCloseHandler);
+  mainNavLinkCatalog.removeEventListener('mouseenter', mainNavLinkCatalogMouseenterHandler);
 };
 
 var modalCallbackCloseClickHandler = function (evt) {
@@ -356,6 +360,7 @@ var modalCallbackCloseClickHandler = function (evt) {
   modalCallback.classList.add('modal--closed');
   evt.target.removeEventListener('click', modalCallbackCloseClickHandler);
   document.removeEventListener('click', modalCallbackCloseHandler);
+  mainNavLinkCatalog.addEventListener('mouseenter', mainNavLinkCatalogMouseenterHandler);
 };
 
 var modalCallbackClickHandler = function (evt) {
@@ -369,6 +374,7 @@ var modalCallbackCloseHandler = function (evt) {
     modalCallback.classList.add('modal--closed');
     evt.target.removeEventListener('click', modalCallbackCloseClickHandler);
     document.removeEventListener('click', modalCallbackCloseHandler);
+    mainNavLinkCatalog.addEventListener('mouseenter', mainNavLinkCatalogMouseenterHandler);
   }
 };
 
