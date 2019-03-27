@@ -895,7 +895,6 @@
       margin-bottom: 0;
       padding-top: 0;
       padding-bottom: 110px;
-      padding-right: 0;
     }
   }
 
@@ -1103,6 +1102,7 @@
   .filter__radio-buttons {
     display: block;
     width: 100%;
+    margin-bottom: 32px;
   }
 
   .filter__additional {
@@ -1242,7 +1242,7 @@
     order: 1;
     font-weight: 500;
     font-size: 14px;
-    line-height: 17px;
+    line-height: 18px;
     text-align: left;
     color: rgba(51, 51, 51, 0.6);
     background-position-x: left;
@@ -1254,8 +1254,16 @@
     flex-direction: column;
     flex-shrink: 0;
     width: 204px;
-    min-height: 563px;
+  }
+
+  .filter__comparison-filters {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    width: 100%;
+    min-height: 256px;
     position: relative;
+    margin-bottom: auto;
   }
 
   .filter__charachteristics {
@@ -1338,9 +1346,5 @@
   .filter {
     padding-left: calc(50% - @desktop-width / 2 + @desktop-offset);
     padding-right: calc(50% - @desktop-width / 2 + @desktop-offset);
-
-    .comparison & {
-      padding-right: calc(50% - @desktop-width / 2 + @desktop-offset);
-    }
   }
 }

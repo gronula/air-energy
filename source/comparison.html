@@ -79,32 +79,34 @@
       <section class="comparison">
         <form class="filter" action="https://echo.htmlacademy.ru" method="post">
           <div class="filter__controls">
-            <button class="filter__remove" type="button">Очистить список</button>
+            <div class="filter__comparison-filters">
+              <div class="filter__select  filter__select--sort">
+                <h4 class="filter__caption">Категория</h4>
+                <p class="filter__choice">Компрессоры</p>
 
-            <div class="filter__select  filter__select--sort">
-              <h4 class="filter__caption">Категория</h4>
-              <p class="filter__choice">Компрессоры</p>
+                <ul class="filter__drop-down">
+                  <li><a class="filter__label" href="#">Компрессоры</a></li>
+                  <li><a class="filter__label" href="#">Осушители</a></li>
+                  <li><a class="filter__label" href="#">Пневмоинструмент</a></li>
+                  <li><a class="filter__label" href="#">Насосы</a></li>
+                  <li><a class="filter__label" href="#">Электростанции</a></li>
+                </ul>
+              </div>
 
-              <ul class="filter__drop-down">
-                <li><a class="filter__label" href="#">Компрессоры</a></li>
-                <li><a class="filter__label" href="#">Осушители</a></li>
-                <li><a class="filter__label" href="#">Пневмоинструмент</a></li>
-                <li><a class="filter__label" href="#">Насосы</a></li>
-                <li><a class="filter__label" href="#">Электростанции</a></li>
-              </ul>
-            </div>
+              <div class="filter__radio-buttons">
+                <input class="filter__radio  visually-hidden" type="radio" name="charachteristics" id="charachteristicsAll"
+                value="all" checked>
+                <label class="filter__label" for="charachteristicsAll">Все характеристики</label>
 
-            <div class="filter__radio-buttons">
-              <input class="filter__radio  visually-hidden" type="radio" name="charachteristics" id="charachteristicsAll"
-              value="all" checked>
-              <label class="filter__label" for="charachteristicsAll">Все характеристики</label>
-
-              <input class="filter__radio  visually-hidden" type="radio" name="charachteristics" id="charachteristicsDifferent"
-              value="different">
-              <label class="filter__label" for="charachteristicsDifferent">Различающиеся</label>
+                <input class="filter__radio  visually-hidden" type="radio" name="charachteristics" id="charachteristicsDifferent"
+                value="different">
+                <label class="filter__label" for="charachteristicsDifferent">Различающиеся</label>
+              </div>
             </div>
 
             <div class="filter__charachteristics">
+              <button class="filter__remove" type="button">Очистить список</button>
+
               <p class="filter__charachteristic">Цена</p>
               <p class="filter__charachteristic">Тип компрессора</p>
               <p class="filter__charachteristic">Тип смазки</p>
