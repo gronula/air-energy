@@ -543,10 +543,11 @@
         position: absolute;
         top: calc(100% - 7px);
         left: 50%;
-        transform: translateX(-50%) scale(0);
-        width: 0;
-        height: 0;
+        transform: translateX(-50%);
+        width: 30px;
+        height: 30px;
         border: 15px solid transparent;
+        visibility: hidden;
         transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
       }
 
@@ -555,10 +556,9 @@
         position: absolute;
         top: calc(100% - 7px);
         left: 50%;
-        transform: translateX(-50%) scale(0);
-        transform-origin: 50% 0;
-        height: 44px;
-        margin-top: 15px;
+        transform: translateX(-50%);
+        height: 0;
+        margin-top: 30px;
         padding-left: 24px;
         padding-right: 24px;
         background-color: transparent;
@@ -569,6 +569,7 @@
         letter-spacing: 0.04em;
         color: @title-color;
         transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+        overflow: hidden;
       }
 
       &:hover {
@@ -576,19 +577,14 @@
 
         &::before {
           border-bottom-color: #fbc02d;
-          transform: translateX(-50%) scale(1);
+          visibility: visible;
         }
 
         &::after {
-          margin-top: 29px;
+          height: 44px;
           background-color: #fbc02d;
-          transform: translateX(-50%) scale(1);
         }
       }
-    }
-
-    .bestsellers .item & {
-      top: calc(100% + 12px);
     }
   }
 
@@ -789,9 +785,9 @@
   }
 
   .item__tooltip {
-    .bestsellers .item:nth-of-type(1) .item__characteristic:first-of-type &:hover {
+    .bestsellers .item:nth-of-type(1) .item__characteristic:first-of-type & {
       &::after {
-        transform: translateX(calc(-15% + -35 * (100vw - 1024px) / 664)) scale(1);
+        transform: translateX(calc(-15% + -35 * (100vw - 1025px) / 664));
       }
     }
   }
@@ -920,7 +916,7 @@
   }
 
   .item__tooltip {
-    .bestsellers .item:nth-of-type(1) .item__characteristic:first-of-type &:hover {
+    .bestsellers .item:nth-of-type(1) .item__characteristic:first-of-type & {
       &::after {
         transform: translateX(-50%) scale(1);
       }
