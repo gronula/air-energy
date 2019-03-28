@@ -1,10 +1,11 @@
 .modal {
   position: fixed;
   z-index: 3;
-  top: 100px;
-  left: 50%;
-  transform: translate(-50%, 0);
-  width: 432px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
   padding-top: 32px;
   padding-bottom: 32px;
   padding-left: 32px;
@@ -63,14 +64,14 @@
   padding-right: 13px;
   border: 0;
   background-color: #eceff1;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 21px;
   letter-spacing: 0.01em;
   color: rgba(51, 51, 51, 0.6);
   transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 
   &::placeholder {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 21px;
     letter-spacing: 0.01em;
     color: rgba(51, 51, 51, 0.6);
@@ -97,7 +98,7 @@
   padding-right: 13px;
   background-color: #eceff1;
   border: 0;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 21px;
   letter-spacing: 0.01em;
   color: rgba(51, 51, 51, 0.6);
@@ -105,7 +106,7 @@
   transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 
   &::placeholder {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 21px;
     letter-spacing: 0.01em;
     color: rgba(51, 51, 51, 0.6);
@@ -223,5 +224,20 @@
   .modal__checkbox:not(:checked) ~ & {
     pointer-events: none;
     filter: grayscale(1);
+  }
+}
+
+@media (min-width: @notebook-width) {
+  .modal {
+    top: 100px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 432px;
+    height: auto;
+
+    &--closed {
+      transform: translate(-50%, 100vh);
+      opacity: 0;
+    }
   }
 }

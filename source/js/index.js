@@ -4,8 +4,9 @@ var header = document.querySelector('.header');
 var logo = header.querySelector('.logo');
 var logoTitle = logo.querySelector('.logo__title');
 var search = header.querySelector('.search');
-var searchIcon = search.querySelector('.search__icon');
+var searchFieldWrapper = search.querySelector('.search__field-wrapper');
 var searchField = search.querySelector('.search__field');
+var searchResults = search.querySelector('.search__results');
 var searchRequest = search.querySelector('.search__request');
 var navButton = header.querySelector('.main-nav__toggle');
 var mainNav = header.querySelector('.main-nav');
@@ -107,33 +108,8 @@ var navButtonClickHandler = function () {
   }
 };
 
-var searchIconClickHandler = function (evt) {
+var searchFocusinHandler = function () {
   if (!window.matchMedia('(max-width: 1023px)').matches) {
-    evt.stopPropagation();
-    mainNav.style.transition = 'all 0.5s cubic-bezier(0.77, 0, 0.175, 1)';
-    mainNav.style.width = 0;
-    mainNav.classList.add('main-nav--closed');
-    searchField.style.transition = 'all 0.5s cubic-bezier(0.77, 0, 0.175, 1)';
-    searchField.style.width = searchFieldWidth + 'px';
-  }
-};
-
-var searchFieldCloseHandler = function (evt) {
-  if (evt.target !== searchField) {
-    searchIcon.classList.remove('search__icon--opened');
-    searchField.style.width = '';
-    mainNav.style.width = mainNavWidth + 'px';
-    mainNav.classList.remove('main-nav--closed');
-  }
-};
-
-var searchFieldFocusHandler = function () {
-  if (!window.matchMedia('(max-width: 1023px)').matches) {
-    searchIcon.classList.add('search__icon--opened');
-    searchField.placeholder = 'Поиск';
-    searchField.addEventListener('blur', searchFieldBlurHandler);
-    document.addEventListener('click', searchFieldCloseHandler);
-
     if (!header.classList.contains('header--fixed')) {
       mainNav.style.transition = 'all 0.5s cubic-bezier(0.77, 0, 0.175, 1)';
       mainNav.style.width = 0;
@@ -141,10 +117,16 @@ var searchFieldFocusHandler = function () {
       searchField.style.transition = 'all 0.5s cubic-bezier(0.77, 0, 0.175, 1)';
       searchField.style.width = searchFieldWidth + 'px';
     }
+
+    searchField.placeholder = 'Поиск';
+
+    search.addEventListener('focusout', searchFocusoutHandler);
+    searchField.addEventListener('input', searchFieldInputHandler);
+    searchResults.addEventListener('click', searchResultsClickHandler);
   }
 };
 
-var searchFieldBlurHandler = function () {
+var searchFocusoutHandler = function () {
   if (!window.matchMedia('(max-width: 1023px)').matches) {
     if (!header.classList.contains('header--fixed')) {
       searchField.style.width = '';
@@ -152,11 +134,39 @@ var searchFieldBlurHandler = function () {
       mainNav.classList.remove('main-nav--closed');
     }
 
-    searchIcon.classList.remove('search__icon--opened');
+    searchFieldWrapper.classList.remove('search__field-wrapper--input');
+    searchField.classList.remove('search__field--input');
     searchField.placeholder = 'Поиск товаров и услуг';
 
-    document.removeEventListener('click', searchFieldCloseHandler);
-    searchField.removeEventListener('blur', searchFieldBlurHandler);
+    search.removeEventListener('focusout', searchFocusoutHandler);
+    searchField.removeEventListener('input', searchFieldInputHandler);
+    searchResults.removeEventListener('click', searchResultsClickHandler);
+  }
+};
+
+var searchResultsClickHandler = function () {
+  if (!header.classList.contains('header--fixed')) {
+    searchField.style.width = '';
+    mainNav.style.width = mainNavWidth + 'px';
+    mainNav.classList.remove('main-nav--closed');
+  }
+
+  searchFieldWrapper.classList.remove('search__field-wrapper--input');
+  searchField.classList.remove('search__field--input');
+  searchField.placeholder = 'Поиск товаров и услуг';
+
+  search.removeEventListener('focusout', searchFocusoutHandler);
+  searchField.removeEventListener('input', searchFieldInputHandler);
+  searchResults.removeEventListener('click', searchResultsClickHandler);
+};
+
+var searchFieldInputHandler = function () {
+  if (searchField.value.trim()) {
+    searchFieldWrapper.classList.add('search__field-wrapper--input');
+    searchField.classList.add('search__field--input');
+  } else {
+    searchFieldWrapper.classList.remove('search__field-wrapper--input');
+    searchField.classList.remove('search__field--input');
   }
 };
 
@@ -179,24 +189,15 @@ var getSearchInputWidth = function () {
   }
 };
 
-var searchRequestClickHandler = function (evt) {
-  if (window.matchMedia('(max-width: 1023px)').matches) {
-    if (searchField.validity.valueMissing) {
-      searchField.setCustomValidity('Введите текст запроса.');
-    } else {
-      search.submit();
-      evt.preventDefault();
-    }
-  } else {
-    modalRequest.classList.remove('modal--closed');
+var searchRequestClickHandler = function () {
+  modalRequest.classList.remove('modal--closed');
 
-    var modalRequestClose = modalRequest.querySelector('.modal--request  .modal__close');
-    modalRequestClose.addEventListener('click', modalRequestCloseClickHandler);
+  var modalRequestClose = modalRequest.querySelector('.modal--request  .modal__close');
+  modalRequestClose.addEventListener('click', modalRequestCloseClickHandler);
 
-    modalRequest.addEventListener('click', modalRequestClickHandler);
-    document.addEventListener('click', modalRequestCloseHandler);
-    mainNavLinkCatalog.removeEventListener('mouseenter', mainNavLinkCatalogMouseenterHandler);
-  }
+  modalRequest.addEventListener('click', modalRequestClickHandler);
+  document.addEventListener('click', modalRequestCloseHandler);
+  mainNavLinkCatalog.removeEventListener('mouseenter', mainNavLinkCatalogMouseenterHandler);
 };
 
 var modalRequestCloseClickHandler = function (evt) {
@@ -899,7 +900,7 @@ var animateBrandsLists = function () {
 var windowScrollHandler = function () {
   if (!window.matchMedia('(max-width: 1023px)').matches) {
     searchField.blur();
-    searchField.style.transition = 'border-bottom 0.5s cubic-bezier(0.77, 0, 0.175, 1)';
+    searchField.style.transition = 'border-bottom 0.5s cubic-bezier(0.77, 0, 0.175, 1), background-color 0.5s cubic-bezier(0.77, 0, 0.175, 1)';
 
     var mainNavLinkCatalogOffsetLeft = mainNavLinkCatalog.getBoundingClientRect().left;
 
@@ -1041,8 +1042,7 @@ var windowResizeHandler = function () {
       it.classList.remove('catalog__sublist--opened');
     });
 
-    searchIcon.addEventListener('click', searchIconClickHandler);
-    searchField.addEventListener('focus', searchFieldFocusHandler);
+    search.addEventListener('focusin', searchFocusinHandler);
 
     setTimeout(function () {
       for (var i = 0; i < categoriesSublists.length; i++) {
