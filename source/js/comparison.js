@@ -460,6 +460,7 @@ var filterRemoveButtonClickHandler = function (evt) {
     $('.comparison__block--images').slick('slickRemove', 0);
     $('.comparison__block:not(.comparison__block--images)').slick('slickRemove', 0);
   }
+  $('.comparison__block.slick-initialized').slick('unslick');
 };
 
 var comparisonDeleteButtonHandler = function (button) {
@@ -816,7 +817,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 $(document).ready(function () {
-  $(window).on('load resize', function () {
+  $(window).on('load', function () {
     if (!document.querySelector('.comparison__block').classList.contains('slick-initialized')) {
       $('.comparison__block--images').slick({
         dots: true,
@@ -842,6 +843,7 @@ $(document).ready(function () {
             settings: {
               dots: false,
               draggable: false,
+              swipe: false,
               variableWidth: true,
               slidesToShow: 3,
               slidesToScroll: 1
@@ -852,6 +854,7 @@ $(document).ready(function () {
             settings: {
               dots: false,
               draggable: false,
+              swipe: false,
               variableWidth: true,
               slidesToShow: 4,
               slidesToScroll: 1
@@ -862,6 +865,7 @@ $(document).ready(function () {
             settings: {
               dots: false,
               draggable: false,
+              swipe: false,
               variableWidth: true,
               slidesToShow: 5,
               slidesToScroll: 1
@@ -872,6 +876,7 @@ $(document).ready(function () {
             settings: {
               dots: false,
               draggable: false,
+              swipe: false,
               variableWidth: true,
               slidesToShow: 6,
               slidesToScroll: 1

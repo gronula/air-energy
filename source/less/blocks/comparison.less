@@ -3,16 +3,39 @@
 }
 
 .comparison__goods {
+  position: relative;
   display: flex;
   flex-direction: column;
+  min-height: 240px;
   margin-top: 48px;
   border-top: 1px solid #eceff1;
   border-bottom: 1px solid #eceff1;
+  z-index: auto;
+  background-color: #ffffff;
+
+  &::before {
+    content: "Сравнивать пока нечего";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding-top: 180px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: rgba(51, 51, 51, 0.6);
+    text-align: center;
+    background: #ffffff url("../../img/comparison-bg-empty.png") no-repeat center -28px;
+    background-size: auto;
+    // background-size: 723px;
+    z-index: 0;
+  }
 }
 
 .comparison__block {
   display: flex;
   text-decoration: none;
+  z-index: 0;
+  background-color: #ffffff;
 }
 
 .comparison__header {
@@ -53,6 +76,11 @@
   padding: 8px 16px;
   background-color: rgba(196, 196, 196, 0.1);
   white-space: nowrap;
+  z-index: 0;
+
+  .comparison__block--images:not(.slick-initialized) ~ & {
+    display: none;
+  }
 }
 
 .comparison__value {
@@ -101,33 +129,18 @@
   }
 
   .comparison__goods {
-    position: relative;
     width: calc(100% - 204px);
     margin-top: 0;
     border-top: 0;
     border-bottom: 0;
-    z-index: auto;
-    background-color: #ffffff;
 
     &::before {
-      content: "Сравнивать пока нечего";
-      position: absolute;
-      width: 100%;
-      height: 100%;
       padding-top: 240px;
-      font-weight: 400;
-      font-size: 18px;
-      line-height: 21px;
-      color: rgba(51, 51, 51, 0.6);
-      text-align: center;
-      background: #ffffff url("../../img/comparison-bg-empty.svg") no-repeat center 64px;
+      background-size: 723px;
     }
   }
 
   .comparison__block {
-    z-index: 0;
-    background-color: #ffffff;
-
     &--images {
       margin-bottom: auto;
     }
