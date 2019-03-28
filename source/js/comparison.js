@@ -684,7 +684,9 @@ var windowScrollHandler = function () {
       } else {
         feedback.style['background-color'] = 'rgb(251, 192, 45)';
       }
-    } else {
+    } else if (pageYOffset < feedbackTop) {
+      feedback.style['background-color'] = 'rgb(255, 255, 255)';
+    } else if (pageYOffset > feedbackBottom) {
       feedback.style['background-color'] = 'rgb(251, 192, 45)';
     }
   }, 100);
