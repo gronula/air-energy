@@ -105,7 +105,7 @@ var navButtonClickHandler = function () {
   }
 };
 
-var searchFocusinHandler = function () {
+var searchFieldFocusinHandler = function () {
   if (!window.matchMedia('(max-width: 1023px)').matches) {
     if (!header.classList.contains('header--fixed')) {
       mainNav.style.transition = 'all 0.5s cubic-bezier(0.77, 0, 0.175, 1)';
@@ -117,13 +117,13 @@ var searchFocusinHandler = function () {
 
     searchField.placeholder = 'Поиск';
 
-    search.addEventListener('focusout', searchFocusoutHandler, true);
+    searchField.addEventListener('focusout', searchFieldFocusoutHandler, true);
     searchField.addEventListener('input', searchFieldInputHandler);
     searchResults.addEventListener('click', searchResultsClickHandler);
   }
 };
 
-var searchFocusoutHandler = function () {
+var searchFieldFocusoutHandler = function () {
   if (!window.matchMedia('(max-width: 1023px)').matches) {
     if (!header.classList.contains('header--fixed')) {
       searchField.style.width = '';
@@ -135,7 +135,7 @@ var searchFocusoutHandler = function () {
     searchField.classList.remove('search__field--input');
     searchField.placeholder = 'Поиск товаров и услуг';
 
-    search.removeEventListener('focusout', searchFocusoutHandler);
+    searchField.removeEventListener('focusout', searchFieldFocusoutHandler);
     searchField.removeEventListener('input', searchFieldInputHandler);
     searchResults.removeEventListener('click', searchResultsClickHandler);
   }
@@ -152,7 +152,7 @@ var searchResultsClickHandler = function () {
   searchField.classList.remove('search__field--input');
   searchField.placeholder = 'Поиск товаров и услуг';
 
-  search.removeEventListener('focusout', searchFocusoutHandler);
+  searchField.removeEventListener('focusout', searchFieldFocusoutHandler);
   searchField.removeEventListener('input', searchFieldInputHandler);
   searchResults.removeEventListener('click', searchResultsClickHandler);
 };
@@ -1190,7 +1190,7 @@ var windowResizeHandler = function () {
 
     contacts.classList.remove('contacts--closed');
 
-    search.addEventListener('focusin', searchFocusinHandler);
+    searchField.addEventListener('focusin', searchFieldFocusinHandler);
 
     filterButtonClickHandler();
 
