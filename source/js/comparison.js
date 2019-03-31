@@ -461,6 +461,13 @@ var filterRemoveButtonClickHandler = function (evt) {
     $('.comparison__block:not(.comparison__block--images)').slick('slickRemove', 0);
   }
   $('.comparison__block.slick-initialized').slick('unslick');
+
+  var filterCharachteristics = filter.querySelectorAll('.filter__charachteristic');
+  filterCharachteristics.forEach(function (it) {
+    it.remove();
+  });
+
+  windowScrollHandler();
 };
 
 var comparisonDeleteButtonHandler = function (button) {
@@ -471,6 +478,15 @@ var comparisonDeleteButtonHandler = function (button) {
 
     $('.comparison__block--images').slick('slickRemove', order);
     $('.comparison__block:not(.comparison__block--images)').slick('slickRemove', order);
+
+    if ($('.comparison__block--images .slick-slide').length === 0) {
+      var filterCharachteristics = filter.querySelectorAll('.filter__charachteristic');
+      filterCharachteristics.forEach(function (it) {
+        it.remove();
+      });
+
+      windowScrollHandler();
+    }
   });
 };
 
