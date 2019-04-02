@@ -189,40 +189,6 @@ var getSearchInputWidth = function () {
   }
 };
 
-var searchRequestClickHandler = function () {
-  modalRequest.classList.remove('modal--closed');
-
-  var modalRequestClose = modalRequest.querySelector('.modal--request  .modal__close');
-  modalRequestClose.addEventListener('click', modalRequestCloseClickHandler);
-
-  modalRequest.addEventListener('click', modalRequestClickHandler);
-  document.addEventListener('click', modalRequestCloseHandler);
-  mainNavLinkCatalog.removeEventListener('mouseenter', mainNavLinkCatalogMouseenterHandler);
-};
-
-var modalRequestCloseClickHandler = function (evt) {
-  evt.preventDefault();
-  modalRequest.classList.add('modal--closed');
-  evt.target.removeEventListener('click', modalRequestCloseClickHandler);
-  document.removeEventListener('click', modalRequestCloseHandler);
-  mainNavLinkCatalog.addEventListener('mouseenter', mainNavLinkCatalogMouseenterHandler);
-};
-
-var modalRequestClickHandler = function (evt) {
-  if (evt.currentTarget === modalRequest) {
-    evt.stopPropagation();
-  }
-};
-
-var modalRequestCloseHandler = function (evt) {
-  if (evt.target !== searchRequest) {
-    modalRequest.classList.add('modal--closed');
-    evt.target.removeEventListener('click', modalRequestCloseClickHandler);
-    document.removeEventListener('click', modalRequestCloseHandler);
-    mainNavLinkCatalog.addEventListener('mouseenter', mainNavLinkCatalogMouseenterHandler);
-  }
-};
-
 var mainNavLinkTimer;
 var isSidebarCatalogHovered = false;
 
@@ -497,38 +463,64 @@ var citiesFooterClickHandler = function (city, address) {
   });
 };
 
-var contactsCallbackClickHandler = function () {
-  modalCallback.classList.remove('modal--closed');
+var searchRequestClickHandler = function () {
+  modalRequest.classList.remove('modal--closed');
 
-  var modalCallbackClose = modalCallback.querySelector('.modal--callback  .modal__close');
-  modalCallbackClose.addEventListener('click', modalCallbackCloseClickHandler);
+  var modalClose = modalRequest.querySelector('.modal--request  .modal__close');
+  modalClose.addEventListener('click', modalCloseClickHandler);
 
-  modalCallback.addEventListener('click', modalCallbackClickHandler);
-  document.addEventListener('click', modalCallbackCloseHandler);
+  document.addEventListener('click', modalCloseHandler, true);
   mainNavLinkCatalog.removeEventListener('mouseenter', mainNavLinkCatalogMouseenterHandler);
 };
 
-var modalCallbackCloseClickHandler = function (evt) {
+var contactsCallbackClickHandler = function () {
+  modalCallback.classList.remove('modal--closed');
+
+  var modalClose = modalCallback.querySelector('.modal--callback  .modal__close');
+  modalClose.addEventListener('click', modalCloseClickHandler);
+
+  document.addEventListener('click', modalCloseHandler, true);
+  mainNavLinkCatalog.removeEventListener('mouseenter', mainNavLinkCatalogMouseenterHandler);
+};
+
+var modalCloseClickHandler = function (evt) {
   evt.preventDefault();
-  modalCallback.classList.add('modal--closed');
-  evt.target.removeEventListener('click', modalCallbackCloseClickHandler);
-  document.removeEventListener('click', modalCallbackCloseHandler);
+  evt.target.parentElement.classList.add('modal--closed');
+  evt.target.removeEventListener('click', modalCloseClickHandler);
+  document.removeEventListener('click', modalCloseHandler, true);
   mainNavLinkCatalog.addEventListener('mouseenter', mainNavLinkCatalogMouseenterHandler);
 };
 
-var modalCallbackClickHandler = function (evt) {
-  if (evt.currentTarget === modalCallback) {
+var modalCloseHandler = function (evt) {
+  var isOnModalClick = getAncestor(evt.target, 'modal');
+  if (isOnModalClick) {
+    return;
+  }
+
+  if (evt.target === searchRequest ||
+      evt.target === contactsCallback) {
     evt.stopPropagation();
   }
+
+  modalRequest.classList.add('modal--closed');
+  modalCallback.classList.add('modal--closed');
+  evt.target.removeEventListener('click', modalCloseClickHandler);
+  document.removeEventListener('click', modalCloseHandler, true);
+  mainNavLinkCatalog.addEventListener('mouseenter', mainNavLinkCatalogMouseenterHandler);
 };
 
-var modalCallbackCloseHandler = function (evt) {
-  if (evt.target !== contactsCallback) {
-    modalCallback.classList.add('modal--closed');
-    evt.target.removeEventListener('click', modalCallbackCloseClickHandler);
-    document.removeEventListener('click', modalCallbackCloseHandler);
-    mainNavLinkCatalog.addEventListener('mouseenter', mainNavLinkCatalogMouseenterHandler);
+var getAncestor = function (target, className) {
+  var element = target;
+
+  while (!element.classList.contains(className)) {
+    element = element.parentElement;
+
+    if (!element) {
+      return false;
+    }
   }
+
+  return true;
 };
 
 var getCategoriesSublistHeight = function (sublist, link) {
@@ -760,14 +752,22 @@ var filterFormsSubmitHandler = function (form) {
 };
 
 var bestsellersItemClickHandler = function (evt) {
+  if (evt.target.classList.contains('item__button')) {
+    return;
+  }
+
   evt.preventDefault();
-  window.location.href = '#';
+  window.location.href = 'product.html';
 };
 
 var bestsellersItemMousedownHandler = function (evt) {
+  if (evt.target.classList.contains('item__button')) {
+    return;
+  }
+
   evt.preventDefault();
   if (evt.which === 2) {
-    window.open('#', '_blank');
+    window.open('product.html', '_blank');
     window.focus();
   }
 };
@@ -1289,28 +1289,6 @@ $(document).ready(function () {
 
   maxValue.text(Math.floor(values[1] / step) + 'K');
   maxValue.css({left: ((values[1] - min) / (max - min) * 100 - 1) + '%'});
-
-  $('.industry .slider__items').on('init reInit afterChange', function (event, slick, currentSlide) {
-    var i = (currentSlide ? currentSlide : 0) + 1;
-
-    if (i < 10) {
-      $('.industry__controls .controls__number--active').text('0' + i);
-    } else {
-      $('.industry__controls .controls__number--active').text(i);
-    }
-
-    if (slick.slideCount < 10) {
-      $('.industry__controls .controls__number--last').text('0' + slick.slideCount);
-    } else {
-      $('.industry__controls .controls__number--last').text(slick.slideCount);
-    }
-
-    $('.industry__controls .controls__timeline').css({
-      width: '0'
-    }).stop().animate({
-      width: '100%'
-    }, 6000);
-  });
 
   $('.industry .slider__items').slick({
     dots: false,

@@ -1,17 +1,11 @@
-.recently-viewed {
+.recommendation {
   width: 100%;
   position: relative;
-  margin-bottom: 40px;
   padding-top: 64px;
   padding-bottom: 80px;
-
-  .main--product & {
-    margin-bottom: 32px;
-    padding-top: 24px;
-  }
 }
 
-.recently-viewed__title {
+.recommendation__title {
   margin-top: 0;
   margin-bottom: 40px;
   padding-left: 24px;
@@ -24,28 +18,21 @@
 }
 
 @media (min-width: @notebook-width) {
-  .recently-viewed {
+  .recommendation {
     order: 6;
     margin-bottom: 0;
     .fluid(margin-left, @notebook-offset, @desktop-offset, @notebook-width, @desktop-width);
     .fluid(margin-right, @notebook-offset, @desktop-offset, @notebook-width, @desktop-width);
-    padding-top: 110px;
+    padding-top: 0;
     padding-bottom: 110px;
-    min-height: 774px;
+    min-height: 682px;
     display: flex;
     flex-wrap: wrap;
     position: relative;
     overflow: hidden;
-
-    .main--product & {
-      margin-bottom: 0;
-      padding-top: 0;
-      padding-bottom: 110px;
-      min-height: 682px;
-    }
   }
 
-  .recently-viewed__title {
+  .recommendation__title {
     margin-bottom: 56px;
     padding-left: 0;
     padding-right: 0;
@@ -54,23 +41,19 @@
     letter-spacing: normal;
   }
 
-  .recently-viewed__products {
+  .recommendation__products {
     display: flex;
     position: absolute;
-    top: 180px;
+    top: 88px;
     left: 0;
     flex-shrink: 0;
     padding-left: 3px;
     padding-right: 3px;
-
-    .main--product & {
-      top: 88px;
-    }
   }
 }
 
 @media (min-width: @desktop-width) {
-  .recently-viewed {
+  .recommendation {
     min-height: 800px;
     margin-left: calc(50% - @desktop-width / 2 + @desktop-offset);
     margin-right: calc(50% - @desktop-width / 2 + @desktop-offset);

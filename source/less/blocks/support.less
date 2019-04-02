@@ -1,5 +1,72 @@
 .support {
   display: none;
+
+  .main--product & {
+    display: block;
+    margin-bottom: 8px;
+  }
+}
+
+.support__item {
+  text-decoration: none;
+
+  .main--product & {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-top: 32px;
+    padding-bottom: 40px;
+    padding-left: 24px;
+    padding-right: 24px;
+    border-top: 1px solid #eceff1;
+
+    &--more {
+      padding-top: 0;
+      padding-bottom: 0;
+      border-top: 0;
+    }
+
+    &:last-of-type:not(.support__item--more) {
+      border-bottom: 1px solid #eceff1;
+    }
+  }
+}
+
+.support__caption {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: @title-color;
+
+  .main--product & {
+    order: 1;
+    width: 200px;
+    margin-top: 0;
+    margin-bottom: 0;
+
+    &--more {
+      width: auto;
+      margin-bottom: 40px;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 31px;
+      letter-spacing: 0.02em;
+    }
+  }
+}
+
+.support__icon {
+  fill: #f1ac00;
+
+  .main--product & {
+    margin-bottom: 16px;
+  }
+
+  .support__item--service &,
+  .support__item--repair &,
+  .support__item--pipeline & {
+    stroke: #f1ac00;
+  }
 }
 
 @media (min-width: @notebook-width) {
@@ -13,6 +80,12 @@
     padding-bottom: 110px;
     .fluid(padding-left, @notebook-offset, @desktop-offset, @notebook-width, @desktop-width);
     .fluid(padding-right, @notebook-offset, @desktop-offset, @notebook-width, @desktop-width);
+
+    .main--product & {
+      order: initial;
+      display: flex;
+      margin-bottom: 0;
+    }
   }
 
   .support__title {
@@ -37,90 +110,10 @@
     font-weight: 500;
     font-size: 16px;
     line-height: 19px;
-    text-decoration: none;
     color: @title-color;
     position: relative;
     mix-blend-mode: multiply;
     transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
-
-    &:last-of-type {
-      background-color: #fbc02d;
-      align-items: center;
-      z-index: auto;
-
-      &:hover {
-        background-color: #ffb600;
-      }
-
-      &::before,
-      &::after {
-        display: none;
-      }
-    }
-
-    &:nth-of-type(1) {
-      &::after {
-        background-image: url("../../img/support-bg-01.png");
-      }
-    }
-
-    &:nth-of-type(2) {
-      &::after {
-        background-image: url("../../img/support-bg-02.png");
-      }
-    }
-
-    &:nth-of-type(3) {
-      &::after {
-        background-image: url("../../img/support-bg-03.png");
-      }
-    }
-
-    &:nth-of-type(4) {
-      &::after {
-        background-image: url("../../img/support-bg-04.png");
-      }
-    }
-
-    &:nth-of-type(5) {
-      &::after {
-        background-image: url("../../img/support-bg-01@1x.png");
-      }
-    }
-
-    &:nth-of-type(6) {
-      &::after {
-        background-image: url("../../img/support-bg-06.png");
-      }
-    }
-
-    &:nth-of-type(7) {
-      &::after {
-        background-image: url("../../img/support-bg-07.png");
-      }
-    }
-
-    &:nth-of-type(4n) {
-      border-right: 1px solid rgba(0, 0, 0, 0.05);
-    }
-
-    &:nth-last-of-type(-n + 4) {
-      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    }
-
-    &:hover {
-      background-color: #fbc02d;
-
-      &::before {
-        color: rgba(22, 22, 22, 0.8);
-      }
-
-      &::after {
-        opacity: 1;
-        visibility: visible;
-        right: -20px;
-      }
-    }
 
     &::before {
       content: "0" counter(items);
@@ -153,6 +146,121 @@
         opacity 0.5s cubic-bezier(0.77, 0, 0.175, 1),
         visibility 0.1s cubic-bezier(0.77, 0, 0.175, 1);
     }
+
+    &--more {
+      background-color: #fbc02d;
+      align-items: center;
+      z-index: auto;
+
+      &:hover {
+        background-color: #ffb600;
+      }
+
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
+
+    &--engineering {
+      &::after {
+        background-image: url("../../img/support-bg-01.png");
+      }
+    }
+
+    &--consultation {
+      &::after {
+        background-image: url("../../img/support-bg-02.png");
+      }
+    }
+
+    &--setup {
+      &::after {
+        background-image: url("../../img/support-bg-03.png");
+      }
+    }
+
+    &--service {
+      &::after {
+        background-image: url("../../img/support-bg-04.png");
+      }
+    }
+
+    &--diagnostic {
+      &::after {
+        background-image: url("../../img/support-bg-01@1x.png");
+      }
+    }
+
+    &--repair {
+      &::after {
+        background-image: url("../../img/support-bg-06.png");
+      }
+    }
+
+    &--pipeline {
+      &::after {
+        background-image: url("../../img/support-bg-07.png");
+      }
+    }
+
+    &:nth-of-type(4n) {
+      border-right: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    &:nth-last-of-type(-n + 4) {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .main--product & {
+      height: 320px;
+      justify-content: flex-end;
+      border-top: 1px solid rgba(0, 0, 0, 0.05);
+
+      &--more {
+        align-items: flex-start;
+        padding-top: 32px;
+        padding-bottom: 40px;
+
+        &::after {
+          content: "";
+          display: block;
+          top: 38px;
+          right: 34px;
+          width: 16px;
+          height: 16px;
+          opacity: 1;
+          visibility: visible;
+          background-image: url("../../img/icon-arrow-top-right-black.svg");
+        }
+
+        &:hover {
+          background-color: #ffb600;
+
+          &::after {
+            right: 34px;
+          }
+        }
+      }
+
+      &:last-of-type:not(.support__item--more) {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      }
+    }
+
+    &:hover {
+      background-color: #fbc02d;
+
+      &::before {
+        color: rgba(22, 22, 22, 0.8);
+      }
+
+      &::after {
+        opacity: 1;
+        visibility: visible;
+        right: -20px;
+      }
+    }
   }
 
   .support__caption {
@@ -164,10 +272,20 @@
     font-size: 16px;
     line-height: 19px;
     color: @title-color;
+    transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 
-    .support__item:nth-of-type(8) & {
+    .support__item--more & {
       margin-bottom: auto;
       text-align: center;
+
+      .main--product & {
+        font-size: 36px;
+        line-height: 42px;
+      }
+    }
+
+    .main--product & {
+      margin-bottom: 0;
     }
 
     .support__item:hover & {
@@ -180,35 +298,34 @@
     transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
     transform: scale(1);
     transform-origin: 0 50%;
-    fill: #f1ac00;
 
-    .support__item:nth-of-type(1) & {
+    .support__item--engineering & {
       top: 156px;
     }
 
-    .support__item:nth-of-type(2) & {
+    .support__item--consultation & {
       top: 151px;
     }
 
-    .support__item:nth-of-type(3) & {
+    .support__item--setup & {
       top: 148px;
     }
 
-    .support__item:nth-of-type(4) & {
+    .support__item--service & {
       top: 156px;
       stroke: #f1ac00;
     }
 
-    .support__item:nth-of-type(5) & {
+    .support__item--diagnostic & {
       top: 166px;
     }
 
-    .support__item:nth-of-type(6) & {
+    .support__item--repair & {
       top: 160px;
       stroke: #f1ac00;
     }
 
-    .support__item:nth-of-type(7) & {
+    .support__item--pipeline & {
       top: 152px;
       stroke: #f1ac00;
     }
@@ -219,9 +336,9 @@
       fill: #000000;
     }
 
-    .support__item:nth-of-type(4):hover &,
-    .support__item:nth-of-type(6):hover &,
-    .support__item:nth-of-type(7):hover & {
+    .support__item--service:hover &,
+    .support__item--repair:hover &,
+    .support__item--pipeline:hover & {
       stroke: #000000;
     }
   }
@@ -236,60 +353,58 @@
   .support__item {
     padding: 42px 37px;
 
-    &:nth-of-type(1) {
+    &--engineering {
       background-position: 42px 145px;
-    }
 
-    &:nth-of-type(2) {
-      background-position: 43px 140px;
-    }
-
-    &:nth-of-type(3) {
-      background-position: 36px 137px;
-    }
-
-    &:nth-of-type(4) {
-      background-position: 42px 145px;
-    }
-
-    &:nth-of-type(5) {
-      background-position: 38px 155px;
-    }
-
-    &:nth-of-type(6) {
-      background-position: 40px 149px;
-    }
-
-    &:nth-of-type(7) {
-      background-position: 41px 141px;
-    }
-
-    &:hover {
-      &:nth-of-type(1) {
+      &:hover {
         background-position: 42px 33px;
       }
+    }
 
-      &:nth-of-type(2) {
+    &--consultation {
+      background-position: 43px 140px;
+
+      &:hover {
         background-position: 43px 33px;
       }
+    }
 
-      &:nth-of-type(3) {
+    &--setup {
+      background-position: 36px 137px;
+
+      &:hover {
         background-position: 36px 33px;
       }
+    }
 
-      &:nth-of-type(4) {
+    &--service {
+      background-position: 42px 145px;
+
+      &:hover {
         background-position: 42px 33px;
       }
+    }
 
-      &:nth-of-type(5) {
+    &--diagnostic {
+      background-position: 38px 155px;
+
+      &:hover {
         background-position: 38px 33px;
       }
+    }
 
-      &:nth-of-type(6) {
+    &--repair {
+      background-position: 40px 149px;
+
+      &:hover {
         background-position: 40px 33px;
       }
+    }
 
-      &:nth-of-type(7) {
+    &--pipeline {
+      background-position: 41px 141px;
+
+      &:hover {
         background-position: 41px 33px;
       }
     }

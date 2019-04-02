@@ -157,11 +157,13 @@
             background-color: #f1ac00;
         }
     }
-    .banner & {
+    .banner &,
+    .goods & {
       top: calc(100% + 10px);
     }
     .bestsellers &,
-    .recently-viewed & {
+    .recently-viewed &,
+    .recommendation & {
       width: calc(100% - 96px);
       top: calc(100% + 21px);
       left: 48px;
@@ -177,6 +179,12 @@
     .comparison & {
       width: calc(100% - 96px);
       top: -40px;
+      left: 48px;
+      z-index: 1;
+    }
+    .products--additional & {
+      width: calc(100% - 96px);
+      top: calc(100% + 24px);
       left: 48px;
       z-index: 1;
     }
