@@ -347,19 +347,21 @@
     padding-bottom: 12px;
     cursor: pointer;
 
-    &::after {
+    &::before {
       content: "";
       position: absolute;
       bottom: 0;
-      left: 0;
-      width: 66%;
+      left: calc(50% - 13px);
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 66px;
       height: 2px;
       background-color: transparent;
       transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
     }
 
     &.slick-current {
-      &::after {
+      &::before {
         background-color: #fbc02d;
       }
     }
