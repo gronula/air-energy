@@ -32,6 +32,8 @@ var catalogNumbers = catalog.querySelectorAll('.catalog__number');
 var catalogSublists = catalog.querySelectorAll('.catalog__sublist');
 var goodsImage = main.querySelector('.goods__image');
 var goodsThumbnailWrappers = main.querySelectorAll('.goods__thumbnail-wrapper');
+var goodsOffer = main.querySelector('.goods__button--offer');
+var goodsCheap = main.querySelector('.goods__button--cheap');
 var industryTitles = main.querySelectorAll('.industry__title');
 var industrySliders = main.querySelectorAll('.industry  .slider__items');
 var industryControls = main.querySelectorAll('.industry__controls');
@@ -47,6 +49,8 @@ var citiesFooter = footer.querySelectorAll('.footer__city');
 var addressesFooter = footer.querySelectorAll('.footer__address');
 var modalRequest = document.querySelector('.modal--request');
 var modalCallback = document.querySelector('.modal--callback');
+var modalOffer = document.querySelector('.modal--offer');
+var modalCheap = document.querySelector('.modal--cheap');
 var searchFieldWidth = 100;
 var mainNavWidth = 240;
 
@@ -361,6 +365,26 @@ var contactsCallbackClickHandler = function () {
   mainNavLinkCatalog.removeEventListener('mouseenter', mainNavLinkCatalogMouseenterHandler);
 };
 
+var goodsOfferClickHandler = function () {
+  modalOffer.classList.remove('modal--closed');
+
+  var modalClose = modalOffer.querySelector('.modal--offer  .modal__close');
+  modalClose.addEventListener('click', modalCloseClickHandler);
+
+  document.addEventListener('click', modalCloseHandler, true);
+  mainNavLinkCatalog.removeEventListener('mouseenter', mainNavLinkCatalogMouseenterHandler);
+};
+
+var goodsCheapClickHandler = function () {
+  modalCheap.classList.remove('modal--closed');
+
+  var modalClose = modalCheap.querySelector('.modal--cheap  .modal__close');
+  modalClose.addEventListener('click', modalCloseClickHandler);
+
+  document.addEventListener('click', modalCloseHandler, true);
+  mainNavLinkCatalog.removeEventListener('mouseenter', mainNavLinkCatalogMouseenterHandler);
+};
+
 var modalCloseClickHandler = function (evt) {
   evt.preventDefault();
   evt.target.parentElement.classList.add('modal--closed');
@@ -376,12 +400,16 @@ var modalCloseHandler = function (evt) {
   }
 
   if (evt.target === searchRequest ||
-      evt.target === contactsCallback) {
+      evt.target === contactsCallback ||
+      evt.target === goodsOffer ||
+      evt.target === goodsCheap) {
     evt.stopPropagation();
   }
 
   modalRequest.classList.add('modal--closed');
   modalCallback.classList.add('modal--closed');
+  modalOffer.classList.add('modal--closed');
+  modalCheap.classList.add('modal--closed');
   evt.target.removeEventListener('click', modalCloseClickHandler);
   document.removeEventListener('click', modalCloseHandler, true);
   mainNavLinkCatalog.addEventListener('mouseenter', mainNavLinkCatalogMouseenterHandler);
@@ -943,6 +971,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   contactsCallback.addEventListener('click', contactsCallbackClickHandler);
   searchRequest.addEventListener('click', searchRequestClickHandler);
+  goodsOffer.addEventListener('click', goodsOfferClickHandler);
+  goodsCheap.addEventListener('click', goodsCheapClickHandler);
 
   for (var i = 0; i < citiesFooter.length; i++) {
     citiesFooterClickHandler(citiesFooter[i], addressesFooter[i]);

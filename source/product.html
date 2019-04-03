@@ -2106,6 +2106,56 @@
       </form>
     </div>
 
+    <div class="modal  modal--offer  modal--closed">
+      <h2 class="modal__title">Отправить запрос</h2>
+      <button class="modal__close" type="button" >Закрыть окно отправки запроса</button>
+
+      <a class="modal__result">
+        <div class="modal__image-wrapper">
+          <img class="modal__image" src="img/products-desktop-01@1x.png" alt="Набор WESTER Компрессор LE 024-150 OLC +Шланг 814-007 ">
+        </div>
+        <div class="modal__info">
+          <p class="modal__category">Винтовой компрессор</p>
+          <p class="modal__name">Набор WESTER Компрессор LE 024-150 OLC +Шланг 814-007</p>
+        </div>
+      </a>
+
+      <form class="modal__form" action="https://echo.htmlacademy.ru" method="post">
+        <input class="modal__input" type="text" name="offerName" id="offerName" placeholder="Имя" required>
+        <input class="modal__input" type="email" name="offerEmail" id="offerEmail" placeholder="E-mail" required>
+        <input class="modal__input" type="tel" name="offerTel" id="offerTel" placeholder="Телефон" required>
+        <textarea class="modal__textarea" name="offerMessage" id="offerMessage" placeholder="Сообщение" required></textarea>
+
+        <label class="modal__file-label">
+          <span class="modal__file-text">Прикрепить документы</span>
+          <input class="modal__file" type="file" name="offerFile" id="offerFile">
+        </label>
+
+        <input class="modal__checkbox  visually-hidden" type="checkbox" name="offerPepsonalData" id="offerPepsonalData" required>
+        <label class="modal__label" for="offerPepsonalData">Я согласен на обработку персональных данных</label>
+
+        <button class="modal__submit" type="submit">Оправить запрос</button>
+      </form>
+    </div>
+
+    <div class="modal  modal--cheap  modal--closed">
+      <h2 class="modal__title">Нашли дешевле?</h2>
+      <button class="modal__close" type="button" >Закрыть окно отправки запроса</button>
+
+      <form class="modal__form" action="https://echo.htmlacademy.ru" method="post">
+        <input class="modal__input" type="text" name="cheapName" id="cheapName" placeholder="Имя" required>
+        <input class="modal__input" type="email" name="cheapEmail" id="cheapEmail" placeholder="E-mail" required>
+        <input class="modal__input" type="tel" name="cheapTel" id="cheapTel" placeholder="Телефон" required>
+        <input class="modal__input" type="text" name="cheapLink" id="cheapLink" placeholder="Ссылка на этот товар с более низкой ценой" required>
+        <textarea class="modal__textarea" name="cheapMessage" id="cheapMessage" placeholder="Сообщение" required></textarea>
+
+        <input class="modal__checkbox  visually-hidden" type="checkbox" name="cheapPepsonalData" id="cheapPepsonalData" required>
+        <label class="modal__label" for="cheapPepsonalData">Я согласен на обработку персональных данных</label>
+
+        <button class="modal__submit" type="submit">Оправить запрос</button>
+      </form>
+    </div>
+
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="js/slick.min.js"></script>
     <script src="js/product.js"></script>
