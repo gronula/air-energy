@@ -307,7 +307,7 @@
     bottom: 0;
     .fluid(left, @notebook-offset, @desktop-offset, @notebook-width, @desktop-width);
     right: 50%;
-    padding-bottom: 40px;
+    padding-bottom: 0;
     padding-left: 0;
     padding-right: 48px;
   }
@@ -394,6 +394,10 @@
     margin-bottom: 24px;
     padding-left: 0;
     padding-right: 0;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
 
     &--desktop {
       display: block;
