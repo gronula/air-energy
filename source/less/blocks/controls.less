@@ -149,6 +149,11 @@
       background-color: transparent;
     }
 
+    .industry--projects & {
+      left: 0;
+      right: auto;
+    }
+
     &--hidden {
       display: none;
     }
@@ -252,7 +257,7 @@
       }
     }
 
-    .main--product .industry & {
+    .main--product .industry:not(.industry--projects) & {
       background-color: #273840;
 
       &--previous {

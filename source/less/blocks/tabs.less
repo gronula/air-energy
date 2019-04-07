@@ -14,7 +14,7 @@
   position: relative;
   margin-top: 0;
   margin-bottom: 60px;
-  margin-right: 24px;
+  .fluid(margin-right, 24px, 40px, 320px, 360px);
   font-weight: 500;
   font-size: 16px;
   line-height: 19px;
@@ -215,6 +215,12 @@
   line-height: 18px;
   color: #f1ac00;
   text-align: right;
+}
+
+@media (min-width: 360px) {
+  .tabs__label {
+    margin-right: 40px;
+  }
 }
 
 @media (min-width: 700px) {

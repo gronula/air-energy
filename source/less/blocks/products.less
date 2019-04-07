@@ -41,7 +41,7 @@
   .main--catalog & {
     display: flex;
     flex-wrap: wrap;
-    height: 128px;
+    min-height: 128px;
     padding-left: 16px;
     padding-right: 16px;
     border-top: 1px solid #e6e6e6;
@@ -131,6 +131,7 @@
 }
 
 .products__image {
+  align-self: center;
   width: 106px;
   height: 128px;
   object-fit: contain;
@@ -145,8 +146,8 @@
 .products__name {
   width: calc(100% - 106px);
   flex-grow: 1;
-  margin-top: 0;
-  margin-bottom: 0;
+  margin-top: 32px;
+  margin-bottom: 32px;
   padding-left: 40px;
   font-weight: 500;
   font-size: 16px;
@@ -157,6 +158,8 @@
   .products--additional & {
     display: inline-block;
     width: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
     padding-left: 0;
     color: #333333;
     flex-grow: 0;

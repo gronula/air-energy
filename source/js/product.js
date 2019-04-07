@@ -34,6 +34,7 @@ var goodsImage = main.querySelector('.goods__image');
 var goodsThumbnailWrappers = main.querySelectorAll('.goods__thumbnail-wrapper');
 var goodsOffer = main.querySelector('.goods__button--offer');
 var goodsCheap = main.querySelector('.goods__button--cheap');
+var industry = document.querySelector('.industry');
 var industryTitles = main.querySelectorAll('.industry__title');
 var industrySliders = main.querySelectorAll('.industry  .slider__items');
 var industryControls = main.querySelectorAll('.industry__controls');
@@ -531,6 +532,7 @@ var setCatalogNumbersValue = function () {
 var industryTitleClickHandler = function (title) {
   title.addEventListener('click', function () {
     if (!title.classList.contains('industry__title--active')) {
+      industry.classList.toggle('industry--projects');
       industryTitles.forEach(function (it) {
         it.classList.toggle('industry__title--active');
       });
