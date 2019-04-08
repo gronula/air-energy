@@ -542,6 +542,8 @@ var industryTitleClickHandler = function (title) {
       industryControls.forEach(function (it) {
         it.classList.toggle('controls--hidden');
       });
+
+      $('.slider__items').slick('slickGoTo', 0, true);
     }
   });
 };
