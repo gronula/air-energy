@@ -50,11 +50,6 @@
       margin-bottom: 76px;
       // transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
     }
-
-    &--projects {
-      width: calc(100% - 670px - (@notebook-offset + unit(@desktop-offset - @notebook-offset) * (100vw - @notebook-width) / unit(@desktop-width - @notebook-width)));
-      margin-left: calc(670px + (@notebook-offset + unit(@desktop-offset - @notebook-offset) * (100vw - @notebook-width) / unit(@desktop-width - @notebook-width)));
-    }
   }
 
   .industry__controls {
@@ -68,14 +63,7 @@
     z-index: 0;
 
     .main--product & {
-      margin-right: 50px;
-    }
-
-    .industry--projects & {
-      transform: translateX(calc(-670px - (@notebook-offset + unit(@desktop-offset - @notebook-offset) * (100vw - @notebook-width) / unit(@desktop-width - @notebook-width))));
-      width: calc(400px + (@notebook-offset + unit(@desktop-offset - @notebook-offset) * (100vw - @notebook-width) / unit(@desktop-width - @notebook-width)));
-      margin-right: calc(-400px - (@notebook-offset + unit(@desktop-offset - @notebook-offset) * (100vw - @notebook-width) / unit(@desktop-width - @notebook-width)));
-      flex-shrink: 0;
+      margin-right: 52px;
     }
   }
 
@@ -124,10 +112,6 @@
         opacity: 1;
       }
     }
-
-    .industry--projects & {
-      color: #15262e;
-    }
   }
 
   .industry__number {
@@ -141,20 +125,11 @@
     .industry__title:only-of-type & {
       display: none;
     }
-
-    .industry--projects & {
-      color: #15262e;
-    }
   }
 
   .more {
     .industry & {
       transition-property: color;
-    }
-
-    .industry--projects & {
-      background-color: #ffffff;
-      color: #15262e;
     }
   }
 
@@ -181,24 +156,9 @@
     .main--product & {
       // width: calc(@desktop-width - @desktop-offset + (50% - @desktop-width / 2) - 80px);
     }
-
-    &--projects {
-      width: calc(100% - 670px - (50vw - @desktop-width / 2 + @desktop-offset - @scrollbar-width / 2));
-      margin-left: calc((50vw - @desktop-width / 2 + @desktop-offset - @scrollbar-width / 2) + 670px);
-      padding-left: 0;
-      padding-right: 0;
-    }
   }
 
   .industry__header {
     margin-right: 172px;
-
-    .industry--projects & {
-      transform: translateX(calc(-670px - (50vw - @desktop-width / 2 + @desktop-offset)));
-      width: calc((50vw - @desktop-width / 2 + @desktop-offset) + 400px);
-      margin-right: calc(-400px - (50vw - @desktop-width / 2 + @desktop-offset));
-      padding-left: calc(50vw - @desktop-width / 2 + @desktop-offset);
-      padding-right: @desktop-offset;
-    }
   }
 }

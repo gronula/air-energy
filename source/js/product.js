@@ -1027,6 +1027,12 @@ $(document).ready(function () {
     ]
   });
 
+  industrySliders.forEach(function (it) {
+    if (it.children.length === 1) {
+      it.classList.add('slider__items--only');
+    }
+  });
+
   $('.slider__items--projects').slick({
     dots: false,
     arrows: true,
