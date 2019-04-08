@@ -78,12 +78,30 @@ input[type="radio"].visually-hidden {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+
+  &--about {
+    position: relative;
+    background: url("../img/page-about-bg-mobile.png") no-repeat top left;
+    background-size: 100%;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 180px;
+      background-image: linear-gradient(to bottom, #000000 0%, rgba(0, 0, 0, 0) 100%);
+      z-index: -1;
+    }
+  }
 }
 
 .no-scroll {
   width: 100%;
   position: fixed;
   overflow: hidden;
+  background-size: calc(100% - 17px);
 }
 
 .dark {
@@ -100,5 +118,13 @@ input[type="radio"].visually-hidden {
     opacity: 0.7;
     z-index: 3;
     transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  }
+}
+
+@media (min-width: @notebook-width) {
+  .page {
+    &--about {
+      background-image: url("../img/page-about-bg-desktop.png");
+    }
   }
 }
